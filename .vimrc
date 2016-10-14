@@ -5,7 +5,6 @@ endif
 call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
-Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 "syntax highlight
