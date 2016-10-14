@@ -5,7 +5,13 @@ endif
 call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-bufferline'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
+
+"airline settings
+let g:airline_powerline_fonts = 1
 
 "syntax highlight
 if empty(glob("~/.vim/colors/jellybeans.vim"))
