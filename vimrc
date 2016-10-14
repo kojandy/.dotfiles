@@ -30,7 +30,7 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
-set nu
+set number
 set nowrap
 set laststatus=2
 
