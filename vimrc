@@ -36,3 +36,4 @@ set laststatus=2
 
 "keymap
 nnoremap <C-n> :NERDTreeToggle<CR>
+inoremap <Tab> <C-p>
