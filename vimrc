@@ -33,6 +33,7 @@ set expandtab
 set number
 set nowrap
 set laststatus=2
+set showcmd
 
 "keymap
 nnoremap <C-n> :NERDTreeToggle<CR>
