@@ -9,6 +9,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-bufferline'
 Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 "airline settings
