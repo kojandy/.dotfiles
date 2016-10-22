@@ -10,6 +10,7 @@ Plug 'bling/vim-bufferline'
 Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/syntastic'
 call plug#end()
 
 "airline settings
@@ -23,7 +24,7 @@ syntax on
 colorscheme jellybeans
 
 "autoformat settings
-let g:formatdef_astyle = '"astyle -A2YpHjxC100"'
+let g:formatdef_astyle = '"astyle -A2SLYMpHjxC200"'
 let g:formatters_java = ['astyle']
 let g:formatters_cpp = ['astyle']
 let g:formatters_c = ['astyle']
