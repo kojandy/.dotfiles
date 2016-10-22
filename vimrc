@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-bufferline'
 Plug 'airblade/vim-gitgutter'
+Plug 'Chiel92/vim-autoformat'
 call plug#end()
 
 "airline settings
@@ -22,6 +23,12 @@ if has("syntax")
 endif
 colorscheme jellybeans
 
+"autoformat settings
+let g:formatdef_astyle = '"astyle -A2YpHjxC100"'
+let g:formatters_java = ['astyle']
+let g:formatters_cpp = ['astyle']
+let g:formatters_c = ['astyle']
+
 "general settings
 filetype indent plugin on
 set autoindent
@@ -34,6 +41,9 @@ set number
 set nowrap
 set laststatus=2
 set showcmd
+
+"autocmd settings
+autocmd BufWrite * :Autoformat
 
 "keymap
 nnoremap <C-n> :NERDTreeToggle<CR>
