@@ -18,9 +18,7 @@ let g:airline_powerline_fonts = 1
 if empty(glob("~/.vim/colors/jellybeans.vim"))
     execute '!curl -fLo ~/.vim/colors/jellybeans.vim --create-dirs https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim'
 endif
-if has("syntax")
-    syntax on
-endif
+syntax on
 colorscheme jellybeans
 
 "autoformat settings
