@@ -1,6 +1,7 @@
 " plug settings
 if empty(glob("~/.vim/autoload/plug.vim"))
-    execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 call plug#begin()
 Plug 'vim-airline/vim-airline'
@@ -18,7 +19,7 @@ let g:airline_powerline_fonts = 1
 
 " syntax highlight
 if empty(glob("~/.vim/colors/jellybeans.vim"))
-    execute '!curl -fLo ~/.vim/colors/jellybeans.vim --create-dirs https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim'
+    silent !curl -fLo ~/.vim/colors/jellybeans.vim --create-dirs https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
 endif
 syntax on
 colorscheme jellybeans
