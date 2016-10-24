@@ -15,4 +15,5 @@ fi
 
 mv -f ~/.zshrc ~/dotfiles/dotfiles_old/zshrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
-ln -s ~/dotfiles/oh-my-zsh/custom/themes ~/.oh-my-zsh/custom/themes
+mkdir -p ~/.oh-my-zsh/custom/themes
+ln -s ~/dotfiles/oh-my-zsh/custom/themes/* ~/.oh-my-zsh/custom/themes
