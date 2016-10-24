@@ -8,7 +8,7 @@ if [ $platform = 'Linux' ]
 then
     sudo apt install vim
     sudo apt install zsh
-    cp -n ~/dotfiles/fonts/Sauce\ Code\ Powerline\ Medium.otf /usr/share/fonts/Sauce\ Code\ Powerline\ Medium.otf
+    sudo cp -n ~/dotfiles/fonts/Sauce\ Code\ Powerline\ Medium.otf /usr/share/fonts/Sauce\ Code\ Powerline\ Medium.otf
 fi
 if [ $SHELL = $(which zsh) ]
 then
