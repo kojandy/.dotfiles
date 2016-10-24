@@ -9,7 +9,10 @@ then
     sudo apt install vim
     sudo apt install zsh
 fi
-chsh -s $(which zsh)
+if [ $SHELL = $(which zsh) ]
+then
+    chsh -s $(which zsh)
+fi
 if [ ! -d ~/.oh-my-zsh ]
 then
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
