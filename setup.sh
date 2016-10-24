@@ -10,7 +10,7 @@ then
     sudo apt install zsh
     sudo cp -n ~/dotfiles/fonts/Source\ Code\ Powerline\ Medium.otf /usr/share/fonts/Source\ Code\ Powerline\ Medium.otf
 fi
-if [ $SHELL = $(which zsh) ]
+if [ $SHELL != $(which zsh) ]
 then
     chsh -s $(which zsh)
 fi
@@ -20,3 +20,4 @@ then
 fi
 mv -f ~/.zshrc ~/dotfiles/dotfiles_old/zshrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/oh-my-zsh/custom/themes ~/.oh-my-zsh/custom/themes
