@@ -1,1 +1,1 @@
-alias omni='ssh ohjun@192.168.108.100'
+alias om='ssh ohjun@192.168.108.100'
