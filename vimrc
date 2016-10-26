@@ -43,7 +43,6 @@ set softtabstop=4
 set expandtab
 
 " general settings
-set number
 set nowrap
 set laststatus=2
 set showcmd
@@ -53,6 +52,8 @@ set wildmenu
 set wildmode=longest:full,full
 set noshowmode
 set hidden
+set relativenumber
+set number
 
 " search settings
 set ignorecase
