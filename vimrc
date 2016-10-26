@@ -28,7 +28,7 @@ syntax on
 colorscheme jellybeans
 
 " autoformat settings
-let g:formatdef_astyle = '"astyle -A2SLYMpHjxC200"'
+let g:formatdef_astyle = '"astyle -A2SLYMpHjoxC200"'
 let g:formatters_java = ['astyle']
 let g:formatters_cpp = ['astyle']
 let g:formatters_c = ['astyle']
@@ -66,12 +66,13 @@ if has('mouse')
 endif
 
 " autocmd settings
-autocmd BufWrite * :Autoformat
+" autocmd BufWrite * :Autoformat
 
 " keymap
 let mapleader=','
 inoremap <Tab> <C-p>
-noremap <SPACE> :noh<CR>
+noremap <silent> <SPACE> :noh<CR>
+nmap <silent> <leader>af :Autoformat<CR>
 
 " nerdtree
 nmap <silent> <C-n> :NERDTreeToggle<CR>
