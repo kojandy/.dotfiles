@@ -54,6 +54,7 @@ set wildmode=longest:full,full
 set noshowmode
 set relativenumber
 set number
+set hidden
 
 " search settings
 set ignorecase
