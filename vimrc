@@ -52,7 +52,6 @@ set scrolloff=3
 set wildmenu
 set wildmode=longest:full,full
 set noshowmode
-set hidden
 set relativenumber
 set number
 
