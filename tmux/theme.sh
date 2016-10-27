@@ -1,8 +1,7 @@
 #### COLOUR
-tm_color_active=colour51
-tm_color_inactive=colour241
-tm_color_feature=colour198
-tm_color_music=colour41
+tm_color_active=colour213
+tm_color_inactive=colour242
+tm_color_feature=colour63
 tm_active_border_color=colour51
 
 # separators
@@ -47,7 +46,7 @@ set-option -g display-panes-colour $tm_color_inactive
 # clock
 set-window-option -g clock-mode-colour $tm_color_active
 
-tm_date="#[fg=$tm_color_inactive] %R %b/%d"
+tm_date="#[fg=$tm_color_inactive] %b/%d %R"
 tm_host="#[fg=$tm_color_feature,bold]#h"
 tm_session_name="#[fg=$tm_color_feature,bold]#S"
 
