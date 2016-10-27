@@ -55,6 +55,7 @@ set noshowmode
 set relativenumber
 set number
 set hidden
+set wildignore+=*.swp,*.pyc,*.zip
 
 " search settings
 set ignorecase
