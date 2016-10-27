@@ -32,6 +32,7 @@ let g:formatdef_astyle = '"astyle -A2SLYMpHjoxC200"'
 let g:formatters_java = ['astyle']
 let g:formatters_cpp = ['astyle']
 let g:formatters_c = ['astyle']
+let g:formatters_python = ['autopep8']
 
 " indent and tab settings
 filetype indent plugin on
