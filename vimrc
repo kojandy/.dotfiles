@@ -15,6 +15,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-obsession'
 call plug#end()
 
 " airline settings
