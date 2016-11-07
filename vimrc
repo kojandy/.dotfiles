@@ -16,6 +16,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-obsession'
+Plug 'BeeWarloc/vim-fuse'
 call plug#end()
 
 " airline settings
@@ -57,6 +58,7 @@ set relativenumber
 set number
 set hidden
 set wildignore+=*.swp,*.pyc,*.zip,venv,.git
+set backspace=indent,eol,start
 
 " search settings
 set ignorecase
