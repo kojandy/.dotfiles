@@ -18,7 +18,15 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-obsession'
 Plug 'BeeWarloc/vim-fuse'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 call plug#end()
+
+" syntax highlight
+if empty(glob("~/.vim/colors/jellybeans.vim"))
+    silent !curl -fLo ~/.vim/colors/jellybeans.vim --create-dirs https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
+endif
+syntax on
+colorscheme jellybeans
 
 " airline settings
 let g:airline_powerline_fonts = 0
@@ -38,19 +46,15 @@ let g:airline_mode_map = {
             \ '' : 'S',
             \ }
 
-" syntax highlight
-if empty(glob("~/.vim/colors/jellybeans.vim"))
-    silent !curl -fLo ~/.vim/colors/jellybeans.vim --create-dirs https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
-endif
-syntax on
-colorscheme jellybeans
-
 " autoformat settings
 let g:formatdef_astyle = '"astyle -A2SLYMpHjoxC200"'
 let g:formatters_java = ['astyle']
 let g:formatters_cpp = ['astyle']
 let g:formatters_c = ['astyle']
 let g:formatters_python = ['autopep8']
+
+" nerdtree settings
+let NERDTreeIgnore = ['\.pyc$']
 
 " indent and tab settings
 filetype indent plugin on
