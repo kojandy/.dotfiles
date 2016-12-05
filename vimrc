@@ -56,6 +56,9 @@ let g:formatters_python = ['autopep8']
 " nerdtree settings
 let NERDTreeIgnore = ['\.pyc$']
 
+" youcompleteme settings
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 " indent and tab settings
 filetype indent plugin on
 set autoindent
