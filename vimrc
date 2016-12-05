@@ -17,6 +17,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-obsession'
 Plug 'BeeWarloc/vim-fuse'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 call plug#end()
 
 " airline settings
@@ -90,7 +91,6 @@ endif
 
 " keymap
 let mapleader=','
-inoremap <Tab> <C-p>
 noremap <silent> <SPACE> :noh<CR>
 nmap <silent> <leader>af :Autoformat<CR>
 
