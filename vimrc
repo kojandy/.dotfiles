@@ -18,7 +18,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-obsession'
 Plug 'BeeWarloc/vim-fuse'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': ['python', 'c', 'cpp'] }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp'] }
 call plug#end()
 
 " syntax highlight
