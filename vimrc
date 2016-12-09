@@ -45,6 +45,7 @@ let g:airline_mode_map = {
             \ 'S'  : 'S',
             \ '' : 'S',
             \ }
+let g:airline_exclude_preview = 1
 
 " autoformat settings
 let g:formatdef_astyle = '"astyle -A2SLYMpHjoxC200"'
