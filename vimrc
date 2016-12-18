@@ -11,12 +11,10 @@ Plug 'bling/vim-bufferline'
 Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-obsession'
-Plug 'BeeWarloc/vim-fuse'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': ['python', 'c', 'cpp'] }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp'] }
 call plug#end()
