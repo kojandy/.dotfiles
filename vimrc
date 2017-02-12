@@ -17,6 +17,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': ['python', 'c', 'cpp'] }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp'] }
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " syntax highlight
