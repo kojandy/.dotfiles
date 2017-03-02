@@ -9,6 +9,6 @@ ln -s ~/.dotfiles/zshrc ~/.zshrc
 mkdir -p ~/.oh-my-zsh/custom/themes
 mkdir -p ~/.dotfiles/dotfiles_old/oh-my-zsh/custom/themes
 mv -f ~/.oh-my-zsh/custom/themes ~/.dotfiles/dotfiles_old/oh-my-zsh/custom/themes
-ln -s ~/.dotfiles/oh-my-zsh/custom/themes/* ~/.oh-my-zsh/custom/themes
+ln -s ~/.dotfiles/oh-my-zsh/custom/themes/ ~/.oh-my-zsh/custom
 mv -f ~/.oh-my-zsh/custom/alias.zsh ~/.dotfiles/dotfiles_old/oh-my-zsh/custom/alias.zsh
 ln -s ~/.dotfiles/oh-my-zsh/custom/alias.zsh ~/.oh-my-zsh/custom/alias.zsh
