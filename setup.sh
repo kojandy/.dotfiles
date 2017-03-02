@@ -1,3 +1,4 @@
-source setup/vim.sh
-source setup/zsh.sh
-source setup/tmux.sh
+#!/bin/sh
+. setup/vim.sh
+. setup/zsh.sh
+. setup/tmux.sh
