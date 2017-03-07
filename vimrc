@@ -15,8 +15,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': ['python', 'c', 'cpp'] }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp'] }
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
@@ -55,9 +53,6 @@ let g:formatters_python = ['autopep8']
 
 " nerdtree settings
 let NERDTreeIgnore = ['\.pyc$']
-
-" youcompleteme settings
-let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " indent and tab settings
 filetype indent plugin on
