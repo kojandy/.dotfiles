@@ -3,3 +3,5 @@
 	name = Ohjun Kwon
 [core]
 	editor = vim
+[push]
+	default = simple
