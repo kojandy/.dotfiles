@@ -17,6 +17,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'udalov/kotlin-vim'
+Plug 'mbbill/undotree'
 call plug#end()
 
 " syntax highlight
@@ -109,3 +110,6 @@ nmap <silent> <leader>ge :Gedit<CR>
 nmap <silent> <leader>gb :Gblame<CR>
 nmap <silent> <leader>gp :Gpush<CR>
 nmap <silent> <leader>gl :Gpull<CR>
+
+" undotree
+nmap <silent> <C-q> :UndotreeToggle<CR>
