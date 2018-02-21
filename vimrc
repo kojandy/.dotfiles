@@ -112,4 +112,4 @@ nmap <silent> <leader>gp :Gpush<CR>
 nmap <silent> <leader>gl :Gpull<CR>
 
 " undotree
-nmap <silent> <C-q> :UndotreeToggle<CR>
+nmap <silent> <C-q> :UndotreeToggle<CR>:UndotreeFocus<CR>
