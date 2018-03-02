@@ -4,7 +4,7 @@ ZSH_THEME="custom"
 DISABLE_AUTO_TITLE="true"
 ZSH_CUSTOM=~/.dotfiles/oh-my-zsh
 
-plugins=(git vi-mode)
+plugins=(git vi-mode sudo)
 
 source $ZSH/oh-my-zsh.sh
 
