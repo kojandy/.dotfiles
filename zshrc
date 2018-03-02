@@ -1,7 +1,6 @@
 export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="custom"
-DISABLE_AUTO_TITLE="true"
 ZSH_CUSTOM=~/.dotfiles/oh-my-zsh
 
 plugins=(git vi-mode sudo)
