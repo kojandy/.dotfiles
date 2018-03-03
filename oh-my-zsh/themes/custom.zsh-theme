@@ -37,7 +37,7 @@ ZSH_THEME_GIT_PROMPT_DIVERGED="↕"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 function _user_host() {
-    echo "%{$turquoise%}%n@%m:"
+    echo "%(?.$turquoise.$orange)%n@%m:"
 }
 
 function _current_dir() {
