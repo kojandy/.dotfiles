@@ -10,8 +10,14 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-if command -v tmux>/dev/null; then
-    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
-
 stty -ixon
+
+if command -v tmux>/dev/null; then
+    if [[ ! $TERM =~ screen ]] && [ -z $TMUX ]; then
+        if tmux ls&>/dev/null; then
+            exec tmux attach-session -t $(tmux ls | tail -n 1 | awk '{ print $1 }')
+        else
+            exec tmux
+        fi
+    fi
+fi
