@@ -37,15 +37,13 @@ ZSH_THEME_GIT_PROMPT_DIVERGED="↕"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 function _user_host() {
-    local _me
+    local _me="local"
     if [[ -n $SSH_CONNECTION ]]; then
         _me="%n@%m"
     elif [[ $LOGNAME != $USER ]]; then
         _me="%n"
     fi
-    if [[ -n $_me ]]; then
-        echo "%(?.$turquoise.$orange)$_me:"
-    fi
+    echo "%(?.$turquoise.$orange)$_me:"
 }
 
 function _current_dir() {
