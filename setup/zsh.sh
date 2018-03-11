@@ -6,6 +6,6 @@ fi
 
 if [ -e ~/.zshrc ]
 then
-    mv -f ~/.zshrc ~/.dotfiles/dotfiles_old/zshrc
+    mv -f ~/.zshrc ~/.dotfiles/_old/zshrc
 fi
 ln -s ~/.dotfiles/zshrc ~/.zshrc
