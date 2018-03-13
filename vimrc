@@ -114,3 +114,6 @@ nmap <silent> <leader>gl :Gpull<CR>
 
 " undotree
 nmap <silent> <C-q> :UndotreeToggle<CR>:UndotreeFocus<CR>
+
+" emmet-vim
+let g:user_emmet_leader_key='<C-e>'
