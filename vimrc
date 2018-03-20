@@ -19,6 +19,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
+Plug 'johngrib/vim-f-hangul'
 call plug#end()
 
 " syntax highlight
