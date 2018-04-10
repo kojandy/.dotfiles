@@ -10,6 +10,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+PATH=~/.dotfiles/bin:$PATH
+
 stty -ixon
 
 if command -v tmux>/dev/null; then
