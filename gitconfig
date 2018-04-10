@@ -12,3 +12,5 @@
     ff = false
 [alias]
     rewrite-author = !~/.dotfiles/bin/git-rewrite-author.sh
+[fetch]
+	prune = true
