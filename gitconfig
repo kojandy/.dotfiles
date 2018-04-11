@@ -1,10 +1,10 @@
 [user]
-	email = dev@kojandy.com
-	name = Ohjun Kwon
+    email = dev@kojandy.com
+    name = Ohjun Kwon
 [core]
-	editor = vim
+    editor = vim
 [push]
-	default = simple
+    default = simple
 [pull]
     rebase = true
 [merge]
@@ -13,4 +13,4 @@
 [alias]
     rewrite-author = !~/.dotfiles/bin/git-rewrite-author
 [fetch]
-	prune = true
+    prune = true
