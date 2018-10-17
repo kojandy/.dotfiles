@@ -20,6 +20,7 @@ Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 Plug 'johngrib/vim-f-hangul'
+Plug 'rstacruz/vim-closer'
 call plug#end()
 
 " syntax highlight
