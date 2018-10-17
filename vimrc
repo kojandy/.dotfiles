@@ -119,3 +119,8 @@ nmap <silent> <C-q> :UndotreeToggle<CR>:UndotreeFocus<CR>
 
 " emmet-vim
 let g:user_emmet_leader_key='<C-e>'
+
+" vim-closer
+au FileType kotlin
+            \ let b:closer = 1 |
+            \ let b:closer_flags = '([{'
