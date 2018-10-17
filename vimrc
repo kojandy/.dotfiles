@@ -21,12 +21,10 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 Plug 'johngrib/vim-f-hangul'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 " syntax highlight
-if empty(glob("~/.vim/colors/jellybeans.vim"))
-    silent !curl -fLo ~/.vim/colors/jellybeans.vim --create-dirs https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
-endif
 syntax on
 colorscheme jellybeans
 
