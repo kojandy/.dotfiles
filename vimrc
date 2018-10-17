@@ -96,6 +96,8 @@ let g:formatters_python = ['autopep8']
 
 " nerdtree
 let NERDTreeIgnore = ['\.pyc$']
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
 nmap <silent> <C-n> :NERDTreeToggle<CR>
 
 " fugitive
