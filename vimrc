@@ -24,11 +24,51 @@ Plug 'sheerun/vim-polyglot'
 Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
+" general
+set nowrap
+set laststatus=2
+set showcmd
+set autoread
+set scrolloff=3
+set wildmenu
+set wildmode=longest:full,full
+set noshowmode
+set relativenumber
+set number
+set hidden
+set wildignore+=*.swp,*.pyc,*.zip,venv,.git
+set backspace=indent,eol,start
+
 " syntax highlight
 syntax on
 colorscheme jellybeans
 
-" airline settings
+" indent and tab
+filetype indent plugin on
+set autoindent
+set smartindent
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+
+" search
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" mouse
+" if has('mouse')
+"     set mouse=a
+" endif
+
+" keymap
+let mapleader=','
+noremap <silent> <SPACE> :noh<CR>
+nmap <silent> <leader>af :Autoformat<CR>
+
+" airline
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -47,59 +87,15 @@ let g:airline_mode_map = {
             \ }
 let g:airline_exclude_preview = 1
 
-" autoformat settings
+" autoformat
 let g:formatdef_astyle = '"astyle -A2SLYMpHjoxC200"'
 let g:formatters_java = ['astyle']
 let g:formatters_cpp = ['astyle']
 let g:formatters_c = ['astyle']
 let g:formatters_python = ['autopep8']
 
-" nerdtree settings
-let NERDTreeIgnore = ['\.pyc$']
-
-" indent and tab settings
-filetype indent plugin on
-set autoindent
-set smartindent
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set expandtab
-
-" general settings
-set nowrap
-set laststatus=2
-set showcmd
-set autoread
-set scrolloff=3
-set wildmenu
-set wildmode=longest:full,full
-set noshowmode
-set relativenumber
-set number
-set hidden
-set wildignore+=*.swp,*.pyc,*.zip,venv,.git
-set backspace=indent,eol,start
-
-" search settings
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-
-if has('mouse')
-    set mouse=a
-endif
-
-" autocmd settings
-" autocmd BufWrite * :Autoformat
-
-" keymap
-let mapleader=','
-noremap <silent> <SPACE> :noh<CR>
-nmap <silent> <leader>af :Autoformat<CR>
-
 " nerdtree
+let NERDTreeIgnore = ['\.pyc$']
 nmap <silent> <C-n> :NERDTreeToggle<CR>
 
 " fugitive
