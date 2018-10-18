@@ -59,9 +59,9 @@ set hlsearch
 set incsearch
 
 " mouse
-" if has('mouse')
-"     set mouse=a
-" endif
+if has('mouse')
+    set mouse=a
+endif
 
 " keymap
 let mapleader=','
