@@ -1,3 +1,6 @@
+# vi
+alias vi='vim'
+
 # python
 alias venv='source venv/bin/activate'
 alias mvenv='python3 -m venv venv'
