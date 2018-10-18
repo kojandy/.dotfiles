@@ -22,6 +22,7 @@ Plug 'johngrib/vim-f-hangul'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'nanotech/jellybeans.vim'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " general
