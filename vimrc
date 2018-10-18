@@ -10,7 +10,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-bufferline'
 Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -23,6 +22,8 @@ Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'nanotech/jellybeans.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " general
