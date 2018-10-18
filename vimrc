@@ -124,3 +124,8 @@ let g:user_emmet_leader_key='<C-e>'
 au FileType kotlin
             \ let b:closer = 1 |
             \ let b:closer_flags = '([{'
+
+" ale
+let g:ale_fixers = {
+            \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+            \ }
