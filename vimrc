@@ -10,7 +10,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-bufferline'
 Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
-Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -25,6 +24,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'rhysd/clever-f.vim'
+Plug 'w0rp/ale'
 call plug#end()
 
 " general
