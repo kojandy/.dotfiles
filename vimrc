@@ -39,6 +39,7 @@ set number
 set hidden
 set wildignore+=*.swp,*.pyc,*.zip,venv,.git
 set backspace=indent,eol,start
+set cursorline
 
 " syntax highlight
 syntax on
