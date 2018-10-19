@@ -17,7 +17,6 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 " Plug 'johngrib/vim-f-hangul'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
-Plug 'nanotech/jellybeans.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -25,6 +24,10 @@ Plug 'rhysd/clever-f.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/goyo.vim'
 Plug 'mhinz/vim-signify'
+
+" colorscheme
+Plug 'nanotech/jellybeans.vim'
+Plug 'koirand/tokyo-metro.vim'
 
 " Try later
 " Plug 'itchyny/lightline.vim'
@@ -50,7 +53,7 @@ set cursorline
 
 " syntax highlight
 syntax on
-colorscheme jellybeans
+colorscheme tokyo-metro
 
 " indent and tab
 filetype indent plugin on
