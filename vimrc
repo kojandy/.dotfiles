@@ -24,6 +24,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'w0rp/ale'
+Plug 'junegunn/goyo.vim'
 Plug 'mhinz/vim-signify'
 call plug#end()
 
