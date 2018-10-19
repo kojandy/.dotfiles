@@ -5,7 +5,6 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin()
 Plug 'vim-airline/vim-airline'
-" Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'bling/vim-bufferline'
 Plug 'Chiel92/vim-autoformat'
@@ -26,6 +25,13 @@ Plug 'rhysd/clever-f.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/goyo.vim'
 Plug 'mhinz/vim-signify'
+
+
+" Try later
+
+" Plug 'itchyny/lightline.vim'
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'SirVer/ultisnips'
 call plug#end()
 
 " general
