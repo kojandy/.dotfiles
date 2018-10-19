@@ -74,6 +74,9 @@ if has('mouse')
     set mouse=a
 endif
 
+" disable comment continuation
+au FileType * set fo-=c fo-=r fo-=o
+
 " keymap
 let mapleader=','
 noremap <silent> <SPACE> :noh<CR>
