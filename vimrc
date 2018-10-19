@@ -5,6 +5,7 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin()
 Plug 'vim-airline/vim-airline'
+" Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-bufferline'
