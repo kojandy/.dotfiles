@@ -26,9 +26,7 @@ Plug 'w0rp/ale'
 Plug 'junegunn/goyo.vim'
 Plug 'mhinz/vim-signify'
 
-
 " Try later
-
 " Plug 'itchyny/lightline.vim'
 " Plug 'Shougo/deoplete.nvim'
 " Plug 'SirVer/ultisnips'
