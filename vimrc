@@ -7,9 +7,7 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 " Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-bufferline'
-Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -26,6 +24,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'w0rp/ale'
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 " general
