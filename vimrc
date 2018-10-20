@@ -26,6 +26,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'alexdavid/vim-min-git-status'
+Plug 'tpope/vim-unimpaired'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " colorscheme
 Plug 'nanotech/jellybeans.vim'
