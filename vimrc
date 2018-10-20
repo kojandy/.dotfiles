@@ -117,16 +117,6 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 nmap <silent> <C-n> :NERDTreeToggle<CR>
 
-" fugitive
-nmap <silent> <leader>gs :Gstatus<CR>
-nmap <silent> <leader>gc :Gcommit<CR>
-nmap <silent> <leader>gw :Gwrite<CR>
-nmap <silent> <leader>gd :Gdiff<CR>
-nmap <silent> <leader>ge :Gedit<CR>
-nmap <silent> <leader>gb :Gblame<CR>
-nmap <silent> <leader>gp :Gpush<CR>
-nmap <silent> <leader>gl :Gpull<CR>
-
 " undotree
 nmap <silent> <C-q> :UndotreeToggle<CR>:UndotreeFocus<CR>
 
