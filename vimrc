@@ -87,7 +87,7 @@ au FileType * set fo-=c fo-=r fo-=o
 
 " keymap
 let mapleader=','
-noremap <silent> <SPACE> :noh<CR>
+nmap <silent> <SPACE> :noh<CR>
 nmap <silent> <leader>af :Autoformat<CR>
 
 " airline
