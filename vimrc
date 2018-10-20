@@ -23,7 +23,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/goyo.vim'
-Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'alexdavid/vim-min-git-status'
 
 " colorscheme
 Plug 'nanotech/jellybeans.vim'
@@ -52,6 +54,7 @@ set hidden
 set wildignore+=*.swp,*.pyc,*.zip,venv,.git
 set backspace=indent,eol,start
 set cursorline
+set updatetime=100
 
 " syntax highlight
 syntax on
@@ -134,3 +137,17 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_fixers = {
             \ '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ }
+
+" gutter
+nmap <silent> <leader>gs :Gministatus<CR>
+nmap <silent> <leader>gc :Gcommit --verbose<CR>
+nmap <silent> <leader>gr :Gread<CR>
+nmap <silent> <leader>gw :Gwrite<CR>
+nmap <silent> <leader>ge :Gedit<CR>
+nmap <silent> <leader>gd :Gdiff<CR>
+nmap <silent> <leader>gb :Gblame<CR>
+nmap <silent> <leader>gp :Gpush<CR>
+nmap <silent> <leader>gl :Gpull<CR>
+
+" bufferline
+let g:bufferline_echo = 0
