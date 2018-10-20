@@ -23,3 +23,5 @@ if command -v tmux>/dev/null; then
         fi
     fi
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
