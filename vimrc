@@ -28,6 +28,8 @@ Plug 'mhinz/vim-signify'
 " colorscheme
 Plug 'nanotech/jellybeans.vim'
 Plug 'koirand/tokyo-metro.vim'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'tomasiser/vim-code-dark'
 
 " Try later
 " Plug 'itchyny/lightline.vim'
