@@ -129,6 +129,8 @@ au FileType kotlin
             \ let b:closer_flags = '([{'
 
 " ale
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
 let g:ale_fixers = {
             \ '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ }
