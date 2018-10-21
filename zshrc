@@ -3,7 +3,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="custom"
 ZSH_CUSTOM=~/.dotfiles/zsh
 
-plugins=(git vi-mode sudo)
+plugins=(git vi-mode sudo docker)
 
 source $ZSH/oh-my-zsh.sh
 
