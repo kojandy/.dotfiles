@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 import os
-import json
 import shutil
-import pprint
 import argparse
 import subprocess
 import configparser
 from pathlib import Path
 
+dotfile_path = Path.home() / '.dotfiles'
 config_name = 'dfmconfig'
-status_path = str(Path.home() / '.dfmstatus')
 exclude = [config_name, 'setup', 'install', 'setup.sh', 'install.sh']
 config_spec = {
     'link': {
@@ -18,70 +16,36 @@ config_spec = {
         'oh-my-zsh': ""
     }
 }
-status_spec = {
-    'path': '/home/kojandy/.dotfiles',
-    'linked': ['vimrc', 'zshrc']
-}
-
-
-def init(args):
-    cwd = Path.cwd()
-    if cwd == Path.home():
-        print('You cannot set home directory as a dotfile dir')
-        exit(1)
-    status = {'path': str(cwd), 'linked': []}
-    print('Dotfile dir: %s' % cwd)
-    with open(status_path, 'w') as f:
-        json.dump(status, f)
-
-
-def clone(args):
-    pass
 
 
 def link(args):
-    with open(status_path, 'r+') as f:
-        status = json.load(f)
+    if args.name:
+        result = __link(args)
+        if result != 0:
+            exit(1)
 
-        if args.name:
-            result = __link(status, args.name, args.merge, args.ours, args.theirs)
-            if result != 0:
-                exit(1)
-
-            status['linked'].append(args.name)
-        else:
-            unsuccessful = []
-            for path in Path(status['path']).glob('[!.]*'):
-                if path.name not in exclude and path.is_file():
-                    result = __link(status, path.name, args.merge, args.ours, args.theirs)
-                    if result == 0:
-                        status['linked'].append(path.name)
-                    elif result == 4:
-                        pass
-                    else:
-                        unsuccessful.append(path.name)
-            if unsuccessful:
-                print('\n\nFollowing files could not be linked:')
-                for name in unsuccessful:
-                    print(name)
-        f.seek(0)
-        json.dump(status, f)
-        f.truncate()
+    else:
+        unsuccessful = []
+        for path in dotfile_path.glob('[!.]*'):
+            if path.name not in exclude and path.is_file():
+                result = __link(args)
+                if result != 0:
+                    unsuccessful.append(path.name)
+        if unsuccessful:
+            print('\n\nFollowing files could not be linked:')
+            for name in unsuccessful:
+                print(name)
 
 
-def __link(status, name, merge=False, ours=False, theirs=False):
+def __link(args):
     # Return value
     # 0: Success
     # 1: File does not exist
     # 2: Link conflict: Both files
     # 3: Link conflict: Both symlinks
-    # 4: Already linked
 
-    if name in status['linked']:
-        print('Already linked: %s' % name)
-        return 4
-    me = Path(status['path']) / name
-    their = Path.home() / ('.' + name)
+    me = dotfile_path / args.name
+    their = Path.home() / ('.' + args.name)
 
     if me.is_file() != their.is_file():
         if me.is_file():
@@ -101,18 +65,18 @@ def __link(status, name, merge=False, ours=False, theirs=False):
             their.symlink_to(me)
             print('ln -s %s %s' % (me, their))
     elif me.is_symlink() and their.is_symlink():
-        print('Link conflict: Both files are symlinks: %s' % name)
+        print('Link conflict: Both files are symlinks: %s' % args.name)
         return 3
     else:
         if me.is_file() and their.is_file():
-            if merge:
+            if args.merge:
                 pass
-            elif ours or their.is_symlink():
+            elif args.ours or their.is_symlink():
                 their.unlink()
                 print('rm %s' % their)
                 their.symlink_to(me)
                 print('ln -s %s %s' % (me, their))
-            elif theirs or me.is_symlink():
+            elif args.theirs or me.is_symlink():
                 me.unlink()
                 print('rm %s' % me)
                 shutil.move(str(their), str(me))
@@ -120,7 +84,8 @@ def __link(status, name, merge=False, ours=False, theirs=False):
                 their.symlink_to(me)
                 print('ln -s %s %s' % (me, their))
             else:
-                print('Link conflict: Both files have contents: %s' % name)
+                print('Link conflict: Both files have contents: %s'
+                      % args.name)
                 return 2
         else:
             print('File does not exist: %s' % me)
@@ -129,44 +94,34 @@ def __link(status, name, merge=False, ours=False, theirs=False):
 
 
 def unlink(args):
-    with open(status_path, 'r+') as f:
-        status = json.load(f)
+    if args.name:
+        result = __unlink(args.name)
+        if result != 0:
+            exit(1)
 
-        if args.name:
-            result = __unlink(status, args.name)
-            if result != 0:
-                exit(1)
-
-            status['linked'].remove(args.name)
-        else:
-            unsuccessful = []
-            for path in Path(status['path']).glob('[!.]*'):
-                if path.name not in exclude and path.is_file():
-                    result = __unlink(status, path.name)
-                    if result == 0:
-                        status['linked'].remove(path.name)
-                    else:
-                        unsuccessful.append(path.name)
-            if unsuccessful:
-                print('\n\nFollowing files could not be unlinked:')
-                for name in unsuccessful:
-                    print(name)
-
-        f.seek(0)
-        json.dump(status, f)
-        f.truncate()
+    else:
+        unsuccessful = []
+        for path in dotfile_path.glob('[!.]*'):
+            if path.name not in exclude and path.is_file():
+                result = __unlink(path.name)
+                if result != 0:
+                    unsuccessful.append(path.name)
+        if unsuccessful:
+            print('\n\nFollowing files could not be unlinked:')
+            for name in unsuccessful:
+                print(name)
 
 
-def __unlink(status, name):
+def __unlink(args):
     # Return value
     # 0: Success
     # 1: Not linked
 
-    if name not in status['linked']:
-        print('Not linked: %s' % name)
+    if (Path.home() / ('.' + args.name)).resolve() != dotfile_path / args.name:
+        print('Not linked: %s' % args.name)
         return 1
-    me = Path(status['path']) / name
-    their = Path.home() / ('.' + name)
+    me = dotfile_path / args.name
+    their = Path.home() / ('.' + args.name)
     their.unlink()
     print('rm %s' % their)
     shutil.copy(str(me), str(their))
@@ -179,13 +134,10 @@ def copy(args):
 
 
 def remove(args):
-    with open(status_path, 'r+') as f:
-        status = json.load(f)
-
-        if args.name:
-            pass
-        else:
-            pass
+    if args.name:
+        pass
+    else:
+        pass
 
 
 def ignore(args):
@@ -193,47 +145,14 @@ def ignore(args):
 
 
 def update(args):
-    with open(status_path) as f:
-        status = json.load(f)
-        os.chdir(status['path'])
-        result = subprocess.run(['git', 'pull'])
+    os.chdir(dotfile_path)
+    subprocess.run(['git', 'pull'])
 
-
-def refresh(args):
-    with open(status_path, 'r+') as f:
-        status = json.load(f)
-
-        linked = []
-        for path in Path(status['path']).glob('[!.]*'):
-            if path.name not in exclude and path.is_file():
-                me = path
-                their = Path.home() / ('.' + path.name)
-                if their.is_symlink() and their.resolve() == me:
-                    linked.append(path.name)
-
-        status['linked'] = linked
-        print(linked)
-        f.seek(0)
-        json.dump(status, f)
-        f.truncate()
-
-
-def status(args):
-    with open(status_path) as f:
-        pprint.pprint(json.load(f))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest='command')
     subparsers.required = True
-
-    parser_init = subparsers.add_parser('init')
-    parser_init.set_defaults(func=init)
-
-    parser_clone = subparsers.add_parser('clone')
-    parser_clone.add_argument('git', type=str)
-    parser_clone.add_argument('name', type=str, nargs='?')
-    parser_clone.set_defaults(func=clone)
 
     parser_link = subparsers.add_parser('link')
     parser_link.add_argument('name', type=str, nargs='?')
@@ -261,18 +180,5 @@ if __name__ == '__main__':
     parser_update = subparsers.add_parser('update')
     parser_update.set_defaults(func=update)
 
-    parser_refresh = subparsers.add_parser('refresh')
-    parser_refresh.set_defaults(func=refresh)
-
-    parser_status = subparsers.add_parser('status')
-    parser_status.set_defaults(func=status)
-
     args = parser.parse_args()
-    try:
-        args.func(args)
-    except FileNotFoundError:
-        print('Dotfile dir not set')
-        exit(1)
-    except json.decoder.JSONDecodeError:
-        print('~/.dfmstatus broken')
-        exit(1)
+    args.func(args)
