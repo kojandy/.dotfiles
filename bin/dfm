@@ -26,6 +26,26 @@ def get_me_their(name):
     return dotfile_path / name, Path.home() / ('.' + name)
 
 
+def rm(path):
+    print('rm %s' % path)
+    return path.unlink()
+
+
+def cp(a, b):
+    print('cp %s %s' % (a, b))
+    return shutil.copy(str(a), str(b))
+
+
+def mv(a, b):
+    print('mv %s %s' % (a, b))
+    return shutil.move(str(a), str(b))
+
+
+def symlink(a, b):
+    print('ln -s %s %s' % (a, b))
+    return b.symlink_to(a)
+
+
 def link(args):
     if args.name:
         result = __link(args.name)
@@ -63,21 +83,14 @@ def __link(name, ours=False, theirs=False):
 
     if me.is_file() != their.is_file():
         if me.is_file():
-            their.symlink_to(me)
-            print('ln -s %s %s' % (me, their))
+            symlink(me, their)
         elif their.is_symlink():
-            original = their.resolve()
-            shutil.copy(str(original), str(me))
-            print('cp %s %s' % (original, me))
-            their.unlink()
-            print('rm %s' % their)
-            their.symlink_to(me)
-            print('ln -s %s %s' % (me, their))
+            cp(their.resolve(), me)
+            rm(their)
+            symlink(me, their)
         else:
-            shutil.move(str(their), str(me))
-            print('mv %s %s' % (their, me))
-            their.symlink_to(me)
-            print('ln -s %s %s' % (me, their))
+            mv(their, me)
+            symlink(me, their)
     elif me.is_symlink() and their.is_symlink():
         print('Link conflict: Both files are symlinks: %s' % name)
         return 3
@@ -86,17 +99,12 @@ def __link(name, ours=False, theirs=False):
             if ours and theirs:
                 pass
             elif ours or their.is_symlink():
-                their.unlink()
-                print('rm %s' % their)
-                their.symlink_to(me)
-                print('ln -s %s %s' % (me, their))
+                rm(their)
+                symlink(me, their)
             elif theirs or me.is_symlink():
-                me.unlink()
-                print('rm %s' % me)
-                shutil.move(str(their), str(me))
-                print('mv %s %s' % (their, me))
-                their.symlink_to(me)
-                print('ln -s %s %s' % (me, their))
+                rm(me)
+                mv(their, me)
+                symlink(me, their)
             else:
                 print('Link conflict: Both files have contents: %s' % name)
                 return 2
@@ -136,10 +144,8 @@ def __unlink(name):
         print('Not linked: %s' % name)
         return 1
 
-    their.unlink()
-    print('rm %s' % their)
-    shutil.copy(str(me), str(their))
-    print('cp %s %s' % (me, their))
+    rm(their)
+    cp(me, their)
     return 0
 
 
