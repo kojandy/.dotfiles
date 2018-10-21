@@ -22,6 +22,10 @@ config_spec = {
 exclude = [config_name] + config['link']['exclude'].split(',')
 
 
+def get_me_their(name):
+    return dotfile_path / name, Path.home() / ('.' + name)
+
+
 def link(args):
     if args.name:
         result = __link(args.name)
@@ -51,8 +55,7 @@ def __link(name, ours=False, theirs=False):
     # 2: Link conflict: Both files
     # 3: Link conflict: Both symlinks
 
-    me = dotfile_path / name
-    their = Path.home() / ('.' + name)
+    me, their = get_me_their(name)
 
     if their.resolve() == me:
         print('Already linked: %s' % name)
@@ -127,11 +130,12 @@ def __unlink(name):
     # 0: Success
     # 1: Not linked
 
-    if (Path.home() / ('.' + name)).resolve() != dotfile_path / name:
+    me, their = get_me_their(name)
+
+    if their.resolve() != me:
         print('Not linked: %s' % name)
         return 1
-    me = dotfile_path / name
-    their = Path.home() / ('.' + name)
+
     their.unlink()
     print('rm %s' % their)
     shutil.copy(str(me), str(their))
