@@ -77,10 +77,6 @@ def __link(name, ours=False, theirs=False):
 
     me, their = get_me_their(name)
 
-    if their.resolve() == me:
-        print('Already linked: %s' % name)
-        return 0
-
     if me.is_file() != their.is_file():
         if me.is_file():
             symlink(me, their)
@@ -96,7 +92,10 @@ def __link(name, ours=False, theirs=False):
         return 3
     else:
         if me.is_file() and their.is_file():
-            if ours and theirs:
+            if their.resolve() == me:
+                print('Already linked: %s' % name)
+                return 0
+            elif ours and theirs:
                 pass
             elif ours or their.is_symlink():
                 rm(their)
@@ -140,7 +139,7 @@ def __unlink(name):
 
     me, their = get_me_their(name)
 
-    if their.resolve() != me:
+    if not me.is_file() or not their.is_file() or their.resolve() != me:
         print('Not linked: %s' % name)
         return 1
 
