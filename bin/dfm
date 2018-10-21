@@ -195,7 +195,7 @@ if __name__ == '__main__':
     subparsers = parser.add_subparsers(dest='command')
     subparsers.required = True
 
-    parser_link = subparsers.add_parser('link')
+    parser_link = subparsers.add_parser('link', aliases=['ln'])
     parser_link.add_argument('name', type=str, nargs='?')
     group = parser_link.add_mutually_exclusive_group()
     group.add_argument('-m', '--merge', action='store_true')
@@ -203,15 +203,15 @@ if __name__ == '__main__':
     group.add_argument('-t', '--theirs', action='store_true')
     parser_link.set_defaults(func=link)
 
-    parser_unlink = subparsers.add_parser('unlink')
+    parser_unlink = subparsers.add_parser('unlink', aliases=['unln'])
     parser_unlink.add_argument('name', type=str, nargs='?')
     parser_unlink.set_defaults(func=unlink)
 
-    parser_remove = subparsers.add_parser('remove')
+    parser_remove = subparsers.add_parser('remove', aliases=['rm'])
     parser_remove.add_argument('name', type=str, nargs='?')
     parser_remove.set_defaults(func=remove)
 
-    parser_update = subparsers.add_parser('update')
+    parser_update = subparsers.add_parser('update', aliases=['up'])
     parser_update.set_defaults(func=update)
 
     args = parser.parse_args()
