@@ -8,7 +8,7 @@ from pathlib import Path
 
 dotfile_path = Path.home() / '.dotfiles'
 config_name = 'dfmconfig'
-exclude = [config_name, 'setup', 'install', 'setup.sh', 'install.sh']
+exclude = [config_name]
 config_spec = {
     'link': {
         'exclude': ['README.md', 'bin']
