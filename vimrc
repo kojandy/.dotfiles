@@ -28,6 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'alexdavid/vim-min-git-status', { 'on': 'Gministatus' }
 Plug 'tpope/vim-unimpaired'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'ervandew/supertab'
 
 " colorscheme
 Plug 'nanotech/jellybeans.vim'
