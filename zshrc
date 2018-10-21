@@ -25,3 +25,4 @@ if command -v tmux>/dev/null; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
