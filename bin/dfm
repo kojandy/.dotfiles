@@ -145,7 +145,7 @@ def ignore(args):
 
 
 def update(args):
-    os.chdir(dotfile_path)
+    os.chdir(str(dotfile_path))
     subprocess.run(['git', 'pull'])
 
 
