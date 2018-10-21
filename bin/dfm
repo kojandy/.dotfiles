@@ -55,7 +55,10 @@ def symlink(a, b):
 
 def link(args):
     if args.name:
-        result = __link(args.name)
+        if args.merge:
+            args.ours = True
+            args.theirs = True
+        result = __link(args.name, args.ours, args.theirs)
         if result != 0:
             exit(1)
 
