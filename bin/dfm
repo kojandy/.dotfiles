@@ -154,9 +154,35 @@ def __unlink(name):
 
 def remove(args):
     if args.name:
-        pass
+        result = __remove(args.name)
+        if result != 0:
+            exit(1)
+
     else:
-        pass
+        unsuccessful = []
+        for name in linkable():
+            result = __remove(name)
+            if result != 0:
+                unsuccessful.append(name)
+        if unsuccessful:
+            print('\n\nFollowing files could not be removed:')
+            for name in unsuccessful:
+                print(name)
+
+
+def __remove(name):
+    # Return value
+    # 0: Success
+    # 1: Not linked
+
+    me, their = get_path(name)
+
+    if not me.is_file() or not their.is_file() or their.resolve() != me:
+        print('Not linked: %s' % name)
+        return 1
+
+    rm(their)
+    return 0
 
 
 def update(args):
