@@ -8,7 +8,9 @@ from pathlib import Path
 
 dotfile_path = Path.home() / '.dotfiles'
 config_name = 'dfmconfig'
-exclude = [config_name]
+
+config = configparser.ConfigParser()
+config.read(str(dotfile_path / config_name))
 config_spec = {
     'link': {
         'exclude': ['README.md', 'bin']
@@ -16,6 +18,8 @@ config_spec = {
         'oh-my-zsh': ""
     }
 }
+
+exclude = [config_name] + config['link']['exclude'].split(',')
 
 
 def link(args):
