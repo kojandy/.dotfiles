@@ -54,6 +54,10 @@ def __link(name, ours=False, theirs=False):
     me = dotfile_path / name
     their = Path.home() / ('.' + name)
 
+    if their.resolve() == me:
+        print('Already linked: %s' % name)
+        return 0
+
     if me.is_file() != their.is_file():
         if me.is_file():
             their.symlink_to(me)
