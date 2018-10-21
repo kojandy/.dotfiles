@@ -154,3 +154,6 @@ nmap <silent> <leader>gl :Gpull<CR>
 
 " bufferline
 let g:bufferline_echo = 0
+
+" supertab
+let g:SuperTabDefaultCompletionType = "context"
