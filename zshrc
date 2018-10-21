@@ -14,6 +14,8 @@ PATH=~/.dotfiles/bin:$PATH
 
 stty -ixon
 
+unsetopt AUTO_CD
+
 if command -v tmux>/dev/null; then
     if [[ ! $TERM =~ screen ]] && [ -z $TMUX ]; then
         if tmux ls&>/dev/null; then
