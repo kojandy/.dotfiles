@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import shutil
+import filecmp
 import argparse
 import subprocess
 import configparser
@@ -102,7 +103,8 @@ def __link(name, ours=False, theirs=False):
                 return 0
             elif ours and theirs:
                 pass
-            elif ours or their.is_symlink():
+            elif ours or their.is_symlink() or \
+                    filecmp.cmp(str(me), str(their)):
                 rm(their)
                 symlink(me, their)
             elif theirs or me.is_symlink():
