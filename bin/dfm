@@ -32,6 +32,7 @@ def link(args):
         unsuccessful = []
         for path in dotfile_path.glob('[!.]*'):
             if path.name not in exclude and path.is_file():
+                args.name = path.name
                 result = __link(args)
                 if result != 0:
                     unsuccessful.append(path.name)
@@ -99,7 +100,7 @@ def __link(args):
 
 def unlink(args):
     if args.name:
-        result = __unlink(args.name)
+        result = __unlink(args)
         if result != 0:
             exit(1)
 
@@ -107,7 +108,8 @@ def unlink(args):
         unsuccessful = []
         for path in dotfile_path.glob('[!.]*'):
             if path.name not in exclude and path.is_file():
-                result = __unlink(path.name)
+                args.name = path.name
+                result = __unlink(args)
                 if result != 0:
                     unsuccessful.append(path.name)
         if unsuccessful:
@@ -133,19 +135,11 @@ def __unlink(args):
     return 0
 
 
-def copy(args):
-    pass
-
-
 def remove(args):
     if args.name:
         pass
     else:
         pass
-
-
-def ignore(args):
-    pass
 
 
 def update(args):
@@ -170,16 +164,9 @@ if __name__ == '__main__':
     parser_unlink.add_argument('name', type=str, nargs='?')
     parser_unlink.set_defaults(func=unlink)
 
-    parser_copy = subparsers.add_parser('copy')
-    parser_copy.add_argument('name', type=str, nargs='?')
-    parser_copy.set_defaults(func=copy)
-
     parser_remove = subparsers.add_parser('remove')
     parser_remove.add_argument('name', type=str, nargs='?')
     parser_remove.set_defaults(func=remove)
-
-    parser_ignore = subparsers.add_parser('ignore')
-    parser_ignore.set_defaults(func=ignore)
 
     parser_update = subparsers.add_parser('update')
     parser_update.set_defaults(func=update)
