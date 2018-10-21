@@ -1,3 +1,6 @@
+# path
+alias ..='cd ..'
+
 # vi
 alias vi='vim'
 
