@@ -22,7 +22,7 @@ config_spec = {
 exclude = [config_name] + config['link']['exclude'].split(',')
 
 
-def get_me_their(name):
+def get_path(name):
     return dotfile_path / name, Path.home() / ('.' + name)
 
 
@@ -80,7 +80,7 @@ def __link(name, ours=False, theirs=False):
     # 2: Link conflict: Both files
     # 3: Link conflict: Both symlinks
 
-    me, their = get_me_their(name)
+    me, their = get_path(name)
 
     if me.is_file() != their.is_file():
         if me.is_file():
@@ -141,7 +141,7 @@ def __unlink(name):
     # 0: Success
     # 1: Not linked
 
-    me, their = get_me_their(name)
+    me, their = get_path(name)
 
     if not me.is_file() or not their.is_file() or their.resolve() != me:
         print('Not linked: %s' % name)
