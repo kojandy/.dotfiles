@@ -157,3 +157,6 @@ let g:bufferline_echo = 0
 
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
+
+" fzf
+nmap <silent> <C-p> :Files<CR>
