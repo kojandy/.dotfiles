@@ -125,7 +125,7 @@ let g:NERDTreeDirArrowCollapsible = '-'
 nmap <silent> <C-n> :NERDTreeToggle<CR>
 
 " undotree
-nmap <silent> <C-e> :UndotreeToggle<CR>:UndotreeFocus<CR>
+nmap <silent> <C-q> :UndotreeToggle<CR>:UndotreeFocus<CR>
 
 " emmet-vim
 let g:user_emmet_leader_key='<C-e>'
