@@ -39,7 +39,6 @@ Plug 'tomasiser/vim-code-dark'
 
 " Try later
 " Plug 'itchyny/lightline.vim'
-" Plug 'Shougo/deoplete.nvim'
 " Plug 'SirVer/ultisnips'
 call plug#end()
 
