@@ -54,7 +54,7 @@ set noshowmode
 set relativenumber
 set number
 set hidden
-set wildignore+=*.swp,*.pyc,*.zip,venv,.git
+set wildignore+=*.swp,*.pyc,*.zip,venv,.git,*.class
 set backspace=indent,eol,start
 set cursorline
 set updatetime=100
