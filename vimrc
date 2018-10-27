@@ -164,9 +164,9 @@ nmap <silent> <C-p> :Files<CR>
 " scratch
 let g:scratch_persistence_file = '/tmp/scratch.vim'
 let g:scratch_no_mappings = 1
-nmap <leader>ss :ScratchPreview<CR>
-nmap <leader>sp :ScratchPreview<CR>
-nmap <leader>si <plug>(scratch-insert-reuse)
-nmap <leader>sI <plug>(scratch-insert-clear)
-xmap <leader>si <plug>(scratch-selection-reuse)
-xmap <leader>sI <plug>(scratch-selection-clear)
+nmap <silent> <leader>ss :ScratchPreview<CR>
+nmap <silent> <leader>sp :ScratchPreview<CR>
+nmap <silent> <leader>si <plug>(scratch-insert-reuse)
+nmap <silent> <leader>sI <plug>(scratch-insert-clear)
+xmap <silent> <leader>si <plug>(scratch-selection-reuse)
+xmap <silent> <leader>sI <plug>(scratch-selection-clear)
