@@ -30,6 +30,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ervandew/supertab'
 Plug 'mtth/scratch.vim'
+Plug 'tmhedberg/matchit'
 
 " colorscheme
 Plug 'nanotech/jellybeans.vim'
