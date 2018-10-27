@@ -160,6 +160,10 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " fzf
 nmap <silent> <C-p> :Files<CR>
+nmap <silent> <leader>ff :Files<CR>
+nmap <silent> <leader>fb :Buffers<CR>
+nmap <silent> <leader>fl :Lines<CR>
+nmap <silent> <leader>fr :Rg<CR>
 
 " scratch
 let g:scratch_persistence_file = '/tmp/scratch.vim'
