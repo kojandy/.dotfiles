@@ -14,7 +14,6 @@ Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
-" Plug 'johngrib/vim-f-hangul'
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
