@@ -19,7 +19,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'rhysd/clever-f.vim'
+Plug 'kojandy/clever-f.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'tpope/vim-fugitive'
