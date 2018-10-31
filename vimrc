@@ -87,11 +87,6 @@ endif
 " disable comment continuation
 au FileType * set fo-=c fo-=r fo-=o
 
-" keymap
-let mapleader=','
-nmap <silent> <SPACE> :noh<CR>
-nmap <silent> <leader>af :Autoformat<CR>
-
 " airline
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
@@ -124,10 +119,6 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeMinimalUI = 1
-nmap <silent> <C-n> :NERDTreeToggle<CR>
-
-" undotree
-nmap <silent> <C-q> :UndotreeToggle<CR>:UndotreeFocus<CR>
 
 " emmet-vim
 let g:user_emmet_leader_key='<C-e>'
@@ -144,7 +135,25 @@ let g:ale_fixers = {
             \ '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ }
 
-" gutter
+" bufferline
+let g:bufferline_echo = 0
+
+" supertab
+let g:SuperTabDefaultCompletionType = "context"
+
+" scratch
+let g:scratch_persistence_file = '/tmp/scratch.vim'
+let g:scratch_no_mappings = 1
+
+" keymap
+let mapleader = ","
+nmap <silent> <SPACE> :noh<CR>
+nmap <silent> <leader>af :Autoformat<CR>
+
+nmap <silent> <C-n> :NERDTreeToggle<CR>
+
+nmap <silent> <C-q> :UndotreeToggle<CR>:UndotreeFocus<CR>
+
 nmap <silent> <leader>gs :Gministatus<CR>
 nmap <silent> <leader>gc :Gcommit --verbose<CR>
 nmap <silent> <leader>gr :Gread<CR>
@@ -155,22 +164,12 @@ nmap <silent> <leader>gb :Gblame<CR>
 nmap <silent> <leader>gp :Gpush<CR>
 nmap <silent> <leader>gl :Gpull<CR>
 
-" bufferline
-let g:bufferline_echo = 0
-
-" supertab
-let g:SuperTabDefaultCompletionType = "context"
-
-" fzf
 nmap <silent> <C-p> :Files<CR>
 nmap <silent> <leader>ff :Files<CR>
 nmap <silent> <leader>fb :Buffers<CR>
 nmap <silent> <leader>fl :Lines<CR>
 nmap <silent> <leader>fr :Rg<CR>
 
-" scratch
-let g:scratch_persistence_file = '/tmp/scratch.vim'
-let g:scratch_no_mappings = 1
 nmap <silent> <leader>ss :ScratchPreview<CR>
 nmap <silent> <leader>sp :ScratchPreview<CR>
 nmap <silent> <leader>si <plug>(scratch-insert-reuse)
