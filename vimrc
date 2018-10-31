@@ -147,7 +147,7 @@ let g:scratch_no_mappings = 1
 
 " keymap
 let mapleader = "\<SPACE>"
-" nmap <silent> <SPACE> :noh<CR>
+nnoremap <silent> <CR> :noh<CR>
 nmap <silent> <leader>af :Autoformat<CR>
 
 nmap <silent> <C-n> :NERDTreeToggle<CR>
