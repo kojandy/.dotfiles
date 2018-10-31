@@ -122,6 +122,8 @@ let g:formatters_python = ['autopep8']
 let NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeMinimalUI = 1
 nmap <silent> <C-n> :NERDTreeToggle<CR>
 
 " undotree
