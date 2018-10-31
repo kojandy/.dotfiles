@@ -146,8 +146,8 @@ let g:scratch_persistence_file = '/tmp/scratch.vim'
 let g:scratch_no_mappings = 1
 
 " keymap
-let mapleader = ","
-nmap <silent> <SPACE> :noh<CR>
+let mapleader = "\<SPACE>"
+" nmap <silent> <SPACE> :noh<CR>
 nmap <silent> <leader>af :Autoformat<CR>
 
 nmap <silent> <C-n> :NERDTreeToggle<CR>
