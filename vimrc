@@ -88,10 +88,10 @@ endif
 au FileType * set fo-=c fo-=r fo-=o
 
 " airline
-let g:airline_powerline_fonts = 0
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_mode_map = {
+let g:airline_powerline_fonts=0
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_mode_map={
             \ '__' : '-',
             \ 'n'  : 'N',
             \ 'i'  : 'I',
@@ -104,49 +104,49 @@ let g:airline_mode_map = {
             \ 'S'  : 'S',
             \ '' : 'S',
             \ }
-let g:airline_exclude_preview = 1
+let g:airline_exclude_preview=1
 
 " autoformat
-let g:formatdef_astyle = '"astyle -A2SLYMpHjoxC200"'
-let g:formatters_java = ['astyle']
-let g:formatters_cpp = ['astyle']
-let g:formatters_c = ['astyle']
-let g:formatters_python = ['autopep8']
+let g:formatdef_astyle='"astyle -A2SLYMpHjoxC200"'
+let g:formatters_java=['astyle']
+let g:formatters_cpp=['astyle']
+let g:formatters_c=['astyle']
+let g:formatters_python=['autopep8']
 
 " nerdtree
-let NERDTreeIgnore = ['\.pyc$']
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeMinimalUI = 1
+let NERDTreeIgnore=['\.pyc$']
+let g:NERDTreeDirArrowExpandable='+'
+let g:NERDTreeDirArrowCollapsible='-'
+let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeMinimalUI=1
 
 " emmet-vim
-let g:user_emmet_leader_key = '<C-e>'
+let g:user_emmet_leader_key='<C-e>'
 
 " vim-closer
 au FileType kotlin
-            \ let b:closer = 1 |
-            \ let b:closer_flags = '([{'
+            \ let b:closer=1 |
+            \ let b:closer_flags='([{'
 
 " ale
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_lint_on_insert_leave = 1
-let g:ale_fixers = {
+let g:ale_lint_on_text_changed='normal'
+let g:ale_lint_on_insert_leave=1
+let g:ale_fixers={
             \ '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ }
 
 " bufferline
-let g:bufferline_echo = 0
+let g:bufferline_echo=0
 
 " supertab
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType="context"
 
 " scratch
-let g:scratch_persistence_file = '/tmp/scratch.vim'
-let g:scratch_no_mappings = 1
+let g:scratch_persistence_file='/tmp/scratch.vim'
+let g:scratch_no_mappings=1
 
 " keymap
-let mapleader = "\<SPACE>"
+let mapleader="\<SPACE>"
 nnoremap <silent> <CR> :noh<CR>
 nmap <silent> <leader>af :Autoformat<CR>
 
