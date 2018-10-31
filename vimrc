@@ -164,7 +164,6 @@ nmap <silent> <leader>gb :Gblame<CR>
 nmap <silent> <leader>gp :Gpush<CR>
 nmap <silent> <leader>gl :Gpull<CR>
 
-nmap <silent> <C-p> :Files<CR>
 nmap <silent> <leader>ff :Files<CR>
 nmap <silent> <leader>fb :Buffers<CR>
 nmap <silent> <leader>fl :Lines<CR>
