@@ -30,6 +30,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ervandew/supertab'
 Plug 'mtth/scratch.vim'
 Plug 'tmhedberg/matchit'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 " colorscheme
 Plug 'nanotech/jellybeans.vim'
@@ -175,3 +176,5 @@ nmap <silent> <leader>si <plug>(scratch-insert-reuse)
 nmap <silent> <leader>sI <plug>(scratch-insert-clear)
 xmap <silent> <leader>si <plug>(scratch-selection-reuse)
 xmap <silent> <leader>sI <plug>(scratch-selection-clear)
+
+nmap <silent> <leader>tt :TagbarToggle<CR>
