@@ -152,7 +152,7 @@ nmap <silent> <leader>af :Autoformat<CR>
 
 nmap <silent> <C-n> :NERDTreeToggle<CR>
 
-nmap <silent> <C-q> :UndotreeToggle<CR>:UndotreeFocus<CR>
+nmap <silent> <leader>uu :UndotreeToggle<CR>:UndotreeFocus<CR>
 
 nmap <silent> <leader>gs :Gministatus<CR>
 nmap <silent> <leader>gc :Gcommit --verbose<CR>
