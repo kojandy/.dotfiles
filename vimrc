@@ -165,8 +165,9 @@ nmap <silent> <leader>gl :Gpull<CR>
 
 nmap <silent> <leader>ff :Files<CR>
 nmap <silent> <leader>fb :Buffers<CR>
-nmap <silent> <leader>fl :Lines<CR>
+nmap <silent> <leader>fl :BLines<CR>
 nmap <silent> <leader>fr :Rg<CR>
+nmap <silent> <leader>ft :BTags<CR>
 
 nmap <silent> <leader>ss :ScratchPreview<CR>
 nmap <silent> <leader>sp :ScratchPreview<CR>
