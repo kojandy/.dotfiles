@@ -1,9 +1,8 @@
 #!/bin/sh
 
-if [ ! -d ~/.oh-my-zsh ]
+if [ ! -d ~/.zgen ]
 then
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 fi
 
-./bin/dfm link --ours zshrc
 ./bin/dfm link

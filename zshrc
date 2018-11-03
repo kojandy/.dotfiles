@@ -1,19 +1,25 @@
-export ZSH=~/.oh-my-zsh
+source ~/.zgen/zgen.zsh
+if ! zgen saved; then
+    zgen oh-my-zsh
 
-ZSH_THEME="custom"
-ZSH_CUSTOM=~/.dotfiles/zsh
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/vi-mode
+    zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/autojump
+    zgen oh-my-zsh plugins/docker
+    zgen oh-my-zsh plugins/docker-compose
 
-plugins=(git vi-mode sudo docker)
+    zgen save
+fi
 
-source $ZSH/oh-my-zsh.sh
-
+source ~/.dotfiles/zsh/aliases.zsh
+source ~/.dotfiles/zsh/theme.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # User configuration
 
 PATH=~/.dotfiles/bin:$PATH
-
 stty -ixon
-
 unsetopt AUTO_CD
 
 if command -v tmux>/dev/null; then
@@ -25,6 +31,3 @@ if command -v tmux>/dev/null; then
         fi
     fi
 fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
