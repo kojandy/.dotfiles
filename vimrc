@@ -4,9 +4,7 @@ if empty(glob("~/.vim/autoload/plug.vim"))
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 call plug#begin()
-Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'bling/vim-bufferline'
 Plug 'Chiel92/vim-autoformat', { 'on': 'Autoformat' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -31,6 +29,10 @@ Plug 'ervandew/supertab'
 Plug 'mtth/scratch.vim'
 Plug 'tmhedberg/matchit'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'itchyny/lightline.vim'
+Plug 'mgee/lightline-bufferline'
+Plug 'maximbaz/lightline-ale'
+Plug 'maximbaz/lightline-trailing-whitespace'
 
 " colorscheme
 Plug 'nanotech/jellybeans.vim'
@@ -39,13 +41,13 @@ Plug 'phanviet/vim-monokai-pro'
 Plug 'tomasiser/vim-code-dark'
 
 " Try later
-" Plug 'itchyny/lightline.vim'
 " Plug 'SirVer/ultisnips'
 call plug#end()
 
 " general
 set nowrap
 set laststatus=2
+set showtabline=2
 set showcmd
 set autoread
 set scrolloff=3
@@ -87,25 +89,6 @@ endif
 " disable comment continuation
 au FileType * set fo-=c fo-=r fo-=o
 
-" airline
-let g:airline_powerline_fonts=0
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_mode_map={
-            \ '__' : '-',
-            \ 'n'  : 'N',
-            \ 'i'  : 'I',
-            \ 'R'  : 'R',
-            \ 'c'  : 'C',
-            \ 'v'  : 'V',
-            \ 'V'  : 'V',
-            \ '' : 'V',
-            \ 's'  : 'S',
-            \ 'S'  : 'S',
-            \ '' : 'S',
-            \ }
-let g:airline_exclude_preview=1
-
 " autoformat
 let g:formatdef_astyle='"astyle -A2SLYMpHjoxC200"'
 let g:formatters_java=['astyle']
@@ -144,6 +127,97 @@ let g:SuperTabDefaultCompletionType="context"
 " scratch
 let g:scratch_persistence_file='/tmp/scratch.vim'
 let g:scratch_no_mappings=1
+
+" lightline
+let s:p={
+            \ 'normal': {
+            \   'left': [['brightgreen', 'gray2', 'bold'], ['black', 'brightgreen'], ['red', 'white']],
+            \   'middle': [['gray7', 'gray2']],
+            \   'right': [['black', 'gray8']],
+            \   'error': [['white', 'brightestred']],
+            \   'warning': [['black', 'brightorange']]
+            \ },
+            \ 'inactive': {
+            \   'left': [['gray7', 'gray2'], ['black', 'gray9']],
+            \   'middle': [['gray7', 'gray2']],
+            \   'right': []
+            \ },
+            \ 'insert': {
+            \   'left': [['mediumcyan', 'gray2', 'bold'], ['black', 'mediumcyan'], ['red', 'white']],
+            \   'middle': [['mediumcyan', 'darkestblue']],
+            \   'right': [['darkestcyan', 'mediumcyan']]
+            \ },
+            \ 'visual': {
+            \   'left': [['brightorange', 'gray2', 'bold'], ['black', 'brightorange'], ['red', 'white']],
+            \   'middle': [['brightestorange', 'darkred']],
+            \   'right': [['black', 'brightorange']]
+            \ },
+            \ 'replace': {
+            \   'left': [['gray2', 'brightred', 'bold'], ['black', 'mediumcyan'], ['red', 'white']],
+            \   'middle': [['mediumcyan', 'darkestblue']],
+            \   'right': [['darkestcyan', 'mediumcyan']]
+            \ },
+            \ 'tabline': {
+            \   'left': [['gray9', 'gray4']],
+            \   'tabsel': [['gray9', 'gray1']],
+            \   'middle': [['gray2', 'gray8']],
+            \   'right': [['gray9', 'gray3']]
+            \ }
+            \ }
+let g:lightline#colorscheme#custom#palette=lightline#colorscheme#fill(s:p)
+let g:lightline#bufferline#show_number=1
+let g:lightline#bufferline#min_buffer_count=2
+let g:lightline#trailing_whitespace#indicator='•'
+let g:lightline={
+            \ 'colorscheme': 'custom',
+            \ 'component': {
+            \   'lineinfo': "%{line('.') . '/' . line('$')}",
+            \ },
+            \ 'component_expand': {
+            \   'buffers': 'lightline#bufferline#buffers',
+            \   'linter_warnings': 'lightline#ale#warnings',
+            \   'linter_errors': 'lightline#ale#errors',
+            \   'trailing': 'lightline#trailing_whitespace#component',
+            \ },
+            \ 'component_type': {
+            \   'buffers': 'tabsel',
+            \   'linter_warnings': 'warning',
+            \   'linter_errors': 'error',
+            \   'trailing': 'warning',
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'fugitive#head',
+            \ },
+            \ 'mode_map': {
+            \   'n': 'N',
+            \   'i': 'I',
+            \   'R': 'R',
+            \   'v': 'V',
+            \   'V': 'V',
+            \   "\<C-v>": 'V',
+            \   'c': 'C',
+            \   's': 'S',
+            \   'S': 'S',
+            \   "\<C-s>": 'S',
+            \   't': 'T'
+            \ },
+            \ 'tabline': {'left': [['buffers']]},
+            \ 'active': {
+            \   'left': [
+            \       ['mode', 'paste'],
+            \       ['gitbranch', 'filename'],
+            \       ['readonly', 'modified']
+            \   ],
+            \   'right': [
+            \       ['trailing', 'linter_warnings', 'linter_errors', 'lineinfo'],
+            \       ['fileformat', 'fileencoding', 'filetype']
+            \   ]
+            \ },
+            \ 'inactive': {
+            \   'left': [['filename'], ['readonly', 'modified']],
+            \   'right': [['lineinfo']]
+            \ }
+            \ }
 
 " keymap
 let mapleader="\<SPACE>"
