@@ -87,7 +87,7 @@ if has('mouse')
 endif
 
 " disable comment continuation
-au FileType * set fo-=c fo-=r fo-=o
+autocmd FileType * set fo-=c fo-=r fo-=o
 
 " autoformat
 let g:formatdef_astyle='"astyle -A2SLYMpHjoxC200"'
@@ -107,7 +107,7 @@ let g:NERDTreeMinimalUI=1
 let g:user_emmet_leader_key='<C-e>'
 
 " vim-closer
-au FileType kotlin
+autocmd FileType kotlin
             \ let b:closer=1 |
             \ let b:closer_flags='([{'
 
