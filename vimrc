@@ -47,27 +47,31 @@ call plug#end()
 " }}}
 
 " general {{{
-set nowrap
-set laststatus=2
-set showtabline=2
-set showcmd
+set hidden
 set autoread
-set scrolloff=3
+set updatetime=100
 set wildmenu
 set wildmode=longest:full,full
-set noshowmode
-set relativenumber
-set number
-set hidden
 set wildignore+=*.swp,*.pyc,*.zip,venv,.git,*.class
 set backspace=indent,eol,start
-set cursorline
-set updatetime=100
-" }}}
 
-" syntax highlight {{{
+" ui {{{
+set nowrap
+set scrolloff=3
+set laststatus=2
+set noshowmode
+set showtabline=2
+set showcmd
+set number
+set relativenumber
+set cursorline
+
 syntax on
 colorscheme iceberg
+
+if has('mouse')
+    set mouse=a
+endif
 " }}}
 
 " indent and tab {{{
@@ -86,15 +90,9 @@ set smartcase
 set hlsearch
 set incsearch
 " }}}
-
-" mouse {{{
-if has('mouse')
-    set mouse=a
-endif
 " }}}
 
 " plugin settings {{{
-
 " autoformat {{{
 let g:formatdef_astyle='"astyle -A2SLYMpHjoxC200"'
 let g:formatters_java=['astyle']
@@ -227,7 +225,6 @@ let g:lightline={
             \ }
             \ }
 " }}}
-
 " }}}
 
 " autocmd {{{
