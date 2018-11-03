@@ -1,2 +1,2 @@
 [link]
-exclude = setup
+exclude = setup,LICENSE
