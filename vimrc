@@ -36,7 +36,7 @@ Plug 'maximbaz/lightline-trailing-whitespace'
 
 " colorscheme
 Plug 'nanotech/jellybeans.vim'
-Plug 'koirand/tokyo-metro.vim'
+Plug 'koirand/tokyo-metro.vim', { 'commit': '59527e4' }
 Plug 'phanviet/vim-monokai-pro'
 Plug 'tomasiser/vim-code-dark'
 
