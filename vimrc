@@ -121,10 +121,6 @@ let g:ale_fixers={
             \ }
 " }}}
 
-" bufferline {{{
-let g:bufferline_echo=0
-" }}}
-
 " supertab {{{
 let g:SuperTabDefaultCompletionType="context"
 " }}}
