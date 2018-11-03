@@ -10,7 +10,7 @@
 
 ### Install
 ```
-$ git clone https://github.com/kojandy/dotfiles.git ~/.dotfiles
+$ git clone https://github.com/kojandy/.dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
 $ ./setup
 $ vim +PlugInstall
