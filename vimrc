@@ -87,9 +87,6 @@ if has('mouse')
     set mouse=a
 endif
 
-" disable comment continuation
-autocmd FileType * set fo-=c fo-=r fo-=o
-
 " autoformat
 let g:formatdef_astyle='"astyle -A2SLYMpHjoxC200"'
 let g:formatters_java=['astyle']
@@ -106,11 +103,6 @@ let g:NERDTreeMinimalUI=1
 
 " emmet-vim
 let g:user_emmet_leader_key='<C-e>'
-
-" vim-closer
-autocmd FileType kotlin
-            \ let b:closer=1 |
-            \ let b:closer_flags='([{'
 
 " ale
 let g:ale_lint_on_text_changed='normal'
@@ -219,6 +211,13 @@ let g:lightline={
             \   'right': [['lineinfo']]
             \ }
             \ }
+
+" autocmd
+autocmd FileType * set formatoptions-=c fo-=r fo-=o " disable comment continuation
+
+autocmd FileType kotlin
+            \ let b:closer=1 |
+            \ let b:closer_flags='([{'
 
 " keymap
 let mapleader="\<SPACE>"
