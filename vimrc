@@ -39,6 +39,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'koirand/tokyo-metro.vim', { 'commit': '59527e4' }
 Plug 'phanviet/vim-monokai-pro'
 Plug 'tomasiser/vim-code-dark'
+Plug 'cocopon/iceberg.vim'
 
 " Try later
 " Plug 'SirVer/ultisnips'
@@ -64,7 +65,7 @@ set updatetime=100
 
 " syntax highlight
 syntax on
-colorscheme tokyo-metro
+colorscheme iceberg
 
 " indent and tab
 filetype indent plugin on
