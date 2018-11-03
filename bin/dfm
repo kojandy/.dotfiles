@@ -12,13 +12,6 @@ config_name = 'dfmconfig'
 
 config = configparser.ConfigParser()
 config.read(str(dotfile_path / config_name))
-config_spec = {
-    'link': {
-        'exclude': ['README.md', 'bin']
-    }, 'install': {
-        'oh-my-zsh': ""
-    }
-}
 
 exclude = [config_name] + config['link']['exclude'].split(',')
 
