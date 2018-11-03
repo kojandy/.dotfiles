@@ -201,7 +201,7 @@ let g:lightline={
             \   "\<C-s>": 'S',
             \   't': 'T'
             \ },
-            \ 'tabline': {'left': [['buffers']]},
+            \ 'tabline': {'left': [['buffers']], 'right': [[]]},
             \ 'active': {
             \   'left': [
             \       ['mode', 'paste'],
