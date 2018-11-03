@@ -1,4 +1,4 @@
-" plug
+" plug {{{
 if empty(glob("~/.vim/autoload/plug.vim"))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall | source $MYVIMRC
@@ -44,8 +44,9 @@ Plug 'cocopon/iceberg.vim'
 " Try later
 " Plug 'SirVer/ultisnips'
 call plug#end()
+" }}}
 
-" general
+" general {{{
 set nowrap
 set laststatus=2
 set showtabline=2
@@ -62,12 +63,14 @@ set wildignore+=*.swp,*.pyc,*.zip,venv,.git,*.class
 set backspace=indent,eol,start
 set cursorline
 set updatetime=100
+" }}}
 
-" syntax highlight
+" syntax highlight {{{
 syntax on
 colorscheme iceberg
+" }}}
 
-" indent and tab
+" indent and tab {{{
 filetype indent plugin on
 set autoindent
 set smartindent
@@ -75,53 +78,65 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
+" }}}
 
-" search
+" search {{{
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+" }}}
 
-" mouse
+" mouse {{{
 if has('mouse')
     set mouse=a
 endif
+" }}}
 
-" autoformat
+" plugin settings {{{
+
+" autoformat {{{
 let g:formatdef_astyle='"astyle -A2SLYMpHjoxC200"'
 let g:formatters_java=['astyle']
 let g:formatters_cpp=['astyle']
 let g:formatters_c=['astyle']
 let g:formatters_python=['autopep8']
+" }}}
 
-" nerdtree
+" nerdtree {{{
 let NERDTreeIgnore=['\.pyc$']
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='-'
 let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeMinimalUI=1
+" }}}
 
-" emmet-vim
+" emmet-vim {{{
 let g:user_emmet_leader_key='<C-e>'
+" }}}
 
-" ale
+" ale {{{
 let g:ale_lint_on_text_changed='normal'
 let g:ale_lint_on_insert_leave=1
 let g:ale_fixers={
             \ '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ }
+" }}}
 
-" bufferline
+" bufferline {{{
 let g:bufferline_echo=0
+" }}}
 
-" supertab
+" supertab {{{
 let g:SuperTabDefaultCompletionType="context"
+" }}}
 
-" scratch
+" scratch {{{
 let g:scratch_persistence_file='/tmp/scratch.vim'
 let g:scratch_no_mappings=1
+" }}}
 
-" lightline
+" lightline {{{
 let s:p={
             \ 'normal': {
             \   'left': [['brightgreen', 'gray2', 'bold'], ['black', 'brightgreen'], ['red', 'white']],
@@ -211,15 +226,19 @@ let g:lightline={
             \   'right': [['lineinfo']]
             \ }
             \ }
+" }}}
 
-" autocmd
+" }}}
+
+" autocmd {{{
 autocmd FileType * set formatoptions-=c fo-=r fo-=o " disable comment continuation
 
 autocmd FileType kotlin
             \ let b:closer=1 |
             \ let b:closer_flags='([{'
+" }}}
 
-" keymap
+" keymap {{{
 let mapleader="\<SPACE>"
 nnoremap <SPACE> <Nop>
 xnoremap <SPACE> <Nop>
@@ -254,3 +273,6 @@ xmap <silent> <leader>si <plug>(scratch-selection-reuse)
 xmap <silent> <leader>sI <plug>(scratch-selection-clear)
 
 nmap <silent> <leader>tt :TagbarToggle<CR>
+" }}}
+
+" vim:fdm=marker
