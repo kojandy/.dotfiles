@@ -1,5 +1,9 @@
 # path
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 
 # vi
 alias vi='vim'
