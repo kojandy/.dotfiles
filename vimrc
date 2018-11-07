@@ -67,7 +67,7 @@ set relativenumber
 set cursorline
 
 syntax on
-colorscheme iceberg
+silent! colorscheme iceberg
 
 if has('mouse')
     set mouse=a
@@ -166,7 +166,7 @@ let s:p={
             \   'right': [['gray9', 'gray3']]
             \ }
             \ }
-let g:lightline#colorscheme#custom#palette=lightline#colorscheme#fill(s:p)
+silent! let g:lightline#colorscheme#custom#palette=lightline#colorscheme#fill(s:p)
 let g:lightline#bufferline#show_number=1
 let g:lightline#bufferline#min_buffer_count=2
 let g:lightline#trailing_whitespace#indicator='•'
