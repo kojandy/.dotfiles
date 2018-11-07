@@ -2,3 +2,4 @@
 ./bin/dfm install zgen
 ./bin/dfm link
 vim +PlugInstall +qall
+zsh
