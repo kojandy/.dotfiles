@@ -1,4 +1,4 @@
 #!/bin/sh
 ./bin/dfm install zgen
 ./bin/dfm link
-vim +PlugInstall
+vim +PlugInstall +qall
