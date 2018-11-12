@@ -2,6 +2,11 @@
 
 ![Screenshot](screenshot.png)
 
+## Try
+```sh
+docker run -it --rm kojandy/dotfiles
+```
+
 ## Installation
 ### Dependencies
 - `curl`
