@@ -1,4 +1,5 @@
 .DS_Store
-*.swp
-.vscode
-node_modules
+.*.swp
+/.vscode/
+/node_modules/
+/venv/
