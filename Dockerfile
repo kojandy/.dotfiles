@@ -1,8 +1,10 @@
 FROM ubuntu
 
-WORKDIR /root
+WORKDIR /root/.dotfiles
 
 RUN apt-get update && apt-get install -y curl git vim zsh python3
-COPY . ./.dotfiles/
+COPY . .
 
 ENV TERM xterm-256color
+
+CMD ["./setup"]
