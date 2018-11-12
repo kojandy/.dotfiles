@@ -16,8 +16,6 @@
 - [autojump](https://github.com/wting/autojump): A cd command that learns - easily navigate directories from the command line
 
 ### Install
-```
-$ git clone https://github.com/kojandy/.dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
-$ ./setup
+```sh
+$ git clone https://github.com/kojandy/.dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./setup
 ```
