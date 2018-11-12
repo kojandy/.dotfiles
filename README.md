@@ -1,5 +1,7 @@
 # kojandy's dotfiles
 
+![Screenshot](screenshot.png)
+
 ## Installation
 ### Dependencies
 - `curl`
