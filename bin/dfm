@@ -194,6 +194,14 @@ def install(args):
         exit(1)
 
 
+def test(args):
+    try:
+        os.system(config['test'])
+    except KeyError:
+        print('Test script not found')
+        exit(1)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest='command')
@@ -221,6 +229,9 @@ if __name__ == '__main__':
     parser_install = subparsers.add_parser('install', aliases=['i'])
     parser_install.add_argument('name', type=str)
     parser_install.set_defaults(func=install)
+
+    parser_test = subparsers.add_parser('test')
+    parser_test.set_defaults(func=test)
 
     args = parser.parse_args()
     args.func(args)
