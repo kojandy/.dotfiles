@@ -27,8 +27,6 @@ source ~/.dotfiles/zsh/aliases.zsh
 source ~/.dotfiles/zsh/theme.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# User configuration
-
 PATH=~/.dotfiles/bin:$PATH
 stty -ixon
 unsetopt AUTO_CD
