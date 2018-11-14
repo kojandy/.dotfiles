@@ -12,6 +12,6 @@
     conflictstyle = diff3
     ff = false
 [alias]
-    rewrite-author = !~/.dotfiles/bin/git-rewrite-author
+    rewrite-author = !$DOTFILES/bin/git-rewrite-author
 [fetch]
     prune = true

@@ -23,10 +23,13 @@ if ! zgen saved; then
     zgen save
 fi
 
-source ~/.dotfiles/zsh/aliases.zsh
-source ~/.dotfiles/zsh/theme.zsh
+export DOTFILES=~/.dotfiles
+export PATH=$DOTFILES/bin:$PATH
+
+source $DOTFILES/zsh/aliases.zsh
+source $DOTFILES/zsh/theme.zsh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-PATH=~/.dotfiles/bin:$PATH
 stty -ixon
 unsetopt AUTO_CD

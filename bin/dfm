@@ -7,7 +7,11 @@ import argparse
 import subprocess
 from pathlib import Path
 
-dotfile_path = Path.home() / '.dotfiles'
+try:
+    dotfile_path = Path(os.environ['DOTFILES'])
+except KeyError:
+    dotfile_path = Path.cwd()
+
 config_name = 'dfmconfig'
 
 with open(str(dotfile_path / config_name)) as f:

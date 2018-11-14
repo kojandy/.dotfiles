@@ -2,5 +2,5 @@
     "install": {
         "zgen": "git clone https://github.com/tarjoilija/zgen.git ~/.zgen"
     },
-    "test": "docker run -it --rm $(docker build -q ~/.dotfiles)"
+    "test": "docker run -it --rm $(docker build -q $DOTFILES)"
 }
