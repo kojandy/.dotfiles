@@ -1,2 +1,5 @@
-[install]
-zgen = git clone https://github.com/tarjoilija/zgen.git ~/.zgen
+{
+    "install": {
+        "zgen": "git clone https://github.com/tarjoilija/zgen.git ~/.zgen"
+    }
+}

@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 import os
+import json
 import shutil
 import filecmp
 import argparse
 import subprocess
-import configparser
 from pathlib import Path
 
 dotfile_path = Path.home() / '.dotfiles'
 config_name = 'dfmconfig'
 
-config = configparser.ConfigParser()
-config.read(str(dotfile_path / config_name))
+with open(str(dotfile_path / config_name)) as f:
+    config = json.load(f)
 
 
 def get_path(name):
