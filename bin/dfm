@@ -13,17 +13,15 @@ config_name = 'dfmconfig'
 config = configparser.ConfigParser()
 config.read(str(dotfile_path / config_name))
 
-exclude = [config_name] + config['link']['exclude'].split(',')
-
 
 def get_path(name):
-    return dotfile_path / name, Path.home() / ('.' + name)
+    return dotfile_path / (name + '@'), Path.home() / ('.' + name)
 
 
 def linkable():
-    for path in dotfile_path.glob('[!.]*'):
-        if path.name not in exclude and path.is_file():
-            yield path.name
+    for path in dotfile_path.glob('*@'):
+        if path.is_file():
+            yield path.name[:-1]
 
 
 def rm(path):

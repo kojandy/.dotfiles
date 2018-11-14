@@ -1,5 +1,2 @@
-[link]
-exclude = setup,LICENSE,Dockerfile,README.md,screenshot.png
-
 [install]
 zgen = git clone https://github.com/tarjoilija/zgen.git ~/.zgen
