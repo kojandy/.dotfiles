@@ -24,3 +24,10 @@ docker run -it --rm kojandy/dotfiles
 ```sh
 git clone https://github.com/kojandy/.dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./setup
 ```
+
+## Customization
+### Things you might want to change
+- [`gitconfig`](gitconfig@)
+
+### Place dotfiles in a different directory
+You can change the default location of the dotfiles by just changing `$DOTFILES` in [`zshrc`](zshrc@).
