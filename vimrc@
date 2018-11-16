@@ -233,13 +233,26 @@ autocmd FileType kotlin
 
 " keymap {{{
 let mapleader="\<SPACE>"
+
+" no I don't need you
+map q: <Nop>
+nnoremap Q <Nop>
 nnoremap <SPACE> <Nop>
 xnoremap <SPACE> <Nop>
+
+nnoremap Y y$
+
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap + <C-a>
+nnoremap - <C-x>
+
 nnoremap <silent> <CR> :noh<CR>
+
 nmap <silent> <leader>af :Autoformat<CR>
 
 nmap <silent> <C-n> :NERDTreeToggle<CR>
-
 nmap <silent> <leader>uu :UndotreeToggle<CR>:UndotreeFocus<CR>
 
 nmap <silent> <leader>gs :Gministatus<CR>
