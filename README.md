@@ -24,6 +24,7 @@ git clone https://github.com/kojandy/.dotfiles.git ~/.dotfiles && cd ~/.dotfiles
 - `tmux`: a terminal multiplexer
 - [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern
 - [autojump](https://github.com/wting/autojump): A cd command that learns - easily navigate directories from the command line
+- [asciinema](https://asciinema.org): Record and share your terminal sessions, the right way.
 
 ## Scripts
 ### dfm
