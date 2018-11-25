@@ -26,6 +26,9 @@ fi
 export DOTFILES=~/.dotfiles
 export PATH=$DOTFILES/bin:$PATH
 
+export VISUAL=vim
+export EDITOR=$VISUAL
+
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/theme.zsh
 
