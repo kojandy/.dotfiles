@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # let's go tmux
 if command -v tmux>/dev/null && [ -z "$TMUX" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]]; then
     if tmux ls&>/dev/null; then
