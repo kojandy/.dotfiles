@@ -17,7 +17,7 @@ docker run -it --rm kojandy/dotfiles
 
 ### Install
 ```sh
-git clone https://github.com/kojandy/.dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./setup
+git clone --depth 1 https://github.com/kojandy/.dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./setup
 chsh -s $(which zsh)
 ```
 
