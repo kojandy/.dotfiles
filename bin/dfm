@@ -12,7 +12,7 @@ try:
 except KeyError:
     dotfile_path = Path.cwd()
 
-config_name = 'dfmconfig'
+config_name = 'dfmconfig.json'
 
 with open(str(dotfile_path / config_name)) as f:
     config = json.load(f)
