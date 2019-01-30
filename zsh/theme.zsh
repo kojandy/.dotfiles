@@ -65,6 +65,10 @@ function _virtualenv_info {
     [ $VIRTUAL_ENV ] && echo " %{$hotpink%}[$(basename $VIRTUAL_ENV)]"
 }
 
+function _tmux_info {
+    tmux ls&>/dev/null && [ -z $TMUX ] && echo " %{$purple%}tm"
+}
+
 function _caret() {
     local _caret_color
     if [[ $KEYMAP == "vicmd" ]]; then
@@ -78,7 +82,7 @@ function _caret() {
 
 # prompts
 PROMPT='
-$(_user_host)$(_current_dir)$(_git_info)$(_virtualenv_info)
+$(_user_host)$(_current_dir)$(_git_info)$(_virtualenv_info)$(_tmux_info)
 $(_caret) '
 
 RPROMPT=''
