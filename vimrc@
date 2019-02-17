@@ -33,7 +33,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'mgee/lightline-bufferline'
 Plug 'maximbaz/lightline-ale'
 Plug 'maximbaz/lightline-trailing-whitespace'
-Plug 'vimwiki/vimwiki'
 Plug 'markonm/traces.vim'
 
 " colorscheme
