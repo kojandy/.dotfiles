@@ -17,16 +17,12 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'rhysd/clever-f.vim'
 Plug 'w0rp/ale'
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'alexdavid/vim-min-git-status', { 'on': 'Gministatus' }
-Plug 'tpope/vim-unimpaired'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ervandew/supertab'
-Plug 'mtth/scratch.vim'
 Plug 'tmhedberg/matchit'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'itchyny/lightline.vim'
@@ -123,11 +119,6 @@ let g:ale_fixers={
 
 " supertab {{{
 let g:SuperTabDefaultCompletionType="context"
-" }}}
-
-" scratch {{{
-let g:scratch_persistence_file='/tmp/scratch.vim'
-let g:scratch_no_mappings=1
 " }}}
 
 " lightline {{{
