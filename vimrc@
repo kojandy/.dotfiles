@@ -5,7 +5,6 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin()
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Chiel92/vim-autoformat', { 'on': 'Autoformat' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -89,14 +88,6 @@ set incsearch
 " }}}
 
 " plugin settings {{{
-" autoformat {{{
-let g:formatdef_astyle='"astyle -A2SLYMpHjoxC200"'
-let g:formatters_java=['astyle']
-let g:formatters_cpp=['astyle']
-let g:formatters_c=['astyle']
-let g:formatters_python=['autopep8']
-" }}}
-
 " nerdtree {{{
 let NERDTreeIgnore=['\.pyc$']
 let g:NERDTreeDirArrowExpandable='+'
