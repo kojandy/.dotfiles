@@ -257,16 +257,10 @@ nmap <silent> <leader>fb :Buffers<CR>
 nmap <silent> <leader>fl :BLines<CR>
 nmap <silent> <leader>fr :Rg<CR>
 nmap <silent> <leader>ft :BTags<CR>
+nmap <silent> <leader>fT :Tags<CR>
 nmap <silent> <leader>fh :History<CR>
 nmap <silent> <leader>f: :History:<CR>
 nmap <silent> <leader>f/ :History/<CR>
-
-nmap <silent> <leader>ss :ScratchPreview<CR>
-nmap <silent> <leader>sp :ScratchPreview<CR>
-nmap <silent> <leader>si <plug>(scratch-insert-reuse)
-nmap <silent> <leader>sI <plug>(scratch-insert-clear)
-xmap <silent> <leader>si <plug>(scratch-selection-reuse)
-xmap <silent> <leader>sI <plug>(scratch-selection-clear)
 
 nmap <silent> <leader>tt :TagbarToggle<CR>
 
