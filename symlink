@@ -19,8 +19,8 @@ if [ -x "$(command -v git)" ]; then
 fi
 
 if [ -x "$(command -v Xorg)" ]; then
-    ln -si $DOTFILES/xprofile/xprofile ~/.xprofile
-    ln -si $DOTFILES/xprofile/Xresources ~/.Xresources
+    ln -si $DOTFILES/xorg/xprofile ~/.xprofile
+    ln -si $DOTFILES/xorg/Xresources ~/.Xresources
 fi
 
 if [ -x "$(command -v bspwm)" ]; then
