@@ -1,0 +1,19 @@
+#!/bin/sh
+ln -si $DOTFILES/profile ~/.profile
+
+if [ -x "$(command -v vim)" ]; then
+    ln -si $DOTFILES/vim/vimrc ~/.vimrc
+fi
+
+if [ -x "$(command -v zsh)" ]; then
+    ln -si $DOTFILES/zsh/zshrc ~/.zshrc
+fi
+
+if [ -x "$(command -v tmux)" ]; then
+    ln -si $DOTFILES/tmux/tmux.conf ~/.tmux.conf
+fi
+
+if [ -x "$(command -v git)" ]; then
+    ln -si $DOTFILES/git/gitconfig ~/.gitconfig
+    ln -si $DOTFILES/git/gitignore_global ~/.gitignore_global
+fi

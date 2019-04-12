@@ -1,8 +1,0 @@
-{
-    "install": {
-        "zgen": "git clone https://github.com/tarjoilija/zgen.git ~/.zgen",
-        "brew": "/usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"",
-        "docker": "curl -fsSL https://get.docker.com | sudo sh"
-    },
-    "test": "docker run -it --rm $(docker build -q $DOTFILES)"
-}
