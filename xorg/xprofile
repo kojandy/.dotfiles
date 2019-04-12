@@ -1,0 +1,8 @@
+setxkbmap -option ctrl:nocaps
+
+[ -f ~/.fehbg ] && source ~/.fehbg
+
+dropbox &
+sxhkd &
+ibus-daemon -drx
+compton &

@@ -17,3 +17,22 @@ if [ -x "$(command -v git)" ]; then
     ln -si $DOTFILES/git/gitconfig ~/.gitconfig
     ln -si $DOTFILES/git/gitignore_global ~/.gitignore_global
 fi
+
+if [ -x "$(command -v Xorg)" ]; then
+    ln -si $DOTFILES/xprofile/xprofile ~/.xprofile
+    ln -si $DOTFILES/xprofile/Xresources ~/.Xresources
+fi
+
+if [ -x "$(command -v bspwm)" ]; then
+    mkdir -p ~/.config/bspwm
+    ln -si $DOTFILES/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
+fi
+
+if [ -x "$(command -v sxhkd)" ]; then
+    mkdir -p ~/.config/sxhkd
+    ln -si $DOTFILES/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
+fi
+
+if [ -x "$(command -v compton)" ]; then
+    ln -si $DOTFILES/compton/compton.conf ~/.compton.conf
+fi
