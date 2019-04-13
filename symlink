@@ -1,4 +1,8 @@
 #!/bin/sh
+if [ -z "$DOTFILES" ]; then
+    export DOTFILES="$(pwd)"
+fi
+
 ln -si $DOTFILES/profile ~/.profile
 
 if [ -x "$(command -v vim)" ]; then
