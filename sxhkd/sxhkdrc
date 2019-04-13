@@ -11,6 +11,12 @@ super + semicolon
 super + {t,shift+t,s}
     bspc node --state {tiled,pseudo_tiled,floating}
 
+super + equal
+    bspc config -d focused window_gap 0
+
+super + {plus,underscore}
+    bspc config -d focused window_gap $(($(bspc config -d focused window_gap) {+,-} 10))
+
 super + m
     bspc node --flag hidden
 
@@ -54,7 +60,7 @@ super + {Left,Down,Up,Right}
 super + Return
     $TERMINAL
 
-super + @space
+super + space
     dmenu_run
 
 super + shift + w
