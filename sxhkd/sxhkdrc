@@ -17,8 +17,8 @@ super + equal
 super + {plus,underscore}
     bspc config -d focused window_gap $(($(bspc config -d focused window_gap) {+,-} 10))
 
-super + m
-    bspc node --flag hidden
+super + {m,ctrl+x,ctrl+s}
+    bspc node --flag {hidden,locked,sticky}
 
 super + shift + m
     bspc node $(bspc query -N -n .hidden | tail -n1) --flag hidden=off
