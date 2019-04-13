@@ -1,9 +1,4 @@
-super + Return
-    urxvt
-
-super + @space
-    dmenu_run
-
+# bspwm
 super + q
     bspc node --close
 
@@ -54,3 +49,13 @@ super + alt + shift + {h,j,k,l}
 
 super + {Left,Down,Up,Right}
     bspc node --move {-40 0,0 40,0 -40,40 0}
+
+# Launch apps
+super + Return
+    $TERMINAL
+
+super + @space
+    dmenu_run
+
+super + shift + w
+    $BROWSER
