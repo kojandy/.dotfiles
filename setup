@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+source ./profile
 ./install/zgen
 ./symlink
 vim +PlugInstall +qall
