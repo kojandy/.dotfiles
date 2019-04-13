@@ -8,3 +8,4 @@ export EDITOR=$VISUAL
 export PAGER=less
 export TERMINAL=urxvt
 export BROWSER=google-chrome-stable
+export FILE=nnn
