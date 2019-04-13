@@ -41,10 +41,10 @@ super + ctrl + {1-9}
 super + ctrl + space
     bspc query --nodes --desktop | xargs -I id -n 1 bspc node id --presel-dir cancel
 
-super + alt + {h,j,k,l}
+super + {u,i,o,p}
     bspc node --resize {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-super + alt + shift + {h,j,k,l}
+super + shift + {u,i,o,p}
     bspc node --resize {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 super + {Left,Down,Up,Right}
