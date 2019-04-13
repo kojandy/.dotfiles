@@ -3,12 +3,6 @@ Xft.dpi: 200
 URxvt.scrollBar: false
 URxvt.font: xft:firacode:size=12
 URxvt.inputMethod: ibus
-! URxvt.depth: 32
-! URxvt.background: [95]#000000
-! URxvt.transparent: true
-! URxvt.inheritPixmap: true
-! URxvt.shading: 15
-! URxvt.fading: 30
 
 ! special
 *.foreground:   #c5c8c6
