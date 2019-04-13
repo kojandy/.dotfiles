@@ -5,7 +5,7 @@ super + q
 super + f
     bspc desktop --layout next
 
-super + g
+super + semicolon
     windowpromoter
 
 super + {t,shift+t,s}
