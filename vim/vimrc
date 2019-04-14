@@ -51,6 +51,7 @@ set wildmenu
 set wildmode=longest:full,full
 set wildignore+=*.swp,*.pyc,*.zip,venv,.git,*.class
 set backspace=indent,eol,start
+set ttimeoutlen=10
 
 " ui {{{
 set nowrap
