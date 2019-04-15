@@ -15,7 +15,7 @@ fi
 stty -ixon
 unsetopt AUTO_CD
 
-KEYTIMEOUT=1
+KEYTIMEOUT=15
 
 [ -z "$DOTFILES" ] && source ~/.profile
 
