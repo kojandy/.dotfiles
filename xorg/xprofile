@@ -7,4 +7,4 @@ export QT_IM_MODULE=ibus
 dropbox &
 sxhkd &
 ibus-daemon -drx
-compton -d
+compton -b
