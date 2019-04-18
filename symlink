@@ -43,6 +43,6 @@ fi
 
 if [ -x "$(command -v polybar)" ]; then
     mkdir -p ~/.config/polybar
-    ln -si $DOTFILES/polybar/config ~/polybar/config
-    ln -si $DOTFILES/polybar/launch.sh ~/polybar/launch.sh
+    ln -si $DOTFILES/polybar/config ~/.config/polybar/config
+    ln -si $DOTFILES/polybar/launch.sh ~/.config/polybar/launch.sh
 fi
