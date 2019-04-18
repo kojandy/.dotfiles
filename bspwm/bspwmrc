@@ -8,6 +8,11 @@ bspc config border_width 5
 bspc config borderless_monocle true
 bspc config gapless_monocle true
 
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_corner
+bspc config focus_follows_pointer true
+
 bspc config normal_border_color "#878787"
 bspc config focused_border_color "#8effff"
 bspc config presel_feedback_color "#ffea35"
