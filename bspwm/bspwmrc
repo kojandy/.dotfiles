@@ -19,3 +19,5 @@ bspc config presel_feedback_color "#ffea35"
 
 bspc rule --add Zathura state=tiled
 bspc rule --add Emacs state=tiled
+
+$HOME/.config/polybar/launch.sh
