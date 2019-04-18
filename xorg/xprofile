@@ -2,8 +2,4 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
-[ -f ~/.fehbg ] && source ~/.fehbg
-
-sxhkd &
 ibus-daemon -drx
-compton -b
