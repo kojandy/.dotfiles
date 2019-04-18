@@ -19,14 +19,18 @@ line-color = #f00
 
 module-margin = 1
 
+padding-right = 2
+
 font-0 = notosanscjkkr:size=20
 
 modules-left = bspwm
-modules-center =
-modules-right =
+modules-center = title
+modules-right = alsa backlight battery wlan date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+tray-position = right
 
 wm-restack = bspwm
 
@@ -48,5 +52,52 @@ label-urgent-padding = 2
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
+
+[module/alsa]
+type = internal/alsa
+
+label-volume = VOL: %percentage%%
+
+label-muted = VOL: muted
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+
+label = BL: %percentage%%
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = AC0
+
+label-charging = Charging %percentage%%
+label-discharging = BATT: %percentage%%
+label-full = Fully charged
+
+[module/date]
+type = internal/date
+
+date =
+date-alt = "%Y-%m-%d"
+
+time = %l:%M %p
+time-alt = %H:%M:%S
+
+label = %date% %time%
+
+[module/title]
+type = internal/xwindow
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+
+label-connected = Wi-Fi: %essid%
+
+; format-prefix-foreground = ${colors.foreground-alt}
+; format-underline = #0a6cf5
 
 ; vim:ft=dosini
