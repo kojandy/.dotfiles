@@ -41,7 +41,7 @@ if [ -x "$(command -v compton)" ]; then
     ln -si $DOTFILES/compton/compton.conf ~/.compton.conf
 fi
 
-if [ -x "" ]; then
+if [ -x "$(command -v polybar)" ]; then
     mkdir -p ~/.config/polybar
     ln -si $DOTFILES/polybar/config ~/polybar/config
     ln -si $DOTFILES/polybar/launch.sh ~/polybar/launch.sh
