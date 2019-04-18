@@ -21,7 +21,7 @@ super + {m,ctrl+x,ctrl+s}
     bspc node --flag {hidden,locked,sticky}
 
 super + shift + m
-    bspc node $(bspc query -N -n .hidden | tail -n1) --flag hidden=off
+    bspc node $(bspc query -N -n .hidden.local | tail -n1) --flag hidden=off
 
 super + {_,shift+}{h,j,k,l}
     bspc node --{focus,swap} {west,south,north,east}
