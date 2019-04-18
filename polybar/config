@@ -22,6 +22,9 @@ module-margin = 1
 padding-right = 2
 
 font-0 = notosanscjkkr:size=20
+font-1 = "Font Awesome 5 Free:style=Regular:size=20"
+font-2 = "Font Awesome 5 Free:style=Solid:size=20"
+font-3 = "Font Awesome 5 Brands:size=20"
 
 modules-left = bspwm
 modules-center = title
@@ -56,16 +59,16 @@ label-empty-padding = 2
 [module/alsa]
 type = internal/alsa
 
-label-volume = VOL: %percentage%%
+label-volume =  %percentage%%
 
-label-muted = VOL: muted
+label-muted =  muted
 
 [module/backlight]
 type = internal/backlight
 
 card = intel_backlight
 
-label = BL: %percentage%%
+label =  %percentage%%
 
 [module/battery]
 type = internal/battery
@@ -73,9 +76,9 @@ type = internal/battery
 battery = BAT0
 adapter = AC0
 
-label-charging = Charging %percentage%%
-label-discharging = BATT: %percentage%%
-label-full = Fully charged
+label-charging =  %percentage%%
+label-discharging =  %percentage%%
+label-full =  %percentage%%
 
 [module/date]
 type = internal/date
@@ -95,7 +98,7 @@ type = internal/xwindow
 type = internal/network
 interface = wlp2s0
 
-label-connected = Wi-Fi: %essid%
+label-connected =  %essid%
 
 ; format-prefix-foreground = ${colors.foreground-alt}
 ; format-underline = #0a6cf5
