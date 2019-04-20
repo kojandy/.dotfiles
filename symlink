@@ -1,6 +1,6 @@
 #!/bin/sh
-[ -z "$DOTFILES" ] && DOTFILES="$(pwd)"
-[ -z "$XDG_CONFIG_HOME" ] && XDG_CONFIG_HOME="$HOME/.config"
+[ -z "$DOTFILES" ] && echo "DOTFILES not set" && exit 1
+[ -z "$XDG_CONFIG_HOME" ] && echo "XDG_CONFIG_HOME not set" && exit 1
 
 ln -si "$DOTFILES/profile" ~/.profile
 
