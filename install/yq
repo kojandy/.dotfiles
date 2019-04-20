@@ -1,0 +1,5 @@
+#!/bin/sh
+base_url="https://github.com/mikefarah/yq/releases/download/2.3.0/yq_$(uname -s)_amd64"
+target="../bin/yq"
+curl -L "$base_url" -o "$target"
+chmod +x "$target"
