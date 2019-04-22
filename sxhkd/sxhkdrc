@@ -61,7 +61,7 @@ super + Return
     $TERMINAL
 
 super + space
-    dmenu_run
+    rofi -show run
 
 super + shift + w
     $BROWSER
