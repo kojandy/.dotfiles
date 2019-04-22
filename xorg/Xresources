@@ -1,4 +1,4 @@
-Xft.dpi: 200
+*.dpi: 200
 
 URxvt.scrollBar: false
 URxvt.font: xft:firacode:size=12,xft:d2coding:size=12
