@@ -72,11 +72,8 @@ super + shift + f
 XF86AudioMute
     amixer --quiet set Master toggle
 
-XF86AudioLowerVolume
-    amixer --quiet set Master 5%- unmute
-
-XF86AudioRaiseVolume
-    amixer --quiet set Master 5%+ unmute
+XF86Audio{Lower,Raise}Volume
+    amixer --quiet set Master 5%{-,+} unmute
 
 # XF86AudioPrev
 
