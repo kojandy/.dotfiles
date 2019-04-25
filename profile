@@ -9,3 +9,5 @@ export PAGER=less
 export TERMINAL=urxvt
 export BROWSER=google-chrome-stable
 export FILE=ranger
+
+export PATH="$HOME/.cargo/bin:$PATH"
