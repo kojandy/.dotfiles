@@ -67,7 +67,7 @@ super + shift + w
     $BROWSER
 
 super + shift + f
-    $TERMINAL -e $FILE
+    $TERMINAL -e ranger
 
 super + BackSpace
     betterlockscreen -l
