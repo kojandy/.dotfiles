@@ -69,6 +69,12 @@ super + shift + w
 super + shift + f
     $TERMINAL -e $FILE
 
+super + BackSpace
+    betterlockscreen -l
+
+super + Escape
+    systemctl suspend
+
 XF86AudioMute
     amixer --quiet set Master toggle
 
