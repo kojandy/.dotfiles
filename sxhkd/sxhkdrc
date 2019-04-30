@@ -69,6 +69,9 @@ super + shift + w
 super + shift + f
     $TERMINAL -e ranger
 
+super + shift + p
+    $TERMINAL -e htop
+
 super + BackSpace
     betterlockscreen -l
 
