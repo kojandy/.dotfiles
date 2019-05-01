@@ -45,3 +45,8 @@ if [ -x "$(command -v polybar)" ]; then
     ln -si "$DOTFILES/polybar/config" "$XDG_CONFIG_HOME/polybar/config"
     ln -si "$DOTFILES/polybar/launch.sh" "$XDG_CONFIG_HOME/polybar/launch.sh"
 fi
+
+if [ -x "$(command -v dunst)" ]; then
+    mkdir -p "$XDG_CONFIG_HOME/dunst"
+    ln -si "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
+fi
