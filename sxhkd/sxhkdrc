@@ -60,7 +60,7 @@ super + {Left,Down,Up,Right}
 super + Return
     $TERMINAL
 
-super + space
+alt + space
     rofi -show run
 
 super + shift + w
