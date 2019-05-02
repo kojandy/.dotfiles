@@ -35,8 +35,8 @@ super + {comma,period}
 super + bracket{left,right}
     bspc desktop -f {prev,next}.local
 
-super + {grave,Tab}
-    bspc {node,desktop} --focus last
+super + Tab
+    bspc desktop --focus last
 
 super + ctrl + {h,j,k,l}
     bspc node --presel-dir {west,south,north,east}
@@ -72,7 +72,7 @@ super + shift + f
 super + shift + p
     $TERMINAL -e htop
 
-super + BackSpace
+super + grave
     betterlockscreen -l
 
 super + Escape
