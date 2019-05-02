@@ -28,7 +28,6 @@ Plug 'mgee/lightline-bufferline'
 Plug 'maximbaz/lightline-ale'
 Plug 'maximbaz/lightline-trailing-whitespace'
 Plug 'markonm/traces.vim'
-Plug 'mcchrish/nnn.vim', { 'on': 'NnnPicker' }
 
 " colorscheme
 " Plug 'nanotech/jellybeans.vim'
@@ -207,10 +206,6 @@ let g:lightline={
             \ }
             \ }
 " }}}
-
-" nnn {{{
-let g:nnn#set_default_mappings = 0
-" }}}
 " }}}
 
 " autocmd {{{
@@ -266,8 +261,6 @@ nmap <silent> <leader>f: :History:<CR>
 nmap <silent> <leader>f/ :History/<CR>
 
 nmap <silent> <leader>tt :TagbarToggle<CR>
-
-nmap <silent> <leader>n :NnnPicker<CR>
 " }}}
 
 " vim:fdm=marker
