@@ -24,5 +24,4 @@ KEYTIMEOUT=25
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/theme.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local

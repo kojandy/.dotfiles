@@ -14,7 +14,6 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 Plug 'rstacruz/vim-closer'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
