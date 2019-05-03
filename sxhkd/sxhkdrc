@@ -32,8 +32,8 @@ super + {_,shift+}{1-9,0}
 super + {comma,period}
     bspc node --focus {prev,next}.local
 
-super + bracket{left,right}
-    bspc desktop -f {prev,next}.local
+super + {_,shift+}bracket{left,right}
+    bspc desktop {--focus,--swap} {prev,next}.local
 
 super + Tab
     bspc desktop --focus last
