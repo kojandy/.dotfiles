@@ -105,5 +105,6 @@ label-connected =  %essid%
 type = custom/script
 exec = ~/.config/polybar/playerctl.sh
 interval = 3
+label = %output:0:30:...%
 
 ; vim:ft=dosini
