@@ -5,6 +5,8 @@ URxvt.font: xft:firacode:size=12,xft:d2coding:size=12
 URxvt.inputMethod: ibus
 URxvt.scrollTtyOutput: false
 URxvt.scrollTtyKeypress: true
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 rofi.theme: DarkBlue
 
