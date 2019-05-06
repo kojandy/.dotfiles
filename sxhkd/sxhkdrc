@@ -93,11 +93,8 @@ XF86AudioMute
 XF86Audio{Lower,Raise}Volume
     amixer --quiet set Master 5%{-,+} unmute
 
-# XF86AudioPrev
-
-# XF86AudioPlay
-
-# XF86AudioNext
+XF86Audio{Prev,Play,Next}
+    playerctl {previous,play-pause,next}
 
 # XF86Search
 
