@@ -50,3 +50,8 @@ if [ -x "$(command -v dunst)" ]; then
     mkdir -p "$XDG_CONFIG_HOME/dunst"
     ln -si "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
 fi
+
+if [ -x "$(command -v mpv)" ]; then
+    mkdir -p "$XDG_CONFIG_HOME/mpv/scripts"
+    ln -si "$DOTFILES/mpv/scripts/mpris.so" "$XDG_CONFIG_HOME/mpv/scripts/mpris.so"
+fi
