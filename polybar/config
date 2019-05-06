@@ -28,7 +28,7 @@ font-3 = "Font Awesome 5 Brands:size=20"
 
 modules-left = bspwm
 modules-center = title
-modules-right = playerctl alsa backlight battery wlan date
+modules-right = playerctl alsa battery wlan date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
