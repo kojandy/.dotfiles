@@ -44,6 +44,7 @@ if [ -x "$(command -v polybar)" ]; then
     mkdir -p "$XDG_CONFIG_HOME/polybar"
     ln -si "$DOTFILES/polybar/config" "$XDG_CONFIG_HOME/polybar/config"
     ln -si "$DOTFILES/polybar/launch.sh" "$XDG_CONFIG_HOME/polybar/launch.sh"
+    ln -si "$DOTFILES/polybar/playerctl.sh" "$XDG_CONFIG_HOME/polybar/playerctl.sh"
 fi
 
 if [ -x "$(command -v dunst)" ]; then
