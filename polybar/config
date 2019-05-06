@@ -85,7 +85,7 @@ label-full =  %percentage%%
 type = internal/date
 
 date =
-date-alt = "%Y-%m-%d"
+date-alt = "%Y-%m-%d %a"
 
 time = %l:%M %p
 time-alt = %H:%M:%S
