@@ -78,6 +78,15 @@ super + grave
 super + Escape
     systemctl suspend
 
+Print
+    scrot "$HOME"'/Scrot/%Y-%m-%d_%H:%M:%S_$wx$h_scrot.png' && \
+    notify-send Scrot 'Saved!'
+
+control + Print
+    sleep 0.2; \
+    scrot -s "$HOME"'/Scrot/%Y-%m-%d_%H:%M:%S_$wx$h_scrot.png' && \
+    notify-send Scrot 'Saved!'
+
 XF86AudioMute
     amixer --quiet set Master toggle
 
@@ -92,6 +101,4 @@ XF86Audio{Lower,Raise}Volume
 
 # XF86Search
 
-# XF86MonBrightnessDown
-
-# XF86MonBrightnessUp
+# XF86MonBrightness{Down,Up}
