@@ -56,3 +56,8 @@ if [ -x "$(command -v mpv)" ]; then
     mkdir -p "$XDG_CONFIG_HOME/mpv/scripts"
     ln -si "$DOTFILES/mpv/scripts/mpris.so" "$XDG_CONFIG_HOME/mpv/scripts/mpris.so"
 fi
+
+if [ -x "$(command -v redshift)" ]; then
+    mkdir -p "$XDG_CONFIG_HOME/redshift"
+    ln -si "$DOTFILES/redshift/redshift.conf" "$XDG_CONFIG_HOME/redshift/redshift.conf"
+fi
