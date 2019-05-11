@@ -8,6 +8,7 @@ URxvt.scrollTtyKeypress: true
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
+rofi.dpi: 200
 rofi.theme: DarkBlue
 
 ! special
