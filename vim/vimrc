@@ -29,6 +29,7 @@ Plug 'mgee/lightline-bufferline'
 Plug 'maximbaz/lightline-ale'
 Plug 'maximbaz/lightline-trailing-whitespace'
 Plug 'markonm/traces.vim'
+Plug 'AndrewRadev/sideways.vim'
 
 " colorscheme
 " Plug 'nanotech/jellybeans.vim'
@@ -262,6 +263,15 @@ nmap <silent> <leader>f: :History:<CR>
 nmap <silent> <leader>f/ :History/<CR>
 
 nmap <silent> <leader>tt :TagbarToggle<CR>
+
+nmap <silent> [a :SidewaysJumpLeft<CR>
+nmap <silent> ]a :SidewaysJumpRight<CR>
+nmap <silent> [A :SidewaysLeft<CR>
+nmap <silent> ]A :SidewaysRight<CR>
+omap aa <Plug>SidewaysArgumentTextobjA
+xmap aa <Plug>SidewaysArgumentTextobjA
+omap ia <Plug>SidewaysArgumentTextobjI
+xmap ia <Plug>SidewaysArgumentTextobjI
 " }}}
 
 " vim:fdm=marker
