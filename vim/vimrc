@@ -266,8 +266,6 @@ nnoremap - <C-x>
 
 nnoremap <silent> <CR> :noh<CR>
 
-nmap <silent> <leader>af :Autoformat<CR>
-
 nmap <silent> <C-n> :NERDTreeToggle<CR>
 nmap <silent> <leader>uu :UndotreeToggle<CR>:UndotreeFocus<CR>
 
