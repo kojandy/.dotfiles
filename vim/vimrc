@@ -4,32 +4,44 @@ if empty(glob("~/.vim/autoload/plug.vim"))
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 call plug#begin()
+" find / navigate
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'tmhedberg/matchit'
+
+" autocomplete / format / edit
+Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
+Plug 'rstacruz/vim-closer'
+Plug 'w0rp/ale'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/sideways.vim'
+Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
-Plug 'rstacruz/vim-closer'
-Plug 'sheerun/vim-polyglot'
+" Plug 'SirVer/ultisnips'
+
+" visual
 Plug 'Yggdroot/indentLine'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
+Plug 'markonm/traces.vim'
+
+" language
+Plug 'sheerun/vim-polyglot'
+
+" git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'alexdavid/vim-min-git-status', { 'on': 'Gministatus' }
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'ervandew/supertab'
-Plug 'tmhedberg/matchit'
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+
+" statusbar
 Plug 'itchyny/lightline.vim'
 Plug 'mgee/lightline-bufferline'
 Plug 'maximbaz/lightline-ale'
 Plug 'maximbaz/lightline-trailing-whitespace'
-Plug 'markonm/traces.vim'
-Plug 'AndrewRadev/sideways.vim'
 
 " colorscheme
 " Plug 'nanotech/jellybeans.vim'
@@ -37,9 +49,6 @@ Plug 'AndrewRadev/sideways.vim'
 " Plug 'phanviet/vim-monokai-pro'
 " Plug 'tomasiser/vim-code-dark'
 Plug 'cocopon/iceberg.vim'
-
-" Try later
-" Plug 'SirVer/ultisnips'
 call plug#end()
 " }}}
 
