@@ -117,6 +117,10 @@ let g:ale_fixers={
 let g:SuperTabDefaultCompletionType="context"
 " }}}
 
+" gitgutter {{{
+let g:gitgutter_map_keys = 0
+" }}}
+
 " lightline {{{
 let s:p={
             \ 'normal': {
@@ -251,6 +255,9 @@ nmap <silent> <leader>gd :Gdiff<CR>
 nmap <silent> <leader>gb :Gblame<CR>
 nmap <silent> <leader>gp :Gpush<CR>
 nmap <silent> <leader>gl :Gpull<CR>
+
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 
 nmap <silent> <leader>ff :Files<CR>
 nmap <silent> <leader>fb :Buffers<CR>
