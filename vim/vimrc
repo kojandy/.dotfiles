@@ -267,6 +267,8 @@ nmap <silent> <leader>gl :Gpull<CR>
 
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
+nmap <leader>hs <Plug>GitGutterStageHunk
+nmap <leader>hu <Plug>GitGutterUndoHunk
 
 nmap <silent> <leader>ff :Files<CR>
 nmap <silent> <leader>fb :Buffers<CR>
