@@ -7,6 +7,8 @@ URxvt.scrollTtyOutput: false
 URxvt.scrollTtyKeypress: true
 URxvt.iso14755: false
 URxvt.iso14755_52: false
+URxvt.perl-ext:
+URxvt.perl-ext-common:
 
 rofi.dpi: 200
 rofi.theme: DarkBlue
