@@ -16,6 +16,7 @@ fi
 
 stty -ixon
 unsetopt AUTO_CD
+disable r
 
 KEYTIMEOUT=25
 
