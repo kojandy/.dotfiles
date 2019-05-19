@@ -61,3 +61,9 @@ if [ -x "$(command -v redshift)" ]; then
     mkdir -p "$XDG_CONFIG_HOME/redshift"
     ln -si "$DOTFILES/redshift/redshift.conf" "$XDG_CONFIG_HOME/redshift/redshift.conf"
 fi
+
+if [ -x "$(command -v ranger)" ]; then
+    mkdir -p "$XDG_CONFIG_HOME/ranger/plugins"
+    ln -si "$DOTFILES/ranger/rc.conf" "$XDG_CONFIG_HOME/ranger/rc.conf"
+    ln -si "$DOTFILES/ranger/plugins/autojump.py" "$XDG_CONFIG_HOME/ranger/plugins/autojump.py"
+fi
