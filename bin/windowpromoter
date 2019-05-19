@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Move current focused window to preselected/biggest window
 # https://github.com/Chrysostomus/bspwm-scripts/blob/master/bin/windowpromoter
 
