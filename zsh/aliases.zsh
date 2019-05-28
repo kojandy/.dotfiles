@@ -9,8 +9,7 @@ alias ......='cd ../../../../..'
 alias vi='vim'
 
 # python
-alias venv='source venv/bin/activate'
-alias mkvenv='python3 -m venv venv'
+alias venv='[ ! -d venv ] && python3 -m venv venv; . venv/bin/activate'
 
 # i am so cuet
 alias claer='clear'
