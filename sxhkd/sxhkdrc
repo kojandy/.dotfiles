@@ -38,6 +38,9 @@ super + {_,shift+}bracket{left,right}
 super + Tab
     bspc desktop --focus last
 
+super + grave
+    bspc node --focus last
+
 super + ctrl + {h,j,k,l}
     bspc node --presel-dir {west,south,north,east}
 
@@ -72,10 +75,10 @@ super + shift + f
 super + shift + p
     $TERMINAL -e htop
 
-super + grave
+super + Escape
     betterlockscreen -l
 
-super + Escape
+super + shift + Escape
     systemctl suspend
 
 Print
