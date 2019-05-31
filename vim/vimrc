@@ -12,6 +12,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'tmhedberg/matchit'
+Plug 'haya14busa/incsearch.vim'
 
 " autocomplete / format / edit
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
@@ -27,7 +28,6 @@ Plug 'tpope/vim-repeat'
 " visual
 Plug 'Yggdroot/indentLine'
 Plug 'markonm/traces.vim'
-Plug 'haya14busa/incsearch.vim'
 
 " language
 Plug 'sheerun/vim-polyglot'
