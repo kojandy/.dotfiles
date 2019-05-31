@@ -35,10 +35,10 @@ super + {comma,period}
 super + {_,shift+}bracket{left,right}
     bspc desktop {--focus,--swap} {prev,next}.local
 
-super + Tab
+super + grave
     bspc desktop --focus last
 
-super + grave
+super + Tab
     bspc node --focus last
 
 super + ctrl + {h,j,k,l}
