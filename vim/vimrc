@@ -27,6 +27,7 @@ Plug 'tpope/vim-repeat'
 " visual
 Plug 'Yggdroot/indentLine'
 Plug 'markonm/traces.vim'
+Plug 'haya14busa/incsearch.vim'
 
 " language
 Plug 'sheerun/vim-polyglot'
@@ -117,8 +118,6 @@ set expandtab
 " search {{{
 set ignorecase
 set smartcase
-set hlsearch
-set incsearch
 " }}}
 " }}}
 
@@ -315,6 +314,12 @@ nmap <leader>ca <Plug>(coc-codeaction)
 nmap <leader>cf <Plug>(coc-format)
 nmap <leader>cr <Plug>(coc-rename)
 nmap <silent> <leader>cd :CocList diagnostics<CR>
+" }}}
+
+" incsearch.vim {{{
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 " }}}
 " }}}
 " vim:fdm=marker
