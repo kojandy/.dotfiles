@@ -104,8 +104,11 @@ set showcmd
 set number
 set relativenumber
 set cursorline
+
 set listchars=tab:»\ ,trail:·,extends:⟩,precedes:⟨,nbsp:·
 set list
+autocmd InsertEnter * set nolist
+autocmd InsertLeave * set list
 
 syntax on
 silent! colorscheme iceberg
