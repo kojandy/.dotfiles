@@ -65,10 +65,19 @@ set ttimeoutlen=10
 let mapleader="\<SPACE>"
 
 " no I don't need you
-map q: <Nop>
+nnoremap q: <Nop>
 nnoremap Q <Nop>
 nnoremap <SPACE> <Nop>
 xnoremap <SPACE> <Nop>
+
+" annoying
+function! s:command_alias(from, to)
+    exec 'cnoreabbrev <expr> ' . a:from
+                \ . ' getcmdtype() == ":" && getcmdline() == "' . a:from . '"'
+                \ . '? "' . a:to . '" : "' . a:from . '"'
+endfunction
+
+call s:command_alias("W", "w")
 
 nnoremap Y y$
 
