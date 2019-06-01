@@ -60,6 +60,7 @@ set wildmode=longest:full,full
 set wildignore+=*.swp,*.pyc,*.zip,venv,.git,*.class
 set backspace=indent,eol,start
 set ttimeoutlen=10
+set encoding=utf-8
 
 " keymap {{{
 let mapleader="\<SPACE>"
