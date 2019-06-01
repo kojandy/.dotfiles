@@ -14,8 +14,9 @@ if [ -x "$(command -v tmux)" ]; then
 fi
 
 if [ -x "$(command -v git)" ]; then
-    ln -si "$DOTFILES/git/gitconfig" ~/.gitconfig
-    ln -si "$DOTFILES/git/gitignore_global" ~/.gitignore_global
+    mkdir -p "$XDG_CONFIG_HOME/git"
+    ln -si "$DOTFILES/git/config" "$XDG_CONFIG_HOME/git/config"
+    ln -si "$DOTFILES/git/ignore" "$XDG_CONFIG_HOME/git/ignore"
 fi
 
 if [ -x "$(command -v Xorg)" ]; then
