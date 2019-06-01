@@ -105,7 +105,7 @@ set number
 set relativenumber
 set cursorline
 
-set listchars=tab:»\ ,trail:·,extends:⟩,precedes:⟨,nbsp:·
+set listchars=tab:»\ ,trail:·,nbsp:·
 set list
 autocmd InsertEnter * set nolist
 autocmd InsertLeave * set list
