@@ -3,7 +3,6 @@
     name = Ohjun Kwon
 [core]
     editor = vim
-    excludesfile = ~/.gitignore_global
 [push]
     default = simple
 [pull]
