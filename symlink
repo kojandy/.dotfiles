@@ -37,7 +37,8 @@ if [ -x "$(command -v sxhkd)" ]; then
 fi
 
 if [ -x "$(command -v compton)" ]; then
-    ln -si "$DOTFILES/compton/compton.conf" ~/.compton.conf
+    mkdir -p "$XDG_CONFIG_HOME/compton"
+    ln -si "$DOTFILES/compton/compton.conf" "$XDG_CONFIG_HOME/compton/compton.conf"
 fi
 
 if [ -x "$(command -v polybar)" ]; then
