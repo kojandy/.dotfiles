@@ -1,7 +1,4 @@
 #!/bin/sh
-[ -z "$DOTFILES" ] && echo "DOTFILES not set" && exit 1
-[ -z "$XDG_CONFIG_HOME" ] && echo "XDG_CONFIG_HOME not set" && exit 1
-
 ln -si "$DOTFILES/profile" ~/.profile
 
 if [ -x "$(command -v vim)" ]; then

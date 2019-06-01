@@ -1,6 +1,6 @@
 #!/bin/bash
 source ./profile
 ./install/zgen
-./symlink
+./install/symlink
 vim +PlugInstall +qall
 zsh
