@@ -1,0 +1,24 @@
+#!/bin/bash
+brightness=$(cat /sys/class/backlight/intel_backlight/brightness)
+max_brightness=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+percent=$((brightness * 100 / max_brightness))
+
+function set_percent() {
+    if [ $1 -lt 0 ]; then
+        set_to=0
+    elif [ $1 -gt 100 ]; then
+        set_to=100
+    else
+        set_to=$1
+    fi
+    echo $(($set_to * max_brightness / 100)) > /sys/class/backlight/intel_backlight/brightness
+}
+
+case $1 in
+    =) set_percent $2
+        ;;
+    +) set_percent $(($percent + $2))
+        ;;
+    -) set_percent $(($percent - $2))
+        ;;
+esac
