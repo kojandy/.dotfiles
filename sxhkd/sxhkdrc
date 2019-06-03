@@ -101,4 +101,5 @@ XF86Audio{Prev,Play,Next}
 
 # XF86Search
 
-# XF86MonBrightness{Down,Up}
+XF86MonBrightness{Down,Up}
+    backlight {-,+} 10
