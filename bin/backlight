@@ -21,4 +21,6 @@ case $1 in
         ;;
     -) set_percent $(($percent - $2))
         ;;
+    *) echo $percent
+        ;;
 esac
