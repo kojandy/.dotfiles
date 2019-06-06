@@ -9,7 +9,7 @@ alert = #bd2c40
 
 [bar/top]
 width = 100%
-height = 50
+height = 2.5%
 
 background = ${colors.background}
 foreground = ${colors.foreground}
