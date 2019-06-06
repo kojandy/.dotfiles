@@ -31,6 +31,7 @@ Plug 'markonm/traces.vim'
 
 " language
 Plug 'sheerun/vim-polyglot'
+Plug 'lervag/vimtex'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -338,6 +339,11 @@ nmap <silent> <leader>cd :CocList diagnostics<CR>
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+" }}}
+
+" vimtex {{{
+let g:tex_flavor = 'latex'
+let g:polyglot_disabled = ['latex']
 " }}}
 " }}}
 " vim:fdm=marker
