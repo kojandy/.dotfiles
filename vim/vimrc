@@ -80,6 +80,8 @@ endfunction
 
 call s:command_alias("W", "w")
 
+command WW execute 'silent! write !sudo tee % >/dev/null' | edit!
+
 nnoremap Y y$
 
 vnoremap < <gv
