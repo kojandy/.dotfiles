@@ -70,7 +70,7 @@ super + shift + w
     $BROWSER
 
 super + shift + f
-    $TERMINAL -e ranger
+    thunar
 
 super + shift + p
     $TERMINAL -e htop
