@@ -4,5 +4,7 @@ export QT_IM_MODULE=ibus
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+xrandr --dpi 220
+
 light-locker &
 ibus-daemon -drx

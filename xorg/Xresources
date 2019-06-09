@@ -1,4 +1,4 @@
-Xft.dpi: 200
+Xft.dpi: 220
 
 URxvt.scrollBar: false
 URxvt.font: xft:firacode:size=12,xft:d2coding:size=12
@@ -11,7 +11,7 @@ URxvt.iso14755_52: false
 URxvt.perl-ext:
 URxvt.perl-ext-common:
 
-rofi.dpi: 200
+rofi.dpi: 220
 rofi.theme: DarkBlue
 
 ! special
