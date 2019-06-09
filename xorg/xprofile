@@ -4,8 +4,6 @@ export QT_IM_MODULE=ibus
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-xrandr --dpi 220
-
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 
