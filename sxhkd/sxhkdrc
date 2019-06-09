@@ -76,7 +76,7 @@ super + shift + p
     $TERMINAL -e htop
 
 super + Escape
-    betterlockscreen -l
+    light-locker-command --lock
 
 super + shift + Escape
     systemctl suspend
