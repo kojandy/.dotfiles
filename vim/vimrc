@@ -175,7 +175,7 @@ nmap <silent> <leader>gl :Gpull<CR>
 nmap <silent> <leader>ff :Files<CR>
 nmap <silent> <leader>fb :Buffers<CR>
 nmap <silent> <leader>fl :BLines<CR>
-nmap <leader>fr :Rg 
+nmap <leader>fr :Rg<Space>
 nmap <silent> <leader>ft :BTags<CR>
 nmap <silent> <leader>fT :Tags<CR>
 nmap <silent> <leader>fh :History<CR>
