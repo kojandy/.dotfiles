@@ -5,8 +5,12 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
-# vi
+# vim
 alias vi='vim'
+
+# emacs
+alias e='emacsclient -t'
+alias ec='emacsclient -nc'
 
 # python
 alias venv='[ ! -d venv ] && python3 -m venv venv; . venv/bin/activate'
