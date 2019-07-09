@@ -5,10 +5,12 @@
    '(
      helm
      auto-completion
-     emacs-lisp
      git
      syntax-checking
 
+     shell
+
+     emacs-lisp
      org
      python
      c-c++
