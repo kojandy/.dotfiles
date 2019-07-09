@@ -18,7 +18,12 @@
      (go
        :variables
        go-tab-width 4
-       gofmt-command "goimports"))))
+       gofmt-command "goimports")
+     (latex
+      :variables
+      latex-build-command "LaTeX"
+      latex-enable-folding t)
+     )))
 
 (defun dotspacemacs/init ()
   (setq-default
