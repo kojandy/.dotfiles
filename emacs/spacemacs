@@ -33,6 +33,8 @@
   (set-face-attribute 'default nil :height 120))
 
 (defun dotspacemacs/user-config ()
+  (setq-default company-idle-delay 0.1)
+
   (define-key evil-motion-state-map (kbd "C-h") #'evil-window-left)
   (define-key evil-motion-state-map (kbd "C-j") #'evil-window-down)
   (define-key evil-motion-state-map (kbd "C-k") #'evil-window-up)
