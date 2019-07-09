@@ -19,6 +19,7 @@
        :variables
        go-tab-width 4
        gofmt-command "goimports")
+     docker
      (latex
       :variables
       latex-build-command "LaTeX"
