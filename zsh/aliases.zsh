@@ -9,6 +9,7 @@ alias ......='cd ../../../../..'
 alias vi='vim'
 
 # emacs
+alias emad='emacs --daemon'
 alias e='emacsclient -t'
 alias ec='emacsclient -nc'
 
