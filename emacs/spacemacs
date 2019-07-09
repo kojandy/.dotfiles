@@ -13,7 +13,10 @@
      python
      c-c++
      rust
-     (go :variables go-tab-width 4)
+     (go
+       :variables
+       go-tab-width 4
+       gofmt-command "goimports")
      )))
 
 (defun dotspacemacs/init ()
