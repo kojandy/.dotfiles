@@ -21,6 +21,7 @@
    dotspacemacs-themes '(noctilux)
    dotspacemacs-default-font '("Fira Code"
                                :powerline-scale 1.2)
+   dotspacemacs-major-mode-leader-key "\\"
    dotspacemacs-line-numbers 'relative
    dotspacemacs-whitespace-cleanup 'trailing
    ))
