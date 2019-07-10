@@ -37,7 +37,7 @@
    ))
 
 (defun dotspacemacs/user-init ()
-  (setq-default custom-file "~/.emacs.d/custom.el")
+  (setq-default custom-file "~/.emacs.d/private/custom.el")
   (load custom-file)
 
   (set-face-attribute 'default nil :height 120))
