@@ -43,7 +43,9 @@
   (set-face-attribute 'default nil :height 120))
 
 (defun dotspacemacs/user-config ()
-  (setq-default company-idle-delay 0.1)
+  (setq-default
+   company-idle-delay 0.1
+   vc-follow-symlinks t)
 
   (add-hook 'prog-mode-hook 'spacemacs/toggle-truncate-lines-on)
 
