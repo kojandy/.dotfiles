@@ -3,6 +3,7 @@
 compton &
 [ -f ~/.fehbg ] && source ~/.fehbg
 "$XDG_CONFIG_HOME/polybar/launch.sh"
+light-locker &
 sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
