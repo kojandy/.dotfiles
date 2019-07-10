@@ -1,9 +1,9 @@
 #!/bin/sh
 
-sxhkd &
 compton &
-"$XDG_CONFIG_HOME/polybar/launch.sh"
 [ -f ~/.fehbg ] && source ~/.fehbg
+"$XDG_CONFIG_HOME/polybar/launch.sh"
+sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
