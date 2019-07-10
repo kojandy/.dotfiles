@@ -45,7 +45,8 @@
 (defun dotspacemacs/user-config ()
   (setq-default
    company-idle-delay 0.1
-   vc-follow-symlinks t)
+   vc-follow-symlinks t
+   neo-theme 'ascii)
 
   (add-hook 'prog-mode-hook 'spacemacs/toggle-truncate-lines-on)
 
