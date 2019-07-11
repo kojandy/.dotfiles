@@ -29,6 +29,7 @@
 (defun dotspacemacs/init ()
   (setq-default
    dotspacemacs-scratch-mode 'org-mode
+   dotspacemacs-loading-progress-bar nil
    dotspacemacs-themes '(noctilux)
    dotspacemacs-default-font '("Fira Code")
    dotspacemacs-major-mode-leader-key "\\"
