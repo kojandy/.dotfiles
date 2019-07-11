@@ -30,8 +30,7 @@
   (setq-default
    dotspacemacs-scratch-mode 'org-mode
    dotspacemacs-themes '(noctilux)
-   dotspacemacs-default-font '("Fira Code"
-                               :powerline-scale 1.3)
+   dotspacemacs-default-font '("Fira Code")
    dotspacemacs-major-mode-leader-key "\\"
    dotspacemacs-line-numbers 'relative
    dotspacemacs-whitespace-cleanup 'trailing
