@@ -11,16 +11,23 @@
      syntax-checking
 
      shell
+     (lsp
+      :variables
+      lsp-navigation 'peek
+      lsp-ui-doc-enable nil
+      lsp-ui-sideline-enable nil)
 
      emacs-lisp
      org
      python
      c-c++
-     rust
+     (rust
+      :variables
+      rust-backend 'lsp)
      (go
        :variables
        go-tab-width 4
-       gofmt-command "goimports")
+       go-backend 'lsp)
      docker
      (latex
       :variables
