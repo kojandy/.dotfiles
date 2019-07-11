@@ -28,6 +28,7 @@
 
 (defun dotspacemacs/init ()
   (setq-default
+   dotspacemacs-scratch-mode 'org-mode
    dotspacemacs-themes '(noctilux)
    dotspacemacs-default-font '("Fira Code"
                                :powerline-scale 1.3)
