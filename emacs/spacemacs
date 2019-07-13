@@ -33,6 +33,7 @@
       :variables
       latex-build-command "LaTeX"
       latex-enable-folding t)
+     yaml
      )))
 
 (defun dotspacemacs/init ()
