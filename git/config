@@ -1,6 +1,7 @@
 [user]
     email = dev@kojandy.com
     name = Ohjun Kwon
+    signingkey = dev@kojandy.com
 [core]
     editor = vim
 [push]
@@ -14,3 +15,5 @@
     rewrite-author = !$DOTFILES/bin/git-rewrite-author
 [fetch]
     prune = true
+[commit]
+    gpgsign = true
