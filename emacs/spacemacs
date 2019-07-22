@@ -18,7 +18,9 @@
       lsp-ui-sideline-enable nil)
 
      emacs-lisp
-     org
+     (org
+      :variables
+      org-startup-indented t)
      python
      c-c++
      (rust
