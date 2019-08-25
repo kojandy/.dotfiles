@@ -6,8 +6,11 @@
      helm
      (auto-completion
       :variables
-      auto-completion-enable-help-tooltip t)
-     git
+      auto-completion-enable-help-tooltip t
+      auto-completion-idle-delay 0.1)
+     (git
+      :variables
+      vc-follow-symlinks t)
      syntax-checking
 
      shell
@@ -29,7 +32,8 @@
      (go
        :variables
        go-tab-width 4
-       go-backend 'lsp)
+       go-backend 'lsp
+       go-format-before-save t)
      docker
      (latex
       :variables
@@ -56,11 +60,6 @@
   (set-face-attribute 'default nil :height 120))
 
 (defun dotspacemacs/user-config ()
-  (setq-default
-   company-idle-delay 0.1
-   vc-follow-symlinks t
-   neo-theme 'ascii)
-
   (add-hook 'prog-mode-hook 'spacemacs/toggle-truncate-lines-on)
 
   (define-key evil-motion-state-map (kbd "C-h") #'evil-window-left)
