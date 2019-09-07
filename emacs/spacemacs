@@ -18,7 +18,8 @@
       :variables
       lsp-navigation 'peek
       lsp-ui-doc-enable nil
-      lsp-ui-sideline-enable nil)
+      lsp-ui-sideline-enable nil
+      lsp-restart 'ignore)
 
      emacs-lisp
      (org
