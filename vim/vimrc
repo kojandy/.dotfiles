@@ -190,10 +190,10 @@ nmap <silent> <leader>tt :TagbarToggle<CR>
 " gitgutter {{{
 let g:gitgutter_map_keys = 0
 
-nmap ]c <Plug>GitGutterNextHunk
-nmap [c <Plug>GitGutterPrevHunk
-nmap <leader>hs <Plug>GitGutterStageHunk
-nmap <leader>hu <Plug>GitGutterUndoHunk
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
+nmap <leader>hs <Plug>(GitGutterStageHunk)
+nmap <leader>hu <Plug>(GitGutterUndoHunk)
 " }}}
 
 " closer {{{
