@@ -32,6 +32,7 @@ Plug 'markonm/traces.vim'
 " language
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
+Plug 'fatih/vim-go'
 
 " git
 Plug 'tpope/vim-fugitive'
