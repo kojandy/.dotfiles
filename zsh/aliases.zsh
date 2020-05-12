@@ -50,23 +50,6 @@ alias gsb='git status -sb'
 alias gsta='git stash push'
 alias gstp='git stash pop'
 
-# docker-compose
-alias dcb='docker-compose build'
-alias dcdn='docker-compose down'
-alias dce='docker-compose exec'
-alias dcl='docker-compose logs'
-alias dclf='docker-compose logs -f'
-alias dco=docker-compose
-alias dcps='docker-compose ps'
-alias dcpull='docker-compose pull'
-alias dcr='docker-compose run'
-alias dcrestart='docker-compose restart'
-alias dcrm='docker-compose rm'
-alias dcstart='docker-compose start'
-alias dcstop='docker-compose stop'
-alias dcup='docker-compose up'
-alias dcupd='docker-compose up -d'
-
 # i am so cuet
 alias claer='clear'
 alias clera='clear'
