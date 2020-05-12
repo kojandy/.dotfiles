@@ -14,6 +14,8 @@ alias e='emacsclient -t'
 alias ec='emacsclient -nc'
 
 # python
+alias python='python3'
+alias pip='pip3'
 alias venv='[ ! -d venv ] && python3 -m venv venv; . venv/bin/activate'
 
 # git
