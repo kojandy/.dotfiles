@@ -15,5 +15,3 @@
     rewrite-author = !$DOTFILES/bin/git-rewrite-author
 [fetch]
     prune = true
-[commit]
-    gpgsign = true
