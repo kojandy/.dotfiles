@@ -49,7 +49,8 @@ Plug 'maximbaz/lightline-trailing-whitespace'
 " Plug 'koirand/tokyo-metro.vim', { 'commit': '59527e4' }
 " Plug 'phanviet/vim-monokai-pro'
 " Plug 'tomasiser/vim-code-dark'
-Plug 'cocopon/iceberg.vim'
+" Plug 'cocopon/iceberg.vim'
+Plug 'rafalbromirski/vim-aurora'
 call plug#end()
 " }}}
 
@@ -116,7 +117,10 @@ autocmd InsertEnter * set nolist
 autocmd InsertLeave * set list
 
 syntax on
-silent! colorscheme iceberg
+
+set termguicolors
+set background=dark
+silent! colorscheme aurora
 
 if has('mouse')
     set mouse=a
