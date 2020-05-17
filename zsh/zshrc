@@ -16,6 +16,9 @@ unsetopt AUTO_CD
 disable r
 zstyle ':completion:*' menu select
 
+bindkey "^P" history-search-backward
+bindkey "^N" history-search-forward
+
 KEYTIMEOUT=25
 
 [ -z "$DOTFILES" ] && source ~/.profile
