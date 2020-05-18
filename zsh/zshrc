@@ -24,6 +24,6 @@ KEYTIMEOUT=25
 [ -z "$DOTFILES" ] && source ~/.profile
 
 source $DOTFILES/zsh/aliases.zsh
-[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
+source $DOTFILES/zsh/p10k.zsh
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
