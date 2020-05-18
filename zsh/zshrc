@@ -9,6 +9,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/cargo
 
     zgen load zsh-users/zsh-completions
+    zgen load zsh-users/zsh-syntax-highlighting . feature/redrawhook
 
     zgen save
 fi
