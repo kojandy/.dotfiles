@@ -349,5 +349,13 @@ map g/ <Plug>(incsearch-stay)
 let g:tex_flavor = 'latex'
 let g:polyglot_disabled = ['latex']
 " }}}
+
+" vim-go {{{
+let g:go_code_completion_enabled = 0
+let g:go_def_mapping_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
+let g:go_gopls_enabled = 0
+let g:go_template_autocreate = 0
+" }}}
 " }}}
 " vim:fdm=marker
