@@ -37,7 +37,6 @@ Plug 'fatih/vim-go'
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'alexdavid/vim-min-git-status', { 'on': 'Gministatus' }
 
 " statusbar
 Plug 'itchyny/lightline.vim'
@@ -165,7 +164,7 @@ let g:user_emmet_leader_key='<C-e>'
 " }}}
 
 " git-fugitive {{{
-nmap <silent> <leader>gs :Gministatus<CR>
+nmap <silent> <leader>gs :Git<CR>
 nmap <silent> <leader>gc :Gcommit --verbose<CR>
 nmap <silent> <leader>gr :Gread<CR>
 nmap <silent> <leader>gw :Gwrite<CR>
