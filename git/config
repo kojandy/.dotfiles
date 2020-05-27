@@ -11,7 +11,5 @@
 [merge]
     conflictstyle = diff3
     ff = false
-[alias]
-    rewrite-author = !$DOTFILES/bin/git-rewrite-author
 [fetch]
     prune = true
