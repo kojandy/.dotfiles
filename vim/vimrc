@@ -189,6 +189,9 @@ xnoremap > >gv
 " readline-style key bindings
 cnoremap <C-a> <Home>
 
+" escape terminal insert mode with esc
+tnoremap <ESC> <C-\><C-n>
+
 " play with numbers
 nnoremap + <C-a>
 nnoremap - <C-x>
