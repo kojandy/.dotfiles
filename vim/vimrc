@@ -167,7 +167,8 @@ function! s:command_alias(from, to)
                 \ . '? "' . a:to . '" : "' . a:from . '"'
 endfunction
 
-call s:command_alias("W", "w")
+call s:command_alias("w", "update")
+call s:command_alias("W", "update")
 
 silent! command WW execute 'silent! write !sudo tee % >/dev/null' | edit!
 
