@@ -96,9 +96,9 @@ Plug 'markonm/traces.vim'
 
 " language {{{
 Plug 'sheerun/vim-polyglot'
+    let g:polyglot_disabled = ['latex']
 Plug 'lervag/vimtex'
     let g:tex_flavor = 'latex'
-    let g:polyglot_disabled = ['latex']
 Plug 'fatih/vim-go'
     let g:go_code_completion_enabled = 0
     let g:go_def_mapping_enabled = 0
