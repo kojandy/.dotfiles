@@ -39,8 +39,6 @@ Plug 'haya14busa/incsearch.vim'
 " }}}
 
 " autocomplete / format / edit {{{
-Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
-    let g:user_emmet_leader_key='<C-e>'
 Plug 'rstacruz/vim-closer'
     autocmd FileType kotlin
                 \ let b:closer=1 |
