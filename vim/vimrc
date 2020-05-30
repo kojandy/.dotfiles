@@ -43,10 +43,6 @@ Plug 'chaoren/vim-wordmotion'
 " }}}
 
 " autocomplete / format / edit {{{
-Plug 'rstacruz/vim-closer'
-    autocmd FileType kotlin
-                \ let b:closer=1 |
-                \ let b:closer_flags='([{'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/sideways.vim'
     nmap <silent> [a :SidewaysJumpLeft<CR>
@@ -88,6 +84,8 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
+" Plug 'cohama/lexima.vim'
 " Plug 'SirVer/ultisnips'
 " }}}
 
