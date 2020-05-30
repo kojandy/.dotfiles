@@ -160,20 +160,22 @@ nnoremap Q <Nop>
 nnoremap <SPACE> <Nop>
 xnoremap <SPACE> <Nop>
 
-" annoying
 function! s:command_alias(from, to)
     exec 'cnoreabbrev <expr> ' . a:from
                 \ . ' getcmdtype() == ":" && getcmdline() == "' . a:from . '"'
                 \ . '? "' . a:to . '" : "' . a:from . '"'
 endfunction
 
+" do not :write but :update the file
 call s:command_alias("w", "update")
+" annoying
 call s:command_alias("W", "update")
-
+" write file with privilege
 silent! command WW execute 'silent! write !sudo tee % >/dev/null' | edit!
 
 nnoremap Y y$
 
+" move lines
 vnoremap <silent> <C-k> :move-2<cr>gv
 vnoremap <silent> <C-j> :move'>+<cr>gv
 vnoremap <silent> <C-h> <gv
@@ -181,6 +183,7 @@ vnoremap <silent> <C-l> >gv
 vnoremap < <gv
 vnoremap > >gv
 
+" play with numbers
 nnoremap + <C-a>
 nnoremap - <C-x>
 " }}}
