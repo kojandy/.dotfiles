@@ -90,6 +90,7 @@ Plug 'tpope/vim-repeat'
 " visual {{{
 " Plug 'Yggdroot/indentLine'
 Plug 'markonm/traces.vim'
+Plug 'psliwka/vim-smoothie'
 " }}}
 
 " language {{{
