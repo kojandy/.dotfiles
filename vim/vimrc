@@ -127,7 +127,6 @@ Plug 'airblade/vim-gitgutter'
 
 " statusbar {{{
 Plug 'itchyny/lightline.vim'
-Plug 'mgee/lightline-bufferline'
 Plug 'maximbaz/lightline-trailing-whitespace'
 " }}}
 
@@ -197,7 +196,6 @@ set nowrap
 set scrolloff=3
 set laststatus=2
 set noshowmode
-set showtabline=2
 set showcmd
 set number
 set relativenumber
@@ -274,8 +272,6 @@ let s:p={
             \ }
             \ }
 silent! let g:lightline#colorscheme#custom#palette=lightline#colorscheme#fill(s:p)
-let g:lightline#bufferline#show_number=1
-let g:lightline#bufferline#min_buffer_count=2
 let g:lightline#trailing_whitespace#indicator='•'
 let g:lightline={
             \ 'colorscheme': 'custom',
@@ -283,7 +279,6 @@ let g:lightline={
             \   'lineinfo': "%{line('.') . '/' . line('$')}",
             \ },
             \ 'component_expand': {
-            \   'buffers': 'lightline#bufferline#buffers',
             \   'trailing': 'lightline#trailing_whitespace#component',
             \ },
             \ 'component_type': {
@@ -306,7 +301,6 @@ let g:lightline={
             \   "\<C-s>": 'S',
             \   't': 'T'
             \ },
-            \ 'tabline': {'left': [['buffers']], 'right': [[]]},
             \ 'active': {
             \   'left': [
             \       ['mode', 'paste'],
