@@ -178,8 +178,6 @@ vnoremap > >gv
 
 nnoremap + <C-a>
 nnoremap - <C-x>
-
-nnoremap <silent> <CR> :noh<CR>
 " }}}
 
 " autocmd {{{
