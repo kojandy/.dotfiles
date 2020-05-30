@@ -176,12 +176,12 @@ silent! command WW execute 'silent! write !sudo tee % >/dev/null' | edit!
 nnoremap Y y$
 
 " move lines
-vnoremap <silent> <C-k> :move-2<cr>gv
-vnoremap <silent> <C-j> :move'>+<cr>gv
-vnoremap <silent> <C-h> <gv
-vnoremap <silent> <C-l> >gv
-vnoremap < <gv
-vnoremap > >gv
+xnoremap <silent> <C-k> :move-2<cr>gv
+xnoremap <silent> <C-j> :move'>+<cr>gv
+xnoremap <silent> <C-h> <gv
+xnoremap <silent> <C-l> >gv
+xnoremap < <gv
+xnoremap > >gv
 
 " play with numbers
 nnoremap + <C-a>
