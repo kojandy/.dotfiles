@@ -1,3 +1,5 @@
+let mapleader=' '
+
 " plug {{{
 if empty(glob("~/.vim/autoload/plug.vim"))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -6,20 +8,80 @@ endif
 call plug#begin()
 " find / navigate
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+    let NERDTreeIgnore=['\.pyc$']
+    let g:NERDTreeDirArrowExpandable='+'
+    let g:NERDTreeDirArrowCollapsible='-'
+    let g:NERDTreeQuitOnOpen=1
+    let g:NERDTreeMinimalUI=1
+
+    nmap <silent> <C-n> :NERDTreeToggle<CR>
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+    nmap <silent> <leader>uu :UndotreeToggle<CR>:UndotreeFocus<CR>
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+    nmap <silent> <leader>ff :Files<CR>
+    nmap <silent> <leader>fb :Buffers<CR>
+    nmap <silent> <leader>fl :BLines<CR>
+    nmap <leader>fr :Rg<Space>
+    nmap <silent> <leader>ft :BTags<CR>
+    nmap <silent> <leader>fT :Tags<CR>
+    nmap <silent> <leader>fh :History<CR>
+    nmap <silent> <leader>f: :History:<CR>
+    nmap <silent> <leader>f/ :History/<CR>
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+    nmap <silent> <leader>tt :TagbarToggle<CR>
 Plug 'tmhedberg/matchit'
 Plug 'haya14busa/incsearch.vim'
+    map / <Plug>(incsearch-forward)
+    map ? <Plug>(incsearch-backward)
+    map g/ <Plug>(incsearch-stay)
 
 " autocomplete / format / edit
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
+    let g:user_emmet_leader_key='<C-e>'
 Plug 'rstacruz/vim-closer'
+    autocmd FileType kotlin
+                \ let b:closer=1 |
+                \ let b:closer_flags='([{'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/sideways.vim'
+    nmap <silent> [a :SidewaysJumpLeft<CR>
+    nmap <silent> ]a :SidewaysJumpRight<CR>
+    nmap <silent> [A :SidewaysLeft<CR>
+    nmap <silent> ]A :SidewaysRight<CR>
+    omap aa <Plug>SidewaysArgumentTextobjA
+    xmap aa <Plug>SidewaysArgumentTextobjA
+    omap ia <Plug>SidewaysArgumentTextobjI
+    xmap ia <Plug>SidewaysArgumentTextobjI
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+    function! s:show_documentation()
+        if (index(['vim','help'], &filetype) >= 0)
+            execute 'h '.expand('<cword>')
+        else
+            call CocAction('doHover')
+        endif
+    endfunction
+
+    inoremap <silent> <expr> <TAB>
+                \ pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ coc#refresh()
+    inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+    nmap <silent> [d <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]d <Plug>(coc-diagnostic-next)
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gr <Plug>(coc-references)
+    nmap <leader>ca <Plug>(coc-codeaction)
+    nmap <leader>cf <Plug>(coc-format)
+    nmap <leader>cr <Plug>(coc-rename)
+    nmap <silent> <leader>cd :CocList diagnostics<CR>
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -32,11 +94,33 @@ Plug 'markonm/traces.vim'
 " language
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
+    let g:tex_flavor = 'latex'
+    let g:polyglot_disabled = ['latex']
 Plug 'fatih/vim-go'
+    let g:go_code_completion_enabled = 0
+    let g:go_def_mapping_enabled = 0
+    let g:go_doc_keywordprg_enabled = 0
+    let g:go_gopls_enabled = 0
+    let g:go_template_autocreate = 0
 
 " git
 Plug 'tpope/vim-fugitive'
+    nmap <silent> <leader>gs :Git<CR>
+    nmap <silent> <leader>gc :Gcommit --verbose<CR>
+    nmap <silent> <leader>gr :Gread<CR>
+    nmap <silent> <leader>gw :Gwrite<CR>
+    nmap <silent> <leader>ge :Gedit<CR>
+    nmap <silent> <leader>gd :Gdiff<CR>
+    nmap <silent> <leader>gb :Gblame<CR>
+    nmap <silent> <leader>gp :Gpush<CR>
+    nmap <silent> <leader>gl :Gpull<CR>
 Plug 'airblade/vim-gitgutter'
+    let g:gitgutter_map_keys = 0
+
+    nmap ]c <Plug>(GitGutterNextHunk)
+    nmap [c <Plug>(GitGutterPrevHunk)
+    nmap <leader>hs <Plug>(GitGutterStageHunk)
+    nmap <leader>hu <Plug>(GitGutterUndoHunk)
 
 " statusbar
 Plug 'itchyny/lightline.vim'
@@ -65,8 +149,6 @@ set ttimeoutlen=10
 set encoding=utf-8
 
 " keymap {{{
-let mapleader="\<SPACE>"
-
 " no I don't need you
 nnoremap q: <Nop>
 nnoremap Q <Nop>
@@ -142,79 +224,6 @@ set expandtab
 set ignorecase
 set smartcase
 " }}}
-" }}}
-
-" plugin settings {{{
-" nerdtree {{{
-let NERDTreeIgnore=['\.pyc$']
-let g:NERDTreeDirArrowExpandable='+'
-let g:NERDTreeDirArrowCollapsible='-'
-let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeMinimalUI=1
-
-nmap <silent> <C-n> :NERDTreeToggle<CR>
-" }}}
-
-" undotree {{{
-nmap <silent> <leader>uu :UndotreeToggle<CR>:UndotreeFocus<CR>
-" }}}
-
-" emmet-vim {{{
-let g:user_emmet_leader_key='<C-e>'
-" }}}
-
-" git-fugitive {{{
-nmap <silent> <leader>gs :Git<CR>
-nmap <silent> <leader>gc :Gcommit --verbose<CR>
-nmap <silent> <leader>gr :Gread<CR>
-nmap <silent> <leader>gw :Gwrite<CR>
-nmap <silent> <leader>ge :Gedit<CR>
-nmap <silent> <leader>gd :Gdiff<CR>
-nmap <silent> <leader>gb :Gblame<CR>
-nmap <silent> <leader>gp :Gpush<CR>
-nmap <silent> <leader>gl :Gpull<CR>
-" }}}
-
-" fzf.vim {{{
-nmap <silent> <leader>ff :Files<CR>
-nmap <silent> <leader>fb :Buffers<CR>
-nmap <silent> <leader>fl :BLines<CR>
-nmap <leader>fr :Rg<Space>
-nmap <silent> <leader>ft :BTags<CR>
-nmap <silent> <leader>fT :Tags<CR>
-nmap <silent> <leader>fh :History<CR>
-nmap <silent> <leader>f: :History:<CR>
-nmap <silent> <leader>f/ :History/<CR>
-" }}}
-
-" tagbar {{{
-nmap <silent> <leader>tt :TagbarToggle<CR>
-" }}}
-
-" gitgutter {{{
-let g:gitgutter_map_keys = 0
-
-nmap ]c <Plug>(GitGutterNextHunk)
-nmap [c <Plug>(GitGutterPrevHunk)
-nmap <leader>hs <Plug>(GitGutterStageHunk)
-nmap <leader>hu <Plug>(GitGutterUndoHunk)
-" }}}
-
-" closer {{{
-autocmd FileType kotlin
-            \ let b:closer=1 |
-            \ let b:closer_flags='([{'
-" }}}
-
-" sideways {{{
-nmap <silent> [a :SidewaysJumpLeft<CR>
-nmap <silent> ]a :SidewaysJumpRight<CR>
-nmap <silent> [A :SidewaysLeft<CR>
-nmap <silent> ]A :SidewaysRight<CR>
-omap aa <Plug>SidewaysArgumentTextobjA
-xmap aa <Plug>SidewaysArgumentTextobjA
-omap ia <Plug>SidewaysArgumentTextobjI
-xmap ia <Plug>SidewaysArgumentTextobjI
 " }}}
 
 " lightline {{{
@@ -303,59 +312,5 @@ let g:lightline={
             \   'right': [['lineinfo']]
             \ }
             \ }
-" }}}
-
-" coc.nvim {{{
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocAction('doHover')
-    endif
-endfunction
-
-inoremap <silent> <expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-nmap <silent> [d <Plug>(coc-diagnostic-prev)
-nmap <silent> ]d <Plug>(coc-diagnostic-next)
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-
-nmap <leader>ca <Plug>(coc-codeaction)
-nmap <leader>cf <Plug>(coc-format)
-nmap <leader>cr <Plug>(coc-rename)
-nmap <silent> <leader>cd :CocList diagnostics<CR>
-" }}}
-
-" incsearch.vim {{{
-map / <Plug>(incsearch-forward)
-map ? <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-" }}}
-
-" vimtex {{{
-let g:tex_flavor = 'latex'
-let g:polyglot_disabled = ['latex']
-" }}}
-
-" vim-go {{{
-let g:go_code_completion_enabled = 0
-let g:go_def_mapping_enabled = 0
-let g:go_doc_keywordprg_enabled = 0
-let g:go_gopls_enabled = 0
-let g:go_template_autocreate = 0
-" }}}
 " }}}
 " vim:fdm=marker
