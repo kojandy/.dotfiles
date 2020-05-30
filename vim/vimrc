@@ -6,7 +6,7 @@ if empty(glob("~/.vim/autoload/plug.vim"))
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 call plug#begin()
-" find / navigate
+" find / navigate {{{
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     let NERDTreeIgnore=['\.pyc$']
     let g:NERDTreeDirArrowExpandable='+'
@@ -36,8 +36,9 @@ Plug 'haya14busa/incsearch.vim'
     map / <Plug>(incsearch-forward)
     map ? <Plug>(incsearch-backward)
     map g/ <Plug>(incsearch-stay)
+" }}}
 
-" autocomplete / format / edit
+" autocomplete / format / edit {{{
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
     let g:user_emmet_leader_key='<C-e>'
 Plug 'rstacruz/vim-closer'
@@ -86,12 +87,14 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 " Plug 'SirVer/ultisnips'
+" }}}
 
-" visual
+" visual {{{
 " Plug 'Yggdroot/indentLine'
 Plug 'markonm/traces.vim'
+" }}}
 
-" language
+" language {{{
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
     let g:tex_flavor = 'latex'
@@ -102,8 +105,9 @@ Plug 'fatih/vim-go'
     let g:go_doc_keywordprg_enabled = 0
     let g:go_gopls_enabled = 0
     let g:go_template_autocreate = 0
+" }}}
 
-" git
+" git {{{
 Plug 'tpope/vim-fugitive'
     nmap <silent> <leader>gs :Git<CR>
     nmap <silent> <leader>gc :Gcommit --verbose<CR>
@@ -121,19 +125,22 @@ Plug 'airblade/vim-gitgutter'
     nmap [c <Plug>(GitGutterPrevHunk)
     nmap <leader>hs <Plug>(GitGutterStageHunk)
     nmap <leader>hu <Plug>(GitGutterUndoHunk)
+" }}}
 
-" statusbar
+" statusbar {{{
 Plug 'itchyny/lightline.vim'
 Plug 'mgee/lightline-bufferline'
 Plug 'maximbaz/lightline-trailing-whitespace'
+" }}}
 
-" colorscheme
+" colorscheme {{{
 " Plug 'nanotech/jellybeans.vim'
 " Plug 'koirand/tokyo-metro.vim', { 'commit': '59527e4' }
 " Plug 'phanviet/vim-monokai-pro'
 " Plug 'tomasiser/vim-code-dark'
 " Plug 'cocopon/iceberg.vim'
 Plug 'rafalbromirski/vim-aurora'
+" }}}
 call plug#end()
 " }}}
 
