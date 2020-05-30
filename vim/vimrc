@@ -128,6 +128,7 @@ Plug 'airblade/vim-gitgutter'
     nmap [c <Plug>(GitGutterPrevHunk)
     nmap <leader>hs <Plug>(GitGutterStageHunk)
     nmap <leader>hu <Plug>(GitGutterUndoHunk)
+Plug 'rhysd/conflict-marker.vim'
 " }}}
 
 " statusbar {{{
