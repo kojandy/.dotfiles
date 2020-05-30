@@ -182,6 +182,9 @@ xnoremap <silent> <C-l> >gv
 xnoremap < <gv
 xnoremap > >gv
 
+" readline-style key bindings
+cnoremap <C-a> <Home>
+
 " play with numbers
 nnoremap + <C-a>
 nnoremap - <C-x>
