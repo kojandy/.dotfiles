@@ -13,7 +13,5 @@
     ff = false
 [fetch]
     prune = true
-[alias]
-	wip = !(git checkout wip || git checkout -b wip) && git add --all && git commit -m "[WIP]" && git push -u origin wip
 [credential]
 	helper = cache --timeout=3600
