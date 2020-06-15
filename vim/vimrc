@@ -89,8 +89,9 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'jiangmiao/auto-pairs'
-" Plug 'cohama/lexima.vim'
+Plug 'cohama/lexima.vim'
+    let g:lexima_enable_basic_rules=0
+" Plug 'jiangmiao/auto-pairs'
 " Plug 'SirVer/ultisnips'
 " }}}
 
