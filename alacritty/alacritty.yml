@@ -12,6 +12,11 @@ colors:
   primary:
     background: '#1d1f21'
     foreground: '#c5c8c6'
+  cursor:
+    cursor: '#c5c8c6'
+  selection:
+    text: '#1d1f21'
+    background: '#c5c8c6'
   normal:
     black: '#282a2e'
     red: '#a54242'
