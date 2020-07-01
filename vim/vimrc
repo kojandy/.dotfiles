@@ -228,6 +228,7 @@ syntax on
 set termguicolors
 set background=dark
 silent! colorscheme aurora
+set t_ut=
 
 if has('mouse')
     set mouse=a
