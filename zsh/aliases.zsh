@@ -55,7 +55,7 @@ alias gsb='git status -sb'
 alias gsta='git stash push'
 alias gstp='git stash pop'
 alias gwip='git checkout wip || git checkout -b wip && git add --all && git commit -m "[WIP]" && git push -u origin wip'
-alias gunwip='git merge --squash --ff wip && git branch -d wip && git push origin :wip && git reset'
+alias gunwip='git branch wip origin/wip && git merge --squash --ff wip && git branch -d wip && git push origin :wip && git reset'
 
 # i am so cuet
 alias claer='clear'
