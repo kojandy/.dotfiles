@@ -27,6 +27,7 @@ zstyle ':completion:*:descriptions' format '%F{yellow}%B* %d%b%f'
 bindkey "^P" history-search-backward
 bindkey "^N" history-search-forward
 bindkey "^U" push-line
+bindkey "^?" backward-delete-char
 
 KEYTIMEOUT=25
 
