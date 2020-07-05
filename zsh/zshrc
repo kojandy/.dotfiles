@@ -28,6 +28,7 @@ bindkey "^P" history-search-backward
 bindkey "^N" history-search-forward
 bindkey "^U" push-line
 bindkey "^?" backward-delete-char
+bindkey -rM vicmd ":"
 
 KEYTIMEOUT=25
 
