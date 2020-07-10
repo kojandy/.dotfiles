@@ -37,7 +37,6 @@ Plug 'christoomey/vim-tmux-navigator'
     tnoremap <silent> <C-l> <C-w>:TmuxNavigateRight<CR>
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
     nmap <silent> <leader>tt :TagbarToggle<CR>
-Plug 'tmhedberg/matchit'
 Plug 'haya14busa/incsearch.vim'
     map / <Plug>(incsearch-forward)
     map ? <Plug>(incsearch-backward)
@@ -99,7 +98,6 @@ Plug 'cohama/lexima.vim'
 
 " visual {{{
 " Plug 'Yggdroot/indentLine'
-Plug 'markonm/traces.vim'
 Plug 'psliwka/vim-smoothie'
 " }}}
 
@@ -155,14 +153,7 @@ call plug#end()
 
 " general {{{
 set hidden
-set autoread
-set updatetime=100
-set wildmenu
 set wildmode=longest:full,full
-set wildignore+=*.swp,*.pyc,*.zip,venv,.git,*.class
-set backspace=indent,eol,start
-set ttimeoutlen=10
-set encoding=utf-8
 
 " keymap {{{
 " no I don't need you
@@ -214,44 +205,32 @@ autocmd FileType * set formatoptions-=c fo-=r fo-=o " disable comment continuati
 " ui {{{
 set nowrap
 set scrolloff=3
-set laststatus=2
 set noshowmode
-set showcmd
 set number
 set cursorline
 
-set listchars=tab:»\ ,trail:·,nbsp:·
 set list
 autocmd InsertEnter * set nolist
 autocmd InsertLeave * set list
 
-syntax on
-
 set termguicolors
-set background=dark
-silent! colorscheme aurora
-set t_ut=
+colorscheme aurora
 
 if has('mouse')
     set mouse=a
 endif
-
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
 " }}}
 
 " indent and tab {{{
-filetype indent plugin on
-set autoindent
 set shiftwidth=4
 set tabstop=4
-set softtabstop=4
 set expandtab
 " }}}
 
 " search {{{
 set ignorecase
 set smartcase
+set inccommand=nosplit
 " }}}
 " }}}
 
@@ -291,7 +270,7 @@ let s:p={
             \   'right': [['gray9', 'gray3']]
             \ }
             \ }
-silent! let g:lightline#colorscheme#custom#palette=lightline#colorscheme#fill(s:p)
+let g:lightline#colorscheme#custom#palette=lightline#colorscheme#fill(s:p)
 let g:lightline#trailing_whitespace#indicator='•'
 let g:lightline={
             \ 'colorscheme': 'custom',
