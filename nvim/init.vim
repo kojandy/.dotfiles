@@ -30,11 +30,6 @@ Plug 'junegunn/fzf.vim'
     nmap <silent> <leader>fh :History<CR>
     nmap <silent> <leader>f: :History:<CR>
     nmap <silent> <leader>f/ :History/<CR>
-Plug 'christoomey/vim-tmux-navigator'
-    tnoremap <silent> <C-h> <C-w>:TmuxNavigateLeft<CR>
-    tnoremap <silent> <C-j> <C-w>:TmuxNavigateDown<CR>
-    tnoremap <silent> <C-k> <C-w>:TmuxNavigateUp<CR>
-    tnoremap <silent> <C-l> <C-w>:TmuxNavigateRight<CR>
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
     nmap <silent> <leader>tt :TagbarToggle<CR>
 Plug 'airblade/vim-rooter'
