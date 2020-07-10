@@ -18,6 +18,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
     nmap <silent> <leader>uu :UndotreeToggle<CR>:UndotreeFocus<CR>
 Plug 'junegunn/fzf'
+    let $FZF_DEFAULT_OPTS = '--reverse'
+    let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5 } }
 Plug 'junegunn/fzf.vim'
     nmap <silent> <leader>ff :Files<CR>
     nmap <silent> <leader>fb :Buffers<CR>
