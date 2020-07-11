@@ -16,11 +16,6 @@ alias md='mkdir -p'
 # vim
 alias vi='vim'
 
-# emacs
-alias emad='emacs --daemon'
-alias e='emacsclient -t'
-alias ec='emacsclient -nc'
-
 # python
 alias python='python3'
 alias pip='pip3'

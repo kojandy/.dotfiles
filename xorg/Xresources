@@ -14,8 +14,6 @@ URxvt.perl-ext-common:
 rofi.dpi: 220
 rofi.theme: DarkBlue
 
-Emacs.useXIM: false
-
 ! special
 *.foreground:   #c5c8c6
 *.background:   #1d1f21

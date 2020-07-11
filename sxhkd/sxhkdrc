@@ -75,9 +75,6 @@ super + slash
 super + shift + w
     $BROWSER
 
-super + shift + e
-    emacsclient -c
-
 super + shift + f
     thunar
 

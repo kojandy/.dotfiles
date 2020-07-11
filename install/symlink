@@ -66,7 +66,3 @@ if [ -x "$(command -v ranger)" ]; then
     ln -si "$DOTFILES/ranger/rc.conf" "$XDG_CONFIG_HOME/ranger/rc.conf"
     ln -si "$DOTFILES/ranger/plugins/autojump.py" "$XDG_CONFIG_HOME/ranger/plugins/autojump.py"
 fi
-
-if [ -x "$(command -v emacs)" ]; then
-    ln -si "$DOTFILES/emacs/spacemacs" ~/.spacemacs
-fi
