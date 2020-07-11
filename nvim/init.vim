@@ -19,17 +19,17 @@ Plug 'junegunn/fzf'
     let $FZF_DEFAULT_OPTS='--reverse'
     let g:fzf_layout={'window': {'width': 0.8, 'height': 0.5}}
 Plug 'junegunn/fzf.vim'
-    nmap <silent> <leader>ff :Files<CR>
-    nmap <silent> <leader>fb :Buffers<CR>
-    nmap <silent> <leader>fl :BLines<CR>
-    nmap <leader>fr :Rg<Space>
-    nmap <silent> <leader>ft :BTags<CR>
-    nmap <silent> <leader>fT :Tags<CR>
-    nmap <silent> <leader>fh :History<CR>
-    nmap <silent> <leader>f: :History:<CR>
-    nmap <silent> <leader>f/ :History/<CR>
+    nmap <silent> <Leader>ff :Files<CR>
+    nmap <silent> <Leader>fb :Buffers<CR>
+    nmap <silent> <Leader>fl :BLines<CR>
+    nmap <Leader>fr :Rg<Space>
+    nmap <silent> <Leader>ft :BTags<CR>
+    nmap <silent> <Leader>fT :Tags<CR>
+    nmap <silent> <Leader>fh :History<CR>
+    nmap <silent> <Leader>f: :History:<CR>
+    nmap <silent> <Leader>f/ :History/<CR>
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-    nmap <silent> <leader>tt :TagbarToggle<CR>
+    nmap <silent> <Leader>tt :TagbarToggle<CR>
 Plug 'airblade/vim-rooter'
     let g:rooter_use_lcd=1
     let g:rooter_silent_chdir=1
@@ -53,20 +53,20 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
         endif
     endfunction
 
-    inoremap <silent> <expr> <TAB>
+    inoremap <silent> <expr> <Tab>
                 \ pumvisible() ? "\<C-n>" :
-                \ <SID>check_back_space() ? "\<TAB>" :
+                \ <SID>check_back_space() ? "\<Tab>" :
                 \ coc#refresh()
-    inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
     nnoremap <silent> K :call <SID>show_documentation()<CR>
     nmap <silent> [d <Plug>(coc-diagnostic-prev)
     nmap <silent> ]d <Plug>(coc-diagnostic-next)
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gr <Plug>(coc-references)
-    nmap <leader>ca <Plug>(coc-codeaction)
-    nmap <leader>cf <Plug>(coc-format)
-    nmap <leader>cr <Plug>(coc-rename)
-    nmap <silent> <leader>cd :CocList diagnostics<CR>
+    nmap <Leader>ca <Plug>(coc-codeaction)
+    nmap <Leader>cf <Plug>(coc-format)
+    nmap <Leader>cr <Plug>(coc-rename)
+    nmap <silent> <Leader>cd :CocList diagnostics<CR>
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -98,19 +98,19 @@ Plug 'fatih/vim-go'
 
 " git {{{
 Plug 'tpope/vim-fugitive'
-    nmap <silent> <leader>gs :Git<CR>
-    nmap <silent> <leader>gc :Gcommit --verbose<CR>
-    nmap <silent> <leader>gr :Gread<CR>
-    nmap <silent> <leader>gw :Gwrite<CR>
-    nmap <silent> <leader>ge :Gedit<CR>
-    nmap <silent> <leader>gd :Gdiff<CR>
-    nmap <silent> <leader>gb :Gblame<CR>
-    nmap <silent> <leader>gp :Gpush<CR>
-    nmap <silent> <leader>gl :Gpull<CR>
+    nmap <silent> <Leader>gs :Git<CR>
+    nmap <silent> <Leader>gc :Gcommit --verbose<CR>
+    nmap <silent> <Leader>gr :Gread<CR>
+    nmap <silent> <Leader>gw :Gwrite<CR>
+    nmap <silent> <Leader>ge :Gedit<CR>
+    nmap <silent> <Leader>gd :Gdiff<CR>
+    nmap <silent> <Leader>gb :Gblame<CR>
+    nmap <silent> <Leader>gp :Gpush<CR>
+    nmap <silent> <Leader>gl :Gpull<CR>
 Plug 'mhinz/vim-signify'
     let g:signify_sign_change='~'
-    nmap <leader>hs <Cmd>SignifyHunkDiff<CR>
-    nmap <leader>hu <Cmd>SignifyHunkUndo<CR>
+    nmap <Leader>hs <Cmd>SignifyHunkDiff<CR>
+    nmap <Leader>hu <Cmd>SignifyHunkUndo<CR>
 Plug 'rhysd/conflict-marker.vim'
 " }}}
 
@@ -139,8 +139,8 @@ set updatetime=100
 " no I don't need you
 nnoremap q: <Nop>
 nnoremap Q <Nop>
-nnoremap <SPACE> <Nop>
-xnoremap <SPACE> <Nop>
+nnoremap <Space> <Nop>
+xnoremap <Space> <Nop>
 
 function! s:command_alias(from, to)
     exec 'cnoreabbrev <expr> ' . a:from
@@ -158,8 +158,8 @@ silent! command WW execute 'silent! write !sudo tee % >/dev/null' | edit!
 nnoremap Y y$
 
 " move lines
-xnoremap <silent> <C-k> :move-2<cr>gv
-xnoremap <silent> <C-j> :move'>+<cr>gv
+xnoremap <silent> <C-k> :move-2<CR>gv
+xnoremap <silent> <C-j> :move'>+<CR>gv
 xnoremap <silent> <C-h> <gv
 xnoremap <silent> <C-l> >gv
 xnoremap < <gv
@@ -175,7 +175,7 @@ nnoremap - <C-x>
 " ?ie; entire object
 " https://github.com/junegunn/dotfiles/blob/master/vimrc
 xnoremap <silent> ie gg0oG$
-onoremap <silent> ie :<C-U>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
+onoremap <silent> ie :<C-u>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
 " }}}
 
 " autocmd {{{
