@@ -1,11 +1,11 @@
 let mapleader=' '
 
 " plug {{{
-if empty(glob("~/.vim/autoload/plug.vim"))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
+if empty(glob(stdpath('data') . '/site/autoload/plug.vim'))
+    silent !sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-call plug#begin()
+call plug#begin(stdpath('data') . '/plugged')
 " find / navigate {{{
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     let NERDTreeIgnore=['\.pyc$']
@@ -18,6 +18,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
     nmap <silent> <leader>uu :UndotreeToggle<CR>:UndotreeFocus<CR>
 Plug 'junegunn/fzf'
+    let $FZF_DEFAULT_OPTS = '--reverse'
+    let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5 } }
 Plug 'junegunn/fzf.vim'
     nmap <silent> <leader>ff :Files<CR>
     nmap <silent> <leader>fb :Buffers<CR>
@@ -35,11 +37,6 @@ Plug 'christoomey/vim-tmux-navigator'
     tnoremap <silent> <C-l> <C-w>:TmuxNavigateRight<CR>
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
     nmap <silent> <leader>tt :TagbarToggle<CR>
-Plug 'tmhedberg/matchit'
-Plug 'haya14busa/incsearch.vim'
-    map / <Plug>(incsearch-forward)
-    map ? <Plug>(incsearch-backward)
-    map g/ <Plug>(incsearch-stay)
 Plug 'airblade/vim-rooter'
     let g:rooter_use_lcd = 1
     let g:rooter_silent_chdir = 1
@@ -97,8 +94,8 @@ Plug 'cohama/lexima.vim'
 
 " visual {{{
 " Plug 'Yggdroot/indentLine'
-Plug 'markonm/traces.vim'
 Plug 'psliwka/vim-smoothie'
+Plug 'romainl/vim-cool'
 " }}}
 
 " language {{{
@@ -153,14 +150,7 @@ call plug#end()
 
 " general {{{
 set hidden
-set autoread
-set updatetime=100
-set wildmenu
 set wildmode=longest:full,full
-set wildignore+=*.swp,*.pyc,*.zip,venv,.git,*.class
-set backspace=indent,eol,start
-set ttimeoutlen=10
-set encoding=utf-8
 
 " keymap {{{
 " no I don't need you
@@ -212,44 +202,32 @@ autocmd FileType * set formatoptions-=c fo-=r fo-=o " disable comment continuati
 " ui {{{
 set nowrap
 set scrolloff=3
-set laststatus=2
 set noshowmode
-set showcmd
 set number
 set cursorline
 
-set listchars=tab:»\ ,trail:·,nbsp:·
 set list
 autocmd InsertEnter * set nolist
 autocmd InsertLeave * set list
 
-syntax on
-
 set termguicolors
-set background=dark
-silent! colorscheme aurora
-set t_ut=
+colorscheme aurora
 
 if has('mouse')
     set mouse=a
 endif
-
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
 " }}}
 
 " indent and tab {{{
-filetype indent plugin on
-set autoindent
 set shiftwidth=4
 set tabstop=4
-set softtabstop=4
 set expandtab
 " }}}
 
 " search {{{
 set ignorecase
 set smartcase
+set inccommand=nosplit
 " }}}
 " }}}
 
@@ -289,7 +267,7 @@ let s:p={
             \   'right': [['gray9', 'gray3']]
             \ }
             \ }
-silent! let g:lightline#colorscheme#custom#palette=lightline#colorscheme#fill(s:p)
+let g:lightline#colorscheme#custom#palette=lightline#colorscheme#fill(s:p)
 let g:lightline#trailing_whitespace#indicator='•'
 let g:lightline={
             \ 'colorscheme': 'custom',
