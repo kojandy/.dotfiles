@@ -172,18 +172,17 @@ nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 
+" vim-unimpaired
+nnoremap [ow <Cmd>set wrap<CR>
+nnoremap ]ow <Cmd>set nowrap<CR>
+
 " ?ie; entire object
 " https://github.com/junegunn/dotfiles/blob/master/vimrc
 xnoremap <silent> ie gg0oG$
 onoremap <silent> ie :<C-u>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
 " }}}
 
-" autocmd {{{
-autocmd FileType * set formatoptions-=c fo-=r fo-=o " disable comment continuation
-" }}}
-
 " ui {{{
-set nowrap
 set scrolloff=3
 set noshowmode
 set number
@@ -201,10 +200,19 @@ if has('mouse')
 endif
 " }}}
 
-" indent and tab {{{
+" format / edit / wrap {{{
 set shiftwidth=4
 set tabstop=4
 set expandtab
+
+set nowrap
+set linebreak
+set breakindent
+set breakindentopt=shift:2
+let &showbreak='\ '
+
+" disable comment continuation
+autocmd FileType * set formatoptions-=c fo-=r fo-=o
 " }}}
 
 " search {{{
