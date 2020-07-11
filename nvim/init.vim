@@ -166,6 +166,12 @@ cnoremap <C-a> <Home>
 nnoremap + <C-a>
 nnoremap - <C-x>
 
+" easy move with splits
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+
 " ?ie; entire object
 " https://github.com/junegunn/dotfiles/blob/master/vimrc
 xnoremap <silent> ie gg0oG$
