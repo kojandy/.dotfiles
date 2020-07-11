@@ -15,8 +15,6 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
     let g:NERDTreeMinimalUI=1
 
     nmap <silent> <C-n> :NERDTreeToggle<CR>
-Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
-    nmap <silent> <leader>uu :UndotreeToggle<CR>:UndotreeFocus<CR>
 Plug 'junegunn/fzf'
     let $FZF_DEFAULT_OPTS='--reverse'
     let g:fzf_layout={'window': {'width': 0.8, 'height': 0.5}}
