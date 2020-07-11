@@ -39,15 +39,6 @@ Plug 'chaoren/vim-wordmotion'
 
 " autocomplete / format / edit {{{
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'AndrewRadev/sideways.vim'
-    nmap <silent> [a :SidewaysJumpLeft<CR>
-    nmap <silent> ]a :SidewaysJumpRight<CR>
-    nmap <silent> [A :SidewaysLeft<CR>
-    nmap <silent> ]A :SidewaysRight<CR>
-    omap aa <Plug>SidewaysArgumentTextobjA
-    xmap aa <Plug>SidewaysArgumentTextobjA
-    omap ia <Plug>SidewaysArgumentTextobjI
-    xmap ia <Plug>SidewaysArgumentTextobjI
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
     function! s:check_back_space() abort
         let col = col('.') - 1
@@ -81,6 +72,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'cohama/lexima.vim'
     let g:lexima_enable_basic_rules=0
+Plug 'wellle/targets.vim'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'SirVer/ultisnips'
 " }}}
