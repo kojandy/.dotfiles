@@ -7,7 +7,7 @@ if empty(glob(stdpath('data') . '/site/autoload/plug.vim'))
 endif
 call plug#begin(stdpath('data') . '/plugged')
 " find / navigate {{{
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
     let NERDTreeIgnore=['\.pyc$']
     let g:NERDTreeDirArrowExpandable='+'
     let g:NERDTreeDirArrowCollapsible='-'
@@ -15,11 +15,11 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     let g:NERDTreeMinimalUI=1
 
     nmap <silent> <C-n> :NERDTreeToggle<CR>
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
     nmap <silent> <leader>uu :UndotreeToggle<CR>:UndotreeFocus<CR>
 Plug 'junegunn/fzf'
-    let $FZF_DEFAULT_OPTS = '--reverse'
-    let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5 } }
+    let $FZF_DEFAULT_OPTS='--reverse'
+    let g:fzf_layout={'window': {'width': 0.8, 'height': 0.5}}
 Plug 'junegunn/fzf.vim'
     nmap <silent> <leader>ff :Files<CR>
     nmap <silent> <leader>fb :Buffers<CR>
@@ -30,13 +30,13 @@ Plug 'junegunn/fzf.vim'
     nmap <silent> <leader>fh :History<CR>
     nmap <silent> <leader>f: :History:<CR>
     nmap <silent> <leader>f/ :History/<CR>
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
     nmap <silent> <leader>tt :TagbarToggle<CR>
 Plug 'airblade/vim-rooter'
-    let g:rooter_use_lcd = 1
-    let g:rooter_silent_chdir = 1
+    let g:rooter_use_lcd=1
+    let g:rooter_silent_chdir=1
 Plug 'chaoren/vim-wordmotion'
-    let g:wordmotion_prefix = '<Leader>'
+    let g:wordmotion_prefix='<Leader>'
 " }}}
 
 " autocomplete / format / edit {{{
@@ -50,7 +50,7 @@ Plug 'AndrewRadev/sideways.vim'
     xmap aa <Plug>SidewaysArgumentTextobjA
     omap ia <Plug>SidewaysArgumentTextobjI
     xmap ia <Plug>SidewaysArgumentTextobjI
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
     function! s:check_back_space() abort
         let col = col('.') - 1
         return !col || getline('.')[col - 1]  =~# '\s'
@@ -95,15 +95,15 @@ Plug 'romainl/vim-cool'
 
 " language {{{
 Plug 'sheerun/vim-polyglot'
-    let g:polyglot_disabled = ['latex']
+    let g:polyglot_disabled=['latex']
 Plug 'lervag/vimtex'
-    let g:tex_flavor = 'latex'
+    let g:tex_flavor='latex'
 Plug 'fatih/vim-go'
-    let g:go_code_completion_enabled = 0
-    let g:go_def_mapping_enabled = 0
-    let g:go_doc_keywordprg_enabled = 0
-    let g:go_gopls_enabled = 0
-    let g:go_template_autocreate = 0
+    let g:go_code_completion_enabled=0
+    let g:go_def_mapping_enabled=0
+    let g:go_doc_keywordprg_enabled=0
+    let g:go_gopls_enabled=0
+    let g:go_template_autocreate=0
 " }}}
 
 " git {{{
@@ -118,7 +118,7 @@ Plug 'tpope/vim-fugitive'
     nmap <silent> <leader>gp :Gpush<CR>
     nmap <silent> <leader>gl :Gpull<CR>
 Plug 'airblade/vim-gitgutter'
-    let g:gitgutter_map_keys = 0
+    let g:gitgutter_map_keys=0
 
     nmap ]c <Plug>(GitGutterNextHunk)
     nmap [c <Plug>(GitGutterPrevHunk)
@@ -134,7 +134,7 @@ Plug 'maximbaz/lightline-trailing-whitespace'
 
 " colorscheme {{{
 " Plug 'nanotech/jellybeans.vim'
-" Plug 'koirand/tokyo-metro.vim', { 'commit': '59527e4' }
+" Plug 'koirand/tokyo-metro.vim', {'commit': '59527e4'}
 " Plug 'phanviet/vim-monokai-pro'
 " Plug 'tomasiser/vim-code-dark'
 " Plug 'cocopon/iceberg.vim'
