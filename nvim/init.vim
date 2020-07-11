@@ -107,13 +107,10 @@ Plug 'tpope/vim-fugitive'
     nmap <silent> <leader>gb :Gblame<CR>
     nmap <silent> <leader>gp :Gpush<CR>
     nmap <silent> <leader>gl :Gpull<CR>
-Plug 'airblade/vim-gitgutter'
-    let g:gitgutter_map_keys=0
-
-    nmap ]c <Plug>(GitGutterNextHunk)
-    nmap [c <Plug>(GitGutterPrevHunk)
-    nmap <leader>hs <Plug>(GitGutterStageHunk)
-    nmap <leader>hu <Plug>(GitGutterUndoHunk)
+Plug 'mhinz/vim-signify'
+    let g:signify_sign_change='~'
+    nmap <leader>hs <Cmd>SignifyHunkDiff<CR>
+    nmap <leader>hu <Cmd>SignifyHunkUndo<CR>
 Plug 'rhysd/conflict-marker.vim'
 " }}}
 
@@ -136,6 +133,7 @@ call plug#end()
 " general {{{
 set hidden
 set wildmode=longest:full,full
+set updatetime=100
 
 " keymap {{{
 " no I don't need you
