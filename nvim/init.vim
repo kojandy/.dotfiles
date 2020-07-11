@@ -37,10 +37,6 @@ Plug 'christoomey/vim-tmux-navigator'
     tnoremap <silent> <C-l> <C-w>:TmuxNavigateRight<CR>
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
     nmap <silent> <leader>tt :TagbarToggle<CR>
-Plug 'haya14busa/incsearch.vim'
-    map / <Plug>(incsearch-forward)
-    map ? <Plug>(incsearch-backward)
-    map g/ <Plug>(incsearch-stay)
 Plug 'airblade/vim-rooter'
     let g:rooter_use_lcd = 1
     let g:rooter_silent_chdir = 1
@@ -99,6 +95,7 @@ Plug 'cohama/lexima.vim'
 " visual {{{
 " Plug 'Yggdroot/indentLine'
 Plug 'psliwka/vim-smoothie'
+Plug 'romainl/vim-cool'
 " }}}
 
 " language {{{
