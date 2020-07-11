@@ -97,7 +97,7 @@ Plug 'tpope/vim-fugitive'
     nmap <Leader>gr <Cmd>Gread<CR>
     nmap <Leader>gw <Cmd>Gwrite<CR>
     nmap <Leader>ge <Cmd>Gedit<CR>
-    nmap <Leader>gd <Cmd>Gdiff<CR>
+    nmap <Leader>gd <Cmd>vertical Gdiff<CR>
     nmap <Leader>gb <Cmd>Gblame<CR>
     nmap <Leader>gp <Cmd>Gpush<CR>
     nmap <Leader>gl <Cmd>Gpull<CR>
