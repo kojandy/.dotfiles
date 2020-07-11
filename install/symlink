@@ -1,8 +1,9 @@
 #!/bin/sh
 ln -si "$DOTFILES/profile" ~/.profile
 
-if [ -x "$(command -v vim)" ]; then
-    ln -si "$DOTFILES/vim/vimrc" ~/.vimrc
+if [ -x "$(command -v nvim)" ]; then
+    mkdir -p "$XDG_CONFIG_HOME/nvim/init.vim"
+    ln -si "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim/init.vim"
 fi
 
 if [ -x "$(command -v zsh)" ]; then

@@ -14,7 +14,7 @@ alias ls='ls --color=tty'
 alias md='mkdir -p'
 
 # vim
-alias vi='vim'
+alias vi='nvim'
 
 # python
 alias python='python3'

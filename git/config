@@ -2,8 +2,6 @@
     email = dev@kojandy.com
     name = Ohjun Kwon
     signingkey = dev@kojandy.com
-[core]
-    editor = vim
 [push]
     default = simple
 [pull]
@@ -14,4 +12,4 @@
 [fetch]
     prune = true
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
