@@ -184,6 +184,7 @@ onoremap <silent> ie :<C-u>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
 
 " ui {{{
 set scrolloff=3
+set sidescroll=0
 set noshowmode
 set number
 set cursorline
@@ -195,9 +196,7 @@ autocmd InsertLeave * set list
 set termguicolors
 colorscheme aurora
 
-if has('mouse')
-    set mouse=a
-endif
+set mouse=a
 " }}}
 
 " format / edit / wrap {{{
