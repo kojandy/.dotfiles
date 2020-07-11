@@ -14,22 +14,22 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
     let g:NERDTreeQuitOnOpen=1
     let g:NERDTreeMinimalUI=1
 
-    nmap <silent> <C-n> :NERDTreeToggle<CR>
+    nmap <C-n> <Cmd>NERDTreeToggle<CR>
 Plug 'junegunn/fzf'
     let $FZF_DEFAULT_OPTS='--reverse'
     let g:fzf_layout={'window': {'width': 0.8, 'height': 0.5}}
 Plug 'junegunn/fzf.vim'
-    nmap <silent> <Leader>ff :Files<CR>
-    nmap <silent> <Leader>fb :Buffers<CR>
-    nmap <silent> <Leader>fl :BLines<CR>
+    nmap <Leader>ff <Cmd>Files<CR>
+    nmap <Leader>fb <Cmd>Buffers<CR>
+    nmap <Leader>fl <Cmd>BLines<CR>
     nmap <Leader>fr :Rg<Space>
-    nmap <silent> <Leader>ft :BTags<CR>
-    nmap <silent> <Leader>fT :Tags<CR>
-    nmap <silent> <Leader>fh :History<CR>
-    nmap <silent> <Leader>f: :History:<CR>
-    nmap <silent> <Leader>f/ :History/<CR>
+    nmap <Leader>ft <Cmd>BTags<CR>
+    nmap <Leader>fT <Cmd>Tags<CR>
+    nmap <Leader>fh <Cmd>History<CR>
+    nmap <Leader>f: <Cmd>History:<CR>
+    nmap <Leader>f/ <Cmd>History/<CR>
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-    nmap <silent> <Leader>tt :TagbarToggle<CR>
+    nmap <Leader>tt <Cmd>TagbarToggle<CR>
 Plug 'airblade/vim-rooter'
     let g:rooter_use_lcd=1
     let g:rooter_silent_chdir=1
@@ -58,7 +58,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
                 \ <SID>check_back_space() ? "\<Tab>" :
                 \ coc#refresh()
     inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
-    nnoremap <silent> K :call <SID>show_documentation()<CR>
+    nnoremap K <Cmd>call <SID>show_documentation()<CR>
     nmap <silent> [d <Plug>(coc-diagnostic-prev)
     nmap <silent> ]d <Plug>(coc-diagnostic-next)
     nmap <silent> gd <Plug>(coc-definition)
@@ -66,7 +66,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     nmap <Leader>ca <Plug>(coc-codeaction)
     nmap <Leader>cf <Plug>(coc-format)
     nmap <Leader>cr <Plug>(coc-rename)
-    nmap <silent> <Leader>cd :CocList diagnostics<CR>
+    nmap <Leader>cd <Cmd>CocList diagnostics<CR>
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -92,15 +92,15 @@ Plug 'lervag/vimtex'
 
 " git {{{
 Plug 'tpope/vim-fugitive'
-    nmap <silent> <Leader>gs :Git<CR>
-    nmap <silent> <Leader>gc :Gcommit --verbose<CR>
-    nmap <silent> <Leader>gr :Gread<CR>
-    nmap <silent> <Leader>gw :Gwrite<CR>
-    nmap <silent> <Leader>ge :Gedit<CR>
-    nmap <silent> <Leader>gd :Gdiff<CR>
-    nmap <silent> <Leader>gb :Gblame<CR>
-    nmap <silent> <Leader>gp :Gpush<CR>
-    nmap <silent> <Leader>gl :Gpull<CR>
+    nmap <Leader>gs <Cmd>Git<CR>
+    nmap <Leader>gc <Cmd>Gcommit --verbose<CR>
+    nmap <Leader>gr <Cmd>Gread<CR>
+    nmap <Leader>gw <Cmd>Gwrite<CR>
+    nmap <Leader>ge <Cmd>Gedit<CR>
+    nmap <Leader>gd <Cmd>Gdiff<CR>
+    nmap <Leader>gb <Cmd>Gblame<CR>
+    nmap <Leader>gp <Cmd>Gpush<CR>
+    nmap <Leader>gl <Cmd>Gpull<CR>
 Plug 'mhinz/vim-signify'
     let g:signify_sign_change='~'
     nmap <Leader>hs <Cmd>SignifyHunkDiff<CR>
