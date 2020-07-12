@@ -16,7 +16,10 @@ fi
 [ -z "$DOTFILES" ] && source "$HOME/.profile"
 
 KEYTIMEOUT=25
+SAVEHIST=10000
+HISTFILE=$HOME/.zsh_history
 
+setopt extended_history
 disable r
 
 bindkey -v
