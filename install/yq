@@ -1,6 +1,0 @@
-#!/bin/sh
-[ -z "$DOTFILES" ] && echo "DOTFILES not set" && exit 1
-url="https://github.com/mikefarah/yq/releases/download/2.3.0/yq_$(uname -s)_amd64"
-target="$DOTFILES/bin/yq"
-curl -L "$url" -o "$target"
-chmod +x "$target"
