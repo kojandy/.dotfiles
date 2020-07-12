@@ -7,7 +7,7 @@ export VISUAL=nvim
 export EDITOR=$VISUAL
 export PAGER=less
 export MANPAGER='nvim +Man!'
-export TERMINAL=urxvt
+export TERMINAL=kitty
 export BROWSER=google-chrome-stable
 
 export PATH="$HOME/go/bin:$PATH"
