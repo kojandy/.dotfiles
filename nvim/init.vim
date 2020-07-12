@@ -207,8 +207,7 @@ set expandtab
 set nowrap
 set linebreak
 set breakindent
-set breakindentopt=shift:2
-let &showbreak='\ '
+set showbreak=↳
 
 " disable comment continuation
 autocmd FileType * set formatoptions-=c fo-=r fo-=o
