@@ -1,13 +1,10 @@
 export DOTFILES="$HOME/.dotfiles"
-export PATH="$DOTFILES/bin:$PATH"
-
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$DOTFILES/bin:$HOME/go/bin:$PATH"
 
-export VISUAL=nvim
-export EDITOR=$VISUAL
+export EDITOR=nvim
+export VISUAL=$EDITOR
 export PAGER=less
 export MANPAGER='nvim +Man!'
 export TERMINAL=kitty
 export BROWSER=google-chrome-stable
-
-export PATH="$HOME/go/bin:$PATH"
