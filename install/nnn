@@ -1,0 +1,4 @@
+#!/bin/sh
+URL=$(curl -fsSL https://api.github.com/repos/jarun/nnn/releases/latest | grep 'static' | grep 'download' | sed 's/.*": "\(.*\)"/\1/')
+curl -L# "$URL" | tar -xz -C "$DOTFILES/bin"
+mv "$DOTFILES/bin/nnn-static" "$DOTFILES/bin/nnn"
