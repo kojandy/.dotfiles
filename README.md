@@ -1,10 +1,5 @@
 # kojandy's dotfiles
 
-## Try
-```sh
-docker run -it --rm kojandy/dotfiles
-```
-
 ## Installation
 ### Install
 ```sh
