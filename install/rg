@@ -1,3 +1,3 @@
 #!/bin/sh
 URL=$(curl -fsSL https://api.github.com/repos/BurntSushi/ripgrep/releases/latest | grep 'musl' | grep 'download' | sed 's/.*": "\(.*\)"/\1/')
-curl -L# "$URL" | tar -xz -C "$DOTFILES/bin" --strip-components=1 "$(echo "$URL" | sed 's#.*/\(.*\).tar.gz$#\1#')/rg"
+curl -L "$URL" | tar -xz -C "$DOTFILES/bin" --strip-components=1 "$(echo "$URL" | sed 's#.*/\(.*\).tar.gz$#\1#')/rg"
