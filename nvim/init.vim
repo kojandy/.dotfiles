@@ -129,6 +129,64 @@ set hidden
 set wildmode=longest:full,full
 set updatetime=100
 
+" ui {{{
+set scrolloff=3
+set sidescroll=0
+set noshowmode
+set number
+set cursorline
+set splitbelow
+set splitright
+
+set list
+autocmd InsertEnter * set nolist
+autocmd InsertLeave * set list
+
+set termguicolors
+colorscheme aurora
+
+set mouse=a
+" }}}
+
+" search {{{
+set ignorecase
+set smartcase
+set inccommand=nosplit
+" }}}
+
+" format / edit / wrap {{{
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
+set nowrap
+set linebreak
+set breakindent
+set showbreak=↳
+
+" disable comment continuation
+autocmd FileType * set formatoptions-=c fo-=r fo-=o
+" }}}
+
+" terminal {{{
+let g:terminal_color_0="#282a2e"
+let g:terminal_color_8="#373b41"
+let g:terminal_color_1="#a54242"
+let g:terminal_color_9="#cc6666"
+let g:terminal_color_2="#8c9440"
+let g:terminal_color_10="#b5bd68"
+let g:terminal_color_3="#de935f"
+let g:terminal_color_11="#f0c674"
+let g:terminal_color_4="#5f819d"
+let g:terminal_color_12="#81a2be"
+let g:terminal_color_5="#85678f"
+let g:terminal_color_13="#b294bb"
+let g:terminal_color_6="#5e8d87"
+let g:terminal_color_14="#8abeb7"
+let g:terminal_color_7="#707880"
+let g:terminal_color_15="#c5c8c6"
+" }}}
+
 " keymap {{{
 " no I don't need you
 nnoremap q: <Nop>
@@ -180,64 +238,6 @@ nnoremap ]ow <Cmd>set nowrap<CR>
 " https://github.com/junegunn/dotfiles/blob/master/vimrc
 xnoremap <silent> ie gg0oG$
 onoremap <silent> ie :<C-u>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
-" }}}
-
-" ui {{{
-set scrolloff=3
-set sidescroll=0
-set noshowmode
-set number
-set cursorline
-set splitbelow
-set splitright
-
-set list
-autocmd InsertEnter * set nolist
-autocmd InsertLeave * set list
-
-set termguicolors
-colorscheme aurora
-
-set mouse=a
-" }}}
-
-" terminal {{{
-let g:terminal_color_0="#282a2e"
-let g:terminal_color_8="#373b41"
-let g:terminal_color_1="#a54242"
-let g:terminal_color_9="#cc6666"
-let g:terminal_color_2="#8c9440"
-let g:terminal_color_10="#b5bd68"
-let g:terminal_color_3="#de935f"
-let g:terminal_color_11="#f0c674"
-let g:terminal_color_4="#5f819d"
-let g:terminal_color_12="#81a2be"
-let g:terminal_color_5="#85678f"
-let g:terminal_color_13="#b294bb"
-let g:terminal_color_6="#5e8d87"
-let g:terminal_color_14="#8abeb7"
-let g:terminal_color_7="#707880"
-let g:terminal_color_15="#c5c8c6"
-" }}}
-
-" format / edit / wrap {{{
-set shiftwidth=4
-set tabstop=4
-set expandtab
-
-set nowrap
-set linebreak
-set breakindent
-set showbreak=↳
-
-" disable comment continuation
-autocmd FileType * set formatoptions-=c fo-=r fo-=o
-" }}}
-
-" search {{{
-set ignorecase
-set smartcase
-set inccommand=nosplit
 " }}}
 " }}}
 
