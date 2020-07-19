@@ -33,8 +33,6 @@ Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'airblade/vim-rooter'
     let g:rooter_use_lcd=1
     let g:rooter_silent_chdir=1
-Plug 'chaoren/vim-wordmotion'
-    let g:wordmotion_prefix='<Leader>'
 " }}}
 
 " autocomplete / format / edit {{{
@@ -72,6 +70,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'cohama/lexima.vim'
     let g:lexima_enable_basic_rules=0
+Plug 'chaoren/vim-wordmotion'
+    let g:wordmotion_prefix='<Leader>'
 Plug 'wellle/targets.vim'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'SirVer/ultisnips'
