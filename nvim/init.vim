@@ -7,14 +7,6 @@ if empty(glob(stdpath('data') . '/site/autoload/plug.vim'))
 endif
 call plug#begin(stdpath('data') . '/plugged')
 " find / navigate {{{
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-    let NERDTreeIgnore=['\.pyc$']
-    let g:NERDTreeDirArrowExpandable='+'
-    let g:NERDTreeDirArrowCollapsible='-'
-    let g:NERDTreeQuitOnOpen=1
-    let g:NERDTreeMinimalUI=1
-
-    nmap <C-N> <Cmd>NERDTreeToggle<CR>
 Plug 'junegunn/fzf'
     let $FZF_DEFAULT_OPTS='--reverse'
     let g:fzf_layout={'window': {'width': 0.8, 'height': 0.5}}
@@ -144,6 +136,8 @@ set termguicolors
 colorscheme aurora
 
 set mouse=a
+
+let g:netrw_banner=0
 " }}}
 
 " search {{{
