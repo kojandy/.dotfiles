@@ -14,7 +14,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
     let g:NERDTreeQuitOnOpen=1
     let g:NERDTreeMinimalUI=1
 
-    nmap <C-n> <Cmd>NERDTreeToggle<CR>
+    nmap <C-N> <Cmd>NERDTreeToggle<CR>
 Plug 'junegunn/fzf'
     let $FZF_DEFAULT_OPTS='--reverse'
     let g:fzf_layout={'window': {'width': 0.8, 'height': 0.5}}
@@ -54,10 +54,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     endfunction
 
     inoremap <silent> <expr> <Tab>
-                \ pumvisible() ? "\<C-n>" :
+                \ pumvisible() ? "\<C-N>" :
                 \ <SID>check_back_space() ? "\<Tab>" :
                 \ coc#refresh()
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<C-H>"
     nnoremap K <Cmd>call <SID>show_documentation()<CR>
     nmap <silent> [d <Plug>(coc-diagnostic-prev)
     nmap <silent> ]d <Plug>(coc-diagnostic-next)
@@ -246,8 +246,8 @@ function! MonkeyTerminalExec(cmd)
   wincmd p
 endfunction
 
-nnoremap <C-z> <Cmd>call MonkeyTerminalToggle()<CR>
-tnoremap <C-z> <Cmd>call MonkeyTerminalToggle()<CR>
+nnoremap <C-Z> <Cmd>call MonkeyTerminalToggle()<CR>
+tnoremap <C-Z> <Cmd>call MonkeyTerminalToggle()<CR>
 " }}}
 " }}}
 
@@ -274,25 +274,25 @@ silent! command WW execute 'silent! write !sudo tee % >/dev/null' | edit!
 nnoremap Y y$
 
 " move lines
-xnoremap <silent> <C-k> :move-2<CR>gv
-xnoremap <silent> <C-j> :move'>+<CR>gv
-xnoremap <silent> <C-h> <gv
-xnoremap <silent> <C-l> >gv
+xnoremap <silent> <C-K> :move-2<CR>gv
+xnoremap <silent> <C-J> :move'>+<CR>gv
+xnoremap <silent> <C-H> <gv
+xnoremap <silent> <C-L> >gv
 xnoremap < <gv
 xnoremap > >gv
 
 " readline-style key bindings
-cnoremap <C-a> <Home>
+cnoremap <C-A> <Home>
 
 " play with numbers
-nnoremap + <C-a>
-nnoremap - <C-x>
+nnoremap + <C-A>
+nnoremap - <C-X>
 
 " easy move with splits
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
 
 " vim-unimpaired
 nnoremap [ow <Cmd>set wrap<CR>
@@ -301,7 +301,7 @@ nnoremap ]ow <Cmd>set nowrap<CR>
 " ?ie; entire object
 " https://github.com/junegunn/dotfiles/blob/master/vimrc
 xnoremap <silent> ie gg0oG$
-onoremap <silent> ie :<C-u>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
+onoremap <silent> ie :<C-U>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
 " }}}
 " }}}
 
@@ -364,11 +364,11 @@ let g:lightline={
             \   'R': 'R',
             \   'v': 'V',
             \   'V': 'V',
-            \   "\<C-v>": 'V',
+            \   "\<C-V>": 'V',
             \   'c': 'C',
             \   's': 'S',
             \   'S': 'S',
-            \   "\<C-s>": 'S',
+            \   "\<C-S>": 'S',
             \   't': 'T'
             \ },
             \ 'active': {
