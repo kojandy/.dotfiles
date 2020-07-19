@@ -135,8 +135,6 @@ set sidescroll=0
 set noshowmode
 set number
 set cursorline
-set splitbelow
-set splitright
 
 set list
 autocmd InsertEnter * set nolist
