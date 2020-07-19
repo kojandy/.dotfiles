@@ -240,8 +240,8 @@ function! MonkeyTerminalExec(cmd)
   wincmd p
 endfunction
 
-nnoremap <C-Z> <Cmd>call MonkeyTerminalToggle()<CR>
-tnoremap <C-Z> <Cmd>call MonkeyTerminalToggle()<CR>
+nnoremap <C-N> <Cmd>call MonkeyTerminalToggle()<CR>
+tnoremap <C-N> <Cmd>call MonkeyTerminalToggle()<CR>
 " }}}
 " }}}
 
