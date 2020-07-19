@@ -1,0 +1,3 @@
+#!/bin/sh
+URL=$(curl -fsSL https://api.github.com/repos/gokcehan/lf/releases/latest | grep download | grep amd64 | grep "$(uname -s | tr '[:upper:]' '[:lower:]')" | sed 's/.*": "\(.*\)"/\1/')
+curl -L "$URL" | tar -xz -C "$DOTFILES/bin"
