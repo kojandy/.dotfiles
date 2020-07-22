@@ -79,7 +79,6 @@ Plug 'romainl/vim-cool'
 Plug 'sheerun/vim-polyglot'
     let g:polyglot_disabled=['latex']
 Plug 'lervag/vimtex'
-    let g:tex_flavor='latex'
 " }}}
 
 " git {{{
@@ -158,6 +157,10 @@ set showbreak=↳
 
 " disable comment continuation
 autocmd FileType * set formatoptions-=c fo-=r fo-=o
+" }}}
+
+" language {{{
+let g:tex_flavor='latex'
 " }}}
 
 " terminal {{{
