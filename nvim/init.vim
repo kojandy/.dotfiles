@@ -23,7 +23,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
     nmap <Leader>tt <Cmd>TagbarToggle<CR>
 Plug 'airblade/vim-rooter'
-    let g:rooter_use_lcd=1
+    let g:rooter_cd_cmd="lcd"
     let g:rooter_silent_chdir=1
 " }}}
 
