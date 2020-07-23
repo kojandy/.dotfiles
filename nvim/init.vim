@@ -63,12 +63,9 @@ Plug 'tpope/vim-repeat'
 Plug 'chaoren/vim-wordmotion'
     let g:wordmotion_prefix='<Leader>'
 Plug 'wellle/targets.vim'
-" Plug 'jiangmiao/auto-pairs'
-" Plug 'SirVer/ultisnips'
 " }}}
 
 " visual {{{
-" Plug 'Yggdroot/indentLine'
 Plug 'psliwka/vim-smoothie'
 Plug 'romainl/vim-cool'
 " }}}
