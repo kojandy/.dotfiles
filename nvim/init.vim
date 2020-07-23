@@ -60,8 +60,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'cohama/lexima.vim'
-    let g:lexima_enable_basic_rules=0
 Plug 'chaoren/vim-wordmotion'
     let g:wordmotion_prefix='<Leader>'
 Plug 'wellle/targets.vim'
