@@ -63,6 +63,8 @@ Plug 'tpope/vim-repeat'
 Plug 'chaoren/vim-wordmotion'
     let g:wordmotion_prefix='<Leader>'
 Plug 'wellle/targets.vim'
+Plug 'cohama/lexima.vim'
+    let g:lexima_enable_basic_rules=0
 " }}}
 
 " visual {{{
