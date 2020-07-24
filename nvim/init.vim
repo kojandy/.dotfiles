@@ -283,10 +283,14 @@ nnoremap + <C-A>
 nnoremap - <C-X>
 
 " easy move with splits
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <Cmd>wincmd h<CR>
+nnoremap <C-J> <Cmd>wincmd j<CR>
+nnoremap <C-K> <Cmd>wincmd k<CR>
+nnoremap <C-L> <Cmd>wincmd l<CR>
+tnoremap <C-H> <Cmd>wincmd h<CR>
+tnoremap <C-J> <Cmd>wincmd j<CR>
+tnoremap <C-K> <Cmd>wincmd k<CR>
+tnoremap <C-L> <Cmd>wincmd l<CR>
 
 " vim-unimpaired
 nnoremap [ow <Cmd>set wrap<CR>
