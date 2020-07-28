@@ -19,12 +19,16 @@ HISTFILE=$HOME/.zsh_history
 setopt extended_history
 disable r
 
+autoload -Uz edit-command-line
+zle -N edit-command-line
+
 bindkey -v
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
 bindkey '^U' push-line
 bindkey '^?' backward-delete-char
 bindkey -rM vicmd ':'
+bindkey -M vicmd v edit-command-line
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
