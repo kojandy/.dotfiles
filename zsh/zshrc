@@ -29,7 +29,7 @@ zle -N edit-command-line
 bindkey -v
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
-bindkey '^U' push-line
+bindkey '^K' push-line
 bindkey '^?' backward-delete-char
 bindkey -rM vicmd ':'
 bindkey -M vicmd v edit-command-line
