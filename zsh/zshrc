@@ -12,7 +12,7 @@ fi
 
 [ -z "$DOTFILES" ] && source "$HOME/.profile"
 
-KEYTIMEOUT=25
+KEYTIMEOUT=1
 SAVEHIST=10000
 HISTFILE=$HOME/.zsh_history
 
