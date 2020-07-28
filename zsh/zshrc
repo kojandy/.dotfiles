@@ -48,6 +48,5 @@ zstyle ':completion:*:descriptions' format '%F{yellow}%B* %d%b%f'
 
 source "$DOTFILES/zsh/aliases.zsh"
 source "$DOTFILES/zsh/p10k.zsh"
-source "$DOTFILES/zsh/cursor_mode.zsh"
 
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
