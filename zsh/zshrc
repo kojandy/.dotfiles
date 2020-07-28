@@ -5,6 +5,7 @@ if ! zgen saved; then
     zgen load agkozak/zsh-z
     zgen load zsh-users/zsh-completions
     zgen load zsh-users/zsh-syntax-highlighting . feature/redrawhook
+    zgen load kojandy/zsh-bd
 
     zgen save
 fi

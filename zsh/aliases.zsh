@@ -1,10 +1,5 @@
 # directories
 alias -- -='cd -'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
 
 alias l='ls -lah'
 alias la='ls -lAh'
