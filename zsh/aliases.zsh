@@ -4,11 +4,8 @@ alias -- -='cd -'
 alias d='dirs -v'
 
 alias l='ls -lah'
-alias la='ls -lAh'
-alias ll='ls -lh'
 alias ls='ls --color=tty'
 
-alias md='mkdir -p'
 alias cdtemp='cd $(mktemp -d)'
 
 # vim
