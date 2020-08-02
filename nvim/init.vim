@@ -178,9 +178,6 @@ let g:terminal_color_14="#8abeb7"
 let g:terminal_color_7="#707880"
 let g:terminal_color_15="#c5c8c6"
 
-autocmd TermOpen * startinsert
-autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
-
 " monkey terminal {{{
 " See: https://gist.github.com/ram535/b1b7af6cd7769ec0481eb2eed549ea23
 let s:monkey_terminal_window=-1
@@ -205,6 +202,7 @@ function! MonkeyTerminalOpen()
     " The buffer of the terminal won't appear in the list of the buffers
     " when calling :buffers command
     set nobuflisted
+    set nonumber
   else
     if !win_gotoid(s:monkey_terminal_window)
       sp
@@ -215,6 +213,7 @@ function! MonkeyTerminalOpen()
       let s:monkey_terminal_window = win_getid()
     endif
   endif
+  startinsert
 endfunction
 
 function! MonkeyTerminalToggle()
@@ -289,10 +288,7 @@ nnoremap <C-H> <Cmd>wincmd h<CR>
 nnoremap <C-J> <Cmd>wincmd j<CR>
 nnoremap <C-K> <Cmd>wincmd k<CR>
 nnoremap <C-L> <Cmd>wincmd l<CR>
-tnoremap <C-H> <Cmd>wincmd h<CR>
-tnoremap <C-J> <Cmd>wincmd j<CR>
-tnoremap <C-K> <Cmd>wincmd k<CR>
-tnoremap <C-L> <Cmd>wincmd l<CR>
+tnoremap <C-J><C-K> <C-\><C-N>
 
 " vim-unimpaired
 nnoremap [ow <Cmd>set wrap<CR>
