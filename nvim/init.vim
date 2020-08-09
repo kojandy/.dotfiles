@@ -288,7 +288,7 @@ nnoremap <C-H> <Cmd>wincmd h<CR>
 nnoremap <C-J> <Cmd>wincmd j<CR>
 nnoremap <C-K> <Cmd>wincmd k<CR>
 nnoremap <C-L> <Cmd>wincmd l<CR>
-tnoremap <C-J><C-K> <C-\><C-N>
+tnoremap <C-]> <C-\><C-N>
 
 " vim-unimpaired
 nnoremap [ow <Cmd>set wrap<CR>
