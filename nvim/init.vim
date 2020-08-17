@@ -22,9 +22,6 @@ Plug 'junegunn/fzf.vim'
     nmap <Leader>f/ <Cmd>History/<CR>
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
     nmap <Leader>tt <Cmd>TagbarToggle<CR>
-Plug 'airblade/vim-rooter'
-    let g:rooter_cd_cmd="lcd"
-    let g:rooter_silent_chdir=1
 " }}}
 
 " autocomplete / format / edit {{{
