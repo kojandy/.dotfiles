@@ -77,7 +77,6 @@ Plug 'tpope/vim-fugitive'
     nmap <Leader>gc <Cmd>Git commit --verbose<CR>
     nmap <Leader>gr <Cmd>Gread<CR>
     nmap <Leader>gw <Cmd>Gwrite<CR>
-    nmap <Leader>ge <Cmd>Gedit<CR>
     nmap <Leader>gd <Cmd>Gvdiffsplit<CR>
     nmap <Leader>gb <Cmd>Git blame<CR>
     nmap <Leader>gp <Cmd>Git push<CR>
