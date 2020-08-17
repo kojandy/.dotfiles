@@ -44,6 +44,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     nmap <silent> [d <Plug>(coc-diagnostic-prev)
     nmap <silent> ]d <Plug>(coc-diagnostic-next)
     nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gD <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
     nmap <Leader>ca <Plug>(coc-codeaction)
     nmap <Leader>cf <Plug>(coc-format)
