@@ -35,20 +35,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
         return !col || getline('.')[col - 1]  =~# '\s'
     endfunction
 
-    function! s:show_documentation()
-        if (index(['vim','help'], &filetype) >= 0)
-            execute 'h '.expand('<cword>')
-        else
-            call CocAction('doHover')
-        endif
-    endfunction
-
     inoremap <silent> <expr> <Tab>
                 \ pumvisible() ? "\<C-N>" :
                 \ <SID>check_back_space() ? "\<Tab>" :
                 \ coc#refresh()
     inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<C-H>"
-    nnoremap K <Cmd>call <SID>show_documentation()<CR>
+    nnoremap K <Cmd>call CocAction('doHover')<CR>
     nmap <silent> [d <Plug>(coc-diagnostic-prev)
     nmap <silent> ]d <Plug>(coc-diagnostic-next)
     nmap <silent> gd <Plug>(coc-definition)
