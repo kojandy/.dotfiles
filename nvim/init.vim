@@ -84,7 +84,7 @@ Plug 'tpope/vim-fugitive'
     nmap <Leader>gl <Cmd>Gpull<CR>
 Plug 'mhinz/vim-signify'
     let g:signify_sign_change='~'
-    nmap <Leader>hs <Cmd>SignifyHunkDiff<CR>
+    nmap <Leader>hd <Cmd>SignifyHunkDiff<CR>
     nmap <Leader>hu <Cmd>SignifyHunkUndo<CR>
 Plug 'rhysd/conflict-marker.vim'
 " }}}
