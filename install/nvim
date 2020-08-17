@@ -1,4 +1,4 @@
 #!/bin/sh
-URL=$(curl -fsSL https://api.github.com/repos/neovim/neovim/releases/latest | grep 'appimage' | grep -v 'zsync' | grep 'download' | sed 's/.*": "\(.*\)"/\1/')
+URL="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
 curl -L "$URL" -o "$DOTFILES/bin/nvim"
 chmod +x "$DOTFILES/bin/nvim"
