@@ -74,14 +74,14 @@ Plug 'lervag/vimtex'
 " git {{{
 Plug 'tpope/vim-fugitive'
     nmap <Leader>gs <Cmd>Git<CR>
-    nmap <Leader>gc <Cmd>Gcommit --verbose<CR>
+    nmap <Leader>gc <Cmd>Git commit --verbose<CR>
     nmap <Leader>gr <Cmd>Gread<CR>
     nmap <Leader>gw <Cmd>Gwrite<CR>
     nmap <Leader>ge <Cmd>Gedit<CR>
-    nmap <Leader>gd <Cmd>vertical Gdiff<CR>
-    nmap <Leader>gb <Cmd>Gblame<CR>
-    nmap <Leader>gp <Cmd>Gpush<CR>
-    nmap <Leader>gl <Cmd>Gpull<CR>
+    nmap <Leader>gd <Cmd>Gvdiffsplit<CR>
+    nmap <Leader>gb <Cmd>Git blame<CR>
+    nmap <Leader>gp <Cmd>Git push<CR>
+    nmap <Leader>gl <Cmd>Git pull<CR>
 Plug 'mhinz/vim-signify'
     let g:signify_sign_change='~'
     let g:signify_priority=5
