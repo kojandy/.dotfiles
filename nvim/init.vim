@@ -46,9 +46,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gD <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
+    nmap <Leader>= <Plug>(coc-format)
+    nmap <Leader>rn <Plug>(coc-rename)
     nmap <Leader>ca <Plug>(coc-codeaction)
-    nmap <Leader>cf <Plug>(coc-format)
-    nmap <Leader>cr <Plug>(coc-rename)
     nmap <Leader>cd <Cmd>CocList diagnostics<CR>
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
