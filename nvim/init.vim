@@ -86,6 +86,9 @@ Plug 'mhinz/vim-signify'
     let g:signify_sign_change='~'
     nmap <Leader>hd <Cmd>SignifyHunkDiff<CR>
     nmap <Leader>hu <Cmd>SignifyHunkUndo<CR>
+    highlight link SignifySignAdd GitGutterAdd
+    highlight link SignifySignChange GitGutterChange
+    highlight link SignifySignDelete GitGutterDelete
 Plug 'rhysd/conflict-marker.vim'
 " }}}
 
