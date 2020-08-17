@@ -84,6 +84,7 @@ Plug 'tpope/vim-fugitive'
     nmap <Leader>gl <Cmd>Gpull<CR>
 Plug 'mhinz/vim-signify'
     let g:signify_sign_change='~'
+    let g:signify_priority=5
     nmap <Leader>hd <Cmd>SignifyHunkDiff<CR>
     nmap <Leader>hu <Cmd>SignifyHunkUndo<CR>
     highlight link SignifySignAdd GitGutterAdd
@@ -119,6 +120,7 @@ set sidescroll=0
 set noshowmode
 set number
 set cursorline
+set signcolumn=number
 
 set list
 autocmd InsertEnter * set nolist
