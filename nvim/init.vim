@@ -115,9 +115,7 @@ set updatetime=100
 set scrolloff=3
 set sidescroll=0
 set noshowmode
-set number
 set cursorline
-set signcolumn=number
 
 set list
 autocmd InsertEnter * set nolist
