@@ -20,8 +20,11 @@ Plug 'junegunn/fzf.vim'
     nmap <Leader>fh <Cmd>History<CR>
     nmap <Leader>f: <Cmd>History:<CR>
     nmap <Leader>f/ <Cmd>History/<CR>
-Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-    nmap <Leader>tt <Cmd>TagbarToggle<CR>
+Plug 'liuchengxu/vista.vim'
+    let g:vista_default_executive='coc'
+    let g:vista#renderer#enable_icon=0
+    nmap <Leader>ss <Cmd>Vista!!<CR>
+    nmap <Leader>fs <Cmd>Vista finder<CR>
 " }}}
 
 " autocomplete / format / edit {{{
