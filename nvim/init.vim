@@ -7,14 +7,27 @@ if empty(glob(stdpath('data') . '/site/autoload/plug.vim'))
 endif
 call plug#begin(stdpath('data') . '/plugged')
 " find / navigate {{{
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
     let $FZF_DEFAULT_OPTS='--reverse'
     let g:fzf_layout={'window': {'width': 0.8, 'height': 0.5}}
 Plug 'junegunn/fzf.vim'
+    function! RipgrepFzf(query, fullscreen)
+      let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+      let initial_command = printf(command_fmt, shellescape(a:query))
+      let reload_command = printf(command_fmt, '{q}')
+      let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+      call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+    endfunction
+
+    command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
     nmap <Leader>ff <Cmd>Files<CR>
+    nmap <Leader>fg <Cmd>GFiles?<CR>
     nmap <Leader>fb <Cmd>Buffers<CR>
     nmap <Leader>fl <Cmd>BLines<CR>
+    nmap <Leader>fL <Cmd>Lines<CR>
     nmap <Leader>fr :Rg<Space>
+    nmap <Leader>fR <Cmd>RG<CR>
     nmap <Leader>ft <Cmd>BTags<CR>
     nmap <Leader>fT <Cmd>Tags<CR>
     nmap <Leader>fh <Cmd>History<CR>
