@@ -106,11 +106,6 @@ Plug 'mhinz/vim-signify'
 Plug 'rhysd/conflict-marker.vim'
 " }}}
 
-" statusbar {{{
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-trailing-whitespace'
-" }}}
-
 " colorscheme {{{
 " Plug 'nanotech/jellybeans.vim'
 " Plug 'koirand/tokyo-metro.vim', {'commit': '59527e4'}
@@ -308,89 +303,5 @@ nnoremap ]ow <Cmd>set nowrap<CR>
 xnoremap <silent> ie gg0oG$
 onoremap <silent> ie :<C-U>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
 " }}}
-" }}}
-
-" lightline {{{
-let s:p={
-            \ 'normal': {
-            \   'left': [['brightgreen', 'gray2', 'bold'], ['black', 'brightgreen'], ['red', 'white']],
-            \   'middle': [['gray7', 'gray2']],
-            \   'right': [['black', 'gray8']],
-            \   'error': [['white', 'brightestred']],
-            \   'warning': [['black', 'brightorange']]
-            \ },
-            \ 'inactive': {
-            \   'left': [['gray7', 'gray2'], ['black', 'gray9']],
-            \   'middle': [['gray7', 'gray2']],
-            \   'right': []
-            \ },
-            \ 'insert': {
-            \   'left': [['mediumcyan', 'gray2', 'bold'], ['black', 'mediumcyan'], ['red', 'white']],
-            \   'middle': [['mediumcyan', 'darkestblue']],
-            \   'right': [['darkestcyan', 'mediumcyan']]
-            \ },
-            \ 'visual': {
-            \   'left': [['brightorange', 'gray2', 'bold'], ['black', 'brightorange'], ['red', 'white']],
-            \   'middle': [['brightestorange', 'darkred']],
-            \   'right': [['black', 'brightorange']]
-            \ },
-            \ 'replace': {
-            \   'left': [['gray2', 'brightred', 'bold'], ['black', 'mediumcyan'], ['red', 'white']],
-            \   'middle': [['mediumcyan', 'darkestblue']],
-            \   'right': [['darkestcyan', 'mediumcyan']]
-            \ },
-            \ 'tabline': {
-            \   'left': [['gray9', 'gray4']],
-            \   'tabsel': [['gray9', 'gray1']],
-            \   'middle': [['gray2', 'gray8']],
-            \   'right': [['gray9', 'gray3']]
-            \ }
-            \ }
-let g:lightline#colorscheme#custom#palette=lightline#colorscheme#fill(s:p)
-let g:lightline#trailing_whitespace#indicator='•'
-let g:lightline={
-            \ 'colorscheme': 'custom',
-            \ 'component': {
-            \   'lineinfo': "%{line('.') . '/' . line('$')}",
-            \ },
-            \ 'component_expand': {
-            \   'trailing': 'lightline#trailing_whitespace#component',
-            \ },
-            \ 'component_type': {
-            \   'buffers': 'tabsel',
-            \   'trailing': 'warning',
-            \ },
-            \ 'component_function': {
-            \   'gitbranch': 'fugitive#head',
-            \ },
-            \ 'mode_map': {
-            \   'n': 'N',
-            \   'i': 'I',
-            \   'R': 'R',
-            \   'v': 'V',
-            \   'V': 'V',
-            \   "\<C-V>": 'V',
-            \   'c': 'C',
-            \   's': 'S',
-            \   'S': 'S',
-            \   "\<C-S>": 'S',
-            \   't': 'T'
-            \ },
-            \ 'active': {
-            \   'left': [
-            \       ['mode', 'paste'],
-            \       ['gitbranch', 'filename'],
-            \       ['readonly', 'modified']
-            \   ],
-            \   'right': [
-            \       ['trailing', 'lineinfo'],
-            \       ['fileformat', 'fileencoding', 'filetype']
-            \   ]
-            \ },
-            \ 'inactive': {
-            \   'left': [['filename'], ['readonly', 'modified']],
-            \   'right': [['lineinfo']]
-            \ }
-            \ }
 " }}}
 " vim:fdm=marker
