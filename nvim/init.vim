@@ -107,8 +107,7 @@ Plug 'tpope/vim-fugitive'
     nmap <Leader>gw <Cmd>Gwrite<CR>
     nmap <Leader>gd <Cmd>Gvdiffsplit<CR>
     nmap <Leader>gb <Cmd>Git blame<CR>
-    nmap <Leader>gp <Cmd>Git push<CR>
-    nmap <Leader>gl <Cmd>Git pull<CR>
+    nmap <Leader>gl <Cmd>Gclog<CR>
     autocmd FileType fugitive* nmap <buffer> <nowait> q gq
 Plug 'mhinz/vim-signify'
     let g:signify_sign_change='~'
