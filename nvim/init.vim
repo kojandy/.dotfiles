@@ -138,6 +138,8 @@ colorscheme aurora
 set mouse=a
 
 let g:netrw_banner=0
+
+set statusline=%f\ %m%=%l/%L
 " }}}
 
 " search {{{
