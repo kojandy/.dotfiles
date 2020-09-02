@@ -1,4 +1,19 @@
 let mapleader=' '
+" <Leader>f - find
+" <Leader>s - show
+    " s - symbol
+    " d - diagnostic
+    " a - (code) action
+    " h - hunk
+" <Leader>a - action
+    " r - rename
+    " f - format
+" <Leader>t - toggle
+    " w - wrap
+    " n - number
+" <Leader>g - git
+" <Leader>h - hunk
+    " u - undo
 
 " plug {{{
 if empty(glob(stdpath('data') . '/site/autoload/plug.vim'))
@@ -59,8 +74,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gD <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
-    nmap <Leader>= <Plug>(coc-format)
-    nmap <Leader>rn <Plug>(coc-rename)
+    nmap <Leader>af <Plug>(coc-format)
+    nmap <Leader>ar <Plug>(coc-rename)
     nmap <Leader>sa <Plug>(coc-codeaction)
     nmap <Leader>sd <Cmd>CocList diagnostics<CR>
 Plug 'tpope/vim-surround'
@@ -98,7 +113,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
     let g:signify_sign_change='~'
     let g:signify_priority=5
-    nmap <Leader>hd <Cmd>SignifyHunkDiff<CR>
+    nmap <Leader>sh <Cmd>SignifyHunkDiff<CR>
     nmap <Leader>hu <Cmd>SignifyHunkUndo<CR>
     highlight link SignifySignAdd GitGutterAdd
     highlight link SignifySignChange GitGutterChange
@@ -296,9 +311,9 @@ nnoremap <C-K> <Cmd>wincmd k<CR>
 nnoremap <C-L> <Cmd>wincmd l<CR>
 tnoremap <C-]> <C-\><C-N>
 
-" vim-unimpaired
-nnoremap [ow <Cmd>set wrap<CR>
-nnoremap ]ow <Cmd>set nowrap<CR>
+" toggles
+nnoremap <Leader>tw <Cmd>set wrap!<CR>
+nnoremap <Leader>tn <Cmd>set number!<CR>
 
 " ?ie; entire object
 " https://github.com/junegunn/dotfiles/blob/master/vimrc
