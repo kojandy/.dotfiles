@@ -121,12 +121,12 @@ Plug 'rhysd/conflict-marker.vim'
 " }}}
 
 " colorscheme {{{
-" Plug 'nanotech/jellybeans.vim'
-" Plug 'koirand/tokyo-metro.vim', {'commit': '59527e4'}
+" Plug 'koirand/tokyo-metro.vim'
 " Plug 'phanviet/vim-monokai-pro'
 " Plug 'tomasiser/vim-code-dark'
 " Plug 'cocopon/iceberg.vim'
 Plug 'rafalbromirski/vim-aurora'
+" Plug 'ayu-theme/ayu-vim'
 " }}}
 call plug#end()
 " }}}
