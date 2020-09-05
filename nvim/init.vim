@@ -58,6 +58,8 @@ Plug 'liuchengxu/vista.vim'
 " autocomplete / format / edit {{{
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    let g:coc_global_extensions=['coc-actions']
+
     function! s:check_back_space() abort
         let col = col('.') - 1
         return !col || getline('.')[col - 1]  =~# '\s'
@@ -76,7 +78,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     nmap <silent> gr <Plug>(coc-references)
     nmap <Leader>af <Plug>(coc-format)
     nmap <Leader>ar <Plug>(coc-rename)
-    nmap <Leader>sa <Plug>(coc-codeaction)
+    nmap <Leader>sa <Cmd>CocCommand actions.open<CR>
+    xmap <leader>sa :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
     nmap <Leader>sd <Cmd>CocList diagnostics<CR>
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
