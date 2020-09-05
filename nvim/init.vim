@@ -81,6 +81,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     nmap <Leader>sa <Cmd>CocCommand actions.open<CR>
     xmap <leader>sa :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
     nmap <Leader>sd <Cmd>CocList diagnostics<CR>
+    nmap <Leader>so <Cmd>CocList outline<CR>
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
