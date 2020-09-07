@@ -77,6 +77,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     nmap <silent> gD <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
     nmap <Leader>af <Plug>(coc-format)
+    xmap <leader>af <Plug>(coc-format-selected)
     nmap <Leader>ar <Plug>(coc-rename)
     nmap <Leader>sa <Cmd>CocCommand actions.open<CR>
     xmap <leader>sa :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
