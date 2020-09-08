@@ -12,6 +12,7 @@ let mapleader=' '
 " <Leader>t - toggle
     " w - wrap
     " n - number
+    " r - relativenumber
 " <Leader>g - git
 " <Leader>h - hunk
     " u - undo
@@ -329,6 +330,7 @@ onoremap <silent> ie :<C-U>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
 nnoremap <Leader>sf <Cmd>Explore<CR>
 nnoremap <Leader>tw <Cmd>set wrap!<CR>
 nnoremap <Leader>tn <Cmd>set number!<CR>
+nnoremap <Leader>tr <Cmd>set relativenumber!<CR>
 " }}}
 " }}}
 " vim:fdm=marker
