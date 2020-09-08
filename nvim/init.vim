@@ -301,8 +301,6 @@ nnoremap Y y$
 " move lines
 xnoremap <silent> <C-K> :move-2<CR>gv
 xnoremap <silent> <C-J> :move'>+<CR>gv
-xnoremap <silent> <C-H> <gv
-xnoremap <silent> <C-L> >gv
 xnoremap < <gv
 xnoremap > >gv
 
