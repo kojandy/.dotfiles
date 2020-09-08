@@ -228,6 +228,11 @@ function! MonkeyTerminalOpen()
     " when calling :buffers command
     set nobuflisted
     set nonumber
+
+    autocmd BufEnter <buffer> startinsert
+    autocmd BufLeave <buffer> stopinsert
+    tnoremap <buffer> <C-L> <C-\><C-N><C-W>l
+    startinsert
   else
     if !win_gotoid(s:monkey_terminal_window)
       sp
@@ -238,7 +243,6 @@ function! MonkeyTerminalOpen()
       let s:monkey_terminal_window = win_getid()
     endif
   endif
-  startinsert
 endfunction
 
 function! MonkeyTerminalToggle()
