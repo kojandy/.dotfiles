@@ -5,6 +5,7 @@ let mapleader=' '
     " d - diagnostic
     " a - (code) action
     " h - hunk
+    " f - file
 " <Leader>a - action
     " r - rename
     " f - format
@@ -158,6 +159,7 @@ colorscheme aurora
 set mouse=a
 
 let g:netrw_banner=0
+let g:netrw_list_hide='^\./$,^\.\./$'
 
 set statusline=%f\ %m%=%l/%L
 " }}}
@@ -318,14 +320,15 @@ nnoremap <C-K> <Cmd>wincmd k<CR>
 nnoremap <C-L> <Cmd>wincmd l<CR>
 tnoremap <C-]> <C-\><C-N>
 
-" toggles
-nnoremap <Leader>tw <Cmd>set wrap!<CR>
-nnoremap <Leader>tn <Cmd>set number!<CR>
-
 " ?ie; entire object
 " https://github.com/junegunn/dotfiles/blob/master/vimrc
 xnoremap <silent> ie gg0oG$
 onoremap <silent> ie :<C-U>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
+
+" leader mappings
+nnoremap <Leader>sf <Cmd>Explore<CR>
+nnoremap <Leader>tw <Cmd>set wrap!<CR>
+nnoremap <Leader>tn <Cmd>set number!<CR>
 " }}}
 " }}}
 " vim:fdm=marker
