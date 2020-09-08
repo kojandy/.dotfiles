@@ -146,6 +146,7 @@ set scrolloff=3
 set sidescroll=0
 set noshowmode
 set cursorline
+set noruler
 
 set list
 autocmd InsertEnter * set nolist
