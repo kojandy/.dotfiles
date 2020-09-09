@@ -1,12 +1,14 @@
 window:
   padding:
-    x: 2
-    y: 2
+    x: 3
+    y: 3
 
 font:
   normal:
     family: Fira Code
   size: 10.0
+  offset:
+    y: 1
 
 colors:
   primary:
