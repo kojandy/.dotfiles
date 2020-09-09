@@ -182,7 +182,7 @@ set breakindent
 set showbreak=↳
 
 " disable comment continuation
-autocmd FileType * set formatoptions-=c fo-=r fo-=o
+autocmd FileType * set formatoptions-=r fo-=o
 " }}}
 
 " language {{{
