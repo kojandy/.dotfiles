@@ -6,5 +6,5 @@ export EDITOR=nvim
 export VISUAL=$EDITOR
 export PAGER=less
 export MANPAGER='nvim +Man!'
-export TERMINAL=kitty
+export TERMINAL=alacritty
 export BROWSER=google-chrome-stable
