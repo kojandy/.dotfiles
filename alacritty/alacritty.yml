@@ -16,6 +16,8 @@ colors:
     foreground: '#c5c8c6'
   cursor:
     cursor: '#c5c8c6'
+  vi_mode_cursor:
+    cursor: '#00ff00'
   selection:
     text: '#1d1f21'
     background: '#c5c8c6'
@@ -38,3 +40,5 @@ colors:
     cyan: '#8abeb7'
     white: '#c5c8c6'
 
+cursor:
+  vi_mode_style: Block
