@@ -36,6 +36,3 @@ colors:
     cyan: '#8abeb7'
     white: '#c5c8c6'
 
-key_bindings:
-  - { key: K, mods: Control|Shift, action: ScrollPageUp }
-  - { key: J, mods: Control|Shift, action: ScrollPageDown }
