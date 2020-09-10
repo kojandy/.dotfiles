@@ -12,7 +12,18 @@ alias ls='ls --color=tty'
 # i am sure that you are not expecting cp overwrites sth
 alias cp='cp -i'
 
-alias cdtemp='cd $(mktemp -d)'
+cdtemp() {
+  PREV_DIR=$(pwd)
+  TEMP_DIR=$(mktemp -d)
+  cd $TEMP_DIR
+  $SHELL
+  read "cleanup?rm -rf $TEMP_DIR? [Y/n] "
+  if [[ ! "$cleanup" =~ "^[nN]$" ]]
+  then
+    rm -rf $TEMP_DIR
+  fi
+  cd $PREV_DIR
+}
 
 # vim
 alias vi='nvim'
