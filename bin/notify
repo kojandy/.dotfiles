@@ -1,7 +1,0 @@
-#!/bin/sh
-{
-    output="$(\time -p $* 2>&1 1>&3)"
-    elapsed=$(echo "$output" | tail -n 3 | head -n 1 | awk '{print $2}')
-    echo "$output" | sed '$d' | sed '$d' | sed '$d' >&2
-    echo "$*" | push -t "Job Done (${elapsed}s)"
-} 3>&1
