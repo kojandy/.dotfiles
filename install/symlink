@@ -11,7 +11,7 @@ if [ -x "$(command -v zsh)" ]; then
 fi
 
 if [ -x "$(command -v tmux)" ]; then
-    ln -si "$DOTFILES/tmux/tmux.conf" ~/.tmux.conf
+    ln -si "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
 fi
 
 if [ -x "$(command -v git)" ]; then
