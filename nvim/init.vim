@@ -13,9 +13,11 @@ let mapleader=' '
     " w - wrap
     " n - number
     " r - relativenumber
+    " g - gutter
 " <Leader>g - git
 " <Leader>h - hunk
     " u - undo
+    " s - stage
 
 " plug {{{
 if empty(glob(stdpath('data') . '/site/autoload/plug.vim'))
@@ -60,7 +62,21 @@ Plug 'liuchengxu/vista.vim'
 " autocomplete / format / edit {{{
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    let g:coc_global_extensions=['coc-actions']
+    let g:coc_global_extensions=[
+                \ 'coc-actions', 'coc-git',
+                \ 'coc-tsserver',
+                \ ]
+    let g:coc_user_config={
+                \ 'diagnostic.virtualText': v:true,
+                \ 'diagnostic.enableMessage': 'jump',
+                \
+                \ 'git.enableGlobalStatus': v:false,
+                \ 'git.addedSign.hlGroup': 'GitGutterAdd',
+                \ 'git.changedSign.hlGroup': 'GitGutterChange',
+                \ 'git.removedSign.hlGroup': 'GitGutterDelete',
+                \ 'git.topRemovedSign.hlGroup': 'GitGutterDelete',
+                \ 'git.changeRemovedSign.hlGroup': 'GitGutterChangeDelete',
+                \ }
 
     function! s:check_back_space() abort
         let col = col('.') - 1
@@ -85,6 +101,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     xmap <leader>sa :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
     nmap <Leader>sd <Cmd>CocList diagnostics<CR>
     nmap <Leader>so <Cmd>CocList outline<CR>
+
+    nmap [c <Plug>(coc-git-prevchunk)
+    nmap ]c <Plug>(coc-git-nextchunk)
+    nmap <Leader>sh <Plug>(coc-git-chunkinfo)
+    nmap <Leader>hu <Cmd>CocCommand git.chunkUndo<CR>
+    nmap <Leader>hs <Cmd>CocCommand git.chunkStage<CR>
+    nmap <Leader>yh <Cmd>CocCommand git.toggleGutters<CR>
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -116,14 +139,6 @@ Plug 'tpope/vim-fugitive'
     nmap <Leader>gb <Cmd>Git blame<CR>
     nmap <Leader>gl <Cmd>Gclog<CR>
     autocmd FileType fugitive* nmap <buffer> <nowait> q gq
-Plug 'mhinz/vim-signify'
-    let g:signify_sign_change='~'
-    let g:signify_priority=5
-    nmap <Leader>sh <Cmd>SignifyHunkDiff<CR>
-    nmap <Leader>hu <Cmd>SignifyHunkUndo<CR>
-    highlight link SignifySignAdd GitGutterAdd
-    highlight link SignifySignChange GitGutterChange
-    highlight link SignifySignDelete GitGutterDelete
 Plug 'rhysd/conflict-marker.vim'
 " }}}
 
