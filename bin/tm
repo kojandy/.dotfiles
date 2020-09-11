@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 # let's go tmux
-if command -v tmux>/dev/null && [ -z "$TMUX" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]]; then
-    if tmux ls&>/dev/null; then
+if command -v tmux >/dev/null && [ -z "$TMUX" ] && ! (echo "$TERM" | grep -Eq "(screen|tmux)")
+then
+    if tmux ls >/dev/null 2>&1
+    then
         tmux attach-session -t $(tmux ls | tail -n 1 | awk '{ print $1 }')
     else
         tmux
