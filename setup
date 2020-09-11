@@ -1,5 +1,5 @@
-#!/bin/bash
-source ./profile
+#!/bin/sh
+. ./profile
 ./install/zgen
 ./install/symlink
 zsh
