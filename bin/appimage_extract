@@ -1,0 +1,16 @@
+#!/bin/sh
+cd $DOTFILES/bin
+if [ -f "$1" ]
+then
+    if ./$1 --appimage-extract 2>/dev/null
+    then
+        mv squashfs-root "$1-root" &&
+            ln -sf "$DOTFILES/bin/$1-root/AppRun" "$1"
+    else
+        echo "$1 is not an appimage"
+        exit 2
+    fi
+else
+    echo "$1 is not a regular file"
+    exit 1
+fi
