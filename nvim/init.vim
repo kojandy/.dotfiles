@@ -67,8 +67,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
                 \ 'coc-tsserver',
                 \ ]
     let g:coc_user_config={
-                \ 'diagnostic.virtualText': v:true,
                 \ 'diagnostic.enableMessage': 'jump',
+                \ 'diagnostic.virtualText': v:true,
+                \ 'diagnostic.virtualTextLines': 1,
                 \
                 \ 'git.enableGlobalStatus': v:false,
                 \ 'git.addedSign.hlGroup': 'GitGutterAdd',
