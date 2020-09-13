@@ -1,16 +1,24 @@
-source ~/.zgen/zgen.zsh
-if ! zgen saved; then
-    zgen load romkatv/powerlevel10k powerlevel10k
+[ -z "$DOTFILES" ] && source "$HOME/.profile"
 
-    zgen load agkozak/zsh-z
-    zgen load zsh-users/zsh-completions
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load kojandy/zsh-bd
-
-    zgen save
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone --depth 1 https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
-[ -z "$DOTFILES" ] && source "$HOME/.profile"
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+zinit ice depth'1'; zinit light romkatv/powerlevel10k
+zinit depth'1' wait lucid for \
+    light-mode agkozak/zsh-z \
+    light-mode kojandy/zsh-bd
+zinit ice wait lucid atload'zicompinit' depth'1' \
+    atclone'source fast-syntax-highlighting.plugin.zsh; fast-theme clean'
+zinit light zdharma/fast-syntax-highlighting
 
 KEYTIMEOUT=1
 HISTSIZE=10000
@@ -21,6 +29,7 @@ setopt extended_history
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushd_silent
+
 disable r
 
 autoload -Uz edit-command-line
@@ -39,7 +48,6 @@ bindkey -M menuselect h vi-backward-char
 bindkey -M menuselect j vi-down-line-or-history
 bindkey -M menuselect k vi-up-line-or-history
 bindkey -M menuselect l vi-forward-char
-
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
