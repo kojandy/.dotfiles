@@ -309,10 +309,8 @@ function! s:command_alias(from, to)
                 \ . '? "' . a:to . '" : "' . a:from . '"'
 endfunction
 
-" do not :write but :update the file
-call s:command_alias("w", "update")
 " annoying
-call s:command_alias("W", "update")
+call s:command_alias("W", "w")
 " write file with privilege
 silent! command WW execute 'silent! write !sudo tee % >/dev/null' | edit!
 
