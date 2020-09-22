@@ -1,0 +1,4 @@
+#!/bin/sh
+URL=$(curl -fsSL https://api.github.com/repos/radareorg/cutter/releases/latest | grep download | grep AppImage | sed 's/.*": "\(.*\)"/\1/')
+curl -L "$URL" -o "$DOTFILES/bin/cutter"
+chmod +x "$DOTFILES/bin/cutter"
