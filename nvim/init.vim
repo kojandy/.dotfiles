@@ -64,7 +64,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
     let g:coc_global_extensions=[
                 \ 'coc-actions', 'coc-git',
-                \ 'coc-tsserver',
                 \ ]
     let g:coc_user_config={
                 \ 'diagnostic.enableMessage': 'jump',
