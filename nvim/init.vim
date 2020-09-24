@@ -125,8 +125,6 @@ Plug 'romainl/vim-cool'
 " }}}
 
 " language {{{
-Plug 'sheerun/vim-polyglot'
-    let g:polyglot_disabled=['latex']
 Plug 'lervag/vimtex'
 Plug 'metakirby5/codi.vim'
 " }}}
