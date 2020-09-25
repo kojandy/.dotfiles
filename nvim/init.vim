@@ -63,7 +63,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
     let g:coc_global_extensions=[
-                \ 'coc-actions', 'coc-git',
+                \ 'coc-actions', 'coc-git', 'coc-yank',
                 \ ]
     let g:coc_user_config={
                 \ 'diagnostic.enableMessage': 'jump',
@@ -76,6 +76,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
                 \ 'git.removedSign.hlGroup': 'GitGutterDelete',
                 \ 'git.topRemovedSign.hlGroup': 'GitGutterDelete',
                 \ 'git.changeRemovedSign.hlGroup': 'GitGutterChangeDelete',
+                \
+                \ 'yank.highlight.duration': 200,
                 \ }
 
     function! s:check_back_space() abort
@@ -108,6 +110,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     nmap <Leader>hu <Cmd>CocCommand git.chunkUndo<CR>
     nmap <Leader>hs <Cmd>CocCommand git.chunkStage<CR>
     nmap <Leader>yh <Cmd>CocCommand git.toggleGutters<CR>
+
+    nmap <Leader>sy <Cmd>CocList -A --normal yank<CR>
+    highlight link HighlightedyankRegion Search
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
