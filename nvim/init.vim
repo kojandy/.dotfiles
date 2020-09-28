@@ -336,6 +336,7 @@ nnoremap <C-H> <Cmd>wincmd h<CR>
 nnoremap <C-J> <Cmd>wincmd j<CR>
 nnoremap <C-K> <Cmd>wincmd k<CR>
 nnoremap <C-L> <Cmd>wincmd l<CR>
+nnoremap <C-W><C-Q> <Cmd>close<CR>
 tnoremap <C-]> <C-\><C-N>
 
 " easy with tabs
