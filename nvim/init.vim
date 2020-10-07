@@ -324,6 +324,9 @@ xnoremap <silent> <C-J> :move'>+<CR>gv
 xnoremap < <gv
 xnoremap > >gv
 
+" . also loves visual mode
+vnoremap . :norm .<CR>
+
 " readline-style key bindings
 cnoremap <C-A> <Home>
 
