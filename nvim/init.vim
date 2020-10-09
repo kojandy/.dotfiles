@@ -168,6 +168,7 @@ set sidescroll=0
 set noshowmode
 set cursorline
 set noruler
+set signcolumn=yes
 
 set list
 autocmd InsertEnter * set nolist
