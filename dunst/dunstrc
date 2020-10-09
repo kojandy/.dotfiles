@@ -1,6 +1,6 @@
 [global]
     follow = mouse
-    geometry = "300x5-5+30"
+    geometry = "300x5-10+25"
     shrink = yes
     padding = 8
     horizontal_padding = 8
