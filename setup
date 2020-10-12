@@ -1,5 +1,0 @@
-#!/bin/sh
-. ./profile
-./install/zgen
-./install/symlink
-zsh
