@@ -63,7 +63,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
     let g:coc_global_extensions=[
-                \ 'coc-actions', 'coc-git', 'coc-yank',
+                \ 'coc-git', 'coc-yank',
                 \ ]
     let g:coc_user_config={
                 \ 'diagnostic.enableMessage': 'jump',
@@ -99,8 +99,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     nmap <Leader>af <Plug>(coc-format)
     xmap <leader>af <Plug>(coc-format-selected)
     nmap <Leader>ar <Plug>(coc-rename)
-    nmap <Leader>sa <Cmd>CocCommand actions.open<CR>
-    xmap <leader>sa :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+    nmap <Leader>sa <Plug>(coc-codeaction)
+    xmap <leader>sa <Plug>(coc-codeaction-selected)
     nmap <Leader>sd <Cmd>CocList diagnostics<CR>
     nmap <Leader>so <Cmd>CocList outline<CR>
 
