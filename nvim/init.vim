@@ -331,10 +331,6 @@ vnoremap . :norm .<CR>
 " readline-style key bindings
 cnoremap <C-A> <Home>
 
-" play with numbers
-nnoremap + <C-A>
-nnoremap - <C-X>
-
 " easy move with splits
 nnoremap <C-H> <Cmd>wincmd h<CR>
 nnoremap <C-J> <Cmd>wincmd j<CR>
@@ -359,7 +355,7 @@ xnoremap <silent> ie gg0oG$
 onoremap <silent> ie :<C-U>execute "normal! m`"<Bar>keepjumps normal! ggVG<CR>
 
 " leader mappings
-nnoremap <Leader>sf <Cmd>Explore<CR>
+nnoremap - <Cmd>Explore<CR>
 nnoremap <Leader>yw <Cmd>set wrap!<CR>
 nnoremap <Leader>yn <Cmd>set number!<CR>
 nnoremap <Leader>yr <Cmd>set relativenumber!<CR>
