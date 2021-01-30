@@ -205,10 +205,6 @@ set showbreak=↳
 autocmd FileType * set formatoptions-=r fo-=o
 " }}}
 
-" language {{{
-let g:tex_flavor='latex'
-" }}}
-
 " terminal {{{
 let g:terminal_color_0="#282a2e"
 let g:terminal_color_8="#373b41"
