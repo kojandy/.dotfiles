@@ -62,15 +62,10 @@ Plug 'liuchengxu/vista.vim'
 " autocomplete / format / edit {{{
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    let g:coc_global_extensions=[
-                \ 'coc-yank',
-                \ ]
     let g:coc_user_config={
                 \ 'diagnostic.enableMessage': 'jump',
                 \ 'diagnostic.virtualText': v:true,
                 \ 'diagnostic.virtualTextLines': 1,
-                \
-                \ 'yank.highlight.duration': 200,
                 \ }
 
     function! s:check_back_space() abort
@@ -96,9 +91,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
     xmap <leader>sa <Plug>(coc-codeaction-selected)
     nmap <Leader>sd <Cmd>CocList diagnostics<CR>
     nmap <Leader>so <Cmd>CocList outline<CR>
-
-    nmap <Leader>sy <Cmd>CocList -A --normal yank<CR>
-    highlight link HighlightedyankRegion Search
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -112,6 +104,9 @@ Plug 'tpope/vim-endwise'
 " visual {{{
 Plug 'psliwka/vim-smoothie'
 Plug 'romainl/vim-cool'
+Plug 'machakann/vim-highlightedyank'
+    let g:highlightedyank_highlight_duration = 200
+    highlight link HighlightedyankRegion Search
 " }}}
 
 " language {{{
