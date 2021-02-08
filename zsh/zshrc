@@ -27,7 +27,6 @@ setopt hist_find_no_dups
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushd_silent
-setopt menu_complete
 
 disable r
 
