@@ -124,7 +124,6 @@ Plug 'tpope/vim-fugitive'
     nmap <Leader>gb <Cmd>Git blame<CR>
     nmap <Leader>gl <Cmd>Gclog<CR>
     autocmd FileType fugitive* nmap <buffer> <nowait> q gq
-Plug 'rhysd/conflict-marker.vim'
 Plug 'mhinz/vim-signify'
     let g:signify_sign_change='~'
     nmap <Leader>yh <Cmd>SignifyToggle<CR>
