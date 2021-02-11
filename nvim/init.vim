@@ -113,7 +113,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'lervag/vimtex'
 Plug 'metakirby5/codi.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    lua require('treesitter')
 " }}}
 
 " git {{{
@@ -147,6 +146,8 @@ Plug 'rafalbromirski/vim-aurora'
 " }}}
 call plug#end()
 " }}}
+
+lua require('treesitter')
 
 " general {{{
 set hidden
