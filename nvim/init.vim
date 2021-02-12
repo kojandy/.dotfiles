@@ -319,11 +319,25 @@ vnoremap . :norm .<CR>
 " readline-style key bindings
 cnoremap <C-A> <Home>
 
+" https://github.com/beauwilliams/Dotfiles/blob/056cf2ba605115ef2454c69d5d07c06c09287034/Vim/nvim/init.vim#L708
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd " . a:key
+    if (t:curwin == winnr())
+        if (match(a:key, '[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd " . a:key
+    endif
+endfunction
+
 " easy move with splits
-nnoremap <C-H> <Cmd>wincmd h<CR>
-nnoremap <C-J> <Cmd>wincmd j<CR>
-nnoremap <C-K> <Cmd>wincmd k<CR>
-nnoremap <C-L> <Cmd>wincmd l<CR>
+nnoremap <C-H> <Cmd>call WinMove('h')<CR>
+nnoremap <C-J> <Cmd>call WinMove('j')<CR>
+nnoremap <C-K> <Cmd>call WinMove('k')<CR>
+nnoremap <C-L> <Cmd>call WinMove('l')<CR>
 nnoremap <C-W><C-Q> <Cmd>close<CR>
 tnoremap <C-]> <C-\><C-N>
 
