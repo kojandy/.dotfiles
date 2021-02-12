@@ -110,7 +110,6 @@ Plug 'machakann/vim-highlightedyank'
 " }}}
 
 " language {{{
-Plug 'lervag/vimtex'
 Plug 'metakirby5/codi.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " }}}
