@@ -39,7 +39,7 @@ return require'packer'.startup(function()
     use 'tpope/vim-endwise'
 
     -- language
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = 'require("treesitter")'}
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = 'require("plugins.treesitter")'}
     use 'metakirby5/codi.vim'
 
     -- git
