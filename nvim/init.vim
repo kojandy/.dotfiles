@@ -235,18 +235,12 @@ nnoremap - <Cmd>Explore<CR>
 
 let mapleader=' '
 " <Leader>f - find
-nmap <Leader>ff <Cmd>Files<CR>
-nmap <Leader>fg <Cmd>GFiles?<CR>
-nmap <Leader>fb <Cmd>Buffers<CR>
-nmap <Leader>fl <Cmd>BLines<CR>
-nmap <Leader>fL <Cmd>Lines<CR>
-nmap <Leader>fr <Cmd>RG<CR>
-nmap <Leader>fR :Rg<Space>
-nmap <Leader>ft <Cmd>BTags<CR>
-nmap <Leader>fT <Cmd>Tags<CR>
-nmap <Leader>fh <Cmd>History<CR>
-nmap <Leader>f: <Cmd>History:<CR>
-nmap <Leader>f/ <Cmd>History/<CR>
+nmap <Leader>f: <Cmd>Telescope builtin<CR>
+nmap <Leader>ff <Cmd>Telescope find_files<CR>
+nmap <Leader>fg <Cmd>Telescope git_status<CR>
+nmap <Leader>fb <Cmd>Telescope buffers<CR>
+nmap <Leader>fr <Cmd>Telescope live_grep<CR>
+nmap <Leader>fl <Cmd>Telescope current_buffer_fuzzy_find<CR>
 nmap <Leader>fs <Cmd>Vista finder<CR>
 
 " <Leader>s - show
