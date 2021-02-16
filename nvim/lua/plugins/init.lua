@@ -11,6 +11,7 @@ return require'packer'.startup(function()
     use {'nvim-telescope/telescope.nvim',
         requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
         config = 'require("plugins.telescope")',
+        cmd = 'Telescope',
     }
 
     -- autocomplete, format, edit
