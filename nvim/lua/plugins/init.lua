@@ -53,6 +53,19 @@ return require'packer'.startup(function()
         vim.g.highlightedyank_highlight_duration = 200
         vim.cmd('highlight link HighlightedyankRegion Search')
     end}
+    use {'romgrk/barbar.nvim',
+        event = 'BufAdd *',
+        setup = function()
+            vim.g.bufferline = {
+                icons = false,
+                auto_hide = true,
+                closable = false,
+                animation = false,
+            }
+            vim.cmd('highlight link BufferInactive TabLine')
+            vim.cmd('nnoremap <silent> <C-S> <Cmd>BufferPick<CR>')
+        end
+    }
 
     -- colorscheme
     use {'rafalbromirski/vim-aurora', config = 'vim.cmd [[colorscheme aurora]]'}
