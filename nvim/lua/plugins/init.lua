@@ -1,7 +1,11 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require'packer'.startup(function()
-    use {'wbthomason/packer.nvim', opt = true}
+    use {'wbthomason/packer.nvim',
+        opt = true,
+        config = 'require("plugins")',
+        cmd = 'PackerSync',
+    }
 
     -- find, navigate
     use {'liuchengxu/vista.vim', config = function()
