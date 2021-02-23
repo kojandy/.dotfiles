@@ -62,16 +62,17 @@ return require'packer'.startup(function()
                 closable = false,
                 animation = false,
             }
-            vim.cmd('highlight link BufferInactive TabLine')
             vim.cmd('nnoremap <silent> <C-S> <Cmd>BufferPick<CR>')
         end
     }
 
     -- colorscheme
-    use {'rafalbromirski/vim-aurora', config = 'vim.cmd [[colorscheme aurora]]'}
-    -- use 'koirand/tokyo-metro.vim'
-    -- use 'phanviet/vim-monokai-pro'
-    -- use 'tomasiser/vim-code-dark'
-    -- use 'cocopon/iceberg.vim'
-    -- use 'ayu-theme/ayu-vim'
+    -- use {'rafalbromirski/vim-aurora', config = 'vim.cmd [[colorscheme aurora]]'}
+    -- use {'cocopon/iceberg.vim', config = 'vim.cmd [[colorscheme iceberg]]'}
+    -- use {'koirand/tokyo-metro.vim', config = 'vim.cmd [[colorscheme tokyo-metro]]'}
+    -- use {'phanviet/vim-monokai-pro', config = 'vim.cmd [[colorscheme monokai_pro]]'}
+    use {'ayu-theme/ayu-vim', config = 'vim.cmd [[colorscheme ayu]]'}
+    -- use {'jacoborus/tender.vim', config = 'vim.cmd [[colorscheme tender]]'}
+    -- use {'w0ng/vim-hybrid', config = 'vim.cmd [[colorscheme hybrid]]'}
+    -- use {'vim-scripts/rootwater.vim', config = 'vim.cmd [[colorscheme rootwater]]'}
 end)
