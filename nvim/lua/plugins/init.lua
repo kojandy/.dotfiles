@@ -71,7 +71,10 @@ return require'packer'.startup(function()
     -- use {'cocopon/iceberg.vim', config = 'vim.cmd [[colorscheme iceberg]]'}
     -- use {'koirand/tokyo-metro.vim', config = 'vim.cmd [[colorscheme tokyo-metro]]'}
     -- use {'phanviet/vim-monokai-pro', config = 'vim.cmd [[colorscheme monokai_pro]]'}
-    use {'ayu-theme/ayu-vim', config = 'vim.cmd [[colorscheme ayu]]'}
+    use {'ayu-theme/ayu-vim', config = function()
+        vim.cmd 'colorscheme ayu'
+        vim.cmd 'highlight clear SignColumn'
+    end}
     -- use {'jacoborus/tender.vim', config = 'vim.cmd [[colorscheme tender]]'}
     -- use {'w0ng/vim-hybrid', config = 'vim.cmd [[colorscheme hybrid]]'}
     -- use {'vim-scripts/rootwater.vim', config = 'vim.cmd [[colorscheme rootwater]]'}
