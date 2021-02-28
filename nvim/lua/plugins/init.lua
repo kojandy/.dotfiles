@@ -1,4 +1,4 @@
-vim.cmd [[packadd packer.nvim]]
+vim.cmd 'packadd packer.nvim'
 
 return require'packer'.startup(function()
     use {'wbthomason/packer.nvim',
@@ -37,13 +37,13 @@ return require'packer'.startup(function()
 
     -- git
     use {'tpope/vim-fugitive', config = function()
-        vim.cmd('autocmd FileType fugitive* nmap <buffer> <nowait> q gq')
+        vim.cmd 'autocmd FileType fugitive* nmap <buffer> <nowait> q gq'
     end}
     use {'mhinz/vim-signify', config = function()
         vim.g.signify_sign_change = '~'
-        vim.cmd('highlight link SignifySignAdd GitGutterAdd')
-        vim.cmd('highlight link SignifySignChange GitGutterChange')
-        vim.cmd('highlight link SignifySignDelete GitGutterDelete')
+        vim.cmd 'highlight link SignifySignAdd GitGutterAdd'
+        vim.cmd 'highlight link SignifySignChange GitGutterChange'
+        vim.cmd 'highlight link SignifySignDelete GitGutterDelete'
     end}
 
     -- visuals
@@ -51,7 +51,7 @@ return require'packer'.startup(function()
     use 'romainl/vim-cool'
     use {'machakann/vim-highlightedyank', config = function()
         vim.g.highlightedyank_highlight_duration = 200
-        vim.cmd('highlight link HighlightedyankRegion Search')
+        vim.cmd 'highlight link HighlightedyankRegion Search'
     end}
     use {'romgrk/barbar.nvim',
         event = 'BufAdd *',
@@ -62,7 +62,7 @@ return require'packer'.startup(function()
                 closable = false,
                 animation = false,
             }
-            vim.cmd('nnoremap <silent> <C-S> <Cmd>BufferPick<CR>')
+            vim.cmd 'nnoremap <silent> <C-S> <Cmd>BufferPick<CR>'
         end
     }
 
@@ -80,7 +80,7 @@ return require'packer'.startup(function()
     -- use {'vim-scripts/rootwater.vim', config = 'vim.cmd [[colorscheme rootwater]]'}
     -- use {'hzchirs/vim-material', config = function()
     --     vim.g.material_style = 'oceanic'
-    --     vim.cmd [[colorscheme vim-material]]
+    --     vim.cmd 'colorscheme vim-material'
     -- end}
     -- use {'arzg/vim-colors-xcode', config = 'vim.cmd [[colorscheme xcodedark]]'}
     -- use {'zeis/vim-kolor', config = 'vim.cmd [[colorscheme kolor]]'}
