@@ -75,4 +75,10 @@ return require'packer'.startup(function()
     -- use {'jacoborus/tender.vim', config = 'vim.cmd [[colorscheme tender]]'}
     -- use {'w0ng/vim-hybrid', config = 'vim.cmd [[colorscheme hybrid]]'}
     -- use {'vim-scripts/rootwater.vim', config = 'vim.cmd [[colorscheme rootwater]]'}
+    -- use {'hzchirs/vim-material', config = function()
+    --     vim.g.material_style = 'oceanic'
+    --     vim.cmd [[colorscheme vim-material]]
+    -- end}
+    -- use {'arzg/vim-colors-xcode', config = 'vim.cmd [[colorscheme xcodedark]]'}
+    -- use {'zeis/vim-kolor', config = 'vim.cmd [[colorscheme kolor]]'}
 end)
