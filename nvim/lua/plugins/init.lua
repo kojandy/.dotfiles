@@ -19,7 +19,6 @@ return require'packer'.startup(function()
     }
 
     -- autocomplete, format, edit
-    use 'AndrewRadev/splitjoin.vim'
     use {'neoclide/coc.nvim', branch = 'release'}
     use 'tpope/vim-surround'
     use 'tpope/vim-commentary'
