@@ -32,6 +32,7 @@ set cursorline
 set noruler
 set signcolumn=yes
 set nofoldenable
+set shortmess+=c
 
 set list
 autocmd InsertEnter * set nolist
