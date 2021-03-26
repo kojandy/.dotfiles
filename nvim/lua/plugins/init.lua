@@ -19,7 +19,15 @@ return require'packer'.startup(function()
     }
 
     -- autocomplete, format, edit
-    use {'neoclide/coc.nvim', branch = 'release'}
+    use {'neoclide/coc.nvim', branch = 'release', config = function()
+        vim.g.coc_user_config = {
+            diagnostic = {
+                enableMessage = 'jump',
+                virtualText = true,
+                virtualTextLines = 1,
+            }
+        }
+    end}
     use 'tpope/vim-surround'
     use 'tpope/vim-commentary'
     use 'tpope/vim-repeat'

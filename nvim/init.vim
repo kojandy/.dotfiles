@@ -1,12 +1,6 @@
 lua require('ensure_packer')
 
 " coc {{{
-let g:coc_user_config={
-            \ 'diagnostic.enableMessage': 'jump',
-            \ 'diagnostic.virtualText': v:true,
-            \ 'diagnostic.virtualTextLines': 1,
-            \ }
-
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
