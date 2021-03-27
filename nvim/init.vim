@@ -11,6 +11,10 @@ inoremap <silent> <expr> <Tab>
             \ <SID>check_back_space() ? "\<Tab>" :
             \ coc#refresh()
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<C-H>"
+inoremap <silent> <expr> <CR>
+            \ pumvisible() ? coc#_select_confirm() :
+            \ "\<C-G>u\<CR>\<C-R>=coc#on_enter()\<CR>"
+
 nnoremap K <Cmd>call CocAction('doHover')<CR>
 nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
