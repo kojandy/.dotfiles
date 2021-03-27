@@ -8,15 +8,26 @@ return require'packer'.startup(function()
     }
 
     -- find, navigate
+    use {'junegunn/fzf', config = function()
+        vim.env.FZF_DEFAULT_OPTS = '--reverse'
+    end}
+    use {'junegunn/fzf.vim', config = function()
+        vim.api.nvim_exec([[
+            function! RipgrepFzf(query, fullscreen)
+                let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+                let initial_command = printf(command_fmt, shellescape(a:query))
+                let reload_command = printf(command_fmt, '{q}')
+                let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+                call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+            endfunction
+
+            command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+        ]], false)
+    end}
     use {'liuchengxu/vista.vim', config = function()
         vim.g.vista_default_executive = 'coc'
         vim.g['vista#renderer#enable_icon'] = 0
     end}
-    use {'nvim-telescope/telescope.nvim',
-        requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
-        config = 'require("plugins.telescope")',
-        cmd = 'Telescope',
-    }
 
     -- autocomplete, format, edit
     use {'neoclide/coc.nvim', branch = 'release', config = function()
