@@ -68,7 +68,7 @@ set linebreak
 set breakindent
 
 " disable comment continuation
-autocmd FileType * set formatoptions-=r fo-=o
+autocmd BufEnter * set formatoptions-=r fo-=o
 " }}}
 
 " terminal {{{
