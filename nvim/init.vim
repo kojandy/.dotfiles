@@ -66,7 +66,6 @@ set expandtab
 set nowrap
 set linebreak
 set breakindent
-set showbreak=↳
 
 " disable comment continuation
 autocmd FileType * set formatoptions-=r fo-=o
