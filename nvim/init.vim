@@ -85,14 +85,8 @@ nnoremap Q <Nop>
 nnoremap <Space> <Nop>
 xnoremap <Space> <Nop>
 
-function! s:command_alias(from, to)
-    exec 'cnoreabbrev <expr> ' . a:from
-                \ . ' getcmdtype() == ":" && getcmdline() == "' . a:from . '"'
-                \ . '? "' . a:to . '" : "' . a:from . '"'
-endfunction
-
 " annoying
-call s:command_alias("W", "w")
+command W w
 " write file with privilege
 silent! command WW execute 'silent! write !sudo tee % >/dev/null' | edit!
 
