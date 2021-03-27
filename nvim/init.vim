@@ -73,23 +73,6 @@ autocmd FileType * set formatoptions-=r fo-=o
 " }}}
 
 " terminal {{{
-let g:terminal_color_0="#282a2e"
-let g:terminal_color_8="#373b41"
-let g:terminal_color_1="#a54242"
-let g:terminal_color_9="#cc6666"
-let g:terminal_color_2="#8c9440"
-let g:terminal_color_10="#b5bd68"
-let g:terminal_color_3="#de935f"
-let g:terminal_color_11="#f0c674"
-let g:terminal_color_4="#5f819d"
-let g:terminal_color_12="#81a2be"
-let g:terminal_color_5="#85678f"
-let g:terminal_color_13="#b294bb"
-let g:terminal_color_6="#5e8d87"
-let g:terminal_color_14="#8abeb7"
-let g:terminal_color_7="#707880"
-let g:terminal_color_15="#c5c8c6"
-
 " monkey terminal {{{
 " See: https://gist.github.com/ram535/b1b7af6cd7769ec0481eb2eed549ea23
 let s:monkey_terminal_window=-1
