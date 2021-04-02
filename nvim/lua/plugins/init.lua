@@ -58,11 +58,20 @@ return require'packer'.startup(function()
     use {'tpope/vim-fugitive', config = function()
         vim.cmd 'autocmd FileType fugitive* nmap <buffer> <nowait> q gq'
     end}
-    use {'mhinz/vim-signify', config = function()
-        vim.g.signify_sign_change = '~'
-        vim.cmd 'highlight link SignifySignAdd GitGutterAdd'
-        vim.cmd 'highlight link SignifySignChange GitGutterChange'
-        vim.cmd 'highlight link SignifySignDelete GitGutterDelete'
+    use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim', config = function()
+        require'gitsigns'.setup {
+            keymaps = {
+                noremap = true,
+                buffer = true,
+
+                ['n ]c'] = {expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'"},
+                ['n [c'] = {expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'"},
+
+                ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+                ['n <leader>hu'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+                ['n <leader>hh'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+            },
+        }
     end}
 
     -- visuals

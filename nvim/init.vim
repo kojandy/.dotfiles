@@ -146,7 +146,6 @@ xmap <leader>sa <Plug>(coc-codeaction-selected)
 nmap <Leader>sd <Cmd>CocList diagnostics<CR>
 nmap <Leader>so <Cmd>CocList outline<CR>
 nmap <Leader>ss <Cmd>Vista!!<CR>
-nmap <Leader>sh <Cmd>SignifyHunkDiff<CR>
 
 " <Leader>a - action
 nmap <Leader>af <Plug>(coc-format)
@@ -157,7 +156,6 @@ nmap <Leader>ar <Plug>(coc-rename)
 nmap <Leader>yw <Cmd>set wrap!<CR>
 nmap <Leader>yn <Cmd>set number!<CR>
 nmap <Leader>yr <Cmd>set relativenumber!<CR>
-nmap <Leader>yh <Cmd>SignifyToggle<CR>
 
 " <Leader>g - git
 nmap <Leader>gs <Cmd>Git<CR>
@@ -167,7 +165,3 @@ nmap <Leader>gw <Cmd>Gwrite<CR>
 nmap <Leader>gd <Cmd>Gvdiffsplit<CR>
 nmap <Leader>gb <Cmd>Git blame<CR>
 nmap <Leader>gl <Cmd>Gclog<CR>
-
-" <Leader>h - hunk
-nmap <Leader>hf <Cmd>SignifyFold<CR>
-nmap <Leader>hu <Cmd>SignifyHunkUndo<CR>
