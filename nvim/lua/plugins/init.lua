@@ -90,7 +90,10 @@ return require'packer'.startup(function()
                 closable = false,
                 animation = false,
             }
-            vim.cmd 'nnoremap <silent> <C-S> <Cmd>BufferPick<CR>'
+            vim.cmd 'nnoremap <M-k> <Cmd>BufferPrevious<CR>'
+            vim.cmd 'nnoremap <M-j> <Cmd>BufferNext<CR>'
+            vim.cmd 'nnoremap <M-o> <Cmd>BufferCloseAllButCurrent<CR>'
+            vim.cmd 'nnoremap <M-w> <Cmd>BufferClose<CR>'
         end
     }
 

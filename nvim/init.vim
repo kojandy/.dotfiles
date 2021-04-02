@@ -89,16 +89,6 @@ nnoremap <C-L> <Cmd>call WinMove('l')<CR>
 nnoremap <C-W><C-Q> <Cmd>close<CR>
 tnoremap <C-]> <C-\><C-N>
 
-" easy with tabs
-nnoremap <M-h> <Cmd>tabprevious<CR>
-nnoremap <M-j> <Cmd>tabnew<CR>
-nnoremap <M-k> <Cmd>-tabnew<CR>
-nnoremap <M-l> <Cmd>tabnext<CR>
-nnoremap <M-H> <Cmd>-tabmove<CR>
-nnoremap <M-L> <Cmd>+tabmove<CR>
-nnoremap <M-o> <Cmd>tabonly<CR>
-nnoremap <M-w> <Cmd>tabclose<CR>
-
 " ?ie; entire object
 " https://github.com/junegunn/dotfiles/blob/master/vimrc
 xnoremap <silent> ie gg0oG$
