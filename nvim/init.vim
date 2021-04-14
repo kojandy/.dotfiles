@@ -48,6 +48,13 @@ command W w
 " write file with privilege
 silent! command WW execute 'silent! write !sudo tee % >/dev/null' | edit!
 
+" mappings
+let mapleader=' '
+" <Leader>y - toggle
+nmap <Leader>yw <Cmd>set wrap!<CR>
+nmap <Leader>yn <Cmd>set number!<CR>
+nmap <Leader>yr <Cmd>set relativenumber!<CR>
+
 " sane defaults
 nnoremap Y y$
 nnoremap q: <Nop>
@@ -117,41 +124,12 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gD <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-let mapleader=' '
-" <Leader>f - find
-nmap <Leader>ff <Cmd>Files<CR>
-nmap <Leader>fg <Cmd>GFiles?<CR>
-nmap <Leader>fb <Cmd>Buffers<CR>
-nmap <Leader>fl <Cmd>BLines<CR>
-nmap <Leader>fL <Cmd>Lines<CR>
-nmap <Leader>fr <Cmd>RG<CR>
-nmap <Leader>ft <Cmd>BTags<CR>
-nmap <Leader>fT <Cmd>Tags<CR>
-nmap <Leader>fh <Cmd>History<CR>
-nmap <Leader>fs <Cmd>Vista finder<CR>
-
-" <Leader>s - show
 nmap <Leader>sa <Plug>(coc-codeaction)
 xmap <leader>sa <Plug>(coc-codeaction-selected)
+
 nmap <Leader>sd <Cmd>CocList diagnostics<CR>
 nmap <Leader>so <Cmd>CocList outline<CR>
-nmap <Leader>ss <Cmd>Vista!!<CR>
 
-" <Leader>a - action
 nmap <Leader>af <Plug>(coc-format)
 xmap <leader>af <Plug>(coc-format-selected)
 nmap <Leader>ar <Plug>(coc-rename)
-
-" <Leader>y - toggle
-nmap <Leader>yw <Cmd>set wrap!<CR>
-nmap <Leader>yn <Cmd>set number!<CR>
-nmap <Leader>yr <Cmd>set relativenumber!<CR>
-
-" <Leader>g - git
-nmap <Leader>gs <Cmd>Git<CR>
-nmap <Leader>gc <Cmd>Git commit --verbose<CR>
-nmap <Leader>gr <Cmd>Gread<CR>
-nmap <Leader>gw <Cmd>Gwrite<CR>
-nmap <Leader>gd <Cmd>Gvdiffsplit<CR>
-nmap <Leader>gb <Cmd>Git blame<CR>
-nmap <Leader>gl <Cmd>Gclog<CR>

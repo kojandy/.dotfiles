@@ -22,11 +22,24 @@ return require'packer'.startup(function()
             endfunction
 
             command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+            nmap <Leader>ff <Cmd>Files<CR>
+            nmap <Leader>fg <Cmd>GFiles?<CR>
+            nmap <Leader>fb <Cmd>Buffers<CR>
+            nmap <Leader>fl <Cmd>BLines<CR>
+            nmap <Leader>fL <Cmd>Lines<CR>
+            nmap <Leader>fr <Cmd>RG<CR>
+            nmap <Leader>ft <Cmd>BTags<CR>
+            nmap <Leader>fT <Cmd>Tags<CR>
+            nmap <Leader>fh <Cmd>History<CR>
         ]], false)
     end}
     use {'liuchengxu/vista.vim', config = function()
         vim.g.vista_default_executive = 'coc'
         vim.g['vista#renderer#enable_icon'] = 0
+
+        vim.cmd 'nmap <Leader>fs <Cmd>Vista finder<CR>'
+        vim.cmd 'nmap <Leader>ss <Cmd>Vista!!<CR>'
     end}
 
     -- autocomplete, format, edit
@@ -56,7 +69,20 @@ return require'packer'.startup(function()
 
     -- git
     use {'tpope/vim-fugitive', config = function()
-        vim.cmd 'autocmd FileType fugitive* nmap <buffer> <nowait> q gq'
+        vim.api.nvim_exec([[
+            augroup fugitive_conf
+                autocmd!
+                autocmd FileType fugitive* nmap <buffer> <nowait> q gq
+            augroup END
+
+            nmap <Leader>gs <Cmd>Git<CR>
+            nmap <Leader>gc <Cmd>Git commit --verbose<CR>
+            nmap <Leader>gr <Cmd>Gread<CR>
+            nmap <Leader>gw <Cmd>Gwrite<CR>
+            nmap <Leader>gd <Cmd>Gvdiffsplit<CR>
+            nmap <Leader>gb <Cmd>Git blame<CR>
+            nmap <Leader>gl <Cmd>Gclog<CR>
+        ]], false)
     end}
     use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim', config = function()
         require'gitsigns'.setup {
