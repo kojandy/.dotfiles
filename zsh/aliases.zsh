@@ -21,7 +21,7 @@ cdtemp() {
   read "cleanup?rm -rf $TEMP_DIR? [Y/n] "
   if [[ ! "$cleanup" =~ "^[nN]$" ]]
   then
-    rm -rf $TEMP_DIR
+    \rm -rf $TEMP_DIR
   fi
   cd $PREV_DIR
 }
