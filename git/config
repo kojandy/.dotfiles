@@ -8,7 +8,6 @@
     rebase = true
 [merge]
     conflictstyle = diff3
-    ff = false
 [fetch]
     prune = true
 [credential]
