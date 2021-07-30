@@ -1,0 +1,23 @@
+[[verbs]]
+key = "ctrl-k"
+internal = ":line_up"
+
+[[verbs]]
+key = "ctrl-j"
+internal = ":line_down"
+
+[[verbs]]
+key = "ctrl-h"
+internal = ":panel_left"
+
+[[verbs]]
+key = "ctrl-l"
+internal = ":panel_right"
+
+[[verbs]]
+key = "ctrl-u"
+internal = ":input_clear"
+
+[[verbs]]
+key = "ctrl-d"
+internal = ":quit"
