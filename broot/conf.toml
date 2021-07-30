@@ -21,3 +21,13 @@ internal = ":input_clear"
 [[verbs]]
 key = "ctrl-d"
 internal = ":quit"
+
+[[verbs]]
+invocation = "edit"
+shortcut = "e"
+external = "$EDITOR {file}"
+leave_broot = false
+
+[[verbs]]
+invocation = "lf"
+external = "lf {file}"
