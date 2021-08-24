@@ -62,6 +62,9 @@ return require'packer'.startup(function()
     use {'cohama/lexima.vim', config = function()
         vim.g.lexima_enable_basic_rules = 0
     end}
+    use {'lambdalisue/suda.vim', config = function()
+        vim.cmd 'command WW execute "SudaWrite" | edit!'
+    end}
 
     -- language
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = 'require("plugins.treesitter")'}

@@ -45,8 +45,6 @@ augroup END
 
 " annoying
 command W w
-" write file with privilege
-silent! command WW execute 'silent! write !sudo tee % >/dev/null' | edit!
 
 " mappings
 let mapleader=' '
