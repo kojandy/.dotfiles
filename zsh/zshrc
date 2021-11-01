@@ -7,8 +7,8 @@ if ! zgen saved; then
     zgen load romkatv/powerlevel10k powerlevel10k
     zgen load agkozak/zsh-z
     zgen load kojandy/zsh-bd
-    zgen load zdharma/fast-syntax-highlighting
-    [ ! -f "$HOME/.zgen/zdharma/fast-syntax-highlighting-master/current_theme.zsh" ] && \
+    zgen load zdharma-continuum/fast-syntax-highlighting
+    [ ! -f "$HOME/.zgen/zdharma-continuum/fast-syntax-highlighting-master/current_theme.zsh" ] && \
         fast-theme clean
 
     zgen save
