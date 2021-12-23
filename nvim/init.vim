@@ -17,6 +17,8 @@ set shortmess+=c
 set termguicolors
 set mouse=a
 set statusline=%f\ %m%=%l/%L
+set number
+set relativenumber
 
 " search
 set ignorecase
