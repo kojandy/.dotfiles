@@ -1,0 +1,7 @@
+set ignorecase
+set incsearch
+set scrolloff=3
+set smartcase
+set ideajoin
+set number
+set relativenumber
