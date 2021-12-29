@@ -13,3 +13,8 @@ Plug 'machakann/vim-highlightedyank'
 
 sethandler <S-Tab> a:vim
 map <S-Tab> <Action>(HideAllWindows)
+
+map <C-H> <C-W><C-H>
+map <C-J> <C-W><C-J>
+map <C-K> <C-W><C-K>
+map <C-L> <C-W><C-L>
