@@ -5,3 +5,11 @@ set smartcase
 set ideajoin
 set number
 set relativenumber
+
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'kana/vim-textobj-entire'
+Plug 'machakann/vim-highlightedyank'
+
+sethandler <S-Tab> a:vim
+map <S-Tab> <Action>(HideAllWindows)
