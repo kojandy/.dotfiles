@@ -124,8 +124,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gD <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-nmap <Leader>sa <Plug>(coc-codeaction)
-xmap <leader>sa <Plug>(coc-codeaction-selected)
+nmap <M-CR> <Plug>(coc-codeaction)
+xmap <M-CR> <Plug>(coc-codeaction-selected)
 
 nmap <Leader>sd <Cmd>CocList diagnostics<CR>
 nmap <Leader>so <Cmd>CocList outline<CR>
