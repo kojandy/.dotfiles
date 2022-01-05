@@ -32,6 +32,7 @@ nmap <Leader>fs <Action>(GotoSymbol)
 
 nmap <Leader>sf <Action>(ActivateProjectToolWindow)
 nmap <Leader>ss <Action>(ActivateStructureToolWindow)
+nmap <Leader>sd <Action>(ActivateProblemsViewToolWindow)
 
 nmap <Leader>gs <Action>(ActivateCommitToolWindow)
 nmap <Leader>gl <Action>(ActivateVersionControlToolWindow)
