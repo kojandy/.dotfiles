@@ -22,6 +22,7 @@ function! MonkeyTerminalOpen()
     " when calling :buffers command
     set nobuflisted
     set nonumber
+    set norelativenumber
 
     autocmd BufEnter <buffer> startinsert
     autocmd BufLeave <buffer> stopinsert
