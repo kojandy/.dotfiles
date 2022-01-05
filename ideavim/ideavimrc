@@ -11,10 +11,32 @@ Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-entire'
 Plug 'machakann/vim-highlightedyank'
 
+let mapleader=" "
+
+xnoremap < <gv
+xnoremap > >gv
+
 sethandler <S-Tab> a:vim
 map <S-Tab> <Action>(HideAllWindows)
 
-map <C-H> <C-W><C-H>
-map <C-J> <C-W><C-J>
-map <C-K> <C-W><C-K>
-map <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
+
+nmap <Leader>ff <Action>(GotoFile)
+nmap <Leader>fs <Action>(GotoSymbol)
+
+nmap <Leader>sf <Action>(ActivateProjectToolWindow)
+nmap <Leader>ss <Action>(ActivateStructureToolWindow)
+
+nmap <Leader>gs <Action>(ActivateCommitToolWindow)
+nmap <Leader>gl <Action>(ActivateVersionControlToolWindow)
+
+nmap <Leader>af <Action>(ReformatCode)
+nmap <Leader>ar <Action>(RenameElement)
+
+nmap <Leader>rr <Action>(Run)
