@@ -11,7 +11,7 @@ alias ls='ls --color=tty'
 
 # i am sure that you are not expecting cp overwrites sth
 alias cp='cp -i'
-alias rm='rm -I'
+# alias rm='rm -I'
 
 cdtemp() {
   PREV_DIR=$(pwd)
