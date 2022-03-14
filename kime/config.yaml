@@ -1,0 +1,22 @@
+engine:
+    global_hotkeys:
+        M-C-E:
+            behavior:
+                Mode: Emoji
+            result: ConsumeIfProcessed
+        Esc:
+            behavior:
+                Switch: Latin
+            result: Bypass
+        Super-Space:
+            behavior:
+                Toggle:
+                    - Hangul
+                    - Latin
+            result: Consume
+        AltR:
+            behavior:
+                Toggle:
+                    - Hangul
+                    - Latin
+            result: Consume
