@@ -16,6 +16,9 @@ let mapleader=" "
 xnoremap < <gv
 xnoremap > >gv
 
+nnoremap g; :action JumpToLastChange<Enter>
+nnoremap g, :action JumpToNextChange<Enter>
+
 sethandler <S-Tab> a:vim
 map <S-Tab> <Action>(HideAllWindows)
 
@@ -23,6 +26,9 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
+
+nmap <M-S-J> tabm +1
+nmap <M-S-K> tabm -1
 
 nmap [d <Action>(GotoPreviousError)
 nmap ]d <Action>(GotoNextError)
