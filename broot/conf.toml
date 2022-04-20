@@ -1,3 +1,5 @@
+default_flags = "hi"
+
 [[verbs]]
 key = "ctrl-k"
 internal = ":line_up"
@@ -21,6 +23,14 @@ internal = ":input_clear"
 [[verbs]]
 key = "ctrl-d"
 internal = ":quit"
+
+[[verbs]]
+key = "ctrl-p"
+internal = ":parent"
+
+[[verbs]]
+key = "ctrl-n"
+internal = ":page_down"
 
 [[verbs]]
 invocation = "edit"
