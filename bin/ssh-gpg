@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# you need to add your keygrip to ~/.gnupg/sshcontrol
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 gpg-connect-agent updatestartuptty /bye >/dev/null
 $SHELL
