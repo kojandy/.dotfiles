@@ -5,11 +5,13 @@
     ripgrep
     broot
     fzf
+    fd
 
     httpie
     htop
     gnupg
     wakeonlan
+    entr
 
     mas
 
