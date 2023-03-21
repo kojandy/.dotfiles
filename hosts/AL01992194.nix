@@ -1,7 +1,9 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    kubernetes-helm
     maven
+
+    kubernetes-helm
+    minikube
   ];
 
   homebrew = {
