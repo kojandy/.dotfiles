@@ -1,10 +1,13 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     neovim
+    tmux
+
     lf
-    ripgrep
     broot
     fzf
+
+    ripgrep
     fd
 
     httpie
@@ -14,8 +17,6 @@
 
     entr
     unixtools.watch
-
-    mas
 
     streamlink
     youtube-dl
@@ -59,6 +60,11 @@
       "obs"
       "zoom"
       "chatty"
+
+      "docker"
+
+      "elgato-control-center"
+      "elgato-stream-deck"
     ];
   };
 

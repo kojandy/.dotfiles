@@ -15,6 +15,13 @@
         system = "aarch64-darwin";
         modules = [ ./hosts/darwin/default.nix ];
       };
+      AL01992194 = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./hosts/darwin/default.nix
+          ./hosts/AL01992194/default.nix
+        ];
+      };
     };
   };
 }
