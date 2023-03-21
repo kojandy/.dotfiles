@@ -11,7 +11,9 @@
     htop
     gnupg
     wakeonlan
+
     entr
+    unixtools.watch
 
     mas
 
