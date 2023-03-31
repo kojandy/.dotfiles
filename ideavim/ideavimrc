@@ -12,15 +12,23 @@ Plug 'kana/vim-textobj-entire'
 Plug 'machakann/vim-highlightedyank'
 
 let mapleader=" "
+sethandler a:vim
 
 xnoremap < <gv
 xnoremap > >gv
 
-nnoremap g; :action JumpToLastChange<Enter>
-nnoremap g, :action JumpToNextChange<Enter>
-
-sethandler <S-Tab> a:vim
 map <S-Tab> <Action>(HideAllWindows)
+
+map <C-S-J> <Action>(MoveTabDown)
+map <C-S-L> <Action>(MoveTabRight)
+map <C-S-H> <Action>(Unsplit)
+
+map <M-J> <Action>(NextTab)
+map <M-K> <Action>(PreviousTab)
+map <M-S-J> :tabm +1<Enter>
+map <M-S-K> :tabm -1<Enter>
+map <M-W> <Action>(CloseContent)
+map <M-O> :tabonly<Enter>
 
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
@@ -30,17 +38,22 @@ nnoremap <C-L> <C-W><C-L>
 nmap [d <Action>(GotoPreviousError)
 nmap ]d <Action>(GotoNextError)
 
+nmap g; <Action>(JumpToLastChange)
+nmap g, <Action>(JumpToNextChange)
+nmap gd <Action>(GotoDeclarationOnly)
+nmap gi <Action>(GotoImplementation)
+nmap gr <Action>(GotoDeclaration)
+nmap gy <Action>(GotoTypeDeclaration)
+imap <C-K> <Action>(ParameterInfo)
+
 nmap <Leader>ff <Action>(GotoFile)
 nmap <Leader>fs <Action>(GotoSymbol)
-
-nmap <Leader>sf <Action>(ActivateProjectToolWindow)
-nmap <Leader>ss <Action>(ActivateStructureToolWindow)
-nmap <Leader>sd <Action>(ActivateProblemsViewToolWindow)
-
-nmap <Leader>gs <Action>(ActivateCommitToolWindow)
-nmap <Leader>gl <Action>(ActivateVersionControlToolWindow)
+nmap <Leader>fr <Action>(FindInPath)
+nmap <Leader>fh <Action>(RecentFiles)
 
 nmap <Leader>af <Action>(ReformatCode)
 nmap <Leader>ar <Action>(RenameElement)
 
-nmap <Leader>rr <Action>(Run)
+nmap <Leader>rr <Action>(RunClass)
+
+nmap <Leader>gg <Action>(WindowMode)
