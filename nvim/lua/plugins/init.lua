@@ -31,7 +31,7 @@ return {
   'tpope/vim-surround',
   'tpope/vim-commentary',
   'tpope/vim-repeat',
-  {'chaoren/vim-wordmotion', config = function()
+  {'chaoren/vim-wordmotion', init = function()
     vim.g.wordmotion_prefix = '<Leader>'
   end},
   'wellle/targets.vim',
@@ -43,28 +43,28 @@ return {
   end},
 
   -- language
-  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
-  opts = {
-    highlight = {enable = true},
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = 'gnn',
-        node_incremental = 'grn',
-        scope_incremental = 'grc',
-        node_decremental = 'grm',
+  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', event = {'BufReadPost', 'BufNewFile'},
+    opts = {
+      highlight = {enable = true},
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = 'gnn',
+          node_incremental = 'grn',
+          scope_incremental = 'grc',
+          node_decremental = 'grm',
+        },
       },
     },
-  },
-  config = function(_, opts)
-    require('nvim-treesitter.configs').setup(opts)
-    vim.wo.foldmethod = 'expr'
-    vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-  end},
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
+      vim.wo.foldmethod = 'expr'
+      vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+    end},
   'metakirby5/codi.vim',
 
   -- git
-  {'tpope/vim-fugitive', config = function()
+  {'tpope/vim-fugitive', event = 'VeryLazy', config = function()
     vim.cmd([[
       augroup fugitive_conf
         autocmd!
@@ -80,7 +80,7 @@ return {
     vim.keymap.set('n', '<Leader>gb', '<Cmd>Git blame<CR>')
     vim.keymap.set('n', '<Leader>gl', '<Cmd>Gclog<CR>')
   end},
-  {'lewis6991/gitsigns.nvim', dependencies = {'nvim-lua/plenary.nvim'}, opts = {
+  {'lewis6991/gitsigns.nvim', dependencies = {'nvim-lua/plenary.nvim'}, event = {'BufReadPre', 'BufNewFile'}, opts = {
     signs = {
       add = {hl = 'GitGutterAdd'},
       change = {hl = 'GitGutterChange'},
