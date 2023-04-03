@@ -1,154 +1,139 @@
-vim.cmd 'packadd packer.nvim'
+return {
+  -- find, navigate
+  {'junegunn/fzf', config = function()
+    vim.env.FZF_DEFAULT_OPTS = '--reverse'
+  end},
+  {'junegunn/fzf.vim', config = function()
+    vim.cmd([[
+      function! RipgrepFzf(query, fullscreen)
+        let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+        let initial_command = printf(command_fmt, shellescape(a:query))
+        let reload_command = printf(command_fmt, '{q}')
+        let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+        call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+      endfunction
 
-return require'packer'.startup(function()
-    use {'wbthomason/packer.nvim',
-        opt = true,
-        config = 'require("plugins")',
-        cmd = 'PackerSync',
-    }
+      command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+    ]])
 
-    -- find, navigate
-    use {'junegunn/fzf', config = function()
-        vim.env.FZF_DEFAULT_OPTS = '--reverse'
-    end}
-    use {'junegunn/fzf.vim', config = function()
-        vim.api.nvim_exec([[
-            function! RipgrepFzf(query, fullscreen)
-                let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-                let initial_command = printf(command_fmt, shellescape(a:query))
-                let reload_command = printf(command_fmt, '{q}')
-                let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-                call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-            endfunction
+    vim.keymap.set('n', '<Leader>ff', '<Cmd>Files<CR>')
+    vim.keymap.set('n', '<Leader>fg', '<Cmd>GFiles?<CR>')
+    vim.keymap.set('n', '<Leader>fb', '<Cmd>Buffers<CR>')
+    vim.keymap.set('n', '<Leader>fl', '<Cmd>BLines<CR>')
+    vim.keymap.set('n', '<Leader>fL', '<Cmd>Lines<CR>')
+    vim.keymap.set('n', '<Leader>fr', '<Cmd>RG<CR>')
+    vim.keymap.set('n', '<Leader>ft', '<Cmd>BTags<CR>')
+    vim.keymap.set('n', '<Leader>fT', '<Cmd>Tags<CR>')
+    vim.keymap.set('n', '<Leader>fh', '<Cmd>History<CR>')
+  end},
 
-            command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+  -- autocomplete, format, edit
+  'tpope/vim-surround',
+  'tpope/vim-commentary',
+  'tpope/vim-repeat',
+  {'chaoren/vim-wordmotion', config = function()
+    vim.g.wordmotion_prefix = '<Leader>'
+  end},
+  'wellle/targets.vim',
+  {'cohama/lexima.vim', config = function()
+    vim.g.lexima_enable_basic_rules = 0
+  end},
+  {'lambdalisue/suda.vim', config = function()
+    vim.cmd.command('WW', 'execute "SudaWrite" | edit!')
+  end},
 
-            nmap <Leader>ff <Cmd>Files<CR>
-            nmap <Leader>fg <Cmd>GFiles?<CR>
-            nmap <Leader>fb <Cmd>Buffers<CR>
-            nmap <Leader>fl <Cmd>BLines<CR>
-            nmap <Leader>fL <Cmd>Lines<CR>
-            nmap <Leader>fr <Cmd>RG<CR>
-            nmap <Leader>ft <Cmd>BTags<CR>
-            nmap <Leader>fT <Cmd>Tags<CR>
-            nmap <Leader>fh <Cmd>History<CR>
-        ]], false)
-    end}
-    use {'liuchengxu/vista.vim', config = function()
-        vim.g.vista_default_executive = 'coc'
-        vim.g['vista#renderer#enable_icon'] = 0
+  -- language
+  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
+  opts = {
+    highlight = {enable = true},
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = 'gnn',
+        node_incremental = 'grn',
+        scope_incremental = 'grc',
+        node_decremental = 'grm',
+      },
+    },
+  },
+  config = function(_, opts)
+    require('nvim-treesitter.configs').setup(opts)
+    vim.wo.foldmethod = 'expr'
+    vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+  end},
+  'metakirby5/codi.vim',
 
-        vim.cmd 'nmap <Leader>fs <Cmd>Vista finder<CR>'
-        vim.cmd 'nmap <Leader>ss <Cmd>Vista!!<CR>'
-    end}
+  -- git
+  {'tpope/vim-fugitive', config = function()
+    vim.cmd([[
+      augroup fugitive_conf
+        autocmd!
+        autocmd FileType fugitive* nmap <buffer> <nowait> q gq
+      augroup END
+    ]])
 
-    -- autocomplete, format, edit
-    use {'neoclide/coc.nvim', branch = 'release', config = function()
-        vim.g.coc_user_config = {
-            diagnostic = {
-                enableMessage = 'jump',
-                virtualText = true,
-                virtualTextLines = 1,
-            }
-        }
-    end}
-    use 'tpope/vim-surround'
-    use 'tpope/vim-commentary'
-    use 'tpope/vim-repeat'
-    use {'chaoren/vim-wordmotion', config = function()
-        vim.g.wordmotion_prefix = '<Leader>'
-    end}
-    use 'wellle/targets.vim'
-    use {'cohama/lexima.vim', config = function()
-        vim.g.lexima_enable_basic_rules = 0
-    end}
-    use {'lambdalisue/suda.vim', config = function()
-        vim.cmd 'command WW execute "SudaWrite" | edit!'
-    end}
+    vim.keymap.set('n', '<Leader>gs', '<Cmd>Git<CR>')
+    vim.keymap.set('n', '<Leader>gc', '<Cmd>Git commit --verbose<CR>')
+    vim.keymap.set('n', '<Leader>gr', '<Cmd>Gread<CR>')
+    vim.keymap.set('n', '<Leader>gw', '<Cmd>Gwrite<CR>')
+    vim.keymap.set('n', '<Leader>gd', '<Cmd>Gvdiffsplit<CR>')
+    vim.keymap.set('n', '<Leader>gb', '<Cmd>Git blame<CR>')
+    vim.keymap.set('n', '<Leader>gl', '<Cmd>Gclog<CR>')
+  end},
+  {'lewis6991/gitsigns.nvim', dependencies = {'nvim-lua/plenary.nvim'}, opts = {
+    signs = {
+      add = {hl = 'GitGutterAdd'},
+      change = {hl = 'GitGutterChange'},
+      delete = {hl = 'GitGutterDelete'},
+      topdelete = {hl = 'GitGutterDelete'},
+      changedelete = {hl = 'GitGutterChange'},
+    },
+    keymaps = {
+      noremap = true,
+      buffer = true,
 
-    -- language
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = 'require("plugins.treesitter")'}
-    use 'metakirby5/codi.vim'
+      ['n ]c'] = {expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'"},
+      ['n [c'] = {expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'"},
 
-    -- git
-    use {'tpope/vim-fugitive', config = function()
-        vim.api.nvim_exec([[
-            augroup fugitive_conf
-                autocmd!
-                autocmd FileType fugitive* nmap <buffer> <nowait> q gq
-            augroup END
+      ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+      ['n <leader>hu'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+      ['n <leader>hh'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+    },
+  }},
 
-            nmap <Leader>gs <Cmd>Git<CR>
-            nmap <Leader>gc <Cmd>Git commit --verbose<CR>
-            nmap <Leader>gr <Cmd>Gread<CR>
-            nmap <Leader>gw <Cmd>Gwrite<CR>
-            nmap <Leader>gd <Cmd>Gvdiffsplit<CR>
-            nmap <Leader>gb <Cmd>Git blame<CR>
-            nmap <Leader>gl <Cmd>Gclog<CR>
-        ]], false)
-    end}
-    use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim', config = function()
-        require'gitsigns'.setup {
-            signs = {
-                add = {hl = 'GitGutterAdd'},
-                change = {hl = 'GitGutterChange'},
-                delete = {hl = 'GitGutterDelete'},
-                topdelete = {hl = 'GitGutterDelete'},
-                changedelete = {hl = 'GitGutterChange'},
-            },
-            keymaps = {
-                noremap = true,
-                buffer = true,
+  -- visuals
+  'psliwka/vim-smoothie',
+  'romainl/vim-cool',
+  -- {'romgrk/barbar.nvim', event = 'BufAdd *', init = function()
+  --   vim.g.bufferline = {
+  --     icons = false,
+  --     auto_hide = true,
+  --     closable = false,
+  --     animation = false,
+  --   }
+  --   vim.cmd 'nnoremap <M-k> <Cmd>BufferPrevious<CR>'
+  --   vim.cmd 'nnoremap <M-j> <Cmd>BufferNext<CR>'
+  --   vim.cmd 'nnoremap <M-o> <Cmd>BufferCloseAllButCurrent<CR>'
+  --   vim.cmd 'nnoremap <M-w> <Cmd>BufferClose<CR>'
+  -- end},
 
-                ['n ]c'] = {expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'"},
-                ['n [c'] = {expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'"},
-
-                ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-                ['n <leader>hu'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-                ['n <leader>hh'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-            },
-        }
-    end}
-
-    -- visuals
-    use 'psliwka/vim-smoothie'
-    use 'romainl/vim-cool'
-    use {'machakann/vim-highlightedyank', config = function()
-        vim.g.highlightedyank_highlight_duration = 200
-        vim.cmd 'highlight link HighlightedyankRegion Search'
-    end}
-    use {'romgrk/barbar.nvim',
-        event = 'BufAdd *',
-        setup = function()
-            vim.g.bufferline = {
-                icons = false,
-                auto_hide = true,
-                closable = false,
-                animation = false,
-            }
-            vim.cmd 'nnoremap <M-k> <Cmd>BufferPrevious<CR>'
-            vim.cmd 'nnoremap <M-j> <Cmd>BufferNext<CR>'
-            vim.cmd 'nnoremap <M-o> <Cmd>BufferCloseAllButCurrent<CR>'
-            vim.cmd 'nnoremap <M-w> <Cmd>BufferClose<CR>'
-        end
-    }
-
-    -- colorscheme
-    -- use {'rafalbromirski/vim-aurora', config = 'vim.cmd [[colorscheme aurora]]'}
-    -- use {'cocopon/iceberg.vim', config = 'vim.cmd [[colorscheme iceberg]]'}
-    -- use {'koirand/tokyo-metro.vim', config = 'vim.cmd [[colorscheme tokyo-metro]]'}
-    -- use {'phanviet/vim-monokai-pro', config = 'vim.cmd [[colorscheme monokai_pro]]'}
-    use {'ayu-theme/ayu-vim', config = function()
-        vim.cmd 'colorscheme ayu'
-        vim.cmd 'highlight clear SignColumn'
-    end}
-    -- use {'jacoborus/tender.vim', config = 'vim.cmd [[colorscheme tender]]'}
-    -- use {'w0ng/vim-hybrid', config = 'vim.cmd [[colorscheme hybrid]]'}
-    -- use {'vim-scripts/rootwater.vim', config = 'vim.cmd [[colorscheme rootwater]]'}
-    -- use {'hzchirs/vim-material', config = function()
-    --     vim.g.material_style = 'oceanic'
-    --     vim.cmd 'colorscheme vim-material'
-    -- end}
-    -- use {'arzg/vim-colors-xcode', config = 'vim.cmd [[colorscheme xcodedark]]'}
-    -- use {'zeis/vim-kolor', config = 'vim.cmd [[colorscheme kolor]]'}
-end)
+  -- colorscheme
+  {'ayu-theme/ayu-vim', lazy = false, priority = 1000, config = function()
+    vim.cmd('colorscheme ayu')
+    vim.cmd('highlight clear SignColumn')
+  end},
+  -- {'rafalbromirski/vim-aurora', config = function() vim.cmd('colorscheme aurora') end},
+  -- {'cocopon/iceberg.vim', config = function() vim.cmd('colorscheme iceberg') end},
+  -- {'koirand/tokyo-metro.vim', config = function() vim.cmd('colorscheme tokyo-metro') end},
+  -- {'phanviet/vim-monokai-pro', config = function() vim.cmd('colorscheme monokai_pro') end},
+  -- {'jacoborus/tender.vim', config = function() vim.cmd('colorscheme tender') end},
+  -- {'w0ng/vim-hybrid', config = function() vim.cmd('colorscheme hybrid') end},
+  -- {'vim-scripts/rootwater.vim', config = function() vim.cmd('colorscheme rootwater') end},
+  -- {'hzchirs/vim-material', config = function()
+  --   vim.g.material_style = 'oceanic'
+  --   vim.cmd('colorscheme vim-material')
+  -- end},
+  -- {'arzg/vim-colors-xcode', config = function() vim.cmd('colorscheme xcodedark') end},
+  -- {'zeis/vim-kolor', config = function() vim.cmd('colorscheme kolor') end},
+}
+-- vim:ts=2:sts=2:sw=2
