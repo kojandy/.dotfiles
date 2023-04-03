@@ -104,18 +104,19 @@ return {
   -- visuals
   'psliwka/vim-smoothie',
   'romainl/vim-cool',
-  -- {'romgrk/barbar.nvim', event = 'BufAdd *', init = function()
-  --   vim.g.bufferline = {
-  --     icons = false,
-  --     auto_hide = true,
-  --     closable = false,
-  --     animation = false,
-  --   }
-  --   vim.cmd 'nnoremap <M-k> <Cmd>BufferPrevious<CR>'
-  --   vim.cmd 'nnoremap <M-j> <Cmd>BufferNext<CR>'
-  --   vim.cmd 'nnoremap <M-o> <Cmd>BufferCloseAllButCurrent<CR>'
-  --   vim.cmd 'nnoremap <M-w> <Cmd>BufferClose<CR>'
-  -- end},
+  {'akinsho/bufferline.nvim', version = 'v3.*', event = 'VeryLazy',
+    keys = {
+      {'<M-k>', '<Cmd>BufferLineCyclePrev<CR>'},
+      {'<M-j>', '<Cmd>BufferLineCycleNext<CR>'},
+      {'<M-o>', ':set modified<CR>:silent! %bd<CR>:<Esc>'},
+      {'<M-w>', '<Cmd>bd<CR>'},
+    },
+    opts = {
+      options = {
+        show_buffer_close_icons = false,
+        always_show_bufferline = false,
+      },
+    }},
 
   -- colorscheme
   {'ayu-theme/ayu-vim', lazy = false, priority = 1000, config = function()
