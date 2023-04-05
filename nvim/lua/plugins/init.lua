@@ -65,7 +65,8 @@ return {
     vim.keymap.set('n', '<Leader>gw', '<Cmd>Gwrite<CR>')
     vim.keymap.set('n', '<Leader>gd', '<Cmd>Gvdiffsplit<CR>')
     vim.keymap.set('n', '<Leader>gb', '<Cmd>Git blame<CR>')
-    vim.keymap.set('n', '<Leader>gl', '<Cmd>Gclog<CR>')
+    vim.keymap.set('n', '<Leader>gl', '<Cmd>Gclog %<CR>')
+    vim.keymap.set('n', '<Leader>gL', '<Cmd>Gclog<CR>')
   end},
   {'lewis6991/gitsigns.nvim', dependencies = {'nvim-lua/plenary.nvim'}, event = {'BufReadPre', 'BufNewFile'}, opts = {
     signs = {
