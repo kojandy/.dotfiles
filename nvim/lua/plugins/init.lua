@@ -1,31 +1,18 @@
 return {
   -- find, navigate
-  {'junegunn/fzf', config = function()
-    vim.env.FZF_DEFAULT_OPTS = '--reverse'
-  end},
-  {'junegunn/fzf.vim', config = function()
-    vim.cmd([[
-      function! RipgrepFzf(query, fullscreen)
-        let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-        let initial_command = printf(command_fmt, shellescape(a:query))
-        let reload_command = printf(command_fmt, '{q}')
-        let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-        call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-      endfunction
-
-      command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-    ]])
-
-    vim.keymap.set('n', '<Leader>ff', '<Cmd>Files<CR>')
-    vim.keymap.set('n', '<Leader>fg', '<Cmd>GFiles?<CR>')
-    vim.keymap.set('n', '<Leader>fb', '<Cmd>Buffers<CR>')
-    vim.keymap.set('n', '<Leader>fl', '<Cmd>BLines<CR>')
-    vim.keymap.set('n', '<Leader>fL', '<Cmd>Lines<CR>')
-    vim.keymap.set('n', '<Leader>fr', '<Cmd>RG<CR>')
-    vim.keymap.set('n', '<Leader>ft', '<Cmd>BTags<CR>')
-    vim.keymap.set('n', '<Leader>fT', '<Cmd>Tags<CR>')
-    vim.keymap.set('n', '<Leader>fh', '<Cmd>History<CR>')
-  end},
+  {'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
+    dependencies = {'nvim-lua/plenary.nvim'},
+    cmd = "Telescope",
+    keys = {
+      {'<Leader>ff', '<Cmd>Telescope find_files<CR>'},
+      {'<Leader>fg', '<Cmd>Telescope git_status<CR>'},
+      {'<Leader>fb', '<Cmd>Telescope buffers<CR>'},
+      {'<Leader>fl', '<Cmd>Telescope current_buffer_fuzzy_find<CR>'},
+      {'<Leader>fL', '<Cmd>Telescope buffers<CR>'},
+      {'<Leader>fr', '<Cmd>Telescope live_grep<CR>'},
+      {'<Leader>fh', '<Cmd>Telescope oldfiles<CR>'},
+    }},
 
   -- autocomplete, format, edit
   'tpope/vim-surround',
