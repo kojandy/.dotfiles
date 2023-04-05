@@ -18,7 +18,7 @@ return {
   'tpope/vim-surround',
   'tpope/vim-commentary',
   'tpope/vim-repeat',
-  {'chaoren/vim-wordmotion', init = function()
+  {'chaoren/vim-wordmotion', event = 'VeryLazy', init = function()
     vim.g.wordmotion_prefix = '<Leader>'
   end},
   'wellle/targets.vim',
