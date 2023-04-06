@@ -6,6 +6,8 @@
     kubernetes-helm
     minikube
     kubectl
+
+    (writeShellScriptBin "jdtls" "exec -a $0 ${jdt-language-server}/bin/jdt-language-server $@")
   ];
 
   homebrew = {

@@ -23,6 +23,8 @@
 
     nodejs
     openjdk
+
+    pyright
   ];
 
   homebrew = {
