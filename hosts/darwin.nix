@@ -5,8 +5,6 @@
 
     lf
     broot
-    fzf
-
     ripgrep
     fd
 
