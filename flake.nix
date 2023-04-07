@@ -13,7 +13,10 @@
     darwinConfigurations = {
       studio = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        modules = [ ./hosts/darwin.nix ];
+        modules = [
+          ./hosts/darwin.nix
+          ./hosts/studio.nix
+        ];
       };
       AL01992194 = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
