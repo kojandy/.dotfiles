@@ -11,7 +11,6 @@
     httpie
     htop
     gnupg
-    wakeonlan
 
     entr
     unixtools.watch
