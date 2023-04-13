@@ -12,7 +12,19 @@ return {
       {'<Leader>fL', '<Cmd>Telescope buffers<CR>'},
       {'<Leader>fr', '<Cmd>Telescope live_grep<CR>'},
       {'<Leader>fh', '<Cmd>Telescope oldfiles<CR>'},
-    }},
+    },
+    opts = {
+      defaults = {
+        mappings = {
+          i = {
+            ['<C-J>'] = 'move_selection_next',
+            ['<C-K>'] = 'move_selection_previous',
+            ['<C-U>'] = false,
+          },
+        },
+      },
+    },
+  },
 
   -- autocomplete, format, edit
   'tpope/vim-surround',
