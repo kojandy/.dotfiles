@@ -90,7 +90,7 @@ return {
   }},
 
   -- visuals
-  'psliwka/vim-smoothie',
+  {'declancm/cinnamon.nvim', opts = {max_length = 100}},
   'romainl/vim-cool',
   {'akinsho/bufferline.nvim', version = 'v3.*', event = 'VeryLazy',
     keys = {
