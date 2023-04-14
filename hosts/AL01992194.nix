@@ -11,6 +11,9 @@
   ];
 
   homebrew = {
+    brews = [
+      "pinot"
+    ];
     casks = [
       "datagrip"
       "intellij-idea"
