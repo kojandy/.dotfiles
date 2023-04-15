@@ -38,6 +38,7 @@ vim.opt.breakindent = true
 -- netrw
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
+vim.g.netrw_keepdir = 0
 
 local vimrc_augroup = vim.api.nvim_create_augroup('vimrc', {clear = true})
 vim.api.nvim_create_autocmd('InsertEnter', {group = vimrc_augroup, pattern = '*', command = 'set nolist'})
