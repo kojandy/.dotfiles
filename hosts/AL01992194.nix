@@ -13,6 +13,7 @@
   homebrew = {
     brews = [
       "pinot"
+      "hbase"
     ];
     casks = [
       "datagrip"
