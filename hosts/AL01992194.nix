@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  networking.computerName = "AL01992194";
+
   environment.systemPackages = with pkgs; [
     maven
     nodePackages.node-gyp

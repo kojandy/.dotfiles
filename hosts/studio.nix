@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  networking.computerName = "studio";
+
   homebrew = {
     brews = [
       "openjdk"
