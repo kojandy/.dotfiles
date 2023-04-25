@@ -27,6 +27,9 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "zap";
+    brews = [
+      "blueutil"
+    ];
     masApps = {
       "Amphetamine" = 937984704;
       "Gestimer" = 990588172;
