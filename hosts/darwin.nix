@@ -3,6 +3,8 @@
     neovim
     tmux
 
+    git
+
     lf
     broot
     ripgrep
