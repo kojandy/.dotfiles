@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
+  environment.packages = with pkgs; [
     neovim
 
     lf
