@@ -65,6 +65,7 @@
       "obs"
       "zoom"
       "chatty"
+      "cron"
 
       "docker"
 
