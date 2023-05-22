@@ -111,7 +111,8 @@ return {
         show_buffer_close_icons = false,
         always_show_bufferline = false,
       },
-    }},
+  }},
+  {'lukas-reineke/indent-blankline.nvim', event = {'BufReadPost', 'BufNewFile'}, config = true},
 
   -- colorscheme
   {'ayu-theme/ayu-vim', lazy = false, priority = 1000, config = function()
