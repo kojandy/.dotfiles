@@ -22,6 +22,8 @@
     nodejs
     openjdk
 
+    gh
+
     pyright
   ];
 
