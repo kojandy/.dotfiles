@@ -2,8 +2,6 @@
   networking.computerName = "AL01992194";
 
   environment.systemPackages = with pkgs; [
-    gh
-
     maven
     nodePackages.node-gyp
 
