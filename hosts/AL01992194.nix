@@ -2,6 +2,8 @@
   networking.computerName = "AL01992194";
 
   environment.systemPackages = with pkgs; [
+    gh
+
     maven
     nodePackages.node-gyp
 
@@ -27,7 +29,10 @@
 
       "zulu7"
       "temurin8"
-      "adoptopenjdk9"
+      {
+        name = "adoptopenjdk9";
+        args = {no_quarantine = true;};
+      }
       "temurin11"
     ];
   };
