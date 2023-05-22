@@ -13,6 +13,28 @@ return {
   {'lambdalisue/suda.vim', config = function()
     vim.cmd.command('WW', 'execute "SudaWrite" | edit!')
   end},
+  {'hrsh7th/nvim-cmp', event = 'InsertEnter',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+    },
+    opts = function()
+      local cmp = require('cmp')
+      return {
+        mapping = cmp.mapping.preset.insert({
+          ['<Tab>'] = cmp.mapping.select_next_item(),
+          ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+          ['<C-D>'] = cmp.mapping.scroll_docs(2),
+          ['<C-U>'] = cmp.mapping.scroll_docs(-2),
+        }),
+        sources = cmp.config.sources({
+          {name = 'nvim_lsp'},
+          {name = 'buffer'},
+          {name = 'path'},
+        }),
+      }
+  end},
 
   -- language
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', event = {'BufReadPost', 'BufNewFile'},
@@ -32,7 +54,7 @@ return {
       require('nvim-treesitter.configs').setup(opts)
       vim.wo.foldmethod = 'expr'
       vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-    end},
+  end},
   'metakirby5/codi.vim',
 
   -- git
