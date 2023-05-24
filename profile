@@ -7,4 +7,4 @@ export VISUAL=$EDITOR
 export PAGER=less
 export MANPAGER='nvim +Man!'
 export TERMINAL=alacritty
-export BROWSER=google-chrome-stable
+# export BROWSER=google-chrome-stable
