@@ -1,9 +1,20 @@
 return {
-  {'neovim/nvim-lspconfig', event = {'BufReadPre', 'BufNewFile'}, config = function()
-    local lspconfig = require('lspconfig')
-    lspconfig.pyright.setup {}
-    lspconfig.jdtls.setup {}
-
+  {'neovim/nvim-lspconfig', event = {'BufReadPre', 'BufNewFile'},
+  dependencies = {
+    {'williamboman/mason.nvim', config = true},
+    {'williamboman/mason-lspconfig.nvim', config = function()
+      local masonlsp = require('mason-lspconfig')
+      masonlsp.setup {
+        ensure_installed = {"pyright", "bashls"},
+      }
+      masonlsp.setup_handlers {
+        function (server_name)
+          require('lspconfig')[server_name].setup {}
+        end,
+      }
+    end},
+  },
+  config = function()
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
