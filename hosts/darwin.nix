@@ -23,8 +23,6 @@
     openjdk
 
     gh
-
-    pyright
   ];
 
   homebrew = {
