@@ -1,4 +1,7 @@
 return {
+  -- browse
+  {"stevearc/oil.nvim", keys = {{'-', '<Cmd>Oil<CR>'}}, config = true},
+
   -- autocomplete, format, edit
   'tpope/vim-surround',
   'tpope/vim-commentary',

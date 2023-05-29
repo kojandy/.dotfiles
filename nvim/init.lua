@@ -36,9 +36,8 @@ vim.opt.linebreak = true
 vim.opt.breakindent = true
 
 -- netrw
-vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
-vim.g.netrw_keepdir = 0
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 local vimrc_augroup = vim.api.nvim_create_augroup('vimrc', {clear = true})
 vim.api.nvim_create_autocmd('InsertEnter', {group = vimrc_augroup, pattern = '*', command = 'set nolist'})
@@ -54,7 +53,6 @@ vim.keymap.set('n', 'Q', '<Nop>')
 vim.keymap.set({'n', 'x'}, '<Space>', '<Nop>')
 vim.keymap.set('v', '.', ':norm .<CR>', {silent = true})
 vim.keymap.set('c', '<C-A>', '<Home>')
-vim.keymap.set('n', '-', '<Cmd>Explore<CR>')
 
 -- move lines
 vim.keymap.set('x', '<C-K>', ':move-2<CR>gv', {silent = true})
