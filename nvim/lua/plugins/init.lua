@@ -10,7 +10,7 @@ return {
   {'cohama/lexima.vim', config = function()
     vim.g.lexima_enable_basic_rules = 0
   end},
-  {'lambdalisue/suda.vim', config = function()
+  {'lambdalisue/suda.vim', cmd = 'WW', config = function()
     vim.cmd.command('WW', 'execute "SudaWrite" | edit!')
   end},
   {'hrsh7th/nvim-cmp', event = 'InsertEnter',
@@ -58,23 +58,26 @@ return {
   'metakirby5/codi.vim',
 
   -- git
-  {'tpope/vim-fugitive', event = 'VeryLazy', config = function()
-    vim.cmd([[
-      augroup fugitive_conf
-        autocmd!
-        autocmd FileType fugitive* nmap <buffer> <nowait> q gq
-      augroup END
-    ]])
-
-    vim.keymap.set('n', '<Leader>gs', '<Cmd>Git<CR>')
-    vim.keymap.set('n', '<Leader>gc', '<Cmd>Git commit --verbose<CR>')
-    vim.keymap.set('n', '<Leader>gr', '<Cmd>Gread<CR>')
-    vim.keymap.set('n', '<Leader>gw', '<Cmd>Gwrite<CR>')
-    vim.keymap.set('n', '<Leader>gd', '<Cmd>Gvdiffsplit<CR>')
-    vim.keymap.set('n', '<Leader>gb', '<Cmd>Git blame<CR>')
-    vim.keymap.set('n', '<Leader>gl', '<Cmd>Gclog %<CR>')
-    vim.keymap.set('n', '<Leader>gL', '<Cmd>Gclog<CR>')
-  end},
+  {'tpope/vim-fugitive',
+    keys = {
+      {'<Leader>gs', '<Cmd>Git<CR>'},
+      {'<Leader>gc', '<Cmd>Git commit --verbose<CR>'},
+      {'<Leader>gr', '<Cmd>Gread<CR>'},
+      {'<Leader>gw', '<Cmd>Gwrite<CR>'},
+      {'<Leader>gd', '<Cmd>Gvdiffsplit<CR>'},
+      {'<Leader>gb', '<Cmd>Git blame<CR>'},
+      {'<Leader>gl', '<Cmd>Gclog %<CR>'},
+      {'<Leader>gL', '<Cmd>Gclog<CR>'},
+    },
+    config = function()
+      vim.cmd([[
+        augroup fugitive_conf
+          autocmd!
+          autocmd FileType fugitive* nmap <buffer> <nowait> q gq
+        augroup END
+      ]])
+    end
+  },
   {'lewis6991/gitsigns.nvim', dependencies = {'nvim-lua/plenary.nvim'}, event = {'BufReadPre', 'BufNewFile'}, opts = {
     signs = {
       add = {hl = 'GitGutterAdd'},
@@ -97,7 +100,7 @@ return {
   }},
 
   -- visuals
-  {'declancm/cinnamon.nvim', opts = {max_length = 100}},
+  {'declancm/cinnamon.nvim', event = 'VeryLazy', opts = {max_length = 100}},
   'romainl/vim-cool',
   {'akinsho/bufferline.nvim', version = 'v3.*', event = 'VeryLazy',
     keys = {
