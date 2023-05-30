@@ -21,6 +21,7 @@
 
     nodejs
     openjdk
+    python3
 
     gh
   ];
