@@ -56,7 +56,6 @@
       "little-snitch"
       "monitorcontrol"
       "soundsource"
-      "karabiner-elements"
       "scroll-reverser"
       "gureumkim"
 
@@ -78,4 +77,34 @@
 
   services.nix-daemon.enable = true;
   programs.zsh.enable = true;
+
+  system = {
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
+    };
+    defaults = {
+      dock = {
+        show-recents = false;
+        showhidden = true;
+        tilesize = 64;
+        wvous-br-corner = 1;
+      };
+      menuExtraClock.ShowSeconds = true;
+      trackpad = {
+        Clicking = true;
+        TrackpadThreeFingerDrag = true;
+      };
+      NSGlobalDomain = {
+        AppleInterfaceStyleSwitchesAutomatically = true;
+        ApplePressAndHoldEnabled = false;
+        AppleICUForce24HourTime = true;
+      };
+      CustomUserPreferences = {
+        "com.apple.dock" = {
+          "size-immutable" = true;
+        };
+      };
+    };
+  };
 }
