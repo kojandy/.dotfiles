@@ -46,8 +46,6 @@
       "Pixelmator Pro" = 1289583905;
       "Soulver 3" = 1508732804;
       "무비스트" = 461788075;
-
-      "Toggl Track" = 1291898086;
     };
     casks = [
       "alfred"
