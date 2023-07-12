@@ -81,26 +81,16 @@ return {
       ]])
     end
   },
-  {'lewis6991/gitsigns.nvim', dependencies = {'nvim-lua/plenary.nvim'}, event = {'BufReadPre', 'BufNewFile'}, opts = {
-    signs = {
-      add = {hl = 'GitGutterAdd'},
-      change = {hl = 'GitGutterChange'},
-      delete = {hl = 'GitGutterDelete'},
-      topdelete = {hl = 'GitGutterDelete'},
-      changedelete = {hl = 'GitGutterChange'},
-    },
-    keymaps = {
-      noremap = true,
-      buffer = true,
+  {'lewis6991/gitsigns.nvim', dependencies = {'nvim-lua/plenary.nvim'}, event = {'BufReadPre', 'BufNewFile'}, config = true,
+    keys = {
+      {'[c', '<Cmd>lua require"gitsigns".prev_hunk()<CR>'},
+      {']c', '<Cmd>lua require"gitsigns".next_hunk()<CR>'},
 
-      ['n ]c'] = {expr = true, "&diff ? ']c' : '<cmd>lua require\"gitsigns\".next_hunk()<CR>'"},
-      ['n [c'] = {expr = true, "&diff ? '[c' : '<cmd>lua require\"gitsigns\".prev_hunk()<CR>'"},
-
-      ['n <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-      ['n <leader>hu'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-      ['n <leader>hh'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+      {'<Leader>hs', '<Cmd>lua require"gitsigns".stage_hunk()<CR>'},
+      {'<Leader>hu', '<Cmd>lua require"gitsigns".reset_hunk()<CR>'},
+      {'<Leader>hh', '<Cmd>lua require"gitsigns".preview_hunk()<CR>'},
     },
-  }},
+  },
 
   -- visuals
   {'declancm/cinnamon.nvim', event = 'VeryLazy', opts = {max_length = 100}},
