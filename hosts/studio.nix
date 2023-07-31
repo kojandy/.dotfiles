@@ -21,7 +21,6 @@
       "notion"
       "philips-hue-sync"
       "steam"
-      "temurin8"
       "tetrio"
     ];
   };
