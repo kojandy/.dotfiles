@@ -23,6 +23,7 @@
     openjdk
     python3
 
+    git
     gh
   ];
 
