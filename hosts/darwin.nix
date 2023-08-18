@@ -7,7 +7,7 @@
     broot
     ripgrep
     fd
-    ncdu
+    ncdu_1
 
     httpie
     htop
