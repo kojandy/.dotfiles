@@ -75,6 +75,7 @@
 
   services.nix-daemon.enable = true;
   programs.zsh.enable = true;
+  programs.nix-index.enable = true;
 
   system = {
     keyboard = {
