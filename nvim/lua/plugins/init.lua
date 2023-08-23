@@ -42,6 +42,7 @@ return {
   -- language
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', event = {'BufReadPost', 'BufNewFile'},
     opts = {
+      ensure_installed = {"bash", "python", "lua"},
       highlight = {enable = true},
       incremental_selection = {
         enable = true,
