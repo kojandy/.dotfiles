@@ -2,7 +2,7 @@ return {
   {'nvim-telescope/telescope.nvim',
     tag = '0.1.1',
     dependencies = {'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-fzy-native.nvim'},
-    cmd = "Telescope",
+    cmd = 'Telescope',
     keys = {
       {'<Leader>ff', '<Cmd>Telescope find_files<CR>'},
       {'<Leader>fg', '<Cmd>Telescope git_status<CR>'},

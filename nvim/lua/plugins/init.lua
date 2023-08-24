@@ -1,6 +1,45 @@
 return {
   -- browse
   {'stevearc/oil.nvim', lazy = false, keys = {{'-', '<Cmd>Oil<CR>'}}, config = true},
+  {'folke/trouble.nvim', cmd = {'Trouble', 'TroubleToggle'},
+    keys = {
+      {'<Leader>sq', '<Cmd>TroubleToggle quickfix<CR>'},
+      {'<Leader>sl', '<Cmd>TroubleToggle loclist<CR>'},
+    },
+    opts = {
+      icons = false,
+      padding = false,
+      cycle_results = false,
+      fold_open = '-',
+      fold_closed = '+',
+      indent_lines = false,
+      signs = {
+          error = 'ERROR',
+          warning = 'WARN',
+          hint = 'HINT',
+          information = 'INFO',
+          other = '-',
+      },
+      use_diagnostic_signs = false
+    },
+  },
+  {'folke/todo-comments.nvim', cmd = {'TodoTrouble', 'TodoTelescope'}, dependencies = {'nvim-lua/plenary.nvim'},
+    keys = {
+      {'<Leader>st', '<Cmd>TodoTrouble<CR>'}
+    },
+    opts = {
+      signs = false,
+      keywords = {
+        FIX = {icon = ''},
+        TODO = {icon = ''},
+        HACK = {icon = ''},
+        WARN = {icon = ''},
+        PERF = {icon = ''},
+        NOTE = {icon = ''},
+        TEST = {icon = ''},
+      },
+    },
+  },
 
   -- autocomplete, format, edit
   'tpope/vim-surround',
@@ -42,15 +81,15 @@ return {
   -- language
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', event = {'BufReadPost', 'BufNewFile'},
     opts = {
-      ensure_installed = {"bash", "python", "lua"},
+      ensure_installed = {'bash', 'python', 'lua'},
       highlight = {enable = true},
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = 'gnn',
-          node_incremental = 'grn',
-          scope_incremental = 'grc',
-          node_decremental = 'grm',
+          init_selection = '<C-Space>',
+          node_incremental = '<C-Space>',
+          scope_incremental = false,
+          node_decremental = '<BS>',
         },
       },
     },
@@ -109,7 +148,22 @@ return {
         always_show_bufferline = false,
       },
   }},
-  {'lukas-reineke/indent-blankline.nvim', event = {'BufReadPost', 'BufNewFile'}, config = true},
+  {'echasnovski/mini.indentscope', event = {'BufReadPre', 'BufNewFile'},
+    dependencies = {'lukas-reineke/indent-blankline.nvim'},
+    opts = function()
+      return {
+        draw = {
+          delay = 0,
+          animation = require('mini.indentscope').gen_animation.none(),
+        },
+        options = {
+          indent_at_cursor = false,
+          try_as_border = true,
+        },
+        symbol = '│',
+      }
+    end,
+  },
 
   -- colorscheme
   {'ayu-theme/ayu-vim', lazy = false, priority = 1000, config = function()
