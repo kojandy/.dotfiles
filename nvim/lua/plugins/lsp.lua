@@ -55,7 +55,7 @@ return {
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
         vim.keymap.set('i', '<C-K>', vim.lsp.buf.signature_help, opts)
 
-        vim.keymap.set({'n', 'v'}, '<Leader>aa', vim.lsp.buf.code_action, opts)
+        vim.keymap.set({'n', 'v'}, '<M-CR>', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', '<Leader>ar', vim.lsp.buf.rename, opts)
         vim.keymap.set('n', '<Leader>af', function() vim.lsp.buf.format {async = true} end, opts)
 
