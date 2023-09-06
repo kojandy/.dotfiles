@@ -25,6 +25,7 @@
 
       "temurin8"
       "temurin11"
+      "temurin17"
     ];
   };
 }
