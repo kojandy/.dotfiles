@@ -148,22 +148,10 @@ return {
         always_show_bufferline = false,
       },
   }},
-  {'echasnovski/mini.indentscope', event = {'BufReadPre', 'BufNewFile'},
-    dependencies = {'lukas-reineke/indent-blankline.nvim'},
-    opts = function()
-      return {
-        draw = {
-          delay = 0,
-          animation = require('mini.indentscope').gen_animation.none(),
-        },
-        options = {
-          indent_at_cursor = false,
-          try_as_border = true,
-        },
-        symbol = '│',
-      }
-    end,
-  },
+  {'lukas-reineke/indent-blankline.nvim', opts = {
+    show_current_context = true,
+    context_highlight_list = {'Comment'},
+  }},
 
   -- colorscheme
   {'ayu-theme/ayu-vim', lazy = false, priority = 1000, config = function()
