@@ -17,7 +17,6 @@
     unixtools.watch
 
     streamlink
-    youtube-dl
 
     nodejs
     openjdk
@@ -32,6 +31,7 @@
     onActivation.cleanup = "zap";
     brews = [
       "blueutil"
+      "youtube-dl"
     ];
     masApps = {
       "Amphetamine" = 937984704;
