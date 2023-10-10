@@ -77,6 +77,7 @@ return {
         }),
       }
   end},
+  {'AndrewRadev/splitjoin.vim', event = {'BufReadPost', 'BufNewFile'}},
 
   -- language
   {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', event = {'BufReadPost', 'BufNewFile'},

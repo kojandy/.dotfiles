@@ -17,6 +17,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "940916074833159bf7b8cbb4bf5e59161461fa5a" },
   "oil.nvim": { "branch": "master", "commit": "83e4d049228233df1870c92e160effb33e314396" },
   "plenary.nvim": { "branch": "master", "commit": "9ce85b0f7dcfe5358c0be937ad23e456907d410b" },
+  "splitjoin.vim": { "branch": "main", "commit": "53962443e4dc557e4d4c02b501adfcb5cd1368c3" },
   "suda.vim": { "branch": "master", "commit": "8b0fc3711760195aba104e2d190cff9af8267052" },
   "targets.vim": { "branch": "master", "commit": "642d3a4ce306264b05ea3219920b13ea80931767" },
   "telescope-fzy-native.nvim": { "branch": "master", "commit": "282f069504515eec762ab6d6c89903377252bf5b" },
