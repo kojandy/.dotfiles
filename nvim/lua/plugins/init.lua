@@ -149,9 +149,16 @@ return {
         always_show_bufferline = false,
       },
   }},
-  {'lukas-reineke/indent-blankline.nvim', opts = {
-    show_current_context = true,
-    context_highlight_list = {'Comment'},
+  {'lukas-reineke/indent-blankline.nvim', event = {'BufReadPre', 'BufNewFile'}, main = 'ibl', opts = {
+    indent = {char = '▏'},
+    scope = {
+      enabled = true,
+      show_start = false,
+      highlight = 'Comment',
+      include = {
+        node_type = {lua = {'table_constructor'}},
+      },
+    },
   }},
 
   -- colorscheme
