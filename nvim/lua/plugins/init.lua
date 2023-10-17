@@ -156,7 +156,10 @@ return {
       show_start = false,
       highlight = 'Comment',
       include = {
-        node_type = {lua = {'table_constructor'}},
+        node_type = {
+          lua = {'table_constructor'},
+          nix = {'attrset_expression', 'list_expression'},
+        },
       },
     },
   }},
