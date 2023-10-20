@@ -23,7 +23,7 @@ return {
         path_display = {shorten = {len = 1, exclude = {1, -2, -1}}},
         dynamic_preview_title = true,
         results_title = false,
-        layout_config = {vertical = {preview_height = 0.6, preview_cutoff = 18, prompt_position = 'top', mirror = true}},
+        layout_config = {vertical = {preview_height = 0.5, preview_cutoff = 18, prompt_position = 'top', mirror = true}},
         mappings = {
           i = {
             ['<C-J>'] = 'move_selection_next',
