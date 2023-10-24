@@ -71,7 +71,6 @@
       "intellij-idea"
 
       "elgato-control-center"
-      "elgato-stream-deck"
     ];
   };
 

@@ -9,6 +9,7 @@
     casks = [
       "calibre"
       "discord"
+      "elgato-stream-deck"
       "hancom-word-2014"
       "handbrake"
       "huiontablet"
