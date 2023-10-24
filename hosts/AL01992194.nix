@@ -23,7 +23,7 @@
       "switchhosts"
       "wireshark"
 
-      "temurin8"
+      "zulu8"
       "temurin11"
       "temurin17"
     ];
