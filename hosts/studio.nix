@@ -12,7 +12,6 @@
       "hancom-word-2014"
       "handbrake"
       "huiontablet"
-      "intellij-idea"
       "jump-desktop-connect"
       "karabiner-elements"
       "loopback"

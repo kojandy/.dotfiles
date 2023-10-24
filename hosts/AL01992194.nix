@@ -17,7 +17,6 @@
     ];
     casks = [
       "datagrip"
-      "intellij-idea"
 
       "mattermost"
       "switchhosts"
