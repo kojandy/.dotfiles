@@ -3,7 +3,6 @@
 
   homebrew = {
     brews = [
-      "openjdk"
       "wakeonlan"
     ];
     casks = [
