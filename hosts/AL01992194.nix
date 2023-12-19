@@ -12,8 +12,9 @@
 
   homebrew = {
     brews = [
-      "pinot"
       "hbase"
+      "pinot"
+      "postgresql"
     ];
     casks = [
       "datagrip"
