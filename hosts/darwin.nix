@@ -29,6 +29,9 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "zap";
+    taps = [
+      "homebrew/services"
+    ];
     brews = [
       "blueutil"
       "youtube-dl"
