@@ -68,7 +68,7 @@
       "obs"
       "zoom"
       "chatty"
-      "cron"
+      "notion-calendar"
 
       "docker"
       "intellij-idea"
