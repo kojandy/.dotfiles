@@ -17,6 +17,7 @@
     unixtools.watch
 
     streamlink
+    ffmpeg
 
     nodejs
     openjdk
