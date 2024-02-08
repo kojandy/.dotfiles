@@ -11,6 +11,9 @@
   ];
 
   homebrew = {
+    taps = [
+      "homebrew/cask-versions"
+    ];
     brews = [
       "hbase"
       "pinot"
