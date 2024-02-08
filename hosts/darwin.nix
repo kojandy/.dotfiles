@@ -31,6 +31,7 @@
     enable = true;
     onActivation.cleanup = "zap";
     taps = [
+      "homebrew/cask-fonts"
       "homebrew/services"
     ];
     brews = [
