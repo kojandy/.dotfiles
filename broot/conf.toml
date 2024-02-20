@@ -17,22 +17,6 @@ key = "ctrl-l"
 internal = ":panel_right"
 
 [[verbs]]
-key = "ctrl-u"
-internal = ":input_clear"
-
-[[verbs]]
-key = "ctrl-d"
-internal = ":quit"
-
-[[verbs]]
-key = "ctrl-p"
-internal = ":parent"
-
-[[verbs]]
-key = "ctrl-n"
-internal = ":page_down"
-
-[[verbs]]
 invocation = "edit"
 shortcut = "e"
 external = "$EDITOR {file}"
