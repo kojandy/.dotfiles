@@ -7,8 +7,45 @@
 [pull]
     rebase = true
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
+	tool = nvimdiff
 [fetch]
     prune = true
 [credential]
     helper = cache --timeout=3600
+[rebase]
+	autosquash = true
+	autoStash = true
+[core]
+	autocrlf = input
+	pager = delta
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = true
+[help]
+	autocorrect = immediate
+[interactive]
+	diffFilter = delta --color-only
+[diff]
+	algorithm = histogram
+	submodule = log
+	tool = difftastic
+	colorMoved = default
+	colorMovedWS = allow-indentation-change
+[status]
+	submoduleSummary = true
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
+[url "https://github.com/"]
+	insteadOf = gh:
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft \"$LOCAL\" \"$REMOTE\"
+[pager]
+	difftool = true
+[log]
+	date = iso
+[branch]
+	sort = committerdate

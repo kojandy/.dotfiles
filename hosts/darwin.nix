@@ -8,6 +8,8 @@
     ripgrep
     fd
     ncdu
+    delta
+    difftastic
 
     httpie
     htop
