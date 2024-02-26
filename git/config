@@ -48,4 +48,4 @@
 [log]
 	date = iso
 [branch]
-	sort = committerdate
+	sort = -committerdate
