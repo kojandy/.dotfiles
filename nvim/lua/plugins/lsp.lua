@@ -5,7 +5,7 @@ return {
     {'williamboman/mason-lspconfig.nvim', opts = function()
       local lspconfig = require('lspconfig')
       return {
-        ensure_installed = {'bashls', 'pyright'},
+        ensure_installed = {'bashls'},
         handlers = {
           function(server_name)
             lspconfig[server_name].setup {}
