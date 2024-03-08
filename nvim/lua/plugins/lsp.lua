@@ -11,6 +11,7 @@ return {
             lspconfig[server_name].setup {}
           end,
 
+          ['jdtls'] = function() end,
           ['lua_ls'] = function()
             lspconfig.lua_ls.setup {
               settings = {
@@ -61,6 +62,12 @@ return {
 
         vim.keymap.set('n', '<Leader>fs', '<Cmd>Telescope lsp_document_symbols<CR>', opts)
       end})
+  end},
+  {'mfussenegger/nvim-jdtls', ft = 'java', dependencies = 'williamboman/mason.nvim', config = function()
+    require('jdtls').start_or_attach {
+      cmd = {os.getenv('MASON') .. '/bin/jdtls'},
+      root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
+    }
   end},
 }
 -- vim:ts=2:sts=2:sw=2
