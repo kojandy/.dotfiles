@@ -21,6 +21,7 @@
       "philips-hue-sync"
       "steam"
       "tetrio"
+      "unity"
     ];
   };
 }
