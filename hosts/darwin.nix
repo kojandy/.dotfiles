@@ -18,6 +18,7 @@
     entr
     unixtools.watch
 
+    yt-dlp
     streamlink
     ffmpeg
 
@@ -44,7 +45,6 @@
     ];
     brews = [
       "blueutil"
-      "youtube-dl"
     ];
     masApps = {
       "Amphetamine" = 937984704;
