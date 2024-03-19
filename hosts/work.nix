@@ -18,8 +18,6 @@
       "postgresql"
     ];
     casks = [
-      "datagrip"
-
       "mattermost"
       "switchhosts"
       "wireshark"
