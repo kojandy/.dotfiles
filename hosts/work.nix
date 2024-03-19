@@ -18,7 +18,6 @@
       "postgresql"
     ];
     casks = [
-      "mattermost"
       "switchhosts"
       "wireshark"
 
