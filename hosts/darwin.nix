@@ -32,7 +32,8 @@
     (texlive.combine {
       inherit (texlive) scheme-small latexmk
         cjk cjk-ko nanumtype1 kotex-plain kotex-utf kotex-utils
-        kotex-oblivoir xpatch;
+        kotex-oblivoir xpatch
+        multirow;
     })
   ];
 
