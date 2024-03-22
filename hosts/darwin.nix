@@ -49,6 +49,7 @@
       "Gestimer" = 990588172;
       "Hand Mirror" = 1502839586;
       "HazeOver" = 430798174;
+      "Yoink" = 457622435;
 
       "Todoist" = 585829637;
 
