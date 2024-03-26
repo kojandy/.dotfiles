@@ -75,7 +75,6 @@
       "iterm2"
       "obs"
       "zoom"
-      "chatty"
       "notion-calendar"
 
       "docker"
