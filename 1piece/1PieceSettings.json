@@ -2,7 +2,6 @@
   "1Piece" : {
     "DefaultWindowListOrder" : 4,
     "DelayWindowList" : 0.10000000000000001,
-    "FlagDeactivateApp" : 1,
     "FlagDisableSystemKeyboardShortcut" : true,
     "FlagHotKeyCycleWindowsDelay" : true,
     "FlagHotKeyCycleWindowsExcludeMinimizedOrHiddenWindow" : true,
