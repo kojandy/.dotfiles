@@ -53,6 +53,7 @@ alias gds='git diff --staged'
 alias gdt='git difftool'
 alias gdts='git difftool --staged'
 alias gl='git pull'
+glu() {git pull upstream $(LC_ALL=C git remote show upstream | sed -n '/HEAD branch/s/.*: //p')}
 alias glog='git log --oneline --decorate --graph'
 alias gm='git merge'
 alias gp='git push'
