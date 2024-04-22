@@ -79,8 +79,6 @@
 
       "docker"
       "intellij-idea"
-
-      "elgato-control-center"
     ];
   };
 

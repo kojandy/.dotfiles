@@ -8,6 +8,7 @@
     casks = [
       "calibre"
       "discord"
+      "elgato-control-center"
       "elgato-stream-deck"
       "hancom-word-2014"
       "handbrake"
