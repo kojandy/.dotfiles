@@ -9,9 +9,6 @@
   ];
 
   homebrew = {
-    taps = [
-      "homebrew/cask-versions"
-    ];
     brews = [
       "hbase"
       "pinot"
@@ -21,9 +18,9 @@
       "switchhosts"
       "wireshark"
 
-      "zulu8"
-      "temurin11"
-      "temurin17"
+      "zulu@8"
+      "temurin@11"
+      "temurin@17"
     ];
   };
 }
