@@ -43,6 +43,7 @@
     taps = [
       "homebrew/cask-fonts"
       "homebrew/services"
+      "nikitabobko/tap"
     ];
     masApps = {
       "Amphetamine" = 937984704;
@@ -60,6 +61,8 @@
       "무비스트" = 461788075;
     };
     casks = [
+      "aerospace"
+
       "alfred"
       "bartender"
       "istat-menus"
