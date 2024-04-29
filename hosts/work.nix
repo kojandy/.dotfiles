@@ -12,7 +12,7 @@
     brews = [
       "hbase"
       "pinot"
-      "postgresql"
+      "postgresql@14"
     ];
     casks = [
       "switchhosts"
