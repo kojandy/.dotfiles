@@ -22,7 +22,7 @@
       "philips-hue-sync"
       "steam"
       "tetrio"
-      "unity"
+      "unity-hub"
     ];
   };
 }
