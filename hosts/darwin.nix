@@ -82,6 +82,7 @@
 
       "docker"
       "intellij-idea"
+      "gitbutler"
     ];
   };
 
