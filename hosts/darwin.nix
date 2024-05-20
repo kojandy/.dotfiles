@@ -79,7 +79,6 @@
       "zoom"
       "notion-calendar"
 
-      "docker"
       "intellij-idea"
       "gitbutler"
     ];
