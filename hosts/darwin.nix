@@ -39,7 +39,10 @@
 
   homebrew = {
     enable = true;
-    onActivation.cleanup = "zap";
+    onActivation = {
+        cleanup = "zap";
+        extraFlags = ["--verbose"];
+    };
     taps = [
       "homebrew/services"
       "nikitabobko/tap"
@@ -82,6 +85,7 @@
       "intellij-idea"
       "gitbutler"
     ];
+    caskArgs.no_quarantine = true;
   };
 
   services.nix-daemon.enable = true;
