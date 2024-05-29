@@ -136,7 +136,7 @@ return {
   -- visuals
   {'declancm/cinnamon.nvim', event = 'VeryLazy', opts = {max_length = 100}},
   'romainl/vim-cool',
-  {'akinsho/bufferline.nvim', event = 'VeryLazy',
+  {'akinsho/bufferline.nvim', version = '*', event = 'VeryLazy',
     keys = {
       {'<M-k>', '<Cmd>BufferLineCyclePrev<CR>'},
       {'<M-j>', '<Cmd>BufferLineCycleNext<CR>'},
