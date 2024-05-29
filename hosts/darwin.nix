@@ -88,6 +88,10 @@
     caskArgs.no_quarantine = true;
   };
 
+  environment.variables = {
+    HOMEBREW_AUTO_UPDATE_SECS = "0";
+  };
+
   services.nix-daemon.enable = true;
   programs.zsh.enable = true;
   programs.nix-index.enable = true;
