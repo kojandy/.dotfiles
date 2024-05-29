@@ -29,4 +29,10 @@
     JAVA_11_HOME = "/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home";
     JAVA_17_HOME = "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home";
   };
+
+  system.defaults.dock.persistent-apps = [
+    "/Applications/Arc.app"
+    "/Applications/WORKS.app"
+    "/Applications/IntelliJ IDEA.app"
+  ];
 }
