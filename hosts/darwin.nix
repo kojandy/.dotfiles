@@ -92,6 +92,9 @@
     HOMEBREW_AUTO_UPDATE_SECS = "0";
   };
 
+  nix.gc.automatic = true;
+  nix.optimise.automatic = true;
+
   services.nix-daemon.enable = true;
   programs.zsh.enable = true;
   programs.nix-index.enable = true;
