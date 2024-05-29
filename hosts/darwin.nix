@@ -112,6 +112,11 @@
         tilesize = 64;
         wvous-br-corner = 1;
       };
+      finder = {
+        AppleShowAllExtensions = true;
+        FXDefaultSearchScope = "SCcf";
+        FXEnableExtensionChangeWarning = false;
+      };
       menuExtraClock.ShowSeconds = true;
       trackpad = {
         Clicking = true;
