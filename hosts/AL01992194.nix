@@ -6,4 +6,10 @@
       "mattermost"
     ];
   };
+
+  system.defaults.dock.persistent-apps = [
+    "/Applications/Arc.app"
+    "/Applications/WORKS.app"
+    "/Applications/IntelliJ IDEA.app"
+  ];
 }
