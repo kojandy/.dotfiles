@@ -89,7 +89,7 @@
   };
 
   environment.variables = {
-    HOMEBREW_AUTO_UPDATE_SECS = "0";
+    HOMEBREW_AUTO_UPDATE_SECS = "86400";
   };
 
   nix.gc.automatic = true;
