@@ -78,6 +78,7 @@
 
       "google-chrome"
       "iterm2"
+      "kitty"
       "obs"
       "zoom"
       "notion-calendar"
