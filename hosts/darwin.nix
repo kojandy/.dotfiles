@@ -64,6 +64,7 @@
     };
     casks = [
       "aerospace"
+      "alt-tab"
 
       "alfred"
       "bartender"
