@@ -37,6 +37,7 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 zle -N edit-command-line
 bindkey -v
+bindkey -rM viins '^D'
 bindkey -M viins "^A" vi-beginning-of-line
 bindkey -M viins "^E" vi-end-of-line
 bindkey -M viins '^P' up-line-or-beginning-search
@@ -47,15 +48,22 @@ bindkey -rM vicmd ':'
 bindkey -M vicmd v edit-command-line
 
 zmodload zsh/complist
-bindkey -M menuselect h vi-backward-char
-bindkey -M menuselect j vi-down-line-or-history
-bindkey -M menuselect k vi-up-line-or-history
-bindkey -M menuselect l vi-forward-char
+bindkey -M menuselect '^h' vi-backward-char
+bindkey -M menuselect '^j' vi-down-line-or-history
+bindkey -M menuselect '^k' vi-up-line-or-history
+bindkey -M menuselect '^l' vi-forward-char
+bindkey -M menuselect '^[' undo
+zstyle ':completion:*' completer _extensions _complete _ignored _list _approximate
 zstyle ':completion:*' menu select
+zstyle ':completion::complete:*' menu select interactive
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-prompt ''
+zstyle ':completion:*' select-prompt ''
+zstyle ':completion:*' file-sort change
 zstyle ':completion:*:descriptions' format '%F{yellow}%B* %d%b%f'
+zstyle ':completion:*:corrections' format '%F{red}%B* %d (errors: %e)%b%f'
 
 source "$DOTFILES/zsh/aliases.zsh"
 source "$DOTFILES/zsh/p10k.zsh"
