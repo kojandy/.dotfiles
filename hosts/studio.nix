@@ -19,6 +19,7 @@
       "minecraft"
       "mullvadvpn"
       "notion"
+      "orbstack"
       "philips-hue-sync"
       "steam"
       "tetrio"
