@@ -83,6 +83,7 @@
       "obs"
       "zoom"
       "notion-calendar"
+      "chatgpt"
 
       "intellij-idea"
       "gitbutler"
