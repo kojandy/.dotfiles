@@ -1,18 +1,12 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    neovim
-    tmux
+  imports = [ ./common.nix ];
 
-    lf
-    broot
-    ripgrep
-    fd
+  environment.systemPackages = with pkgs; [
     ncdu
     delta
     difftastic
 
     httpie
-    htop
     gnupg
 
     entr
@@ -26,7 +20,6 @@
     openjdk
     python3
 
-    git
     gh
 
     (texlive.combine {
@@ -95,11 +88,7 @@
     HOMEBREW_AUTO_UPDATE_SECS = "86400";
   };
 
-  nix.gc.automatic = true;
-  nix.optimise.automatic = true;
-
   services.nix-daemon.enable = true;
-  programs.zsh.enable = true;
   security.pam.enableSudoTouchIdAuth = true;
   security.sudo.extraConfig = "Defaults env_keep += \"TERM TERMINFO\"";
 
