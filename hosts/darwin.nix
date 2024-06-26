@@ -100,7 +100,6 @@
 
   services.nix-daemon.enable = true;
   programs.zsh.enable = true;
-  programs.nix-index.enable = true;
   security.pam.enableSudoTouchIdAuth = true;
   security.sudo.extraConfig = "Defaults env_keep += \"TERM TERMINFO\"";
 
