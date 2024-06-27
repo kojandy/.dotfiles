@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  networking.computerName = "studio";
+  networking.hostName = "studio";
 
   homebrew = {
     brews = [
