@@ -1,6 +1,14 @@
 { pkgs, ... }: {
   networking.hostName = "studio";
 
+  environment.systemPackages = with pkgs; [
+    gnupg
+
+    yt-dlp
+    streamlink
+    ffmpeg
+  ];
+
   homebrew = {
     brews = [
       "wakeonlan"

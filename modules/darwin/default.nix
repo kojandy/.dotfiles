@@ -9,14 +9,8 @@
   environment.systemPackages = with pkgs; [
     ncdu
 
-    gnupg
-
     entr
     unixtools.watch
-
-    yt-dlp
-    streamlink
-    ffmpeg
 
     nodejs
     openjdk
