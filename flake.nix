@@ -11,7 +11,7 @@
   outputs = { self, nixpkgs, darwin }: {
     darwinConfigurations.studio = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
-      modules = [ ./modules/darwin.nix ./hosts/studio.nix ];
+      modules = [ ./modules/darwin ./hosts/studio.nix ];
     };
   };
 }
