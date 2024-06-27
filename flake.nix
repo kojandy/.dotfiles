@@ -10,30 +10,9 @@
   };
 
   outputs = { self, nixpkgs, darwin }: {
-    darwinConfigurations = {
-      studio = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          ./hosts/darwin.nix
-          ./hosts/studio.nix
-        ];
-      };
-      AL01992194 = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          ./hosts/darwin.nix
-          ./hosts/work.nix
-          ./hosts/AL01992194.nix
-        ];
-      };
-      AL02360247 = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          ./hosts/darwin.nix
-          ./hosts/work.nix
-          ./hosts/AL02360247.nix
-        ];
-      };
+    darwinConfigurations.studio = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [ ./hosts/darwin.nix ./hosts/studio.nix ];
     };
   };
 }
