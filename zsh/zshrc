@@ -1,7 +1,7 @@
-[ -z "$DOTFILES" ] && source "$HOME/.profile"
+[ -z "$DOTFILES" ] && source "$HOME/.profile" || source "$HOME/.dotfiles/profile"
+BASEDIR="${${DOTFILES:+$DOTFILES/zsh}:-${$(realpath ${funcsourcetrace[1]%:*})%/*}}"
 
-[ ! -d "$HOME/.zgen" ] && \
-    git clone --depth 1 "https://github.com/tarjoilija/zgen.git" "$HOME/.zgen"
+[ ! -d "$HOME/.zgen" ] && git clone --depth 1 "https://github.com/tarjoilija/zgen.git" "$HOME/.zgen"
 source "$HOME/.zgen/zgen.zsh"
 if ! zgen saved; then
     zgen load romkatv/powerlevel10k powerlevel10k
@@ -65,7 +65,7 @@ zstyle ':completion:*' file-sort change
 zstyle ':completion:*:descriptions' format '%F{yellow}%B* %d%b%f'
 zstyle ':completion:*:corrections' format '%F{red}%B* %d (errors: %e)%b%f'
 
-source "$DOTFILES/zsh/aliases.zsh"
-source "$DOTFILES/zsh/p10k.zsh"
+source "$BASEDIR/aliases.zsh"
+source "$BASEDIR/p10k.zsh"
 
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
