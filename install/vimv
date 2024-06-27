@@ -1,4 +1,0 @@
-#!/bin/sh
-URL="https://raw.githubusercontent.com/thameera/vimv/master/vimv"
-curl "$URL" -o "$DOTFILES/bin/vimv"
-chmod u+x "$DOTFILES/bin/vimv"

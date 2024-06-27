@@ -1,4 +1,0 @@
-#!/bin/sh
-URL="https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage"
-curl -L "$URL" -o "$DOTFILES/bin/nvim"
-chmod +x "$DOTFILES/bin/nvim"
