@@ -16,6 +16,7 @@
     git
   ];
 
+  nix.extraOptions = "experimental-features = nix-command flakes";
   nix.gc.automatic = true;
   nix.optimise.automatic = true;
 
