@@ -3,10 +3,7 @@
 
   environment.systemPackages = with pkgs; [
     ncdu
-    delta
-    difftastic
 
-    httpie
     gnupg
 
     entr
