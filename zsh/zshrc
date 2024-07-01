@@ -14,7 +14,7 @@ if ! zgen saved; then
     zgen save
 fi
 
-KEYTIMEOUT=1
+KEYTIMEOUT=10
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE="$HOME/.zsh_history"
@@ -33,9 +33,13 @@ disable r
 autoload -Uz up-line-or-beginning-search
 autoload -Uz down-line-or-beginning-search
 autoload -Uz edit-command-line
+autoload -Uz surround
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 zle -N edit-command-line
+zle -N delete-surround surround
+zle -N add-surround surround
+zle -N change-surround surround
 bindkey -v
 bindkey -rM viins '^D'
 bindkey -M viins "^A" vi-beginning-of-line
@@ -46,6 +50,21 @@ bindkey -M viins '^K' push-line
 bindkey -M viins '^?' backward-delete-char
 bindkey -rM vicmd ':'
 bindkey -M vicmd v edit-command-line
+bindkey -M vicmd cs change-surround
+bindkey -M vicmd ds delete-surround
+bindkey -M vicmd ys add-surround
+
+autoload -Uz select-bracketed select-quoted
+zle -N select-quoted
+zle -N select-bracketed
+for m in viopp visual; do
+  for c in {a,i}${(s..)^:-\'\"\`\|,./:;=+@}; do
+    bindkey -M $m -- $c select-quoted
+  done
+  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+    bindkey -M $m -- $c select-bracketed
+  done
+done
 
 zmodload zsh/complist
 bindkey -M menuselect '^h' vi-backward-char
