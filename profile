@@ -4,7 +4,5 @@ export PATH="$DOTFILES/bin:$PATH"
 
 export EDITOR=nvim
 export VISUAL=$EDITOR
-export PAGER=less
 export MANPAGER='nvim +Man!'
-export TERMINAL=alacritty
 # export BROWSER=google-chrome-stable
