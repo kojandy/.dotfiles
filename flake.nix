@@ -20,6 +20,7 @@
         modules = [
           ./modules/darwin
           ./hosts/studio.nix
+          ./modules/pinpoint.nix
 
           home-manager.darwinModules.home-manager (mkHome {
             "kojandy" = {
