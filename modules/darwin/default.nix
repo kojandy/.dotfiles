@@ -13,7 +13,7 @@
     unixtools.watch
 
     nodejs
-    openjdk
+    temurin-bin-21
     python3
 
     gh
