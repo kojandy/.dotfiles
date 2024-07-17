@@ -7,11 +7,14 @@
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-on-droid.url = "github:nix-community/nix-on-droid/release-24.05";
+    nix-on-droid.inputs.nixpkgs.follows = "nixpkgs";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager }:
+  outputs = { self, nixpkgs, darwin, nix-on-droid, home-manager }:
     let
       inherit (import ./lib { inherit nixpkgs; }) mkHome;
     in {
@@ -34,6 +37,11 @@
             };
           })
         ];
+      };
+
+      nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
+        pkgs = import nixpkgs { system = "aarch64-linux"; };
+        modules = [ ./modules/nix-on-droid.nix ];
       };
     };
 }
