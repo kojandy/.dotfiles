@@ -134,7 +134,7 @@ return {
   },
 
   -- visuals
-  {'declancm/cinnamon.nvim', event = 'VeryLazy', opts = {max_length = 100}},
+  {'declancm/cinnamon.nvim', event = 'VeryLazy', opts = { max_delta = { time = 100 } }},
   'romainl/vim-cool',
   {'akinsho/bufferline.nvim', version = '*', event = 'VeryLazy',
     keys = {
