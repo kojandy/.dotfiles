@@ -1,0 +1,10 @@
+[ui]
+default-command = "log"
+pager = "less -FRX"
+
+[user]
+name = "Ohjun Kwon"
+email = "dev@kojandy.com"
+
+[revsets]
+log = "ancestors((remote_branches() | immutable_heads()).., 2) | ancestors(trunk()..branches(), 2) | trunk()::@"
