@@ -1,6 +1,5 @@
 { ... }: {
   homebrew.casks = [
-    "aerospace"
     "alt-tab"
 
     "alfred"
