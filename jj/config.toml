@@ -7,4 +7,8 @@ name = "Ohjun Kwon"
 email = "dev@kojandy.com"
 
 [revsets]
-log = "ancestors((remote_branches() | immutable_heads()).., 2) | ancestors(trunk()..branches(), 2) | trunk()::@"
+log = "connected(ancestors(interests(), 2) | trunk())"
+
+[revset-aliases]
+"local()" = "(remote_branches() | immutable_heads()).."
+"interests()" = "local() | trunk()..branches() | trunk()..@"
