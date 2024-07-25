@@ -12,3 +12,15 @@ log = "connected(ancestors(interests(), 2) | trunk())"
 [revset-aliases]
 "immutable_heads()" = "trunk() | tags() | remote_branches()"
 "interests()" = "immutable_heads().. | trunk()..branches() | trunk()..@"
+
+[templates]
+log_node = '''
+coalesce(
+  if(!self, "◌"),
+  if(current_working_copy, "@"),
+  if(root, "┴"),
+  if(description.lower().starts_with("wip"), if(immutable, "▲", "△")),
+  if(empty, "┼"),
+  if(immutable, "●", "○"),
+)
+'''
