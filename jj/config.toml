@@ -10,5 +10,5 @@ email = "dev@kojandy.com"
 log = "connected(ancestors(interests(), 2) | trunk())"
 
 [revset-aliases]
-"local()" = "(remote_branches() | immutable_heads()).."
-"interests()" = "local() | trunk()..branches() | trunk()..@"
+"immutable_heads()" = "trunk() | tags() | remote_branches()"
+"interests()" = "immutable_heads().. | trunk()..branches() | trunk()..@"
