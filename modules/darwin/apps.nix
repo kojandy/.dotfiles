@@ -22,7 +22,6 @@
     "chatgpt"
 
     "intellij-idea"
-    "gitbutler"
   ];
 
   homebrew.masApps = {
