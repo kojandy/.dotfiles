@@ -10,8 +10,8 @@ email = "dev@kojandy.com"
 log = "connected(ancestors(interests(), 2) | trunk())"
 
 [revset-aliases]
-"immutable_heads()" = "trunk() | tags() | remote_branches()"
-"interests()" = "immutable_heads().. | trunk()..branches() | trunk()..@"
+"local()" = "(immutable_heads() | remote_branches()).."
+"interests()" = "local() | trunk()..branches() | trunk()..@"
 
 [templates]
 log_node = '''
