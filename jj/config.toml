@@ -17,13 +17,14 @@ log = "connected(ancestors(interests(), 2) | trunk())"
 log_node = '''
 coalesce(
   if(!self, "◌"),
-  if(current_working_copy, "@"),
+  if(current_working_copy, if(pushed, "!", "@")),
   if(root, "┴"),
-  if(description.lower().starts_with("wip"), if(immutable, "▲", "△")),
+  if(description.lower().starts_with("wip"), if(pushed, "▲", "△")),
   if(empty, "┼"),
-  if(immutable, "●", "○"),
+  if(pushed, "●", "○"),
 )
 '''
 
 [template-aliases]
+"pushed" = "self.contained_in('::remote_branches()')"
 "format_timestamp(timestamp)" = "timestamp.ago()"
