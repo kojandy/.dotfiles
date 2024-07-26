@@ -24,3 +24,6 @@ coalesce(
   if(immutable, "●", "○"),
 )
 '''
+
+[template-aliases]
+"format_timestamp(timestamp)" = "timestamp.ago()"
