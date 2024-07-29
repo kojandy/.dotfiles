@@ -17,10 +17,10 @@ log = "connected(ancestors(interests(), 2) | trunk())"
 log_node = '''
 coalesce(
   if(!self, "◌"),
-  if(current_working_copy, if(pushed, "!", "@")),
   if(root, "┴"),
+  if(current_working_copy, if(pushed, "!", "@")),
   if(description.lower().starts_with("wip"), if(pushed, "▲", "△")),
-  if(empty, "┼"),
+  if(empty, if(pushed, "┿", "┼")),
   if(pushed, "●", "○"),
 )
 '''
