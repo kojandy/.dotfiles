@@ -30,6 +30,7 @@
       "orbstack"
       "philips-hue-sync"
       "steam"
+      "tailscale"
       "tetrio"
       "unity-hub"
     ];
