@@ -14,7 +14,6 @@
     "font-sarasa-gothic"
 
     "google-chrome"
-    "iterm2"
     "kitty"
     "obs"
     "zoom"
