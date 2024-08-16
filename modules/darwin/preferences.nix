@@ -26,6 +26,7 @@
       ApplePressAndHoldEnabled = false;
       AppleICUForce24HourTime = true;
     };
+    WindowManager.EnableStandardClickToShowDesktop = false;
     CustomUserPreferences = {
       "com.apple.dock" = {
         "size-immutable" = true;
