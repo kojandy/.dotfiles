@@ -7,7 +7,6 @@
     fd
     broot
     lf
-    delta
     difftastic
 
     htop

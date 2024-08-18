@@ -19,15 +19,12 @@
 	updateRefs = true
 [core]
 	autocrlf = input
-	pager = delta
 [init]
 	defaultBranch = main
 [rerere]
 	enabled = true
 [help]
 	autocorrect = immediate
-[interactive]
-	diffFilter = delta --color-only
 [diff]
 	algorithm = histogram
 	submodule = log
