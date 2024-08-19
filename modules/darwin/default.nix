@@ -12,7 +12,6 @@
     entr
     unixtools.watch
 
-    nodejs
     temurin-bin-21
     python3
 
