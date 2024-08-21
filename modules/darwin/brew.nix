@@ -2,7 +2,7 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "zap";
-    onActivation.extraFlags = ["--verbose"];
+    onActivation.extraFlags = ["--quiet"];
     caskArgs.no_quarantine = true;
     taps = [ "homebrew/services" ];
   };
