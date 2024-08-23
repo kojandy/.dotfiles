@@ -28,6 +28,7 @@
                 root = {
                   ".profile" = ./profile;
                   ".zshrc" = ./zsh/zshrc;
+                  "Library/Application Support/jj/config.toml" = ./jj/config.toml;
                 };
                 configs = [ "git" "ideavim" "kitty" "lf" "nvim" "tmux" "broot" ];
               };
