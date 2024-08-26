@@ -11,30 +11,15 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager }:
-    let
-      inherit (import ./lib { inherit nixpkgs; }) mkHome;
-    in {
-      darwinConfigurations.studio = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          ./modules/darwin
-          ./hosts/studio.nix
-          ./modules/pinpoint.nix
-
-          home-manager.darwinModules.home-manager (mkHome {
-            "kojandy" = {
-              file = {
-                root = {
-                  ".profile" = ./profile;
-                  ".zshrc" = ./zsh/zshrc;
-                  "Library/Application Support/jj/config.toml" = ./jj/config.toml;
-                };
-                configs = [ "git" "ideavim" "kitty" "lf" "nvim" "tmux" "broot" ];
-              };
-            };
-          })
-        ];
-      };
+  outputs = { darwin, ... }@inputs: {
+    darwinConfigurations.studio = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [
+        ./modules/darwin
+        ./hosts/studio.nix
+        ./modules/pinpoint.nix
+      ];
+      specialArgs.inputs = inputs;
     };
+  };
 }
