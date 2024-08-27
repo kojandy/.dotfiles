@@ -21,6 +21,7 @@ HISTFILE="$HOME/.zsh_history"
 
 [[ $- == *i* ]] && stty -ixon
 
+unsetopt share_history
 setopt extended_history
 setopt inc_append_history_time
 setopt hist_find_no_dups
