@@ -1,10 +1,14 @@
-[ui]
-default-command = "log"
-pager = "less -FRX"
-
 [user]
 name = "Ohjun Kwon"
 email = "dev@kojandy.com"
+
+[ui]
+default-command = "log"
+pager = "less -FRX"
+merge-editor = "vimdiff"
+
+[merge-tools.vimdiff]
+program = "nvim"
 
 [revsets]
 log = "connected(ancestors(interests(), 2) | trunk())"
