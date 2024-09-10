@@ -28,10 +28,7 @@
 
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
       pkgs = import nixpkgs { system = "aarch64-linux"; };
-      modules = [
-        ./modules/nix-on-droid.nix
-        ./hosts/purin.nix
-      ];
+      modules = [ ./modules/nix-on-droid.nix ];
       extraSpecialArgs.inputs = inputs;
     };
   };
