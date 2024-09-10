@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     neovim
     tmux
@@ -18,6 +18,7 @@
   ];
 
   nix.extraOptions = "experimental-features = nix-command flakes";
+  nix.registry.nixpkgs.flake = inputs.nixpkgs;
   nix.gc.automatic = true;
   nix.optimise.automatic = true;
 

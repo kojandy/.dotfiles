@@ -1,5 +1,5 @@
-{ pkgs, ... }:
-  with (import ./common.nix { inherit pkgs; }); {
+{ inputs, pkgs, ... }:
+  with (import ./common.nix { inherit inputs pkgs; }); {
     home-manager.useGlobalPkgs = true;
     environment.packages = environment.systemPackages
       ++ (with pkgs; [
@@ -31,6 +31,7 @@
     };
 
     nix.extraOptions = nix.extraOptions;
+    nix.registry.nixpkgs.flake = nix.registry.nixpkgs.flake;
 
     system.stateVersion = "24.05";
   }

@@ -32,6 +32,7 @@
         ./modules/nix-on-droid.nix
         ./hosts/purin.nix
       ];
+      extraSpecialArgs.inputs = inputs;
     };
   };
 }
