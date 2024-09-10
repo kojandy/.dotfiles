@@ -3,6 +3,8 @@
     home-manager.useGlobalPkgs = true;
     environment.packages = environment.systemPackages
       ++ (with pkgs; [
+        zsh
+        curl
         openssh
       ]);
 
