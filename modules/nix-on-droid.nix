@@ -25,7 +25,7 @@
     };
 
     user.shell = "${pkgs.zsh}/bin/zsh";
-    terminal.font = "${pkgs.iosevka}/share/fonts/truetype/Iosevka-Regular.ttc";
+    terminal.font = "${pkgs.iosevka}/share/fonts/truetype/Iosevka-Regular.ttf";
     terminal.colors = {
       foreground = "#c5c8c6";
       background = "#1d1f21";
