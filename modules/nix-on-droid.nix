@@ -8,10 +8,11 @@
         openssh
       ]);
 
-    home-manager.config = { pkgs, ... }: {
+    home-manager.config = { config, ... }: {
       home.file = {
         ".profile".source = ../profile;
         ".zshrc".source = ../zsh/zshrc;
+        "Downloads".source = config.lib.file.mkOutOfStoreSymlink "/sdcard/Download";
       };
       xdg.configFile = {
         "nvim".source = ../nvim;
