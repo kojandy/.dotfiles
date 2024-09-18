@@ -25,6 +25,7 @@
         "jj".source = ../jj;
       };
       home.stateVersion = "24.05";
+      home.enableNixpkgsReleaseCheck = false;
     };
 
     user.shell = "${pkgs.zsh}/bin/zsh";
@@ -53,6 +54,8 @@
 
     nix.extraOptions = nix.extraOptions;
     nix.registry.nixpkgs.flake = nix.registry.nixpkgs.flake;
+
+    environment.motd = null;
 
     system.stateVersion = "24.05";
   }
