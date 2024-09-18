@@ -6,6 +6,8 @@
         zsh
         curl
         openssh
+
+        wget gnutar gzip
       ]);
 
     home-manager.config = { config, ... }: {
