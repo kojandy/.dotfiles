@@ -4,10 +4,10 @@
     environment.packages = environment.systemPackages
       ++ (with pkgs; [
         zsh
-        curl
         openssh
-
-        wget gnutar gzip
+        curl wget
+        gnutar gzip unzip
+        gcc
       ]);
 
     home-manager.config = { config, ... }: {
