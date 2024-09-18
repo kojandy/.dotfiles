@@ -8,6 +8,8 @@
         curl wget
         gnutar gzip unzip
         gcc
+
+        yt-dlp streamlink
       ]);
 
     home-manager.config = { config, ... }: {
