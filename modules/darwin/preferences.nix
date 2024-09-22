@@ -30,6 +30,7 @@
     CustomUserPreferences = {
       "com.apple.dock" = {
         "size-immutable" = true;
+        "contents-immutable" = true;
       };
     };
   };
