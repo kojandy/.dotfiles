@@ -18,6 +18,7 @@
       ".profile".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/profile";
       ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/zsh/zshrc";
       "Library/Application Support/jj".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/jj";
+      ".dotfiles/bin/littlesnitch".source = config.lib.file.mkOutOfStoreSymlink "/Applications/Little Snitch.app/Contents/Components/littlesnitch";
     };
     xdg.configFile = {
       "broot".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/broot";
