@@ -17,7 +17,7 @@
     "kitty"
     "obs"
     "zoom"
-    "notion-calendar"
+    "morgen"
     "chatgpt"
 
     "intellij-idea"
