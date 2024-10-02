@@ -9,6 +9,8 @@
         gnutar gzip unzip
         gcc
 
+        gnugrep gnused
+
         yt-dlp streamlink
       ]);
 
