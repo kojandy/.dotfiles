@@ -14,8 +14,8 @@ program = "nvim"
 log = "connected(ancestors(interests(), 2) | trunk())"
 
 [revset-aliases]
-"local()" = "(immutable_heads() | remote_branches()).."
-"interests()" = "local() | trunk()..branches() | trunk()..@"
+"local()" = "(immutable_heads() | remote_bookmarks()).."
+"interests()" = "local() | trunk()..bookmarks() | trunk()..@"
 
 [templates]
 log_node = '''
@@ -30,5 +30,5 @@ coalesce(
 '''
 
 [template-aliases]
-"pushed" = "self.contained_in('::remote_branches()')"
+"pushed" = "self.contained_in('::remote_bookmarks()')"
 "format_timestamp(timestamp)" = "timestamp.ago()"
