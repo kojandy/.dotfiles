@@ -32,6 +32,3 @@ coalesce(
 [template-aliases]
 "pushed" = "self.contained_in('::remote_branches()')"
 "format_timestamp(timestamp)" = "timestamp.ago()"
-
-[experimental-advance-branches]
-enabled-branches = ["glob:wip/*"]
