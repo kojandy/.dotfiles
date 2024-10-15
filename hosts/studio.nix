@@ -34,6 +34,7 @@
 
   homebrew = {
     brews = [
+      "m1ddc"
       "wakeonlan"
     ];
     casks = [
