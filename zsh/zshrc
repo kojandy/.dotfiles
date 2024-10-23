@@ -1,3 +1,9 @@
+[[ $- == *i* ]] && stty -ixon
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 [ -z "$DOTFILES" ] && source "$HOME/.profile" || source "$HOME/.dotfiles/profile"
 BASEDIR="${${DOTFILES:+$DOTFILES/zsh}:-${$(realpath ${funcsourcetrace[1]%:*})%/*}}"
 
@@ -18,8 +24,6 @@ KEYTIMEOUT=10
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE="$HOME/.zsh_history"
-
-[[ $- == *i* ]] && stty -ixon
 
 unsetopt share_history
 setopt extended_history
