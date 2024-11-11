@@ -38,7 +38,6 @@
       "wakeonlan"
     ];
     casks = [
-      "calibre"
       "discord"
       "elgato-control-center"
       "elgato-stream-deck"
