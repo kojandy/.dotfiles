@@ -5,7 +5,11 @@ email = "dev@kojandy.com"
 [ui]
 default-command = "log"
 pager = "less -FRX"
+diff.tool = "difft"
 merge-editor = "vimdiff"
+
+[merge-tools.difft]
+diff-args = ["--color=always", "$left", "$right"]
 
 [merge-tools.vimdiff]
 program = "nvim"
