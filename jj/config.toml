@@ -14,6 +14,12 @@ diff-args = ["--color=always", "$left", "$right"]
 [merge-tools.vimdiff]
 program = "nvim"
 
+[merge-tools.idea]
+program = "idea"
+diff-args = ["diff",  "$left", "$right"]
+edit-args = ["diff",  "$left", "$right"]
+merge-args = ["merge" , "$left", "$right", "$base", "$output"]
+
 [revsets]
 log = "connected(ancestors(interests(), 2) | trunk())"
 

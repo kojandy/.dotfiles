@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   homebrew.casks = [
     "alt-tab"
 
@@ -38,4 +38,10 @@
     "Soulver 3" = 1508732804;
     "무비스트" = 461788075;
   };
+
+  environment.systemPackages = with pkgs; [
+    (writeShellScriptBin "idea" ''
+      "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"
+    '')
+  ];
 }
