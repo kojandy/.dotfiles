@@ -29,7 +29,7 @@
       "nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/nvim";
       "tmux".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/tmux";
     };
-    home.stateVersion = "24.11";
+    home.stateVersion = "25.05";
   };
 
   homebrew = {
