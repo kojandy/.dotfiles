@@ -25,6 +25,7 @@
       AppleInterfaceStyleSwitchesAutomatically = true;
       ApplePressAndHoldEnabled = false;
       AppleICUForce24HourTime = true;
+      "com.apple.sound.beep.feedback" = 0;
     };
     WindowManager.EnableStandardClickToShowDesktop = false;
     CustomUserPreferences = {
