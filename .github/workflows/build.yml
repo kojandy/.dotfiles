@@ -1,0 +1,16 @@
+name: Build
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**.nix'
+      - 'flake.lock'
+
+jobs:
+  studio:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@v16
+      - uses: DeterminateSystems/magic-nix-cache-action@v8
+      - run: nix build .#darwinConfigurations.studio.system
