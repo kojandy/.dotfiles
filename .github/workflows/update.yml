@@ -1,5 +1,5 @@
 name: Update flake.lock
-run-name: 'bot(nix): update flake.lock'
+run-name: 'chore: update flake.lock'
 
 on:
   workflow_dispatch:
@@ -20,9 +20,9 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@v8
       - uses: DeterminateSystems/update-flake-lock@v24
         with:
-          commit-msg: 'bot(nix): update flake.lock'
+          commit-msg: 'chore: update flake.lock'
           branch: bot/update-flake
-          pr-title: 'bot(nix): update flake.lock'
+          pr-title: 'chore: update flake.lock'
           pr-body: |
             Automated changes by the [update-flake-lock](https://github.com/DeterminateSystems/update-flake-lock) GitHub Action.
 
