@@ -19,7 +19,7 @@
 
   nix.extraOptions = ''
       experimental-features = nix-command flakes
-      commit-lockfile-summary = chore(nix): update flake.lock
+      commit-lockfile-summary = chore: update flake.lock
   '';
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
   nix.gc.automatic = true;
