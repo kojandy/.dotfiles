@@ -23,6 +23,7 @@ jobs:
           commit-msg: 'chore: update flake.lock'
           branch: bot/update-flake
           pr-title: 'chore: update flake.lock'
+          pr-labels: automated
           pr-body: |
             Automated changes by the [update-flake-lock](https://github.com/DeterminateSystems/update-flake-lock) GitHub Action.
 
