@@ -4,8 +4,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-[ -z "$DOTFILES" ] && source "$HOME/.profile" || source "$HOME/.dotfiles/profile"
-BASEDIR="${${DOTFILES:+$DOTFILES/zsh}:-${$(realpath ${funcsourcetrace[1]%:*})%/*}}"
+[ -z "$DOTFILES" ] && source "$HOME/.profile" || source "$HOME/.dotfiles/config/profile"
+BASEDIR="${${DOTFILES:+$DOTFILES/config/zsh}:-${$(realpath ${funcsourcetrace[1]%:*})%/*}}"
 
 [ ! -d "$HOME/.zgen" ] && git clone --depth 1 "https://github.com/tarjoilija/zgen.git" "$HOME/.zgen"
 source "$HOME/.zgen/zgen.zsh"
