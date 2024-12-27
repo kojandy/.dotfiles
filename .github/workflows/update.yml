@@ -4,7 +4,7 @@ run-name: 'chore: update flake.lock'
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 1'
+    - cron: '0 0 * * 1,4'
 
 jobs:
   lockfile:
