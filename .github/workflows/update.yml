@@ -1,5 +1,5 @@
 name: Update flake.lock
-run-name: 'chore: update flake.lock'
+run-name: 'Check flake inputs for updates'
 
 on:
   workflow_dispatch:
