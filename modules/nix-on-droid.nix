@@ -28,7 +28,7 @@
         "tmux".source = ../tmux;
         "jj".source = ../jj;
       };
-      home.stateVersion = "24.05";
+      home.stateVersion = "25.05";
       home.enableNixpkgsReleaseCheck = false;
     };
 
