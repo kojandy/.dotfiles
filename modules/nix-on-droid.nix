@@ -16,17 +16,17 @@
 
     home-manager.config = { config, ... }: {
       home.file = {
-        ".profile".source = ../profile;
-        ".zshrc".source = ../zsh/zshrc;
+        ".profile".source = ../config/profile;
+        ".zshrc".source = ../config/zsh/zshrc;
         "Downloads".source = config.lib.file.mkOutOfStoreSymlink "/sdcard/Download";
       };
       xdg.configFile = {
-        "nvim".source = ../nvim;
-        "git".source = ../git;
-        "lf".source = ../lf;
-        "broot".source = ../broot;
-        "tmux".source = ../tmux;
-        "jj".source = ../jj;
+        "nvim".source = ../config/nvim;
+        "git".source = ../config/git;
+        "lf".source = ../config/lf;
+        "broot".source = ../config/broot;
+        "tmux".source = ../config/tmux;
+        "jj".source = ../config/jj;
       };
       home.stateVersion = "25.05";
       home.enableNixpkgsReleaseCheck = false;
