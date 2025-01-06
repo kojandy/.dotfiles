@@ -1,7 +1,9 @@
 { pkgs, ... }: {
+  homebrew.brews = [
+    "pueue"
+  ];
   homebrew.casks = [
     "alt-tab"
-
     "alfred"
     "bartender"
     "istat-menus"
