@@ -30,12 +30,22 @@ log = "connected(ancestors(interests(), 2) | trunk())"
 [templates]
 log_node = '''
 coalesce(
-  if(!self, "◌"),
+  if(!self, label("elided", "~")),
   if(root, "┴"),
-  if(current_working_copy, if(pushed, "!", "@")),
-  if(description.lower().starts_with("wip"), if(pushed, "▲", "△")),
-  if(empty, if(pushed, "┿", "┼")),
-  if(pushed, "●", "○"),
+  label(
+    separate(" ",
+      if(empty, "elided"),
+      if(current_working_copy, "working_copy"),
+      if(immutable, "immutable"),
+      if(conflict, "conflict"),
+    ),
+    coalesce(
+      if(current_working_copy, if(pushed, "!", "@")),
+      if(description.lower().starts_with("wip"), if(pushed, "▲", "△")),
+      if(conflict, "×"),
+      if(pushed, "●", "○"),
+    )
+  )
 )
 '''
 
