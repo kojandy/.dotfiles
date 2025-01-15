@@ -20,13 +20,6 @@ diff-args = ["diff",  "$left", "$right"]
 edit-args = ["diff",  "$left", "$right"]
 merge-args = ["merge" , "$left", "$right", "$base", "$output"]
 
-[revsets]
-log = "connected(ancestors(interests(), 2) | trunk())"
-
-[revset-aliases]
-"local()" = "(immutable_heads() | remote_bookmarks()).."
-"interests()" = "local() | trunk()..bookmarks() | trunk()..@"
-
 [templates]
 log_node = '''
 coalesce(
