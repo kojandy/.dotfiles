@@ -88,6 +88,7 @@ alias jbf='jj bookmark forget'
 alias jbm='jj bookmark move'
 alias jbo='jj bookmark list -a --color always | grep "^\S*@origin"'
 alias jbt='jj bookmark track'
+jbu() {jj bookmark untrack "glob:$1@*"}
 alias jci='jj commit -m'
 alias jcl='jj git clone --colocate'
 alias jd='jj diff'
