@@ -20,6 +20,9 @@ diff-args = ["diff",  "$left", "$right"]
 edit-args = ["diff",  "$left", "$right"]
 merge-args = ["merge" , "$left", "$right", "$base", "$output"]
 
+[revsets]
+log = "present(@) | present(ancestors(trunk()..@, 2)) | ancestors(immutable_heads().., 2) | bookmarks() | fork_point(bookmarks()) | present(tracked_remote_bookmarks()::trunk())"
+
 [templates]
 log_node = '''
 coalesce(
