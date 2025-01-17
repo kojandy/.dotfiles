@@ -3,7 +3,7 @@ name = "Ohjun Kwon"
 email = "dev@kojandy.com"
 
 [ui]
-default-command = "log"
+default-command = ["log", "-T builtin_log_compact"]
 pager = "less -FRX"
 diff.tool = "difft"
 merge-editor = "vimdiff"
@@ -24,6 +24,7 @@ merge-args = ["merge" , "$left", "$right", "$base", "$output"]
 log = "present(@) | present(ancestors(trunk()..@, 2)) | ancestors(immutable_heads().., 2) | bookmarks() | fork_point(bookmarks()) | present(tracked_remote_bookmarks()::trunk())"
 
 [templates]
+log = "builtin_log_oneline"
 log_node = '''
 coalesce(
   if(!self, label("elided", "~")),
