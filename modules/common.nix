@@ -9,6 +9,7 @@
     broot
     lf
     difftastic
+    lnav
 
     htop
     httpie
