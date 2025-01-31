@@ -56,6 +56,7 @@
       "tailscale"
       "tetrio"
       "unity-hub"
+      "league-of-legends"
     ];
   };
 
