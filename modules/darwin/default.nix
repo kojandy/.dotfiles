@@ -25,7 +25,6 @@
     })
   ];
 
-  services.nix-daemon.enable = true;
   security.pam.enableSudoTouchIdAuth = true;
   security.sudo.extraConfig = "Defaults env_keep += \"TERM TERMINFO\"";
 
