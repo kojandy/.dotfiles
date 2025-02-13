@@ -86,6 +86,7 @@ alias jbc='jj bookmark create'
 alias jbd='jj bookmark delete'
 alias jbf='jj bookmark forget'
 alias jbm='jj bookmark move'
+alias jbmc="jj bookmark move --from 'heads(::@- & bookmarks())' --to @-"
 alias jbo='jj bookmark list -a --color always | grep "^\S*@origin"'
 alias jbr='jj bookmark rename'
 alias jbt='jj bookmark track'
