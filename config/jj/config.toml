@@ -23,6 +23,9 @@ merge-args = ["merge" , "$left", "$right", "$base", "$output"]
 [revsets]
 log = "present(@) | present(ancestors(trunk()..@, 2)) | ancestors(immutable_heads().., 2) | bookmarks() | fork_point(bookmarks()) | present(tracked_remote_bookmarks()::trunk())"
 
+[revset-aliases]
+'untracked_origin_log()' = 'present(trunk()) | present(ancestors(trunk()..untracked_remote_bookmarks(remote=origin), 2))'
+
 [templates]
 log = "builtin_log_oneline"
 log_node = '''
