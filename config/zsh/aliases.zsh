@@ -92,6 +92,7 @@ alias jbr='jj bookmark rename'
 alias jbt='jj bookmark track'
 jbu() {jj bookmark untrack "glob:$1@*" && jj bookmark delete "$1"}
 alias jci='jj commit -m'
+alias jcii='jj commit -i'
 alias jcl='jj git clone --colocate'
 alias jd='jj diff'
 alias jds='jj describe'
