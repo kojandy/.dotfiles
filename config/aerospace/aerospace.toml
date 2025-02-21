@@ -1,4 +1,15 @@
 start-at-login = true
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffffffff inactive_color=0xff555555 width=5.0'
+]
+
+[gaps]
+inner.horizontal = 20
+inner.vertical = 20
+outer.left = 20
+outer.right = 20
+outer.top = 20
+outer.bottom = 20
 
 [mode.main.binding]
 alt-slash = 'layout tiles horizontal'
@@ -24,6 +35,11 @@ alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-0 = 'workspace 10'
 
+alt-q = 'workspace q'
+alt-w = 'workspace w'
+alt-e = 'workspace e'
+alt-r = 'workspace r'
+
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
@@ -35,8 +51,13 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
-alt-tab = 'workspace-back-and-forth'
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+alt-shift-q = 'move-node-to-workspace q'
+alt-shift-w = 'move-node-to-workspace w'
+alt-shift-e = 'move-node-to-workspace e'
+alt-shift-r = 'move-node-to-workspace r'
+
+alt-tab = 'focus-monitor --wrap-around next'
+alt-shift-tab = 'move-node-to-monitor --wrap-around next'
 
 alt-shift-semicolon = 'mode service'
 
@@ -45,3 +66,9 @@ r = ['flatten-workspace-tree', 'mode main']
 f = ['layout floating tiling', 'mode main']
 backspace = ['close-all-windows-but-current', 'mode main']
 esc = ['reload-config', 'mode main']
+
+[workspace-to-monitor-force-assignment]
+q = 'secondary'
+w = 'secondary'
+e = 'secondary'
+r = 'secondary'
