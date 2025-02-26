@@ -26,7 +26,7 @@
   ];
 
   nix.enable = false;
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
   security.sudo.extraConfig = "Defaults env_keep += \"TERM TERMINFO\"";
 
   system.stateVersion = 5;
