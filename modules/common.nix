@@ -23,8 +23,6 @@
       commit-lockfile-summary = chore: update flake.lock
   '';
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
-  nix.gc.automatic = true;
-  nix.optimise.automatic = true;
 
   programs.zsh.enable = true;
 }
