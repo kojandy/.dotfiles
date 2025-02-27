@@ -15,6 +15,7 @@
       AppleShowAllExtensions = true;
       FXDefaultSearchScope = "SCcf";
       FXEnableExtensionChangeWarning = false;
+      NewWindowTarget = "Home";
     };
     menuExtraClock.ShowSeconds = true;
     trackpad = {
