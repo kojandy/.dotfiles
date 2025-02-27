@@ -6,7 +6,7 @@
     "alt-tab"
     "alfred"
     "bartender"
-    "istat-menus"
+    "istat-menus@6"
     "little-snitch"
     "monitorcontrol"
     "soundsource"
