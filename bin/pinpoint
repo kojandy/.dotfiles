@@ -1,0 +1,54 @@
+#!/bin/zsh
+
+stop_servers() {
+    tmux kill-session -t pinot
+    brew services stop hbase
+
+    rm -rf /opt/homebrew/var/hbase
+    rm -rf /opt/homebrew/var/zookeeper
+}
+
+start_servers() {
+    brew services start hbase
+    hbase shell =(echo exit)
+
+    tmux new-session -ds pinot
+    tmux rename-window -t pinot:1 controller
+    tmux new-window -t pinot:2 -n broker
+    tmux new-window -t pinot:3 -n server
+    tmux new-window -t pinot:4 -n kafka
+    tmux new-window -t pinot:5 -n minion
+    tmux send-keys -t pinot:controller 'while :; do pinot-admin StartController; done' C-m
+    tmux send-keys -t pinot:broker 'while :; do pinot-admin StartBroker; done' C-m
+    tmux send-keys -t pinot:server 'while :; do pinot-admin StartServer; done' C-m
+    tmux send-keys -t pinot:kafka 'while :; do pinot-admin StartKafka -zkAddress=localhost:2181/kafka; done' C-m
+    tmux send-keys -t pinot:minion 'while :; do pinot-admin StartMinion; done' C-m
+    # tmux attach-session -t pinot
+
+    hbase shell $HOME/Projects/pinpoint/hbase/scripts/hbase-create.hbase
+}
+
+status() {
+    brew services | grep hbase
+    tmux ls | grep pinot
+}
+
+case $1 in
+    stop)
+        stop_servers
+        ;;
+    restart | re)
+        stop_servers
+        start_servers
+        ;;
+    status | st | stat)
+        status
+        ;;
+    start)
+        start_servers
+        ;;
+    *)
+        echo "unknown subcommand: $1"
+        exit 1
+        ;;
+esac
