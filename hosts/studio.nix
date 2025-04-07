@@ -38,17 +38,14 @@
   homebrew = {
     brews = [
       "m1ddc"
-      "wakeonlan"
     ];
     casks = [
       "discord"
       "elgato-control-center"
       "elgato-stream-deck"
       "hancom-word-2014"
-      "handbrake"
       "huiontablet"
       "jump-desktop-connect"
-      "karabiner-elements"
       "loopback"
       "minecraft"
       "mullvadvpn"
@@ -58,8 +55,6 @@
       "steam"
       "tailscale"
       "tetrio"
-      "unity-hub"
-      "league-of-legends"
     ];
   };
 
