@@ -21,6 +21,7 @@
       modules = [
         ./modules/darwin
         ./hosts/studio.nix
+        ./modules/tex.nix
         ./modules/pinpoint.nix
       ];
       specialArgs.inputs = inputs;
