@@ -80,6 +80,7 @@ alias gunwip='git pull && git branch wip origin/wip && git merge --squash --ff w
 # jujutsu
 alias j='jj'
 alias ja='jj abandon'
+alias jas='jj absorb'
 alias jb='jj bookmark list'
 alias jba='jj bookmark list -a'
 alias jbc='jj bookmark create'
