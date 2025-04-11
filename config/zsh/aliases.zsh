@@ -90,7 +90,7 @@ alias jbmc="jj bookmark move --from 'heads(::@- & bookmarks())' --to @-"
 alias jbo='jj bookmark list -a --color always | grep "^\S*@origin"'
 alias jbr='jj bookmark rename'
 alias jbt='jj bookmark track'
-jbu() {jj bookmark untrack "glob:$1@*" && jj bookmark delete "$1"}
+alias jbu='jj bookmark untrack'
 alias jci='jj commit -m'
 alias jcii='jj commit -i'
 alias jcl='jj git clone --colocate'
