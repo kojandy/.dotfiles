@@ -16,6 +16,8 @@
 
     git
     jujutsu
+
+    nh
   ];
 
   nix.extraOptions = ''
