@@ -12,6 +12,8 @@
     ffmpeg
   ];
 
+  system.primaryUser = "kojandy";
+
   users.users."kojandy".home = "/Users/kojandy";
   home-manager.users."kojandy" = { config, ... }: {
     home.file = {
