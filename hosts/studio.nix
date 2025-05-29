@@ -57,6 +57,9 @@
       "tailscale"
       "tetrio"
     ];
+    masApps = {
+      "Gifski" = 1351639930;
+    };
   };
 
   system.defaults.dock.persistent-apps = [
