@@ -25,7 +25,6 @@ jobs:
         with:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - uses: DeterminateSystems/nix-installer-action@v16
-      - uses: DeterminateSystems/magic-nix-cache-action@v8
       - uses: DeterminateSystems/update-flake-lock@v24
         with:
           commit-msg: 'chore: update flake.lock'
