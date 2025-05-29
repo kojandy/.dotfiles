@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
   system.keyboard = {
     enableKeyMapping = true;
     remapCapsLockToControl = true;
@@ -23,9 +23,9 @@
       TrackpadThreeFingerDrag = true;
     };
     NSGlobalDomain = {
+      AppleICUForce24HourTime = true;
       AppleInterfaceStyleSwitchesAutomatically = true;
       ApplePressAndHoldEnabled = false;
-      AppleICUForce24HourTime = true;
       "com.apple.sound.beep.feedback" = 0;
     };
     WindowManager.EnableStandardClickToShowDesktop = false;
@@ -48,6 +48,7 @@
           "65".enabled = false; # Finder 검색 윈도우 보기
         };
       };
+      NSGlobalDomain.NSToolbarTitleViewRolloverDelay = 0;
     };
   };
 }

@@ -15,10 +15,14 @@
       ]);
 
     home-manager.config = { config, ... }: {
-      home.file = {
-        ".profile".source = ../config/profile;
-        ".zshrc".source = ../config/zsh/zshrc;
-        "Downloads".source = config.lib.file.mkOutOfStoreSymlink "/sdcard/Download";
+      home = {
+        file = {
+          ".profile".source = ../config/profile;
+          ".zshrc".source = ../config/zsh/zshrc;
+          "Downloads".source = config.lib.file.mkOutOfStoreSymlink "/sdcard/Download";
+        };
+        stateVersion = "25.05";
+        enableNixpkgsReleaseCheck = false;
       };
       xdg.configFile = {
         "nvim".source = ../config/nvim;
@@ -28,8 +32,6 @@
         "tmux".source = ../config/tmux;
         "jj".source = ../config/jj;
       };
-      home.stateVersion = "25.05";
-      home.enableNixpkgsReleaseCheck = false;
     };
 
     user.shell = "${pkgs.zsh}/bin/zsh";
