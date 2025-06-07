@@ -16,6 +16,7 @@
 
     git
     jujutsu
+    jjui
 
     nh
   ];
