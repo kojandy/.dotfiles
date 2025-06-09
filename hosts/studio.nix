@@ -46,6 +46,7 @@
       "elgato-control-center"
       "elgato-stream-deck"
       "huiontablet"
+      "izotope-product-portal"
       "jump-desktop-connect"
       "loopback"
       "minecraft"
