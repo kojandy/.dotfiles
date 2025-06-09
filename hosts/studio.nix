@@ -56,6 +56,7 @@
       "steam"
       "tailscale"
       "tetrio"
+      "waves-central"
     ];
     masApps = {
       "Gifski" = 1351639930;
