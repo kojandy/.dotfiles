@@ -5,7 +5,7 @@ email = "dev@kojandy.com"
 [ui]
 default-command = ["log", "-T builtin_log_compact"]
 pager = "less -FRX"
-diff.tool = "difft"
+diff-formatter = "difft"
 merge-editor = "vimdiff"
 
 [merge-tools.difft]
