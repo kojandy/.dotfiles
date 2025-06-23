@@ -1,6 +1,11 @@
 {
   description = "ohjun's home";
 
+  nixConfig = {
+    extra-substituters = [ "https://kojandy.cachix.org" ];
+    extra-trusted-public-keys = [ "kojandy.cachix.org-1:HyuwXDaJ1ub3Kooeec/gkXv76Uk/YWBc3HxW8jQB+gs=" ];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
