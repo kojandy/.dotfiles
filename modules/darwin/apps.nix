@@ -12,16 +12,16 @@
       "soundsource"
       "scroll-reverser"
       "gureumkim"
-  
+
       "font-sarasa-gothic"
-  
+
       "google-chrome"
       "kitty"
       "obs"
       "zoom"
       "morgen"
       "chatgpt"
-  
+
       "intellij-idea"
     ];
 
@@ -32,9 +32,9 @@
       "Hand Mirror" = 1502839586;
       "HazeOver" = 430798174;
       "Yoink" = 457622435;
-  
+
       "Todoist" = 585829637;
-  
+
       "Boop" = 1518425043;
       "Jump Desktop" = 524141863;
       "Pixelmator Pro" = 1289583905;
