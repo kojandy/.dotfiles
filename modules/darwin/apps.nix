@@ -21,6 +21,7 @@
       "zoom"
       "morgen"
       "chatgpt"
+      "claude"
 
       "intellij-idea"
     ];
@@ -43,7 +44,13 @@
     };
   };
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    "claude-code"
+  ];
+
   environment.systemPackages = with pkgs; [
+    claude-code
+
     (writeShellScriptBin "idea" ''
       "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"
     '')
