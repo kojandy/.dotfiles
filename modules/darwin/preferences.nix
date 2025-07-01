@@ -49,6 +49,7 @@ _: {
         };
       };
       NSGlobalDomain.NSToolbarTitleViewRolloverDelay = 0;
+      "com.apple.assistant.support"."Assistant Enabled" = false;
     };
   };
 }
