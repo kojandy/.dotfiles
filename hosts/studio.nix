@@ -46,6 +46,7 @@
       "elgato-control-center"
       "elgato-stream-deck"
       "huiontablet"
+      "insta360-link-controller"
       "izotope-product-portal"
       "jump-desktop-connect"
       "loopback"
