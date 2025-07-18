@@ -69,6 +69,5 @@ return {
       root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
     }
   end},
-  {'github/copilot.vim', event = {'BufReadPre', 'BufNewFile'}},
 }
 -- vim:ts=2:sts=2:sw=2
