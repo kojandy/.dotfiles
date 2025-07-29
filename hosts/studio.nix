@@ -20,9 +20,9 @@
       ".profile".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/profile";
       ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/zsh/zshrc";
       ".dotfiles/bin/littlesnitch".source = config.lib.file.mkOutOfStoreSymlink "/Applications/Little Snitch.app/Contents/Components/littlesnitch";
-      "Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home".source = "${pkgs.zulu8}";
-      "Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home".source = "${pkgs.temurin-bin-11}";
-      "Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home".source = "${pkgs.temurin-bin-17}";
+      "Library/Java/JavaVirtualMachines/zulu-8.jdk".source = "${pkgs.zulu8}/Library/Java/JavaVirtualMachines/zulu-8.jdk";
+      "Library/Java/JavaVirtualMachines/temurin-11.jdk".source = "${pkgs.temurin-bin-11}/Library/Java/JavaVirtualMachines/temurin-11.jdk";
+      "Library/Java/JavaVirtualMachines/temurin-17.jdk".source = "${pkgs.temurin-bin-17}/Library/Java/JavaVirtualMachines/temurin-17.jdk";
     };
     xdg.configFile = {
       "broot".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/broot";
