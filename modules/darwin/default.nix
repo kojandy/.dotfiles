@@ -12,11 +12,14 @@
     entr
     unixtools.watch
 
-    temurin-bin-21
     python3
 
     gh
   ];
+
+  system.activationScripts.extraActivation.text = ''
+    ln -sf "${pkgs.temurin-bin-21}/Library/Java/JavaVirtualMachines/temurin-21.jdk" "/Library/Java/JavaVirtualMachines/"
+  '';
 
   nix.enable = false;
   security.pam.services.sudo_local.touchIdAuth = true;
