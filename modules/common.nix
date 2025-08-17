@@ -10,6 +10,7 @@
     lf
     difftastic
     lnav
+    ast-grep
 
     htop
     httpie
