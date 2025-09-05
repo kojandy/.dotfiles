@@ -21,10 +21,12 @@
     nh
   ];
 
-  nix.extraOptions = ''
-      experimental-features = nix-command flakes
-      commit-lockfile-summary = chore: update flake.lock
-  '';
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    commit-lockfile-summary = "chore: update flake.lock";
+    extra-substituters = "https://kojandy.cachix.org";
+    extra-trusted-public-keys = "kojandy.cachix.org-1:HyuwXDaJ1ub3Kooeec/gkXv76Uk/YWBc3HxW8jQB+gs=";
+  };
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
 
   programs.zsh.enable = true;
