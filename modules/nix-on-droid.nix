@@ -15,6 +15,8 @@
       ]);
 
     home-manager.config = { config, ... }: {
+      nix.package = pkgs.nix;
+      nix.settings = nix.settings;
       home = {
         file = {
           ".profile".source = ../config/profile;
@@ -58,7 +60,6 @@
       color15 = "#c5c8c6";
     };
 
-    nix.extraOptions = nix.extraOptions;
     nix.registry.nixpkgs.flake = nix.registry.nixpkgs.flake;
 
     environment.motd = null;
