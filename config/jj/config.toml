@@ -21,7 +21,7 @@ edit-args = ["diff",  "$left", "$right"]
 merge-args = ["merge" , "$left", "$right", "$base", "$output"]
 
 [revsets]
-log = "present(@) | present(ancestors(trunk()..@, 2)) | ancestors(immutable_heads().., 2) | bookmarks() | fork_point(bookmarks()) | present(tracked_remote_bookmarks()::trunk())"
+log = "connected(present(@) | present(trunk()) | present(fork_point(@ | trunk()))) | ancestors(immutable_heads().., 2) | bookmarks() | fork_point(bookmarks())"
 
 [revset-aliases]
 'untracked_origin_log()' = 'present(trunk()) | present(ancestors(trunk()..untracked_remote_bookmarks(remote=origin), 2))'
