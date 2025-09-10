@@ -11,7 +11,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: DeterminateSystems/nix-installer-action@v17
+      - uses: nixbuild/nix-quick-install-action@v31
       - uses: cachix/cachix-action@v16
         with:
           name: kojandy
