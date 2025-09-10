@@ -28,6 +28,7 @@
     extra-trusted-public-keys = "kojandy.cachix.org-1:HyuwXDaJ1ub3Kooeec/gkXv76Uk/YWBc3HxW8jQB+gs=";
   };
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
+  nix.channel.enable = false;
 
   programs.zsh.enable = true;
 }
