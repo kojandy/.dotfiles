@@ -10,7 +10,7 @@ jobs:
   studio:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v5
       - uses: nixbuild/nix-quick-install-action@v33
       - uses: cachix/cachix-action@v16
         with:
@@ -21,8 +21,8 @@ jobs:
   nix-on-droid:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5.0.0
-      - uses: docker/setup-qemu-action@v3.6.0
+      - uses: actions/checkout@v5
+      - uses: docker/setup-qemu-action@v3
         with:
           platforms: arm64
       - uses: nixbuild/nix-quick-install-action@v33
