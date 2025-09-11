@@ -21,11 +21,11 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - uses: DeterminateSystems/nix-installer-action@v17
-      - uses: DeterminateSystems/update-flake-lock@v24
+      - uses: DeterminateSystems/nix-installer-action@v20
+      - uses: DeterminateSystems/update-flake-lock@v27
         with:
           commit-msg: 'chore: update flake.lock'
           branch: bot/update-flake
