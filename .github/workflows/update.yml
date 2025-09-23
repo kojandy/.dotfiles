@@ -4,7 +4,7 @@ run-name: 'Check flake inputs for updates'
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 1,4'
+    - cron: '0 0 * * *'
   issue_comment:
     types: [created]
 
