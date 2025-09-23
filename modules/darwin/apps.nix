@@ -21,7 +21,6 @@
       "zoom"
       "morgen"
       "chatgpt"
-      "claude"
 
       "intellij-idea"
     ];
