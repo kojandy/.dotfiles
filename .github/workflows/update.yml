@@ -5,17 +5,9 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'
-  issue_comment:
-    types: [created]
 
 jobs:
   lockfile:
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      github.event_name == 'schedule' ||
-      (github.event_name == 'issue_comment' &&
-      github.event.issue.pull_request &&
-      github.event.comment.body == 'update')
     runs-on: ubuntu-latest
     permissions:
       contents: read
