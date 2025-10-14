@@ -2,22 +2,18 @@
   environment.systemPackages = with pkgs; [
     neovim
     tmux
-    nodejs
+    nodejs cargo # for language servers
 
-    ripgrep
-    fd
-    broot
-    lf
+    ripgrep fd ast-grep
+    broot lf
     difftastic
     lnav
-    ast-grep
 
     htop
     httpie
 
     git
-    jujutsu
-    jjui
+    jujutsu jjui
 
     nh
   ];
