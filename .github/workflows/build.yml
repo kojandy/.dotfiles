@@ -20,13 +20,17 @@ jobs:
             runs-on: macos-latest
             target: .#darwinConfigurations.studio.system
             build-args: ''
+            comment-title: 'Darwin Package Changes (studio)'
           - system: nix-on-droid
             runs-on: ubuntu-latest
             target: .#nixOnDroidConfigurations.default.activationPackage
             build-args: '--impure --extra-platforms aarch64-linux'
             qemu: true
             cachix-extra-pull: nix-on-droid
+            comment-title: 'Nix-on-Droid Package Changes'
     runs-on: ${{ matrix.runs-on }}
+    permissions:
+      pull-requests: write
     steps:
       - uses: actions/checkout@v5
       - uses: docker/setup-qemu-action@v3
@@ -40,3 +44,26 @@ jobs:
           extraPullNames: ${{ matrix.cachix-extra-pull || '' }}
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - run: nix build ${{ matrix.target }} ${{ matrix.build-args }}
+      
+      - name: Build old system and generate nvd diff
+        if: github.event_name == 'pull_request' && github.head_ref == 'bot/update-flake'
+        run: |
+          git fetch origin master
+          git checkout origin/master
+          nix profile install nixpkgs#nvd
+          nix build ${{ matrix.target }} ${{ matrix.build-args }} --out-link old-system
+          git checkout ${{ github.sha }}
+          nix build ${{ matrix.target }} ${{ matrix.build-args }} --out-link new-system
+          nvd diff old-system new-system > nvd-diff.txt
+          
+          cat <<'EOF' > comment.md
+          ## 📦 ${{ matrix.comment-title }}
+
+          ```
+          $(cat nvd-diff.txt)
+          ```
+          EOF
+          
+          gh pr comment ${{ github.event.pull_request.number }} --body-file comment.md
+        env:
+          GH_TOKEN: ${{ github.token }}
