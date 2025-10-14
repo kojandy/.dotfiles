@@ -18,6 +18,7 @@ jobs:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - uses: nixbuild/nix-quick-install-action@v33
       - uses: DeterminateSystems/update-flake-lock@v27
+        id: update
         with:
           commit-msg: 'chore: update flake.lock'
           branch: bot/update-flake
@@ -29,3 +30,65 @@ jobs:
             ```
             {{ env.GIT_COMMIT_MESSAGE }}
             ```
+  
+  nvd-diff:
+    needs: lockfile
+    if: needs.lockfile.outputs.pull-request-number != ''
+    strategy:
+      matrix:
+        include:
+          - system: darwin
+            runs-on: macos-latest
+            target: .#darwinConfigurations.studio.system
+            build-args: ''
+            comment-title: 'Darwin Package Changes (studio)'
+          - system: nix-on-droid
+            runs-on: ubuntu-latest
+            target: .#nixOnDroidConfigurations.default.activationPackage
+            build-args: '--impure --extra-platforms aarch64-linux'
+            qemu: true
+            cachix-extra-pull: nix-on-droid
+            comment-title: 'Nix-on-Droid Package Changes'
+    runs-on: ${{ matrix.runs-on }}
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: bot/update-flake
+      - uses: docker/setup-qemu-action@v3
+        if: matrix.qemu
+        with:
+          platforms: arm64
+      - uses: nixbuild/nix-quick-install-action@v33
+      - uses: cachix/cachix-action@v16
+        with:
+          name: kojandy
+          extraPullNames: ${{ matrix.cachix-extra-pull || '' }}
+      
+      - name: Build old system and install nvd
+        run: |
+          git fetch origin master
+          git checkout origin/master
+          nix profile install nixpkgs#nvd
+          nix build ${{ matrix.target }} ${{ matrix.build-args }} --out-link old-system
+          git checkout bot/update-flake
+      
+      - name: Build new system
+        run: nix build ${{ matrix.target }} ${{ matrix.build-args }} --out-link new-system
+      
+      - name: Generate and comment nvd diff
+        run: |
+          nvd diff old-system new-system > nvd-diff.txt
+          
+          cat <<'EOF' > comment.md
+          ## 📦 ${{ matrix.comment-title }}
+
+          ```
+          $(cat nvd-diff.txt)
+          ```
+          EOF
+          
+          gh pr comment ${{ needs.lockfile.outputs.pull-request-number }} --body-file comment.md
+        env:
+          GH_TOKEN: ${{ github.token }}
