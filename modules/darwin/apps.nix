@@ -44,11 +44,11 @@
   };
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-    "claude-code"
+    "amp-cli"
   ];
 
   environment.systemPackages = with pkgs; [
-    claude-code
+    amp-cli
 
     (writeShellScriptBin "idea" ''
       "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"
