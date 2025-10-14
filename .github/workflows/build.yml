@@ -12,28 +12,31 @@ on:
       - 'flake.lock'
 
 jobs:
-  studio:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v5
-      - uses: nixbuild/nix-quick-install-action@v33
-      - uses: cachix/cachix-action@v16
-        with:
-          name: kojandy
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix build .#darwinConfigurations.studio.system
-
-  nix-on-droid:
-    runs-on: ubuntu-latest
+  build:
+    strategy:
+      matrix:
+        include:
+          - system: darwin
+            runs-on: macos-latest
+            target: .#darwinConfigurations.studio.system
+            build-args: ''
+          - system: nix-on-droid
+            runs-on: ubuntu-latest
+            target: .#nixOnDroidConfigurations.default.activationPackage
+            build-args: '--impure --extra-platforms aarch64-linux'
+            qemu: true
+            cachix-extra-pull: nix-on-droid
+    runs-on: ${{ matrix.runs-on }}
     steps:
       - uses: actions/checkout@v5
       - uses: docker/setup-qemu-action@v3
+        if: matrix.qemu
         with:
           platforms: arm64
       - uses: nixbuild/nix-quick-install-action@v33
       - uses: cachix/cachix-action@v16
         with:
           name: kojandy
-          extraPullNames: nix-on-droid
+          extraPullNames: ${{ matrix.cachix-extra-pull || '' }}
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix build .#nixOnDroidConfigurations.default.activationPackage --impure --extra-platforms aarch64-linux
+      - run: nix build ${{ matrix.target }} ${{ matrix.build-args }}
