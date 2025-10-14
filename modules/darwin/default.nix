@@ -1,9 +1,12 @@
 { pkgs, ... }: {
   imports = [
     ../common.nix
-    ./apps.nix
     ./brew.nix
     ./preferences.nix
+  ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    "amp-cli"
   ];
 
   environment.systemPackages = with pkgs; [
@@ -15,6 +18,12 @@
     python3
 
     gh
+
+    amp-cli
+
+    (writeShellScriptBin "idea" ''
+      "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"
+    '')
   ];
 
   system.activationScripts.extraActivation.text = ''
