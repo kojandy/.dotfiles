@@ -1,0 +1,95 @@
+name: NVD Diff
+run-name: 'Generate package diff with nvd'
+
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - completed
+
+jobs:
+  darwin-nvd-diff:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.head_branch == 'bot/update-flake'
+    runs-on: macos-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - uses: nixbuild/nix-quick-install-action@v33
+      - uses: cachix/cachix-action@v16
+        with:
+          name: kojandy
+      
+      - name: Build old system and install nvd
+        run: |
+          git fetch origin master
+          git checkout origin/master
+          nix profile install nixpkgs#nvd
+          nix build .#darwinConfigurations.studio.system --out-link old-system
+          git checkout ${{ github.event.workflow_run.head_sha }}
+      
+      - name: Build new system (cached from previous build)
+        run: nix build .#darwinConfigurations.studio.system --out-link new-system
+      
+      - name: Generate and comment nvd diff
+        run: |
+          nvd diff old-system new-system > nvd-diff.txt
+          
+          cat <<'EOF' > comment.md
+          ## 📦 Darwin Package Changes (studio)
+
+          ```
+          $(cat nvd-diff.txt)
+          ```
+          EOF
+          
+          gh pr comment ${{ github.event.workflow_run.pull_requests[0].number }} --body-file comment.md
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  nix-on-droid-nvd-diff:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.head_branch == 'bot/update-flake'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
+      - uses: nixbuild/nix-quick-install-action@v33
+      - uses: cachix/cachix-action@v16
+        with:
+          name: kojandy
+          extraPullNames: nix-on-droid
+      
+      - name: Build old system and install nvd
+        run: |
+          git fetch origin master
+          git checkout origin/master
+          nix profile install nixpkgs#nvd
+          nix build .#nixOnDroidConfigurations.default.activationPackage --impure --extra-platforms aarch64-linux --out-link old-system
+          git checkout ${{ github.event.workflow_run.head_sha }}
+      
+      - name: Build new system (cached from previous build)
+        run: nix build .#nixOnDroidConfigurations.default.activationPackage --impure --extra-platforms aarch64-linux --out-link new-system
+      
+      - name: Generate and comment nvd diff
+        run: |
+          nvd diff old-system new-system > nvd-diff.txt
+          
+          cat <<'EOF' > comment.md
+          ## 📦 Nix-on-Droid Package Changes
+
+          ```
+          $(cat nvd-diff.txt)
+          ```
+          EOF
+          
+          gh pr comment ${{ github.event.workflow_run.pull_requests[0].number }} --body-file comment.md
+        env:
+          GH_TOKEN: ${{ github.token }}
