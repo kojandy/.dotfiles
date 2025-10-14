@@ -5,7 +5,7 @@ return {
     {'williamboman/mason-lspconfig.nvim', opts = function()
       local lspconfig = require('lspconfig')
       return {
-        ensure_installed = {'bashls'},
+        ensure_installed = {'bashls', 'lua_ls', 'nil_ls'},
         handlers = {
           function(server_name)
             lspconfig[server_name].setup {}
