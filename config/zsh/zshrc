@@ -10,6 +10,7 @@ BASEDIR="${${DOTFILES:+$DOTFILES/config/zsh}:-${$(realpath ${funcsourcetrace[1]%
 [ ! -d "$HOME/.zgen" ] && git clone --depth 1 "https://github.com/tarjoilija/zgen.git" "$HOME/.zgen"
 source "$HOME/.zgen/zgen.zsh"
 if ! zgen saved; then
+    zgen load mafredri/zsh-async . main
     zgen load romkatv/powerlevel10k powerlevel10k
     zgen load agkozak/zsh-z
     zgen load kojandy/zsh-bd
