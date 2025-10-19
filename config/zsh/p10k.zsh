@@ -1742,13 +1742,9 @@
   # of calculating the jj status.
   _my_jj_async() {
     local workspace=$1
-    local display revision bookmark distance
+    local display bookmark distance
 
-    revision=$(jj log --repository "$workspace" --ignore-working-copy \
-      --no-graph --limit 1 --color always \
-      --revisions @ -T 'prompt')
-
-    bookmark=$(jj log --repository "$workspace" --ignore-working-copy \
+    bookmark=$(jj log --repository "$workspace" \
       --no-graph --limit 1 --color always \
       -r "closest_bookmark(@)" -T 'bookmarks.join(" ")' 2>/dev/null)
 
@@ -1769,16 +1765,16 @@
         END { for (j=1; j<=i; j++) printf "%s%s", parts[j], (j<i ? " " : "") }
       ')
 
-    display=$revision
-
     if [[ -n "$bookmark" ]]; then
-      display+=" $bookmark"
+      display+="$bookmark"
       if [[ "$distance" -gt 0 ]]; then
-        display+=" %7F⇡${distance}"
+        display+="%7F+${distance} "
+      else
+        display+=" "
       fi
     fi
     if [[ -n "$file_status" ]]; then
-      display+=" ${file_status}"
+      display+="${file_status}"
     fi
 
     echo "$display" | sed 's/\x1b\[[0-9;]*m/%{&%}/g'
