@@ -1750,7 +1750,7 @@
 
     distance=$(jj log --repository "$workspace" --ignore-working-copy \
       --no-graph --color never \
-      -r "closest_bookmark(@)..@" \
+      -r "closest_bookmark(@)..@ ~ empty()" \
       -T 'change_id ++ "\n"' 2>/dev/null | wc -l | tr -d ' ')
 
     file_status=$(jj log --repository "$workspace" --ignore-working-copy \
