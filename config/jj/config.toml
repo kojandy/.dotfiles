@@ -3,7 +3,7 @@ name = "Ohjun Kwon"
 email = "dev@kojandy.com"
 
 [ui]
-default-command = ["log", "-T builtin_log_compact"]
+default-command = ["log", "-T builtin_log_compact", "--no-pager"]
 pager = "less -FRX"
 diff-formatter = "difft"
 merge-editor = "vimdiff"
