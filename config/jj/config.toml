@@ -3,10 +3,14 @@ name = "Ohjun Kwon"
 email = "dev@kojandy.com"
 
 [ui]
-default-command = ["log", "-T builtin_log_compact", "--config", 'ui.pager=["/usr/bin/env", "zsh", "-c", "head -n $(($(tput lines) - 4))"]']
-pager = "less -FRX"
+default-command = ["log", "-T builtin_log_compact", "--config", 'ui.pager=["/usr/bin/env", "zsh", "-c", "head -n $((LINES - 4))"]']
+pager = ":builtin"
 diff-formatter = "difft"
 merge-editor = "vimdiff"
+
+[ui.streampager]
+wrapping = "none"
+interface = "quit-quickly-or-clear-output"
 
 [merge-tools.difft]
 diff-args = ["--color=always", "$left", "$right"]
