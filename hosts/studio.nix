@@ -49,6 +49,7 @@
       "insta360-link-controller"
       "izotope-product-portal"
       "jump-desktop-connect"
+      "localsend"
       "loopback"
       "minecraft"
       "mullvad-vpn"
