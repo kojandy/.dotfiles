@@ -124,9 +124,9 @@ alias jsqi='jj squash -i'
 alias jss='jj show -s'
 alias jst='jj status'
 alias jun='jj undo'
+alias jw='jj workspace list'
 alias jwa='jj workspace add'
 alias jwf='jj workspace forget'
-alias jwl='jj workspace list'
 
 # i am so cuet
 alias claer='clear'
