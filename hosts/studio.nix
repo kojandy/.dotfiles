@@ -59,6 +59,7 @@
       "steam"
       "tailscale-app"
       "tetrio"
+      "utm"
       "waves-central"
     ];
     masApps = {
