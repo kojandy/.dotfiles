@@ -1,4 +1,19 @@
 { inputs, pkgs, ... }: {
+  pkgs.overlays = [
+    (final: prev: {
+      lnav = prev.lnav.overrideAttrs (_: {
+        version = "0.13.2";
+        src = prev.fetchFromGitHub {
+          owner = "tstack";
+          repo = "lnav";
+          tag = "v0.13.2";
+          hash = "sha256-IYBcYnai7Se3/GNITzhpSV/XYvCUvcpiZDTF4Y58Zt0=";
+        };
+      });
+    })
+  ];
+
+
   environment.systemPackages = with pkgs; [
     neovim
     tmux
