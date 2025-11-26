@@ -39,6 +39,7 @@ coalesce(
   label(
     separate(" ",
       if(empty, "elided"),
+      if(hidden, "elided"),
       if(current_working_copy, "working_copy"),
       if(immutable, "immutable"),
       if(conflict, "conflict"),
