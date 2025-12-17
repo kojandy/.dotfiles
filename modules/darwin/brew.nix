@@ -28,6 +28,7 @@ _: {
     masApps = {
       "Amphetamine" = 937984704;
       "Folder Preview" = 6698876601;
+      "iPreview" = 1519213509;
       "Gestimer" = 990588172;
       "Hand Mirror" = 1502839586;
       "HazeOver" = 430798174;
