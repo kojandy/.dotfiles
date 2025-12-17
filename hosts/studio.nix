@@ -42,6 +42,8 @@
       "m1ddc"
     ];
     casks = [
+      "cleanshot"
+      "daisydisk"
       "discord"
       "elgato-control-center"
       "elgato-stream-deck"
