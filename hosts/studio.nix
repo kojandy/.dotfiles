@@ -65,6 +65,7 @@
       "waves-central"
     ];
     masApps = {
+      "Droplr" = 498672703;
       "Gifski" = 1351639930;
     };
   };
