@@ -48,6 +48,7 @@
       "m1ddc"
     ];
     casks = [
+      "1password"
       "cleanshot"
       "daisydisk"
       "discord"
