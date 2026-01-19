@@ -3,6 +3,10 @@
 
   networking.hostName = "studio";
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    "amp-cli"
+  ];
+
   home-manager.useGlobalPkgs = true;
   environment.systemPackages = with pkgs; [
     gnupg
@@ -10,6 +14,8 @@
     yt-dlp
     streamlink
     ffmpeg
+
+    amp-cli
   ];
 
   system.primaryUser = "kojandy";
@@ -54,8 +60,10 @@
       "localsend"
       "loopback"
       "minecraft"
+      "monitorcontrol"
       "mullvad-vpn"
       "notion"
+      "obs"
       "orbstack"
       "philips-hue-sync"
       "steam"
@@ -67,6 +75,8 @@
     masApps = {
       "Droplr" = 498672703;
       "Gifski" = 1351639930;
+      "Pixelmator Pro" = 1289583905;
+      "무비스트" = 461788075;
     };
   };
 

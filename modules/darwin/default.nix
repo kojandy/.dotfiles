@@ -5,21 +5,9 @@
     ./preferences.nix
   ];
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-    "amp-cli"
-  ];
 
   environment.systemPackages = with pkgs; [
-    ncdu
-
-    entr
-    unixtools.watch
-
     python3
-
-    gh
-
-    amp-cli
 
     (writeShellScriptBin "idea" ''
       "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"

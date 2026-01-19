@@ -7,6 +7,7 @@
     ripgrep fd ast-grep
     broot lf
     difftastic
+    unixtools.watch
     lnav
 
     htop
