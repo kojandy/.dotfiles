@@ -8,6 +8,7 @@
 
   environment.systemPackages = with pkgs; [
     python3
+    yubikey-manager
 
     (writeShellScriptBin "idea" ''
       "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"
