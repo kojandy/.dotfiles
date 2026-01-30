@@ -10,6 +10,11 @@
     python3
     yubikey-manager
 
+    docker
+    kubectl
+    kubernetes-helm
+    k9s
+
     (writeShellScriptBin "idea" ''
       "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"
     '')

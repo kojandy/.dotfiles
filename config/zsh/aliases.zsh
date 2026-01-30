@@ -26,6 +26,8 @@ cdtemp() {
   cd $PREV_DIR
 }
 
+alias k9s='LC_CTYPE=en_US.UTF-8 k9s'
+
 # vim
 alias vi='nvim'
 
