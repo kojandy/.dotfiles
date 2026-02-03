@@ -11,29 +11,102 @@ on:
       - '**.nix'
       - 'flake.lock'
 
-jobs:
-  studio:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v5
-      - uses: nixbuild/nix-quick-install-action@v33
-      - uses: cachix/cachix-action@v16
-        with:
-          name: kojandy
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix build .#darwinConfigurations.studio.system
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
 
-  nix-on-droid:
-    runs-on: ubuntu-latest
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.runs_on }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: studio
+            runs_on: macos-latest
+            target: darwinConfigurations.studio.system
+          - name: nix-on-droid
+            runs_on: ubuntu-24.04-arm
+            target: nixOnDroidConfigurations.default.activationPackage
+            build_flags: "--impure"
+            extra_pull_names: "nix-on-droid"
     steps:
       - uses: actions/checkout@v5
-      - uses: docker/setup-qemu-action@v3
         with:
-          platforms: arm64
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: nixbuild/nix-quick-install-action@v33
       - uses: cachix/cachix-action@v16
         with:
           name: kojandy
-          extraPullNames: nix-on-droid
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix build .#nixOnDroidConfigurations.default.activationPackage --impure --extra-platforms aarch64-linux
+          extraPullNames: ${{ matrix.extra_pull_names }}
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - name: Build ${{ matrix.target }}
+        id: build_head
+        run: |
+          set -euo pipefail
+          path="$(nix build .#${{ matrix.target }} ${{ matrix.build_flags }} --print-out-paths)"
+          echo "path=$path" >> "$GITHUB_OUTPUT"
+      - name: Compute nix package diff
+        if: github.event_name == 'pull_request'
+        id: dix
+        shell: bash
+        run: |
+          set -euo pipefail
+          base_sha="${{ github.event.pull_request.base.sha }}"
+          tmpdir="$(mktemp -d)"
+          cleanup() {
+            git worktree remove "$tmpdir" --force
+          }
+          trap cleanup EXIT
+
+          git worktree add "$tmpdir" "$base_sha"
+
+          old_path="$(nix build "$tmpdir"#${{ matrix.target }} ${{ matrix.build_flags }} --print-out-paths)"
+          new_path="${{ steps.build_head.outputs.path }}"
+
+          if [ "$old_path" = "$new_path" ]; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          nix run github:faukah/dix -- "$old_path" "$new_path" > dix.raw
+
+          line_count="$(wc -l < dix.raw | awk '{$1=$1};1')"
+          {
+            echo "<!-- dix-diff:${{ matrix.name }} -->"
+            echo "### Nix package diff"
+            echo "Target: \`${{ matrix.target }}\`"
+            echo '```'
+            (grep '^\[[A-Z][^.]\]' dix.raw || echo "No changes in system-wide packages.") | sort -k2
+            echo
+            tail -n2 dix.raw
+            echo '```'
+            echo "<details>"
+            echo "<summary>Show full diff (${line_count} lines)</summary>"
+            echo
+            echo '```'
+            cat dix.raw
+            echo '```'
+            echo "</details>"
+          } > dix-comment.md
+
+          echo "has_changes=true" >> "$GITHUB_OUTPUT"
+      - name: Find Comment
+        if: ${{ steps.dix.outputs.has_changes }}
+        uses: peter-evans/find-comment@v3
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: "<!-- dix-diff:${{ matrix.name }} -->"
+      - name: Comment diff on PR
+        if: ${{ steps.dix.outputs.has_changes }}
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body-file: dix-comment.md
+          edit-mode: replace

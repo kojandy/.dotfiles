@@ -9,16 +9,12 @@ on:
 jobs:
   lockfile:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
     steps:
       - uses: actions/checkout@v5
-        with:
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - uses: nixbuild/nix-quick-install-action@v33
       - uses: DeterminateSystems/update-flake-lock@v27
         with:
+          token: ${{ secrets.PAT }}
           commit-msg: 'chore: update flake.lock'
           branch: bot/update-flake
           pr-title: 'chore: update flake.lock'
