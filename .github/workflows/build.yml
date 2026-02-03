@@ -11,29 +11,113 @@ on:
       - '**.nix'
       - 'flake.lock'
 
-jobs:
-  studio:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v5
-      - uses: nixbuild/nix-quick-install-action@v33
-      - uses: cachix/cachix-action@v16
-        with:
-          name: kojandy
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix build .#darwinConfigurations.studio.system
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
 
-  nix-on-droid:
-    runs-on: ubuntu-latest
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.runs_on }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: studio
+            runs_on: macos-latest
+            target: darwinConfigurations.studio.system
+            build_flags: ""
+            extra_pull_names: ""
+            qemu: false
+          - name: nix-on-droid
+            runs_on: ubuntu-latest
+            target: nixOnDroidConfigurations.default.activationPackage
+            build_flags: "--impure --extra-platforms aarch64-linux"
+            extra_pull_names: "nix-on-droid"
+            qemu: true
     steps:
       - uses: actions/checkout@v5
-      - uses: docker/setup-qemu-action@v3
+        with:
+          fetch-depth: 1
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Fetch base commit
+        if: github.event_name == 'pull_request'
+        run: git fetch --no-tags --depth=1 origin ${{ github.event.pull_request.base.sha }}
+      - name: Setup QEMU
+        if: ${{ matrix.qemu }}
+        uses: docker/setup-qemu-action@v3
         with:
           platforms: arm64
       - uses: nixbuild/nix-quick-install-action@v33
       - uses: cachix/cachix-action@v16
         with:
           name: kojandy
-          extraPullNames: nix-on-droid
+          extraPullNames: ${{ matrix.extra_pull_names }}
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix build .#nixOnDroidConfigurations.default.activationPackage --impure --extra-platforms aarch64-linux
+      - name: Build ${{ matrix.name }} (head)
+        id: build_head
+        run: |
+          set -euo pipefail
+          path="$(nix build .#${{ matrix.target }} ${{ matrix.build_flags }} --print-out-paths)"
+          echo "path=$path" >> "$GITHUB_OUTPUT"
+      - name: Compute nix closure diff (dix)
+        if: github.event_name == 'pull_request'
+        id: dix
+        shell: bash
+        run: |
+          set -euo pipefail
+          base_sha="${{ github.event.pull_request.base.sha }}"
+          tmpdir="$(mktemp -d)"
+          cleanup() {
+            git worktree remove "$tmpdir" --force
+          }
+          trap cleanup EXIT
+
+          git worktree add "$tmpdir" "$base_sha"
+
+          old_path="$(nix build "$tmpdir"#${{ matrix.target }} ${{ matrix.build_flags }} --print-out-paths)"
+          new_path="${{ steps.build_head.outputs.path }}"
+
+          if [ "$old_path" = "$new_path" ]; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          nix run github:faukah/dix -- "$old_path" "$new_path" > dix.raw
+
+          max_lines=400
+          line_count="$(wc -l < dix.raw)"
+          use_details=false
+          if [ "$line_count" -gt "$max_lines" ]; then
+            use_details=true
+          fi
+
+          {
+            echo "<!-- dix-diff:${{ matrix.name }} -->"
+            echo "### Nix package diff (dix)"
+            echo
+            echo "Target: \`${{ matrix.target }}\`"
+            echo
+            if [ "$use_details" = "true" ]; then
+              echo "<details>"
+              echo "<summary>Show full diff (${line_count} lines)</summary>"
+              echo
+            fi
+            echo "````"
+            cat dix.raw
+            echo "````"
+            if [ "$use_details" = "true" ]; then
+              echo "</details>"
+            fi
+          } > dix-comment.md
+
+          echo "has_changes=true" >> "$GITHUB_OUTPUT"
+      - name: Comment diff on PR
+        if: github.event_name == 'pull_request' && steps.dix.outputs.has_changes == 'true'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body-file: dix-comment.md
+          body-includes: "<!-- dix-diff:${{ matrix.name }} -->"
+          edit-mode: replace
