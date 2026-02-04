@@ -16,6 +16,7 @@
     ffmpeg
 
     amp-cli
+    codex
   ];
 
   system.primaryUser = "kojandy";
