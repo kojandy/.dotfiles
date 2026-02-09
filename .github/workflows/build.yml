@@ -32,6 +32,7 @@ jobs:
             target: nixOnDroidConfigurations.default.activationPackage
             build_flags: "--impure"
             extra_pull_names: "nix-on-droid"
+            skip-diff: true
     steps:
       - uses: actions/checkout@v5
         with:
@@ -50,7 +51,7 @@ jobs:
           path="$(nix build .#${{ matrix.target }} ${{ matrix.build_flags }} --print-out-paths)"
           echo "path=$path" >> "$GITHUB_OUTPUT"
       - name: Compute Nix package diff
-        if: github.event_name == 'pull_request'
+        if: ${{ !matrix.skip-diff && github.event_name == 'pull_request' }}
         shell: bash
         run: |
           set -euo pipefail
