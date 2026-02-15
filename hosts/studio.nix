@@ -3,10 +3,6 @@
 
   networking.hostName = "studio";
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-    "amp-cli"
-  ];
-
   home-manager.useGlobalPkgs = true;
   environment.systemPackages = with pkgs; [
     gnupg
@@ -15,7 +11,6 @@
     streamlink
     ffmpeg
 
-    amp-cli
     codex
   ];
 
