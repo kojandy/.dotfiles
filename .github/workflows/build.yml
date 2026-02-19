@@ -61,7 +61,7 @@ jobs:
           old_path="$(nix build "$tmpdir"#${{ matrix.target }} ${{ matrix.build_flags }} --print-out-paths)"
           new_path="${{ steps.build_head.outputs.path }}"
 
-          nix run github:faukah/dix -- "$old_path" "$new_path" > dix.raw
+          nix run github:faukah/dix?ref=v1.4.2 -- "$old_path" "$new_path" > dix.raw
 
           line_count="$(wc -l < dix.raw | awk '{$1=$1};1')"
           [ "$line_count" -eq 5 ] && exit 0
