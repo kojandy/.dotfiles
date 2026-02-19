@@ -1,8 +1,9 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     ../common.nix
     ./brew.nix
     ./preferences.nix
+    inputs.nix-index-database.darwinModules.default
   ];
 
 
@@ -19,6 +20,9 @@
       "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"
     '')
   ];
+
+  programs.nix-index.enable = false;
+  programs.nix-index-database.comma.enable = true;
 
   system.activationScripts.extraActivation.text = ''
     ln -sf "${pkgs.temurin-bin-21}/Library/Java/JavaVirtualMachines/temurin-21.jdk" "/Library/Java/JavaVirtualMachines/"
