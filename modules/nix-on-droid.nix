@@ -1,6 +1,5 @@
 { inputs, pkgs, ... }:
   with (import ./common.nix { inherit inputs pkgs; }); {
-    home-manager.useGlobalPkgs = true;
     environment.packages = environment.systemPackages
       ++ (with pkgs; [
         zsh
@@ -14,10 +13,14 @@
         yt-dlp streamlink
       ]);
 
+    home-manager.useGlobalPkgs = true;
+    home-manager.sharedModules = [ inputs.nix-index-database.homeModules.default ];
     home-manager.config = { config, ... }: {
       nix.package = pkgs.nix;
       nix.settings = nix.settings;
+      nix.nixPath = [ "nixpkgs=${inputs.nixpkgs-droid}" ];
       nix.registry.nixpkgs.flake = inputs.nixpkgs-droid;
+      programs.nix-index-database.comma.enable = true;
       home = {
         file = {
           ".profile".source = ../config/profile;
@@ -37,6 +40,7 @@
       };
     };
 
+    environment.motd = null;
     user.shell = "${pkgs.zsh}/bin/zsh";
     terminal.font = "${pkgs.iosevka}/share/fonts/truetype/Iosevka-Regular.ttf";
     terminal.colors = {
@@ -60,8 +64,6 @@
       color7 = "#707880";
       color15 = "#c5c8c6";
     };
-
-    environment.motd = null;
 
     system.stateVersion = "24.05";
   }
