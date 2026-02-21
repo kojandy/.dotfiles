@@ -17,6 +17,7 @@
     home-manager.config = { config, ... }: {
       nix.package = pkgs.nix;
       nix.settings = nix.settings;
+      nix.registry.nixpkgs.flake = inputs.nixpkgs-droid;
       home = {
         file = {
           ".profile".source = ../config/profile;
@@ -59,8 +60,6 @@
       color7 = "#707880";
       color15 = "#c5c8c6";
     };
-
-    nix.registry.nixpkgs.flake = nix.registry.nixpkgs.flake;
 
     environment.motd = null;
 
