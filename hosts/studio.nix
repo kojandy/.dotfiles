@@ -3,6 +3,14 @@
 
   networking.hostName = "studio";
 
+  services.openssh = {
+    enable = true;
+    extraConfig = ''
+      PasswordAuthentication no
+      KbdInteractiveAuthentication no
+    '';
+  };
+
   home-manager.useGlobalPkgs = true;
   environment.systemPackages = with pkgs; [
     gnupg
@@ -15,7 +23,6 @@
   ];
 
   system.primaryUser = "kojandy";
-
   users.users."kojandy".home = "/Users/kojandy";
   home-manager.users."kojandy" = { config, ... }: {
     home.file = {
