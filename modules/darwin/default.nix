@@ -6,6 +6,9 @@
     inputs.nix-index-database.darwinModules.default
   ];
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    "claude-code"
+  ];
 
   environment.systemPackages = with pkgs; [
     python3
@@ -15,6 +18,8 @@
     kubectl
     kubernetes-helm
     k9s
+
+    claude-code
 
     (writeShellScriptBin "idea" ''
       "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"
