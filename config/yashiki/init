@@ -1,0 +1,62 @@
+#!/bin/sh
+
+yashiki add-exec-path /opt/homebrew/bin
+
+yashiki layout-set-default tatami
+yashiki set-outer-gap 20
+yashiki layout-cmd set-inner-gap 15
+
+yashiki set-cursor-warp on-focus-change
+yashiki set-auto-raise enabled --delay 100
+
+for i in 1 2 3 4 5 6 7 8 9; do
+  yashiki bind "alt-$i" tag-view "$((1<<(i-1)))"
+  yashiki bind "alt-ctrl-$i" tag-toggle "$((1<<(i-1)))"
+  yashiki bind "alt-shift-$i" window-move-to-tag "$((1<<(i-1)))"
+  yashiki bind "alt-shift-ctrl-$i" window-toggle-tag "$((1<<(i-1)))"
+done
+yashiki bind alt-tab tag-view-last
+
+yashiki bind alt-j window-focus next
+yashiki bind alt-k window-focus prev
+yashiki bind alt-m window-focus left
+yashiki bind alt-shift-j window-swap next
+yashiki bind alt-shift-k window-swap prev
+yashiki bind alt-semicolon layout-cmd zoom
+
+yashiki bind alt-h layout-cmd dec-main-ratio
+yashiki bind alt-l layout-cmd inc-main-ratio
+yashiki bind alt-plus layout-cmd set-main-ratio 0.5
+yashiki bind alt-shift-h layout-cmd inc-main-count
+yashiki bind alt-shift-l layout-cmd dec-main-count
+
+yashiki bind alt-z window-toggle-fullscreen
+yashiki bind alt-s window-toggle-float
+yashiki bind alt-w window-close
+yashiki bind alt-escape retile
+
+yashiki bind alt-leftbracket output-focus prev
+yashiki bind alt-rightbracket output-focus next
+yashiki bind alt-shift-leftbracket exec "yashiki output-send prev && yashiki retile"
+yashiki bind alt-shift-rightbracket exec "yashiki output-send next && yashiki retile"
+yashiki bind alt-shift-o output-send next
+
+yashiki declare-mode passthrough
+yashiki bind alt-p enter-mode passthrough
+yashiki bind --mode passthrough alt-p enter-mode normal
+
+yashiki exec --track "borders active_color=0xffffffff inactive_color=0xff555555 width=5.0"
+
+yashiki bind alt-return exec "open -n /Applications/kitty.app"
+yashiki bind alt-shift-w exec "open -n '/Applications/Google Chrome.app'"
+yashiki bind alt-shift-f exec "open -a Finder"
+
+yashiki rule-add --subrole Dialog float
+yashiki rule-add --subrole FloatingWindow float
+yashiki rule-add --fullscreen-button none float
+
+yashiki rule-add --subrole AXUnknown ignore
+yashiki rule-add --close-button none ignore
+yashiki rule-add --app-name borders ignore
+
+yashiki rule-add --app-name "IntelliJ IDEA" tags 2
