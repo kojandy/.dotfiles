@@ -70,6 +70,7 @@
       "loopback"
       "minecraft"
       "monitorcontrol"
+      "mullvad-browser"
       "mullvad-vpn"
       "notion"
       "obs"
