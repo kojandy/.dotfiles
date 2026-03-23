@@ -50,6 +50,7 @@ yashiki bind alt-shift-f exec "open -a Finder"
 yashiki rule-add --subrole Dialog float
 yashiki rule-add --subrole FloatingWindow float
 yashiki rule-add --fullscreen-button none float
+yashiki rule-add --app-name "Morgen" float
 
 yashiki rule-add --subrole AXUnknown ignore
 yashiki rule-add --close-button none ignore
