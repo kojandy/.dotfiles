@@ -41,10 +41,6 @@ yashiki bind alt-shift-leftbracket exec "yashiki output-send prev && yashiki ret
 yashiki bind alt-shift-rightbracket exec "yashiki output-send next && yashiki retile"
 yashiki bind alt-shift-o output-send next
 
-yashiki declare-mode passthrough
-yashiki bind alt-p enter-mode passthrough
-yashiki bind --mode passthrough alt-p enter-mode normal
-
 yashiki exec --track "borders active_color=0xffffffff inactive_color=0xff555555 width=5.0"
 
 yashiki bind alt-return exec "open -n /Applications/kitty.app"
