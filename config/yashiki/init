@@ -43,7 +43,7 @@ yashiki bind alt-shift-o output-send next
 
 yashiki exec --track "borders active_color=0xffffffff inactive_color=0xff555555 width=5.0"
 
-yashiki bind alt-return exec "open -n /Applications/kitty.app"
+yashiki bind alt-shift-return exec "open -n /Applications/kitty.app"
 yashiki bind alt-shift-w exec "open -n '/Applications/Google Chrome.app'"
 yashiki bind alt-shift-f exec "open -a Finder"
 
