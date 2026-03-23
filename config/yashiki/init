@@ -1,6 +1,6 @@
 #!/bin/sh
 
-yashiki add-exec-path /opt/homebrew/bin
+yashiki add-exec-path /run/current-system/sw/bin
 
 yashiki layout-set-default tatami
 yashiki set-outer-gap 20
