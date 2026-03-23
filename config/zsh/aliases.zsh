@@ -3,9 +3,7 @@ alias -- -='cd -'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
 alias d='dirs -v'
-
 alias l='ls -lah'
 alias ls='ls --color=tty'
 
@@ -26,9 +24,9 @@ cdtemp() {
   cd $PREV_DIR
 }
 
+alias ad='LC_CTYPE=en_US.UTF-8 agent-deck'
+alias cc='claude'
 alias k9s='LC_CTYPE=en_US.UTF-8 k9s'
-
-# vim
 alias vi='nvim'
 
 # python
