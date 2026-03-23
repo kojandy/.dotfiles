@@ -26,7 +26,7 @@ yashiki bind alt-semicolon layout-cmd zoom
 
 yashiki bind alt-h layout-cmd dec-main-ratio
 yashiki bind alt-l layout-cmd inc-main-ratio
-yashiki bind alt-plus layout-cmd set-main-ratio 0.5
+yashiki bind alt-equal layout-cmd set-main-ratio 0.5
 yashiki bind alt-shift-h layout-cmd inc-main-count
 yashiki bind alt-shift-l layout-cmd dec-main-count
 
