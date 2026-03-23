@@ -33,7 +33,7 @@ yashiki bind alt-shift-l layout-cmd dec-main-count
 yashiki bind alt-z window-toggle-fullscreen
 yashiki bind alt-s window-toggle-float
 yashiki bind alt-q window-close
-yashiki bind alt-escape retile
+yashiki bind alt-escape exec "yashiki quit && open -a Yashiki"
 
 yashiki bind alt-leftbracket output-focus prev
 yashiki bind alt-rightbracket output-focus next
