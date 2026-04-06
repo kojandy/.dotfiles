@@ -25,7 +25,7 @@ edit-args = ["diff",  "$left", "$right"]
 merge-args = ["merge" , "$left", "$right", "$base", "$output"]
 
 [revsets]
-log = "tree(present(@) | present(trunk()) | ancestors(immutable_heads().., 2) | bookmarks()) | tracked_remote_bookmarks()::"
+log = "(tree(present(@) | present(trunk()) | ancestors(immutable_heads().., 2) | bookmarks()) | tracked_remote_bookmarks()::) ~ hidden()"
 
 [revset-aliases]
 'tree(x)' = 'x | fork_point(x)'
