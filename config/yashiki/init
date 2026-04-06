@@ -1,6 +1,7 @@
 #!/bin/sh
 
 yashiki add-exec-path /run/current-system/sw/bin
+yashiki add-exec-path /opt/homebrew/bin
 
 yashiki layout-set-default tatami
 yashiki set-outer-gap 20
@@ -43,8 +44,8 @@ yashiki bind alt-shift-o output-send next
 
 yashiki exec --track "borders active_color=0xffffffff inactive_color=0xff555555 width=5.0"
 
-yashiki bind alt-shift-return exec "open -n /Applications/kitty.app"
-yashiki bind alt-shift-w exec "open -n '/Applications/Google Chrome.app'"
+yashiki bind alt-shift-return exec "kitty --single-instance --working-directory $HOME"
+yashiki bind alt-shift-w exec "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 yashiki bind alt-shift-f exec "open -a Finder"
 
 yashiki rule-add --subrole Dialog float
