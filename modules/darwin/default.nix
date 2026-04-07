@@ -26,6 +26,10 @@
     '')
   ];
 
+  environment.variables = {
+    RIPGREP_CONFIG_PATH = "$HOME/.dotfiles/config/rg/ripgreprc";
+  };
+
   programs.nix-index.enable = false;
   programs.nix-index-database.comma.enable = true;
 
