@@ -1,5 +1,7 @@
 _: {
   homebrew = {
+    taps = [ "asheshgoplani/tap" ];
+    brews = [ "asheshgoplani/tap/agent-deck" ];
     casks = [
       "alt-tab"
       "alfred"
