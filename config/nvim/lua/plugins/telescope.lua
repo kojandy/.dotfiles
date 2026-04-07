@@ -33,6 +33,7 @@ return {
         },
       },
       pickers = {
+        find_files = {no_ignore = true, hidden = true},
         lsp_definitions = {path_display = {'tail'}},
         lsp_references = {path_display = {'tail'}},
         lsp_implementations = {path_display = {'tail'}},
