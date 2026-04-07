@@ -1744,7 +1744,7 @@
     local workspace=$1
     local display bookmark distance
 
-    bookmark=$(jj log --repository "$workspace" \
+    bookmark=$(jj log --repository "$workspace" --ignore-working-copy \
       --no-graph --limit 1 --color always \
       -r "closest_bookmark(@)" -T 'bookmarks.join(" ")' 2>/dev/null)
 
