@@ -96,5 +96,6 @@
     "/Applications/Google Chrome.app"
     "/Applications/Home Assistant.app"
     "/Applications/Totalmix.app"
+    "/Applications/whooing.app"
   ];
 }
