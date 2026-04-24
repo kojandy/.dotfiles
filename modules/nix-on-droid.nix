@@ -15,7 +15,7 @@
 
     home-manager.useGlobalPkgs = true;
     home-manager.sharedModules = [ inputs.nix-index-database.homeModules.default ];
-    home-manager.config = { config, ... }: {
+    home-manager.config = { lib, ... }: {
       nix.package = pkgs.nix;
       nix.settings = nix.settings;
       nix.nixPath = [ "nixpkgs=${inputs.nixpkgs-droid}" ];
@@ -25,7 +25,7 @@
         file = {
           ".profile".source = ../config/profile;
           ".zshrc".source = ../config/zsh/zshrc;
-          "Downloads".source = config.lib.file.mkOutOfStoreSymlink "/sdcard/Download";
+          "Downloads".source = lib.file.mkOutOfStoreSymlink "/sdcard/Download";
         };
         stateVersion = "25.05";
         enableNixpkgsReleaseCheck = false;

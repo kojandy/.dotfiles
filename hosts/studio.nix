@@ -26,25 +26,25 @@
 
   system.primaryUser = "kojandy";
   users.users."kojandy".home = "/Users/kojandy";
-  home-manager.users."kojandy" = { config, ... }: {
+  home-manager.users."kojandy" = { config, lib, ... }: {
     home.file = {
-      ".profile".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/profile";
-      ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/zsh/zshrc";
-      ".dotfiles/bin/littlesnitch".source = config.lib.file.mkOutOfStoreSymlink "/Applications/Little Snitch.app/Contents/Components/littlesnitch";
+      ".profile".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/profile";
+      ".zshrc".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/zsh/zshrc";
+      ".dotfiles/bin/littlesnitch".source = lib.file.mkOutOfStoreSymlink "/Applications/Little Snitch.app/Contents/Components/littlesnitch";
       "Library/Java/JavaVirtualMachines/zulu-8.jdk".source = "${pkgs.zulu8}/Library/Java/JavaVirtualMachines/zulu-8.jdk";
       "Library/Java/JavaVirtualMachines/temurin-11.jdk".source = "${pkgs.temurin-bin-11}/Library/Java/JavaVirtualMachines/temurin-11.jdk";
       "Library/Java/JavaVirtualMachines/temurin-17.jdk".source = "${pkgs.temurin-bin-17}/Library/Java/JavaVirtualMachines/temurin-17.jdk";
     };
     xdg.configFile = {
-      "broot".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/broot";
-      "git".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/git";
-      "ideavim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/ideavim";
-      "jj/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/jj/config.toml";
-      "kitty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/kitty";
-      "lf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/lf";
-      "nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/nvim";
-      "tmux".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/tmux";
-      "yashiki".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/yashiki";
+      "broot".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/broot";
+      "git".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/git";
+      "ideavim".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/ideavim";
+      "jj/config.toml".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/jj/config.toml";
+      "kitty".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/kitty";
+      "lf".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/lf";
+      "nvim".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/nvim";
+      "tmux".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/tmux";
+      "yashiki".source = lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/yashiki";
     };
     home.stateVersion = "25.05";
   };
