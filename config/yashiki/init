@@ -44,10 +44,6 @@ yashiki bind alt-shift-o output-send next
 
 yashiki exec --track "borders active_color=0xffffffff inactive_color=0xff555555 width=5.0"
 
-yashiki bind alt-shift-return exec "kitty --single-instance --working-directory $HOME"
-yashiki bind alt-shift-w exec "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-yashiki bind alt-shift-f exec "open -a Finder"
-
 yashiki rule-add --window-level floating float
 yashiki rule-add --subrole Dialog float
 yashiki rule-add --subrole FloatingWindow float

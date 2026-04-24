@@ -1,0 +1,3 @@
+alt + shift - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance --working-directory ~
+alt + shift - w : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+alt + shift - f : open -a Finder
