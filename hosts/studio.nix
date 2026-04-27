@@ -62,7 +62,7 @@
       "discord"
       "elgato-control-center"
       "elgato-stream-deck"
-      "huiontablet"
+      # "huiontablet"
       "insta360-link-controller"
       "izotope-product-portal"
       "jump-desktop-connect"
