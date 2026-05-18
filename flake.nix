@@ -4,20 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    darwin = {
-      url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixpkgs-droid.url = "github:NixOS/nixpkgs/88d3861";
-    nix-on-droid = {
-      url = "github:nix-community/nix-on-droid/release-24.05";
-      inputs = {
-        nixpkgs.follows = "nixpkgs-droid";
-        home-manager.follows = "home-manager";
-      };
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +12,24 @@
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixpkgs-droid.url = "github:NixOS/nixpkgs/88d3861";
+    home-manager-droid = {
+      url = "github:nix-community/home-manager/c909892";
+      inputs.nixpkgs.follows = "nixpkgs-droid";
+    };
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-24.05";
+      inputs = {
+        nixpkgs.follows = "nixpkgs-droid";
+        home-manager.follows = "home-manager-droid";
+      };
     };
   };
 
