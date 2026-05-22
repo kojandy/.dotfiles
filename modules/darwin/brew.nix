@@ -5,7 +5,6 @@ _: {
     casks = [
       "alt-tab"
       "alfred"
-      "bartender"
       "istat-menus@6"
       "little-snitch"
       "scroll-reverser"
