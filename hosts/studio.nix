@@ -20,8 +20,6 @@
     ffmpeg
 
     codex
-
-    jankyborders
   ];
 
   system.primaryUser = "kojandy";
@@ -44,13 +42,11 @@
       "lf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/lf";
       "nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/nvim";
       "tmux".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/tmux";
-      "yashiki".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/config/yashiki";
     };
     home.stateVersion = "25.05";
   };
 
   homebrew = {
-    taps = [ "typester/yashiki" ];
     brews = [
       "m1ddc"
     ];
@@ -81,8 +77,6 @@
       "tetrio"
       "utm"
       "waves-central"
-
-      "typester/yashiki/yashiki"
     ];
     masApps = {
       "Droplr" = 498672703;
