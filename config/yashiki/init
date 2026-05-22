@@ -48,11 +48,13 @@ yashiki bind alt-shift-return exec "kitty --single-instance --working-directory 
 yashiki bind alt-shift-w exec "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 yashiki bind alt-shift-f exec "open -a Finder"
 
+yashiki rule-add --window-level floating float
 yashiki rule-add --subrole Dialog float
 yashiki rule-add --subrole FloatingWindow float
 yashiki rule-add --fullscreen-button none float
 yashiki rule-add --app-name "Morgen" float
 
+yashiki rule-add --window-level other ignore
 yashiki rule-add --subrole AXUnknown ignore
 yashiki rule-add --close-button none ignore
 yashiki rule-add --app-name borders ignore
