@@ -124,6 +124,11 @@
           bundle_id = "com.apple.systempreferences";
           floating = true;
         };
+        "homeassistant" = {
+          title = ".*";
+          bundle_id = "io.robbie.HomeAssistant";
+          floating = true;
+        };
       };
     };
   };
