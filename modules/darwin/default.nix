@@ -81,6 +81,7 @@
         window_fullwidth = "alt - z";
 
         window_focus_first = "alt - m";
+        window_swap_first = "alt + shift - m";
         window_center = "alt - semicolon";
 
         mouse_nextdisplay = "alt - tab";
