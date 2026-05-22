@@ -81,6 +81,7 @@ alias gunwip='git pull && git branch wip origin/wip && git merge --squash --ff w
 alias j='jj'
 alias ja='jj abandon'
 alias jab='jj absorb'
+alias jarr='jj arrange'
 alias jb='jj bookmark list'
 alias jba='jj bookmark advance'
 alias jbc='jj bookmark create'
