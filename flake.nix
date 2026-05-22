@@ -31,6 +31,11 @@
         home-manager.follows = "home-manager-droid";
       };
     };
+
+    paneru = {
+      url = "github:karinushka/paneru";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, darwin, nix-on-droid, nixpkgs-droid, ... }@inputs: {
