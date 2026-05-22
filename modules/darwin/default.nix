@@ -129,6 +129,11 @@
           bundle_id = "io.robbie.HomeAssistant";
           floating = true;
         };
+        "totalmix" = {
+          title = ".*";
+          bundle_id = "de.rme-audio.TotalmixFX";
+          floating = true;
+        };
       };
     };
   };
