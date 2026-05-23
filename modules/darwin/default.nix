@@ -134,6 +134,11 @@
           bundle_id = "de.rme-audio.TotalmixFX";
           floating = true;
         };
+        "kakaotalk" = {
+          title = ".*";
+          bundle_id = "com.kakao.KakaoTalkMac";
+          floating = true;
+        };
       };
     };
   };
