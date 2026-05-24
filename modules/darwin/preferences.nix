@@ -8,6 +8,8 @@ _: {
     dock = {
       show-recents = false;
       showhidden = true;
+      autohide = true;
+      orientation = "left";
       tilesize = 64;
       wvous-br-corner = 1;
     };
