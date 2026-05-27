@@ -3,7 +3,6 @@ _: {
     taps = [ "asheshgoplani/tap" ];
     brews = [ "asheshgoplani/tap/agent-deck" ];
     casks = [
-      "alt-tab"
       "alfred"
       "istat-menus@6"
       "little-snitch"
