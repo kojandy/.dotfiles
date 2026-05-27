@@ -88,8 +88,6 @@
         mouse_nextdisplay = "alt - tab";
         window_nextdisplaysend = "alt + shift - tab";
 
-        quit = "alt + shift - escape";
-
         window_virtualnum_1 = "alt - 1";
         window_virtualnum_2 = "alt - 2";
         window_virtualnum_3 = "alt - 3";
