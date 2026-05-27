@@ -139,6 +139,7 @@
           floating = true;
         };
       };
+      restore.enabled = false;
     };
   };
 
