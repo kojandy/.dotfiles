@@ -19,6 +19,7 @@ _: {
       "chatgpt"
 
       "intellij-idea"
+      "codex-app"
     ];
 
     masApps = {

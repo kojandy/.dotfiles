@@ -20,6 +20,7 @@
     kubernetes-helm
     k9s
 
+    codex
     claude-code
 
     (writeShellScriptBin "idea" ''

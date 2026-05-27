@@ -18,8 +18,6 @@
     yt-dlp
     streamlink
     ffmpeg
-
-    codex
   ];
 
   system.primaryUser = "kojandy";
@@ -53,7 +51,6 @@
     casks = [
       "1password"
       "cleanshot"
-      "codex-app"
       "daisydisk"
       "discord"
       "elgato-control-center"
