@@ -51,6 +51,9 @@
         left = 10;
         right = 10;
       };
+      decorations = {
+        workspace_popup_status = false;
+      };
       swipe = {
         sensitivity = 0.15;
         deceleration = 10.0;
