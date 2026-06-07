@@ -1,7 +1,6 @@
 alt + shift - return : open -n /Applications/kitty.app
 alt + shift - w : open -n /Applications/Google\ Chrome.app
 alt + shift - c : open -a /Applications/Morgen.app
-alt + shift - escape : /run/current-system/sw/bin/paneru restart
 
 alt + shift - f : open ~
 alt + shift - d : open ~/Downloads
