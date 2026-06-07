@@ -1,5 +1,5 @@
-alt + shift - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance --working-directory ~
-alt + shift - w : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+alt + shift - return : open -n /Applications/kitty.app
+alt + shift - w : open -n /Applications/Google\ Chrome.app
 alt + shift - f : open -a Finder
-alt + shift - c : open -a Morgen
+alt + shift - c : open -a /Applications/Morgen.app
 alt + shift - escape : /run/current-system/sw/bin/paneru restart
