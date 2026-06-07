@@ -55,6 +55,7 @@
       "discord"
       "elgato-control-center"
       "elgato-stream-deck"
+      "home-assistant"
       # "huiontablet"
       "insta360-link-controller"
       "izotope-product-portal"
