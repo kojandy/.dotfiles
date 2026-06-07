@@ -42,6 +42,8 @@
     enable = true;
     settings = {
       options = {
+        focus_follows_mouse = false;
+        mouse_follows_focus = false;
         animation_speed = 20;
         window_resize_cycle = false;
       };
@@ -59,27 +61,23 @@
         deceleration = 10.0;
         gesture = {
           fingers_count = 4;
+          direction = "Reversed";
           vertical = false;
         };
       };
       bindings = {
-        window_focus_west = "alt - h";
-        window_focus_east = "alt - l";
-        window_swap_west = "alt + shift - h";
-        window_swap_east = "alt + shift - l";
-
-        window_virtual_south = "alt - j";
-        window_virtual_north = "alt - k";
-        window_virtualsend_south = "alt + shift - j";
-        window_virtualsend_north = "alt + shift - k";
+        window_focus_east = "alt - j";
+        window_focus_west = "alt - k";
+        window_swap_east = "alt + shift - j";
+        window_swap_west = "alt + shift - k";
 
         window_focus_north = "alt - ,";
         window_focus_south = "alt - .";
         window_stack = "alt + shift - ,";
         window_unstack = "alt + shift - .";
 
-        window_shrink = "alt - minus";
-        window_grow = "alt - equal";
+        window_shrink = "alt - h";
+        window_grow = "alt - l";
 
         window_manage = "alt - s";
         window_fullwidth = "alt - z";
