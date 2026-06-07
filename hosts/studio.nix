@@ -62,6 +62,7 @@
       "localsend"
       "loopback"
       "minecraft"
+      "mole-app"
       "monitorcontrol"
       "mullvad-browser"
       "mullvad-vpn"
