@@ -35,7 +35,12 @@ _: {
 
     enable = true;
     onActivation.cleanup = "zap";
-    onActivation.extraFlags = ["--quiet"];
+    onActivation.extraFlags = [
+      "--quiet"
+
+      # https://github.com/nix-darwin/nix-darwin/issues/1787
+      "--force-cleanup"
+    ];
   };
 
   environment.variables.HOMEBREW_AUTO_UPDATE_SECS = "86400";
