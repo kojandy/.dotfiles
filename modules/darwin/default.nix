@@ -61,7 +61,6 @@
         deceleration = 10.0;
         gesture = {
           fingers_count = 4;
-          direction = "Reversed";
           vertical = false;
         };
       };
