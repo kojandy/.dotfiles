@@ -20,6 +20,8 @@
     kubernetes-helm
     k9s
 
+    gh
+
     codex
     claude-code
 
