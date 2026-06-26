@@ -1,4 +1,8 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+let
+  llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+in
+{
   imports = [
     ../common.nix
     ./brew.nix
@@ -7,9 +11,9 @@
     inputs.paneru.darwinModules.paneru
   ];
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-    "claude-code"
-  ];
+  # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+  #   "claude-code"
+  # ];
 
   environment.systemPackages = with pkgs; [
     python3
@@ -22,8 +26,9 @@
 
     gh
 
-    codex
-    claude-code
+    llm-agents.codex
+    llm-agents.claude-code
+    llm-agents.agent-deck
 
     (writeShellScriptBin "idea" ''
       "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"

@@ -1,7 +1,5 @@
 _: {
   homebrew = {
-    taps = [ "asheshgoplani/tap" ];
-    brews = [ "asheshgoplani/tap/agent-deck" ];
     casks = [
       "alfred"
       "istat-menus@6"
