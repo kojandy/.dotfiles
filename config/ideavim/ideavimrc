@@ -5,6 +5,8 @@ set smartcase
 set ideajoin
 set number
 set relativenumber
+set inccommand=nosplit
+set VimEverywhere
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
