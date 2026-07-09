@@ -12,6 +12,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-entire'
 Plug 'machakann/vim-highlightedyank'
+Plug 'jeetsukumaran/vim-indentwise'
 
 let mapleader=" "
 sethandler a:vim
