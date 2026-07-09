@@ -1,5 +1,6 @@
 _: {
   homebrew = {
+    taps = [ "typester/yashiki" ];
     casks = [
       "alfred"
       "istat-menus@6"
@@ -17,6 +18,8 @@ _: {
 
       "intellij-idea"
       "codex-app"
+
+      "typester/yashiki/yashiki"
     ];
 
     masApps = {

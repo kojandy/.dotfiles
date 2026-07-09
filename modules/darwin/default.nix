@@ -31,6 +31,8 @@ in
     llm-agents.agent-deck
     llm-agents.pi
 
+    jankyborders
+
     (writeShellScriptBin "idea" ''
       "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea" "$@"
     '')
@@ -47,7 +49,7 @@ in
   services.skhd.skhdConfig = builtins.readFile ../../config/skhd/skhdrc;
 
   services.paneru = {
-    enable = true;
+    enable = false;
     settings = {
       options = {
         focus_follows_mouse = false;

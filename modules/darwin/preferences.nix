@@ -9,7 +9,7 @@ _: {
       show-recents = false;
       showhidden = true;
       autohide = true;
-      orientation = "left";
+      orientation = "bottom";
       tilesize = 64;
       wvous-br-corner = 1;
     };
