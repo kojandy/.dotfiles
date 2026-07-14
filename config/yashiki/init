@@ -45,10 +45,13 @@ yashiki rule-add --subrole Dialog float
 yashiki rule-add --subrole FloatingWindow float
 yashiki rule-add --fullscreen-button none float
 yashiki rule-add --app-name "Morgen" float
+yashiki rule-add --app-name "Home Assistant" float
+yashiki rule-add --app-name "카카오톡" float
 
 yashiki rule-add --window-level other ignore
 yashiki rule-add --subrole AXUnknown ignore
 yashiki rule-add --close-button none ignore
 yashiki rule-add --app-name borders ignore
+yashiki rule-add --app-name "TotalMix FX" ignore
 
 yashiki rule-add --app-name "IntelliJ IDEA" tags 2
