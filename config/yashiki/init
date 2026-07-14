@@ -3,7 +3,6 @@
 yashiki add-exec-path /run/current-system/sw/bin
 yashiki add-exec-path /opt/homebrew/bin
 
-yashiki layout-set-default tatami
 yashiki set-outer-gap 20
 yashiki layout-cmd set-inner-gap 15
 
@@ -55,3 +54,5 @@ yashiki rule-add --app-name borders ignore
 yashiki rule-add --app-name "TotalMix FX" ignore
 
 yashiki rule-add --app-name "IntelliJ IDEA" tags 2
+
+yashiki layout-set-default tatami
