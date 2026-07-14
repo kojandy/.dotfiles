@@ -14,9 +14,10 @@ _: {
       "kitty"
       "zoom"
       "morgen"
-      "chatgpt"
+      "chatgpt-classic"
 
       "intellij-idea"
+      "chatgpt"
 
       "typester/yashiki/yashiki"
     ];
