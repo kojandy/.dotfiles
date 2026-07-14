@@ -80,25 +80,6 @@ return {
   {'AndrewRadev/splitjoin.vim', event = {'BufReadPost', 'BufNewFile'}},
 
   -- language
-  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', event = {'BufReadPost', 'BufNewFile'},
-    opts = {
-      ensure_installed = {'bash', 'lua', 'nix'},
-      highlight = {enable = true},
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = '<C-Space>',
-          node_incremental = '<C-Space>',
-          scope_incremental = false,
-          node_decremental = '<C-BS>',
-        },
-      },
-    },
-    config = function(_, opts)
-      require('nvim-treesitter.configs').setup(opts)
-      vim.wo.foldmethod = 'expr'
-      vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-  end},
   'metakirby5/codi.vim',
 
   -- git
