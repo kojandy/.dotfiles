@@ -47,6 +47,9 @@ yashiki rule-add --app-name "Home Assistant" float
 yashiki rule-add --app-name "카카오톡" float
 yashiki rule-add --app-name "WORKS" float
 yashiki rule-add --app-name "LINE" float
+yashiki rule-add --app-name "Discord" float
+yashiki rule-add --app-name "1Password" float
+yashiki rule-add --app-name "음악" float
 
 yashiki rule-add --window-level other ignore
 yashiki rule-add --subrole AXUnknown ignore
