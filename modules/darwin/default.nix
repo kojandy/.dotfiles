@@ -11,10 +11,6 @@ in
     inputs.paneru.darwinModules.paneru
   ];
 
-  # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-  #   "claude-code"
-  # ];
-
   environment.systemPackages = with pkgs; [
     python3
     yubikey-manager
@@ -26,6 +22,7 @@ in
 
     gh
 
+    nono
     llm-agents.codex
     llm-agents.claude-code
     llm-agents.agent-deck

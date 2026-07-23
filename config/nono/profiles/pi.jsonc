@@ -1,0 +1,20 @@
+{
+  "$schema": "../nono-profile.schema.json",
+  "extends": "nolabs-ai/pi",
+  "meta": {
+    "name": "pi"
+  },
+  "filesystem": {
+    "read": [
+      "$HOME/Projects",
+      "$HOME/.m2"
+    ],
+    "read_file": [
+      "$RIPGREP_CONFIG_PATH"
+    ],
+    "suppress_save_prompt": [
+      "$HOME",
+      "/Users"
+    ]
+  }
+}
