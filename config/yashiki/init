@@ -50,6 +50,7 @@ yashiki rule-add --app-name "LINE" float
 yashiki rule-add --app-name "Discord" float
 yashiki rule-add --app-name "1Password" float
 yashiki rule-add --app-name "음악" float
+yashiki rule-add --app-name "BIG-IP Edge Client" float
 
 yashiki rule-add --window-level other ignore
 yashiki rule-add --subrole AXUnknown ignore
