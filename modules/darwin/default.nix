@@ -23,6 +23,7 @@ in
     gh
 
     nono
+    ccusage
     llm-agents.codex
     llm-agents.claude-code
     llm-agents.agent-deck
