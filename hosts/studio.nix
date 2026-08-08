@@ -67,7 +67,6 @@
       "minecraft"
       "mole-app"
       "monitorcontrol"
-      "mullvad-browser"
       "mullvad-vpn"
       "notion"
       "obs"
