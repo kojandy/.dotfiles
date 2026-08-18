@@ -12,16 +12,24 @@ alias cp='cp -i'
 # alias rm='rm -I'
 
 cdtemp() {
-  PREV_DIR=$(pwd)
-  TEMP_DIR=$(mktemp -d)
-  cd $TEMP_DIR
-  $SHELL
-  read "cleanup?rm -rf $TEMP_DIR? [Y/n] "
-  if [[ ! "$cleanup" =~ "^[nN]$" ]]
-  then
-    \rm -rf $TEMP_DIR
+  local temp_dir exit_code cleanup
+  temp_dir=$(mktemp -d) || return 1
+  (
+    cd "$temp_dir" || exit 1
+    if (( $# == 0 )); then
+      "$SHELL"
+    else
+      "$@"
+    fi
+  )
+  exit_code=$?
+  if ! rmdir "$temp_dir" 2>/dev/null; then
+    read "cleanup?rm -rf $temp_dir? [Y/n] "
+    [[ ! "$cleanup" =~ "^[nN]$" ]] && {
+      rm -rf "$temp_dir" || return 1
+    }
   fi
-  cd $PREV_DIR
+  return exit_code
 }
 
 alias ad='LC_CTYPE=en_US.UTF-8 agent-deck'
