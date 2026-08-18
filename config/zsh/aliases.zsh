@@ -36,7 +36,14 @@ alias ad='LC_CTYPE=en_US.UTF-8 agent-deck'
 alias cc='claude'
 alias k9s='LC_CTYPE=en_US.UTF-8 k9s'
 alias vi='nvim'
-alias pi='nono run --profile pi --allow-cwd --silent -- pi'
+pi() {
+  local -a pi_command=(nono run --profile pi --allow-cwd --silent -- pi "$@")
+  if [[ "$PWD" == "$HOME" ]]; then
+    cdtemp "${pi_command[@]}"
+  else
+    "${pi_command[@]}"
+  fi
+}
 
 # python
 alias python='python3'
