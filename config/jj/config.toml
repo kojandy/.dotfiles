@@ -3,7 +3,7 @@ name = "Ohjun Kwon"
 email = "dev@kojandy.com"
 
 [ui]
-default-command = ["log", "-T builtin_log_compact", "--config", 'ui.pager=["/usr/bin/env", "zsh", "-c", "head -n $((LINES - 4))"]']
+default-command = ["log", "-T builtin_log_compact", "-r present(@) | present(trunk()..@) | (ancestors(immutable_heads()..visible_heads(), 2) ~ trunk()..bookmarks()-) | tree(tracked_remote_bookmarks())", "--config", 'ui.pager=["/usr/bin/env", "zsh", "-c", "head -n $((LINES - 4))"]']
 pager = ":builtin"
 diff-formatter = "difft"
 merge-editor = "vimdiff"
@@ -25,7 +25,7 @@ edit-args = ["diff",  "$left", "$right"]
 merge-args = ["merge" , "$left", "$right", "$base", "$output"]
 
 [revsets]
-log = "(tree(present(@) | present(trunk()) | ancestors(immutable_heads().., 2) | bookmarks()) | tracked_remote_bookmarks()::) ~ hidden()"
+log = "present(@) | present(trunk()..@) | ancestors(immutable_heads()..visible_heads(), 2) | tree(tracked_remote_bookmarks())"
 bookmark-advance-to = 'heads(::@ & mutable() & ~description(exact:"") & (~empty() | merges()))'
 
 [revset-aliases]
