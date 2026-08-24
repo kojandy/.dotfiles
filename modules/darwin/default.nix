@@ -20,6 +20,7 @@ in
     k9s
 
     gh
+    llm-agents.tuicr
 
     nono
     ccusage
