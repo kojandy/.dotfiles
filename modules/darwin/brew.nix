@@ -1,7 +1,6 @@
 _: {
   homebrew = {
     taps = [ "typester/yashiki" ];
-    brews = [ "codeburn" ];
     casks = [
       "alfred"
       "istat-menus@6"
