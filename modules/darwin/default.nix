@@ -23,6 +23,7 @@ in
 
     nono
     ccusage
+    codexbar
     llm-agents.codex
     llm-agents.claude-code
     llm-agents.agent-deck
