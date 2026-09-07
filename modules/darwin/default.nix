@@ -27,8 +27,9 @@ in
     codexbar
     llm-agents.codex
     llm-agents.claude-code
-    llm-agents.agent-deck
     llm-agents.pi
+    llm-agents.agent-deck
+    llm-agents.herdr
 
     jankyborders
 

@@ -39,9 +39,9 @@ alias vi='nvim'
 pi() {
   local -a pi_command=(nono run --profile pi --allow-cwd --silent -- pi "$@")
   if [[ "$PWD" == "$HOME" ]]; then
-    cdtemp "${pi_command[@]}"
+    HERDR_AGENT=pi cdtemp "${pi_command[@]}"
   else
-    "${pi_command[@]}"
+    HERDR_AGENT=pi "${pi_command[@]}"
   fi
 }
 
