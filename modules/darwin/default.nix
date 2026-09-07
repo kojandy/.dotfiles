@@ -22,7 +22,7 @@ in
     gh
     llm-agents.tuicr
 
-    nono
+    llm-agents.nono
     ccusage
     codexbar
     llm-agents.codex
