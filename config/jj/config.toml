@@ -62,6 +62,7 @@ coalesce(
 
 [git]
 private-commits = "description(glob-i:'!*')"
+fetch = "*"
 
 [remotes.origin]
 fetch-tags = "~*"
