@@ -28,7 +28,6 @@ in
     llm-agents.codex
     llm-agents.claude-code
     llm-agents.pi
-    llm-agents.agent-deck
     llm-agents.herdr
 
     jankyborders
