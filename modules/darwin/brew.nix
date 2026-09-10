@@ -19,6 +19,8 @@ _: {
       "intellij-idea"
       "chatgpt"
 
+      "codexbar"
+
       "typester/yashiki/yashiki"
     ];
 

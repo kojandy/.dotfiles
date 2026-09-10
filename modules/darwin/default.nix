@@ -24,7 +24,6 @@ in
 
     llm-agents.nono
     ccusage
-    codexbar
     llm-agents.codex
     llm-agents.claude-code
     llm-agents.pi
