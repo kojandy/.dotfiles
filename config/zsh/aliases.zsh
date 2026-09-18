@@ -38,10 +38,12 @@ alias k9s='LC_CTYPE=en_US.UTF-8 k9s'
 alias vi='nvim'
 pi() {
   local -a pi_command=(nono run --profile pi --allow-cwd --silent -- pi "$@")
-  if [[ "$PWD" == "$HOME" ]]; then
-    HERDR_AGENT=pi cdtemp "${pi_command[@]}"
-  else
+  [[ "$PWD" == "$HOME" ]] && pi_command=(cdtemp "${pi_command[@]}")
+
+  if [[ "${HERDR_ENV:-}" == "1" ]]; then
     HERDR_AGENT=pi "${pi_command[@]}"
+  else
+    "${pi_command[@]}"
   fi
 }
 
