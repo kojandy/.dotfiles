@@ -25,7 +25,7 @@ edit-args = ["diff",  "$left", "$right"]
 merge-args = ["merge" , "$left", "$right", "$base", "$output"]
 
 [revsets]
-log = "present(@) | present(trunk()..@) | ancestors(immutable_heads()..visible_heads(), 2) | tree(tracked_remote_bookmarks())"
+log = "present(@) | present(trunk()..@) | ancestors(immutable_heads()..visible_heads(), 2) | tree(tracked_remote_bookmarks()) | @..trunk()"
 bookmark-advance-to = 'heads(::@ & mutable() & ~description(exact:"") & (~empty() | merges()))'
 
 [revset-aliases]
