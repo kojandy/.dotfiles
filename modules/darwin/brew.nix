@@ -1,6 +1,7 @@
 _: {
   homebrew = {
     taps = [ "typester/yashiki" ];
+    brews = [ "terminal-notifier" ];
     casks = [
       "alfred"
       "istat-menus@6"
