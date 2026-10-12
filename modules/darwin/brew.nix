@@ -8,6 +8,7 @@ _: {
       "little-snitch"
       "scroll-reverser"
       "gureumkim"
+      "hammerspoon"
 
       "font-sarasa-gothic"
 
