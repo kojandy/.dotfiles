@@ -18,8 +18,7 @@
     home-manager.config = { config, ... }: {
       nix.package = pkgs.nix;
       nix.settings = nix.settings;
-      nix.nixPath = [ "nixpkgs=${inputs.nixpkgs-droid}" ];
-      nix.registry.nixpkgs.flake = inputs.nixpkgs-droid;
+      nix.registry.nixpkgs.flake = nix.registry.nixpkgs.flake;
       programs.nix-index-database.comma.enable = true;
       home = {
         file = {
