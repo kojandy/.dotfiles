@@ -23,7 +23,7 @@ in
     llm-agents.tuicr
 
     llm-agents.nono
-    ccusage
+    llm-agents.ccusage
     llm-agents.codex
     llm-agents.claude-code
     llm-agents.pi
